@@ -1,0 +1,29 @@
+```{r, child = "_setup.Rmd"}
+```
+
+### Shadow sizes
+
+```{r}
+library(htmltools)
+
+div(
+  div(
+    .style %>%
+      margin(2) %>%
+      shadow("small"),  # <-
+    "Small"
+  ),
+  div(
+    .style %>%
+      margin(2) %>%
+      shadow("medium"),  # <-
+    "Medium"
+  ),
+  div(
+    .style %>%
+      margin(2) %>%
+      shadow("large"),  # <-
+    "Large"
+  )
+)
+```

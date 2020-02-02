@@ -1,0 +1,22 @@
+```{r, child = "_setup.Rmd"}
+```
+
+## Borders
+
+```{r}
+library(htmltools)
+
+print(
+  .style %>%
+    border("primary") %>%
+    font("primary")
+)
+
+## div(
+##   .style %>%
+##     border("primary") %>%
+##     font("primary"),
+##   p("Cras justo odio, dapibus ac facilisis in, egestas eget quam."),
+##   p("Etiam porta sem malesuada magna mollis euismod.")
+## )
+```
