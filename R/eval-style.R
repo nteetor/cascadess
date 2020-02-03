@@ -1,5 +1,9 @@
-style_pronoun <- function(subclass = NULL) {
-  structure(list(), class = c(subclass, "cascadess_style_pronoun"))
+style_pronoun <- function(prefix = NULL) {
+  structure(
+    class = "cascadess_style_pronoun",
+    prefix = prefix,
+    list()
+  )
 }
 
 is_style_pronoun <- function(x) {
@@ -16,12 +20,16 @@ str.cascadess_style_pronoun <- function(object, ...) {
   invisible(NULL)
 }
 
-eval_style <- function(expr, prefix = NULL, context = style_pronoun()) {
-  enquo(expr)
+style_prefix <- function(x, default = NULL) {
+  (x %@% prefix) %||% default
 }
 
-foo <- function(...) {
-  eval_style({ ... })
+with_style_pronoun <- function(pronoun, expr) {
+  qexpr <- enquo(expr)
+
+  mask <- list2(.style = pronoun)
+
+  eval_tidy(qexpr, data = mask)
 }
 
 style_dots_eval <- function(..., .style = NULL, .mask = NULL) {

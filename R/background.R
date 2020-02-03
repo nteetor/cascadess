@@ -16,7 +16,7 @@ background <- function(x, color) {
 
 #' @export
 background.cascadess_style_pronoun <- function(x, color) {
-  style_class_add(x, background_color("bg", color))
+  style_class_add(x, background_color(style_prefix(x, "bg"), color))
 }
 
 #' @export
