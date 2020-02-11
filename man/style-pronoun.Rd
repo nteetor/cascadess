@@ -4,9 +4,12 @@
 \name{style-pronoun}
 \alias{style-pronoun}
 \alias{.style}
+\alias{with_style_pronoun}
 \title{Style pronoun}
 \usage{
 .style
+
+with_style_pronoun(pronoun, expr)
 }
 \description{
 The \code{.style} pronoun allows you to define styles for a tag element within the

@@ -20,50 +20,30 @@ str.cascadess_style_pronoun <- function(object, ...) {
   invisible(NULL)
 }
 
+print.cascadess_pronoun_box <- function(x, ...) {
+  cat("<pronoun>\n")
+  invisible(x)
+}
+
+str.cascadess_pronoun_box <- function(object, ...) {
+  cat("<pronoun>\n")
+  invisible(NULL)
+}
+
 style_prefix <- function(x, default = NULL) {
   (x %@% prefix) %||% default
 }
 
-with_style_pronoun <- function(pronoun, expr) {
-  qexpr <- enquo(expr)
-
-  mask <- list2(.style = pronoun)
-
-  eval_tidy(qexpr, data = mask)
-}
-
-style_dots_eval <- function(..., .style = NULL, .mask = NULL) {
-  .style <- .style %||% style_pronoun()
-  .mask <- list2(.style = .style, !!!.mask)
-
-  # eval_tidy and with_bindings don't seem to affect ... evaluation
-  qargs <- enquos(...)
-
-  flatten_if(lapply(qargs, eval_tidy, data = .mask))
-}
-
-css_class_add <- function(x, new) {
-  if (is_style_pronoun(x)) {
-    if (!is.null(x$class)) {
-      new <- paste(x$class, new)
-    }
-
-    x$class <- new
-  } else {
-    if (!is.null(x$attribs$class)) {
-      new <- paste(x$attribs$class, new)
-    }
-
-    x$attribs$class <- new
-  }
-
+pronoun_class_add <- function(x, class) {
+  x$class <- paste(c(x$class, class), collapse = " ")
+  x <- splice(x)
+  class(x) <- unique(c("cascadess_pronoun_box", class(x)))
   x
 }
 
-tag_class_add <- css_class_add
-
-style_class_add <- function(x, new) {
-  splice(css_class_add(x, new))
+tag_class_add <- function(x, class) {
+  x$attribs$class <- paste(c(x$attribs$class, class), collapse = " ")
+  x
 }
 
 #' Style pronoun
@@ -102,3 +82,14 @@ style_class_add <- function(x, new) {
 #' @format NULL
 #' @export
 .style <- style_pronoun()
+
+
+#' @rdname style-pronoun
+#' @export
+with_style_pronoun <- function(pronoun, expr) {
+  quexpr <- enquo(expr)
+
+  mask <- list2(.style = pronoun)
+
+  eval_tidy(quexpr, data = mask)
+}

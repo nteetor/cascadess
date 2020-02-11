@@ -16,11 +16,11 @@ background <- function(x, color) {
 
 #' @export
 background.cascadess_style_pronoun <- function(x, color) {
-  style_class_add(x, background_color(style_prefix(x, "bg"), color))
+  pronoun_class_add(x, background_color(style_prefix(x, "bg"), color))
 }
 
 #' @export
-background.rlang_box_splice <- function(x, color) {
+background.cascadess_pronoun_box <- function(x, color) {
   background(unbox(x), color)
 }
 
