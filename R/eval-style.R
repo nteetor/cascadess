@@ -83,13 +83,24 @@ tag_class_add <- function(x, class) {
 #' @export
 .style <- style_pronoun()
 
-
-#' @rdname style-pronoun
+#' Style pronoun contexts
+#'
+#' The `with_style_pronoun()` allows overloading the `.style` pronoun.
+#'
+#' @param pronoun A call to `style_pronoun()`.
+#'
+#' @param expr An expression.
+#'
+#' @keywords internal
 #' @export
 with_style_pronoun <- function(pronoun, expr) {
-  quexpr <- enquo(expr)
+  force(pronoun)
 
-  mask <- list2(.style = pronoun)
+  caller <- caller_env()
+  quo <- enquo(expr)
 
-  eval_tidy(quexpr, data = mask)
+  e <- new_environment(list(.style = pronoun), parent = caller)
+  mask <- new_data_mask(e)
+
+  eval_tidy(quo, mask, e)
 }
