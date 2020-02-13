@@ -1,10 +1,10 @@
 #' Floats
 #'
-#' Use `float()` to float an element to the left or right side of its parent
-#' element. A newspaper layout is a classic example where an image is floated
+#' The `float()` function floats an element to the left or right side of its
+#' parent element. A newspaper layout is a classic example of a floated image
 #' with text wrapped around.
 #'
-#' @inheritParams affix
+#' @inheritParams background
 #'
 #' @param side A [responsive] argument. One of `"left"` or `"right"` specifying
 #'   the side to float the element.
@@ -19,25 +19,20 @@ float <- function(x, side) {
 
 #' @export
 float.cascadess_style_pronoun <- function(x, side) {
-  NextMethod("float", x)
+  pronoun_class_add(x, dashed("float", responsive(side)))
 }
 
 #' @export
-float.rlang_box_splice <- function(x, side) {
-  NextMethod("float", unbox(x))
+float.cascadess_pronoun_box <- function(x, side) {
+  float(unbox(x), side)
 }
 
 #' @export
 float.shiny.tag <- function(x, side) {
-  tag_class_add(x, float_side(side))
+  tag_class_add(x, dashed("float", responsive(side)))
 }
 
 #' @export
 float.default <- function(x, side) {
-  tag_class_add(x, float_side(side))
-}
 
-float_side <- function(side) {
-  side <- resp_construct(side, c("left", "right"))
-  resp_classes(side, "float")
 }

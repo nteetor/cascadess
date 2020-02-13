@@ -4,14 +4,13 @@
 \alias{align}
 \title{Inline alignment}
 \usage{
-align(.tag, align, ...)
+align(x, vertical)
 }
 \arguments{
-\item{.tag}{A tag element or \code{.style} pronoun.}
+\item{x}{A tag element or \link{.style} pronoun.}
 
-\item{align}{One of \verb{r dQuote(align_values, q = FALSE)}}
-
-\item{...}{Other arguments passed on to methods.}
+\item{vertical}{One of
+\Sexpr[results=rd,stage=render]{rd_quoted(align_values)}.}
 }
 \description{
 The \code{align()} function adjusts the CSS \code{vertical-align} property of an
@@ -19,6 +18,5 @@ element. This property applies to \strong{inline} elements and may be used to
 adjust the alignment of an image in a line of text or the contents of a table
 cell.
 
-For broader alignment purposes you may want to consider flex \code{display()} and
-\code{flex()}.
+For broader alignment purposes use flex box, see \code{display()} and \code{flex()}.
 }

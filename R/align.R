@@ -16,31 +16,38 @@ align_values <- c(
 #' adjust the alignment of an image in a line of text or the contents of a table
 #' cell.
 #'
-#' For broader alignment purposes you may want to consider flex `display()` and
-#' `flex()`.
+#' For broader alignment purposes use flex box, see `display()` and `flex()`.
 #'
-#' @param .tag A tag element or `.style` pronoun.
+#' @param x A tag element or [.style] pronoun.
 #'
-#' @param align One of `r dQuote(align_values, q = FALSE)`
-#'
-#' @param ... Other arguments passed on to methods.
+#' @param vertical One of
+#'   \Sexpr[results=rd,stage=render]{rd_quoted(align_values)}.
 #'
 #' @export
-align <- function(.tag, align, ...) {
+align <- function(x, vertical) {
+  UseMethod("align")
+}
+
+#' @export
+align.cascadess_style_pronoun <- function(x, vertical) {
+  pronoun_class_add(x, align_vertical(vertical))
+}
+
+#' @export
+align.cascadess_pronoun_box <- function(x, vertical) {
+  align(unbox(x), vertical)
+}
+
+#' @export
+align.shiny.tag <- function(x, vertical) {
 
 }
 
 #' @export
-align.shiny.tag <- function(.tag, align) {
+align.default <- function(x, vertical) {
 
 }
 
-#' @export
-align.cascadess_style_pronoun <- function(.tag, align) {
-  eval_style(align, prefix = "align", context = .tag)
+align_vertical <- function(x) {
 
-  add_class(.tag, new_align_class)
-}
-
-align_align <- function() {
 }

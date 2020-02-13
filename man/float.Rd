@@ -7,26 +7,28 @@
 float(x, side)
 }
 \arguments{
+\item{x}{A tag element or \link{.style} pronoun.}
+
 \item{side}{A \link{responsive} argument. One of \code{"left"} or \code{"right"} specifying
 the side to float the element.}
 }
 \description{
-Use \code{float()} to float an element to the left or right side of its parent
-element. A newspaper layout is a classic example where an image is floated
+The \code{float()} function floats an element to the left or right side of its
+parent element. A newspaper layout is a classic example of a floated image
 with text wrapped around.
 }
 \seealso{
 Other design utilities: 
-\code{\link{affix}()},
 \code{\link{background}()},
 \code{\link{border}()},
 \code{\link{display}()},
+\code{\link{fixed}()},
 \code{\link{flex}()},
 \code{\link{font}()},
 \code{\link{height}()},
 \code{\link{margin}()},
+\code{\link{overflow}()},
 \code{\link{padding}()},
-\code{\link{scroll}()},
 \code{\link{shadow}()},
 \code{\link{width}()}
 }

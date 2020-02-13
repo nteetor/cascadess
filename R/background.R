@@ -1,12 +1,16 @@
+theme_colors <- c(
+  "red", "purple", "indigo", "blue", "cyan", "teal", "green",
+  "yellow", "amber", "orange", "grey", "black", "white"
+)
+
 #' Backgrounds
 #'
 #' Use `background()` to modify the background color of a tag element.
 #'
-#' @inheritParams affix
+#' @param x A tag element or [.style] pronoun.
 #'
-# @eval param_color("background")
-#'
-# @includeRmd man/roxygen/background.Rmd
+#' @param color One of
+#'   \Sexpr[results=rd,stage=render]{rd_quoted(theme_colors)}.
 #'
 #' @family design utilities
 #' @export
@@ -16,7 +20,7 @@ background <- function(x, color) {
 
 #' @export
 background.cascadess_style_pronoun <- function(x, color) {
-  pronoun_class_add(x, background_color(style_prefix(x, "bg"), color))
+  pronoun_class_add(x, dashed(style_prefix(x, "bg"), color))
 }
 
 #' @export
@@ -26,14 +30,10 @@ background.cascadess_pronoun_box <- function(x, color) {
 
 #' @export
 background.shiny.tag <- function(x, color) {
-  tag_class_add(x, background_color("bg", color))
+  tag_class_add(x, dashed("bg", color))
 }
 
 #' @export
 background.default <- function(x, color) {
-  tag_class_add(x, background_color("bg", color))
-}
 
-background_color <- function(prefix, color) {
-  sprintf("%s-%s", prefix, color)
 }

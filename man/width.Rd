@@ -30,17 +30,17 @@ the browser window.
 }
 \seealso{
 Other design utilities: 
-\code{\link{affix}()},
 \code{\link{background}()},
 \code{\link{border}()},
 \code{\link{display}()},
+\code{\link{fixed}()},
 \code{\link{flex}()},
 \code{\link{float}()},
 \code{\link{font}()},
 \code{\link{height}()},
 \code{\link{margin}()},
+\code{\link{overflow}()},
 \code{\link{padding}()},
-\code{\link{scroll}()},
 \code{\link{shadow}()}
 }
 \concept{design utilities}
