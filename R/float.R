@@ -19,7 +19,7 @@ float <- function(x, side) {
 
 #' @export
 float.cascadess_style_pronoun <- function(x, side) {
-  pronoun_class_add(x, dashed("float", responsive(side)))
+  pronoun_class_add(x, dash("float", responsive(side)))
 }
 
 #' @export
@@ -29,7 +29,7 @@ float.cascadess_pronoun_box <- function(x, side) {
 
 #' @export
 float.shiny.tag <- function(x, side) {
-  tag_class_add(x, dashed("float", responsive(side)))
+  tag_class_add(x, dash("float", responsive(side)))
 }
 
 #' @export

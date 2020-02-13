@@ -18,7 +18,7 @@ overflow <- function(x, scroll = "auto") {
 
 #' @export
 overflow.cascadess_style_pronoun <- function(x, scroll = "auto") {
-  pronoun_class_add(x, dashed("overflow", scroll))
+  pronoun_class_add(x, dash("overflow", scroll))
 }
 
 #' @export
@@ -28,7 +28,7 @@ scroll.cascadess_pronoun_box <- function(x, scroll = "auto") {
 
 #' @export
 scroll.shiny.tag <- function(x, scroll = "auto") {
-  tag_class_add(x, dashed("overflow", scroll))
+  tag_class_add(x, dash("overflow", scroll))
 }
 
 #' @export
