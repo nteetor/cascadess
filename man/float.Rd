@@ -17,19 +17,3 @@ The \code{float()} function floats an element to the left or right side of its
 parent element. A newspaper layout is a classic example of a floated image
 with text wrapped around.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

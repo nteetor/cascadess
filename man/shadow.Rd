@@ -15,19 +15,3 @@ The \code{shadow} utility applies a shadow to a tag element. By default many
 elements include a shadow to help distinguish them. Use \code{"none"} to remove an
 element's shadow.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

@@ -18,19 +18,3 @@ The \code{overflow()} function specifies an element's content should scroll
 instead of extending the height or width of the element. The height of the
 element must be set.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{padding}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

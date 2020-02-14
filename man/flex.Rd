@@ -45,19 +45,3 @@ items or child tag elements. For more on turning a tag element into a flex
 container see \code{\link[=display]{display()}}. By default tag elements within a flex container
 are treated as flex items.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

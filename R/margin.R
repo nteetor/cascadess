@@ -14,7 +14,6 @@
 #'
 # @includeRmd man/roxygen/margin.Rmd
 #'
-#' @family design utilities
 #' @export
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                    left = NULL, ...) {

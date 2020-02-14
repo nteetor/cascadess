@@ -7,27 +7,15 @@
 display(x, type)
 }
 \arguments{
-\item{type}{A \link{responsive} argument. One of \code{"inline"}, \code{"block"},
-\code{"inline-block"}, \code{"flex"}, \code{"inline-flex"}, or \code{"none"}.}
+\item{x}{A tag element or \link{.style} pronoun.}
+
+\item{type}{A \link{responsive} argument.
+
+One of \code{"inline"}, \code{"block"}, \code{"inline-block"}, \code{"flex"}, \code{"inline-flex"},
+or \code{"none"}.}
 }
 \description{
-Use the \code{display()} utility to adjust how a tag element is rendered. All
-arguments are responsive allowing you to hide elements on small screens or
-convert elements from inline to block on large screens.
+The \code{display()} function adjusts how a tag element is rendered. All arguments
+are responsive allowing you to hide elements on small screens or convert
+elements from inline to block on large screens.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

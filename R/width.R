@@ -22,7 +22,6 @@
 #'   `"viewport"`, in which case the element's width is determined by the size
 #'   of the browser window.
 #'
-#' @family design utilities
 #' @export
 width <- function(x, size) {
   UseMethod("width", x)

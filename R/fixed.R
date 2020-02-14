@@ -8,7 +8,6 @@
 #' @param position One of `"top"` or `"bottom"` specifying the fixed behavior of
 #'   an element.
 #'
-#' @family design utilities
 #' @export
 fixed <- function(x, position) {
   UseMethod("affix", x)

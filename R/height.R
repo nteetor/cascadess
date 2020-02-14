@@ -22,7 +22,6 @@
 #'   `"viewport"`, in which case the element's height is determined by the size
 #'   of the browser window.
 #'
-#' @family design utilities
 #' @export
 height <- function(x, size) {
   UseMethod("height", x)

@@ -10,7 +10,6 @@
 #'   element scrolls, defaults to `"auto"`. `TRUE` and `FALSE` may be used in
 #'   place of `"auto"` or `"hidden"`, respectively.
 #'
-#' @family design utilities
 #' @export
 overflow <- function(x, scroll = "auto") {
   UseMethod("overflow", x)

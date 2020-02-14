@@ -31,19 +31,3 @@ case the argument is ignored.}
 \description{
 The \code{border()} functions adds or modifies tag element borders.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

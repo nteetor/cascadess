@@ -32,19 +32,3 @@ a tag element's text. All arguments default to \code{NULL}, in which case they a
 ignored.  For example, \code{font(.., size = "lg")} increases font size without
 affecting color, weight, case, or alignment.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

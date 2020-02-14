@@ -30,7 +30,6 @@
 #'
 # @includeRmd man/roxygen/font.Rmd
 #'
-#' @family design utilities
 #' @export
 font <- function(x, color = NULL, size = NULL, weight = NULL, case = NULL,
                  align = NULL) {

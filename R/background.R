@@ -12,7 +12,6 @@ theme_colors <- c(
 #' @param color One of
 #'   \Sexpr[results=rd,stage=render]{rd_quoted(theme_colors)}.
 #'
-#' @family design utilities
 #' @export
 background <- function(x, color) {
   UseMethod("background", x)

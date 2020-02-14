@@ -17,19 +17,3 @@ of a tag element is the space between the tag element's border and its
 content or child elements. All arguments default to \code{NULL}, in which case
 they are ignored.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{shadow}()},
-\code{\link{width}()}
-}
-\concept{design utilities}

@@ -11,7 +11,6 @@
 #'
 # @includeRmd man/roxygen/float.Rmd
 #'
-#' @family design utilities
 #' @export
 float <- function(x, side) {
   UseMethod("float", x)

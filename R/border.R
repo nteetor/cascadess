@@ -17,7 +17,6 @@
 #'
 # @includeRmd man/roxygen/border.Rmd
 #'
-#' @family design utilities
 #' @export
 border <- function(x, color = NULL, all = !is.null(color), top = NULL,
                    right = NULL, bottom = NULL, left = NULL) {

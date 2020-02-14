@@ -11,7 +11,6 @@
 #'
 # @includeRmd man/roxygen/shadow.Rmd
 #'
-#' @family design utilities
 #' @export
 shadow <- function(x, size = "medium") {
   UseMethod("shadow", x)

@@ -28,19 +28,3 @@ Utility function to change a tag element's width. Widths are specified
 relative the width of a parent element, an element's content, or the size of
 the browser window.
 }
-\seealso{
-Other design utilities: 
-\code{\link{background}()},
-\code{\link{border}()},
-\code{\link{display}()},
-\code{\link{fixed}()},
-\code{\link{flex}()},
-\code{\link{float}()},
-\code{\link{font}()},
-\code{\link{height}()},
-\code{\link{margin}()},
-\code{\link{overflow}()},
-\code{\link{padding}()},
-\code{\link{shadow}()}
-}
-\concept{design utilities}

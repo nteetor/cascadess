@@ -1,15 +1,16 @@
 #' Display
 #'
-#' Use the `display()` utility to adjust how a tag element is rendered. All
-#' arguments are responsive allowing you to hide elements on small screens or
-#' convert elements from inline to block on large screens.
+#' The `display()` function adjusts how a tag element is rendered. All arguments
+#' are responsive allowing you to hide elements on small screens or convert
+#' elements from inline to block on large screens.
 #'
-#' @inheritParams affix
+#' @inheritParams background
 #'
-#' @param type A [responsive] argument. One of `"inline"`, `"block"`,
-#'   `"inline-block"`, `"flex"`, `"inline-flex"`, or `"none"`.
+#' @param type A [responsive] argument.
 #'
-#' @family design utilities
+#'   One of `"inline"`, `"block"`, `"inline-block"`, `"flex"`, `"inline-flex"`,
+#'   or `"none"`.
+#'
 #' @export
 display <- function(x, type) {
   UseMethod("display", x)

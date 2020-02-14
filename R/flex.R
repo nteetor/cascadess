@@ -93,7 +93,6 @@ NULL
 #'
 # @includeRmd man/roxygen/flex.Rmd
 #'
-#' @family design utilities
 #' @export
 flex <- function(x, direction = NULL, justify = NULL, align = NULL,
                  wrap = NULL, reverse = NULL) {
