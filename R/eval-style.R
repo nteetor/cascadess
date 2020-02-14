@@ -34,15 +34,15 @@ style_prefix <- function(x, default = NULL) {
   (x %@% prefix) %||% default
 }
 
-pronoun_class_add <- function(x, class) {
-  x$class <- paste(c(x$class, class), collapse = " ")
+pronoun_class_add <- function(x, ...) {
+  x$class <- paste(c(x$class, ...), collapse = " ")
   x <- splice(x)
   class(x) <- unique(c("cascadess_pronoun_box", class(x)))
   x
 }
 
-tag_class_add <- function(x, class) {
-  x$attribs$class <- paste(c(x$attribs$class, class), collapse = " ")
+tag_class_add <- function(x, ...) {
+  x$attribs$class <- paste(c(x$attribs$class, ...), collapse = " ")
   x
 }
 

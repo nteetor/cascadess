@@ -2,21 +2,34 @@
 % Please edit documentation in R/border.R
 \name{border}
 \alias{border}
-\title{Border colors}
+\title{Borders and border colors}
 \usage{
-border(x, color = NULL, sides = "all", round = NULL)
+border(
+  x,
+  color = NULL,
+  all = !is.null(color),
+  top = NULL,
+  right = NULL,
+  bottom = NULL,
+  left = NULL
+)
 }
 \arguments{
-\item{sides}{One or more of \code{"top"}, \code{"right"}, \code{"bottom"}, \code{"left"}, or
-\code{"all"} or \code{"none"} specifying which sides to add a border to, defaults to
-\code{"all"}. Specifying \code{"none"} will remove the element's borders.}
+\item{x}{A tag element or \link{.style} pronoun.}
 
-\item{round}{One or more of \code{"top"}, \code{"right"}, \code{"bottom"}, \code{"left"},
-\code{"all"}, or \code{"none"} specifying how to round the border(s) of a tag
-element, defaults to \code{NULL}, in which case the argument is ignored.}
+\item{color}{One of the theme colors, defaults to \code{NULL}.}
+
+\item{all}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"},
+\code{"b"}, or \code{"left"}, \code{"l"}, specifying which sides to add borders to,
+defaults to \code{!is.null(color)}. \code{TRUE} and \code{FALSE} may be used as shorthands
+for all sides or no sides, respectively.}
+
+\item{top, right, bottom, left}{One of \code{TRUE} or \code{FALSE} specifying if a border
+is added or removed to the tag element side, defaults to \code{NULL}, in which
+case the argument is ignored.}
 }
 \description{
-Use \code{border()} to add or modify tag element borders.
+The \code{border()} functions adds or modifies tag element borders.
 }
 \seealso{
 Other design utilities: 

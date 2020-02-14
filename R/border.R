@@ -1,93 +1,57 @@
-#' Border colors
+#' Borders and border colors
 #'
-#' Use `border()` to add or modify tag element borders.
+#' The `border()` functions adds or modifies tag element borders.
 #'
-#' @inheritParams affix
+#' @inheritParams background
 #'
-# @eval param_color("border")
+#' @param color One of the theme colors, defaults to `NULL`.
 #'
-#' @param sides One or more of `"top"`, `"right"`, `"bottom"`, `"left"`, or
-#'   `"all"` or `"none"` specifying which sides to add a border to, defaults to
-#'   `"all"`. Specifying `"none"` will remove the element's borders.
+#' @param all One or more of `"top"`, `"t"`, `"right"`, `"r"`, `"bottom"`,
+#'   `"b"`, or `"left"`, `"l"`, specifying which sides to add borders to,
+#'   defaults to `!is.null(color)`. `TRUE` and `FALSE` may be used as shorthands
+#'   for all sides or no sides, respectively.
 #'
-#' @param round One or more of `"top"`, `"right"`, `"bottom"`, `"left"`,
-#'   `"all"`, or `"none"` specifying how to round the border(s) of a tag
-#'   element, defaults to `NULL`, in which case the argument is ignored.
+#' @param top,right,bottom,left One of `TRUE` or `FALSE` specifying if a border
+#'   is added or removed to the tag element side, defaults to `NULL`, in which
+#'   case the argument is ignored.
 #'
 # @includeRmd man/roxygen/border.Rmd
 #'
 #' @family design utilities
 #' @export
-border <- function(x, color = NULL, sides = "all", round = NULL) {
+border <- function(x, color = NULL, all = !is.null(color), top = NULL,
+                   right = NULL, bottom = NULL, left = NULL) {
   UseMethod("border", x)
 }
 
 #' @export
-border.cascadess_style_pronoun <- function(x, color = NULL, sides = "all",
-                                           round = NULL) {
-  style_class_add(x, c(
-    border_sides(sides),
-    border_color(color),
-    border_round(round)
-  ))
+border.cascadess_style_pronoun <- function(x, color = NULL,
+                                           all = !is.null(color),
+                                           top = NULL, right = NULL, bottom =
+                                           NULL, left = NULL) {
+  s <- sides(all, top, right, bottom, left)
+
+  pronoun_class_add(x, dash("border", s), dash("border", color))
 }
 
 #' @export
-border.rlang_box_splice <- function(x, color = NULL, sides = "all",
-                                    round = NULL) {
-  border(unbox(x), color, sides, round)
+border.cascadess_pronoun_box <- function(x, color = NULL,
+                                         all = !is.null(color),
+                                         top = NULL, right = NULL,
+                                         bottom = NULL, left = NULL) {
+  border(unbox(x), color, all, top, right, bottom, left)
 }
 
 #' @export
-border.shiny.tag <- function(x, color = NULL, sides = "all", round = NULL) {
-  tag_class_add(x, c(
-    border_sides(sides),
-    border_color(color),
-    border_round(round)
-  ))
+border.shiny.tag <- function(x, color = NULL, all = !is.null(color), top = NULL,
+                             right = NULL, bottom = NULL, left = NULL) {
+  s <- sides(all, top, right, bottom, left)
+
+  tag_class_add(x, dash("border", s), dash("border", color))
 }
 
 #' @export
-border.default <- function(x, color = NULL, sides = "all", round = NULL) {
-  tag_class_add(x, c(
-    border_sides(sides),
-    border_color(color),
-    border_round(round)
-  ))
-}
+border.default <- function(x, color = NULL, all = !is.null(color), top = NULL,
+                           right = NULL, bottom = NULL, left = NULL) {
 
-border_sides <- function(sides) {
-  if (is.null(sides)) {
-    return(NULL)
-  }
-
-  if ("all" %in% sides) {
-    "border"
-  } else if ("none" %in% sides) {
-    "border-0"
-  } else {
-    sprintf("border-%s", sides)
-  }
-}
-
-border_color <- function(color) {
-  if (is.null(color)) {
-    return(NULL)
-  }
-
-  sprintf("border-%s", color)
-}
-
-border_round <- function(round) {
-  if (is.null(round)) {
-    return(NULL)
-  }
-
-  if ("all" %in% round) {
-    "rounded"
-  } else if ("none" %in% round) {
-    "rounded-0"
-  } else {
-    sprintf("rounded-%s", round)
-  }
 }
