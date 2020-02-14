@@ -1,4 +1,3 @@
 # cascadess
 
-A standalone package for yonder's design utilities. Based on the Boostrap 5
-utility api.
+A standalone package for [yonder](https://github.com/nteetor/yonder)'s design functions.
