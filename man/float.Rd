@@ -9,11 +9,11 @@ float(x, side)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{side}{A \link{responsive} argument. One of \code{"left"} or \code{"right"} specifying
-the side to float the element.}
+\item{side}{A \link{responsive} argument.
+
+One of \code{"left"} or \code{"right"} specifying the side to float the element.}
 }
 \description{
-The \code{float()} function floats an element to the left or right side of its
-parent element. A newspaper layout is a classic example of a floated image
-with text wrapped around.
+The \code{float()} function places an element to the left or right side of its
+parent element. Text and inline elements will wrap around floated elements.
 }
