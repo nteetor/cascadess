@@ -1,125 +1,98 @@
-#' Font color, size, weight
+font_weights <- c(
+  "light",
+  "lighter",
+  "normal",
+  "bolder",
+  "bold"
+)
+
+font_aligns <- c(
+  "left",
+  "right",
+  "center"
+)
+
+cases <- function(x) {
+  if (is_null(x)) {
+    return(NULL)
+  }
+
+  if (x == "upper")
+    "uppercase"
+  else if (x == "lower") {
+    "lowercase"
+  } else {
+    "capitalize"
+  }
+}
+
+#' Font
 #'
-#' The `font()` utility modifies the color, size, weight, case, or alignment of
-#' a tag element's text. All arguments default to `NULL`, in which case they are
-#' ignored.  For example, `font(.., size = "lg")` increases font size without
-#' affecting color, weight, case, or alignment.
+#' The `font()` function adjusts the color, size, weight, case, or alignment of
+#' a tag element's text.
 #'
-#' @inheritParams affix
+#' @inheritParams background
 #'
-# @eval param_color("text")
+#' @param color One of \Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}
+#'   specifying the font color, defaults to `NULL`, in which case the argument is
+#'   ignored.
 #'
-#' @param size Deprecated, in future versions of bootstrap resonsive font sizing
-#'   will be enabled by default,
-#'   \url{https://github.com/twbs/bootstrap/pull/29152}.
+#' @param weight One of
+#'   \Sexpr[results=rd,stage=render]{rd_chr_lst(font_weights)} specifying the
+#'   font weight of the element's text, defaults to `NULL`.
 #'
-#'   One of `"xs"`, `"sm"`, `"base"`, `"lg"`, `"xl"` specifying a font size
-#'   relative to the default base page font size, defaults to `NULL`.
-#'
-#' @param weight One of `"bold"`, `"bolder"`, `"normal"`, `"lighter"`, or
-#'   `"light"` specifying the font weight of the element's text, defaults to
-#'   `NULL`. `"bolder"` and `"lighter"` change the weight relative to the
-#'   current font weight of the element.
+#'   If `"bolder"` or `"lighter"`, the font weight is changed relative to the
+#'   current font weight.
 #'
 #' @param case One of `"upper"`, `"lower"`, or `"title"` specifying a
-#'   transformation of the tag element's text, default to `NULL`.
+#'   transformation of the tag element's text, default to `NULL`, in which case
+#'   the argument is ignored.
 #'
-#' @param align A [responsive] argument. One of `"left"`, `"center"`, `"right"`,
-#'   or `"justify"`, specifying the alignment of the tag element's text,
-#'   defaults to `NULL`.
+#' @param align A [responsive] argument.
+#'
+#'   One of \Sexpr[results=rd,stage=render]{rd_chr_lst(font_aligns)} specifying
+#'   the alignment of the tag element's text, defaults to `NULL`, in which case
+#'   the argument is ignored.
 #'
 # @includeRmd man/roxygen/font.Rmd
 #'
 #' @export
-font <- function(x, color = NULL, size = NULL, weight = NULL, case = NULL,
-                 align = NULL) {
+font <- function(x, color = NULL, weight = NULL, case = NULL, align = NULL) {
   UseMethod("font", x)
 }
 
 #' @export
-font.cascadess_style_pronoun <- function(x,  color = NULL, size = NULL,
-                                         weight = NULL, case = NULL,
-                                         align = NULL) {
-  style_class_add(x, c(
-    font_color(color),
-    font_weight(weight),
-    font_case(case),
-    font_align(align)
-  ))
+font.cascadess_style_pronoun <- function(x, color = NULL, weight = NULL,
+                                         case = NULL, align = NULL) {
+  pronoun_class_add(
+    x,
+    dash("text", color),
+    dash("font-weight", weight),
+    dash("text", cases(case)),
+    dash("text", responsive(align))
+  )
 }
 
 #' @export
-font.rlang_box_splice <- function(x, color = NULL, size = NULL, weight = NULL,
-                                  case = NULL, align = NULL) {
+font.cascadess_pronoun_box <- function(x, color = NULL, weight = NULL,
+                                       case = NULL, align = NULL) {
   font(unbox(x), color, size, weight, case, align)
 }
 
 #' @export
-font.shiny.tag <- function(x, color = NULL, size = NULL, weight = NULL,
-                           case = NULL, align = NULL) {
-  tag_class_add(x, c(
-    font_color(color),
-    font_weight(weight),
-    font_case(case),
-    font_align(align)
-  ))
+font.shiny.tag <- function(x, color = NULL, weight = NULL, case = NULL,
+                           align = NULL) {
+  tag_class_add(
+    x,
+    dash("text", color),
+    dash("font-weight", weight),
+    dash("text", cases(case)),
+    dash("text", responsive(align))
+  )
 }
 
 #' @export
-font.default <- function(x, color = NULL, size = NULL, weight = NULL,
-                         case = NULL, align = NULL) {
-  tag_class_add(x, c(
-    font_color(color),
-    font_weight(weight),
-    font_case(case),
-    font_align(align)
-  ))
-}
+font.default <- function(x, color = NULL, weight = NULL, case = NULL,
+                         align = NULL) {
 
-font_color <- function(color) {
-  if (is_null(color)) {
-    return(NULL)
-  }
-
-  sprintf("text-%s", color)
-}
-
-font_size <- function(size) {
-  if (is_null(size)) {
-    return(NULL)
-  }
-
-  sprintf("font-size-%s", size)
-}
-
-font_weight <- function(weight) {
-  if (is_null(weight)) {
-    return(NULL)
-  }
-
-  sprintf("font-weight-%s", weight)
-}
-
-font_case <- function(case) {
-  if (is_null(case)) {
-    return(NULL)
-  }
-
-  if (case == "upper")
-    "text-uppercase"
-  else if (case == "lower") {
-     "text-lowercase"
-  } else {
-    "text-capitalize"
-  }
-}
-
-font_align <- function(align) {
-  if (is_null(align)) {
-    return(NULL)
-  }
-
-  align <- resp_construct(align, c("left", "center", "right", "justify"))
-
-  resp_classes(align, "text")
 }

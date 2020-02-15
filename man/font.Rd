@@ -2,33 +2,35 @@
 % Please edit documentation in R/font.R
 \name{font}
 \alias{font}
-\title{Font color, size, weight}
+\title{Font}
 \usage{
-font(x, color = NULL, size = NULL, weight = NULL, case = NULL, align = NULL)
+font(x, color = NULL, weight = NULL, case = NULL, align = NULL)
 }
 \arguments{
-\item{size}{Deprecated, in future versions of bootstrap resonsive font sizing
-will be enabled by default,
-\url{https://github.com/twbs/bootstrap/pull/29152}.
+\item{x}{A tag element or \link{.style} pronoun.}
 
-One of \code{"xs"}, \code{"sm"}, \code{"base"}, \code{"lg"}, \code{"xl"} specifying a font size
-relative to the default base page font size, defaults to \code{NULL}.}
+\item{color}{One of \Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}
+specifying the font color, defaults to \code{NULL}, in which case the argument is
+ignored.}
 
-\item{weight}{One of \code{"bold"}, \code{"bolder"}, \code{"normal"}, \code{"lighter"}, or
-\code{"light"} specifying the font weight of the element's text, defaults to
-\code{NULL}. \code{"bolder"} and \code{"lighter"} change the weight relative to the
-current font weight of the element.}
+\item{weight}{One of
+\Sexpr[results=rd,stage=render]{rd_chr_lst(font_weights)} specifying the
+font weight of the element's text, defaults to \code{NULL}.
+
+If \code{"bolder"} or \code{"lighter"}, the font weight is changed relative to the
+current font weight.}
 
 \item{case}{One of \code{"upper"}, \code{"lower"}, or \code{"title"} specifying a
-transformation of the tag element's text, default to \code{NULL}.}
+transformation of the tag element's text, default to \code{NULL}, in which case
+the argument is ignored.}
 
-\item{align}{A \link{responsive} argument. One of \code{"left"}, \code{"center"}, \code{"right"},
-or \code{"justify"}, specifying the alignment of the tag element's text,
-defaults to \code{NULL}.}
+\item{align}{A \link{responsive} argument.
+
+One of \Sexpr[results=rd,stage=render]{rd_chr_lst(font_aligns)} specifying
+the alignment of the tag element's text, defaults to \code{NULL}, in which case
+the argument is ignored.}
 }
 \description{
-The \code{font()} utility modifies the color, size, weight, case, or alignment of
-a tag element's text. All arguments default to \code{NULL}, in which case they are
-ignored.  For example, \code{font(.., size = "lg")} increases font size without
-affecting color, weight, case, or alignment.
+The \code{font()} function adjusts the color, size, weight, case, or alignment of
+a tag element's text.
 }
