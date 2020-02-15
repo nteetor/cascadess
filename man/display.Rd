@@ -11,8 +11,8 @@ display(x, type)
 
 \item{type}{A \link{responsive} argument.
 
-One of \code{"inline"}, \code{"block"}, \code{"inline-block"}, \code{"flex"}, \code{"inline-flex"},
-or \code{"none"}.}
+One of \code{"inline"}, \code{"inline-block"}, \code{"block"}, \code{"table"}, \code{"table-row"},
+\code{"table-cell"}, \code{"flex"}, \code{"inline-flex"}, or \code{"none"}.}
 }
 \description{
 The \code{display()} function adjusts how a tag element is rendered. All arguments

@@ -8,8 +8,8 @@
 #'
 #' @param type A [responsive] argument.
 #'
-#'   One of `"inline"`, `"block"`, `"inline-block"`, `"flex"`, `"inline-flex"`,
-#'   or `"none"`.
+#'   One of `"inline"`, `"inline-block"`, `"block"`, `"table"`, `"table-row"`,
+#'   `"table-cell"`, `"flex"`, `"inline-flex"`, or `"none"`.
 #'
 #' @export
 display <- function(x, type) {
@@ -18,29 +18,20 @@ display <- function(x, type) {
 
 #' @export
 display.cascadess_style_pronoun <- function(x, type) {
-  style_class_add(x, display_type(type))
+  pronoun_class_add(x, dash("d", responsive(type)))
 }
 
 #' @export
-display.rlang_box_splice <- function(x, type) {
+display.cascadess_pronoun_box <- function(x, type) {
   display(unbox(x), type)
 }
 
 #' @export
 display.shiny.tag <- function(x, type) {
-  tag_class_add(x, display_type(type))
+  tag_class_add(x, dash("d", responsive(type)))
 }
 
 #' @export
 display.default <- function(x, type) {
-  tag_class_add(x, display_type(type))
-}
 
-display_type <- function(type) {
-  type <- resp_construct(
-    type,
-    c("inline", "block", "inline-block", "flex", "inline-flex", "none")
-  )
-
-  resp_classes(type, "d")
 }
