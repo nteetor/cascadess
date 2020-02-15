@@ -1,177 +1,158 @@
-#' Understanding responsive arguments
+#' Flexbox
 #'
 #' @description
 #'
-#' A responsive argument may be a single value or a named list. Possible names
-#' includes `default` or `xs`, `sm`, `md`, `lg`, and `xl`. Specifying a single
-#' unnamed value is equivalent to specifying `default` or `xs`. The possible
-#' values will be described in the specific help page. Most responsive arguments
-#' will default to `NULL` in which case no corresponding style is applied.
+#' The `flexbox()` function adjusts the flex box layout of an element. To use
+#' the flex box layout the element must also use the flex display, see
+#' [display()]. The flex box layout is incredibly powerful and allows centering
+#' of elements vertically or horizontally, automatic adjustment of space between
+#' or around child elements, and more.
 #'
-#' Responsive arguments allow you to apply styles to tag elements based on the
-#' size of the viewport. This is important when developing applications for both
-#' web and mobile.  Specifying a single unnamed value the style will be applied
-#' for all viewport sizes. Use the names above to apply a style for viewports of
-#' that size and larger. For example, specifying `list(default = x, md = y)`
-#' will apply `x` on extra small and small viewports, but for medium, large, and
-#' extra large viewports `y` is applied.
+#' Direct child elements of a flex box container are automatically considered
+#' flex items and may be adjusted with [flex()].
 #'
-#' Styles for larger viewports take precedence. See below for details about each
-#' breakpoint.
+#' @inheritParams background
 #'
-#' **extra small**
+#' @param direction A [responsive] argument.
 #'
-#' How: pass a single value, use name `xs`, or use name `default`.
+#'   One of `"row"` or `"column"` specifying the main axis of flex items,
+#'   defaults to `"row"`.
 #'
-#' When: the style is always applied, unless supplanted by a style for any other
-#' viewport size.
+#'   If `"row"`, the main axis is horizontal and items are arranged from left to
+#'   right. The cross axis is the vertical.
 #'
-#' **small**
+#'   If `"column"`, the main axis is vertical and items are arranged from top to
+#'   bottom. The cross axis is the horizontal.
 #'
-#' How: use name `sm`.
+#' @param justify A [responsive] argument.
 #'
-#' When: the style is applied when the viewport is at least 576px wide, think
-#' landscape phones.
+#'   One of `"start"`, `"end"`, `"center"`, `"between"`, or `"around"`
+#'   specifying how items are arranged on the main axis, defaults to `"start"`.
 #'
-#' **medium**
+#'   If `"between"` or `"around"`, items are arranged by evenly sharing the
+#'   space between or around the items.
 #'
-#' How: use name `md`.
+#' @param align A [responsive] argument.
 #'
-#' When: the style is applied when the viewport is at least 768px wide, think
-#' tablets.
+#'   One of `"start"`, `"end"`, `"center"`, `"baseline"`, or `"stretch"`
+#'   specifying how items are arranged on the cross axis, defaults to
+#'   `"stretch"`.
 #'
-#' **large**
+#' @param wrap A [responsive] argument.
 #'
-#' How: use name `lg`.
-#'
-#' When: the style is applied when the viewport is at least 992px wide, think
-#' laptop or smaller desktops.
-#'
-#' **extra large**
-#'
-#' How: use name `xl`.
-#'
-#' When: the style is applied when the viewport is at least 1200px wide, think
-#' large desktops.
-#'
-#' @name responsive
-NULL
-
-#' Flex layout
-#'
-#' Use `flex()` to control how a flex container tag element places its flex
-#' items or child tag elements. For more on turning a tag element into a flex
-#' container see [display()]. By default tag elements within a flex container
-#' are treated as flex items.
-#'
-#' @inheritParams affix
-#'
-#' @param direction A [responsive] argument. One of `"row"` or `"column"`
-#'   specifying the placement of flex items, defaults to `NULL`. If `"row"`
-#'   items are placed vertically, if `"column"` items are placed horizontally.
-#'   Browsers place items vertically by default.
-#'
-#' @param reverse A [responsive] argument. One of `TRUE` or `FALSE` specifying
-#'   if flex items are placed in reverse order, defaults to `NULL`. If `TRUE`
-#'   items are placed from right to left when `direction` is `"row"` or bottom
-#'   to top when `direction` is `"column"`.
-#'
-#' @param justify A [responsive] argument. One of `"start"`, `"end"`,
-#'   `"center"`, `"between"`, or `"around"` specifying how items are
-#'   horizontally aligned, defaults to `NULL`. See the **justify** section below
-#'   for more on how the different values affect horizontal spacing.
-#'
-#' @param align A [responsive] argument. One of `"start"`, `"end"`, `"center"`,
-#'   `"baseline"`, or `"stretch"` specifying how items are vertically aligned,
-#'   defaults to `NULL`. See the **align** section below for more on how the
-#'   different values affect vertical spacing.
-#'
-#' @param wrap A [responsive] argument. One of `TRUE` or `FALSE` specifying
-#'   whether to wrap flex items inside the flex container, `tag`, defaults to
-#'   `NULL`. If `TRUE` items wrap inside the container, if `FALSE` items will
-#'   not wrap. See the **wrap** section below for more.
+#'   One of `TRUE` or `FALSE` specifying if items are forced onto one line
+#'   or allowed to wrap onto multiple lines, defaults to `FALSE`.
 #'
 # @includeRmd man/roxygen/flex.Rmd
 #'
 #' @export
-flex <- function(x, direction = NULL, justify = NULL, align = NULL,
-                 wrap = NULL, reverse = NULL) {
+flexbox <- function(x, direction = "row", justify = "start", align = "stretch",
+                    wrap = FALSE) {
+  UseMethod("flexbox", x)
+}
+
+#' @export
+flexbox.cascadess_style_pronoun <- function(x, direction = "row",
+                                            justify = "start",
+                                            align = "stretch", wrap = FALSE) {
+  d <- dash("flex", responsive(direction))
+  j <- dash("justify-content", responsive(justify))
+  a <- dash("align-items", responsive(align))
+  w <- dash("flex", responsive(ifelse(wrap, "wrap", "nowrap")))
+
+  pronoun_class_add(x, d, j, a, w)
+}
+
+#' @export
+flexbox.cascadess_pronoun_box <- function(x, direction = "row",
+                                          justify = "start",
+                                          align = "stretch", wrap = FALSE) {
+  flexbox(unbox(x), direction, justify, align, wrap)
+}
+
+#' @export
+flexbox.shiny.tag <- function(x, direction = "row", justify = "start",
+                              align = "stretch", wrap = FALSE) {
+  d <- dash("flex", responsive(direction))
+  j <- dash("justify-content", responsive(justify))
+  a <- dash("align-items", responsive(align))
+  w <- dash("flex", responsive(ifelse(wrap, "wrap", "nowrap")))
+
+  tag_class_add(x, d, j, a, w)
+}
+
+#' @export
+flexbox.default <- function(x, direction = "row", justify = "start",
+                            align = NULL, wrap = NULL) {
+
+}
+
+#' Flex items
+#'
+#' The `flex()` function adjusts a flex item. Unlike [flexbox()], which adjusts
+#' the flex box layout through the flex container element, `flex()` is used to
+#' change specific flex items. A flex item may be reordered, expanded, or
+#' shrunk.
+#'
+#' @inheritParams background
+#'
+#' @param align A [responsive] argument.
+#'
+#'   One of `"auto"`, `"start"`, `"end"`, `"center"`, `"baseline"`, or
+#'   `"stretch"` specifying how to align the item on the cross axis, defaults
+#'   to `"stretch"`. Overrides the [flexbox()] `align` argument.
+#'
+#' @param order A [responsive] argument.
+#'
+#'   One of \Sexpr[results=rd,stage=render]{rd_num_lst(0:7)} specifying the
+#'   order of the item, defaults to `1`. Items of the same order are then sorted
+#'   by their source code order.
+#'
+#' @param grow A [responsive] argument.
+#'
+#'   One of `TRUE` or `FALSE`, defaults to `NULL`, in which case the argument
+#'   is ignored.
+#'
+#' @param shrink A [responsive] argument.
+#'
+#'   One of `TRUE` or `FALSE`, defaults to `NULL`, in which case the argument
+#'   is ignored.
+#'
+#' @export
+flex <- function(x, align = "stretch", order = 1, grow = NULL, shrink = NULL) {
   UseMethod("flex", x)
 }
 
 #' @export
-flex.cascadess_style_pronoun <- function(x, direction = NULL, justify = NULL,
-                                         align = NULL, wrap = NULL,
-                                         reverse = NULL) {
-  NextMethod("flex", x)
+flex.cascadess_style_pronoun <- function(x, align = "stretch", order = 1,
+                                         grow = NULL, shrink = NULL) {
+  a <- dash("align-self", responsive(align))
+  o <- dash("order", responsive(order))
+  g <- dash("flex-grow", responsive(grow))
+  s <- dash("flex-shrink", responsive(shrink))
+
+  pronoun_class_add(x, a, o, g, s)
 }
 
 #' @export
-flex.rlang_box_splice <- function(x, direction = NULL, justify = NULL,
-                                  align = NULL, wrap = NULL, reverse = NULL) {
-  NextMethod("flex", unbox(x))
+flex.cascadess_pronoun_box <- function(x, align = "stretch", order = 1,
+                                       grow = NULL, shrink = NULL) {
+  flex(unbox(x), align, order, grow, shrink)
 }
 
 #' @export
-flex.shiny.tag <- function(x, direction = NULL, justify = NULL, align = NULL,
-                           wrap = NULL, reverse = NULL) {
-  tag_class_add(x, c(
-    flex_direction(direction, reverse),
-    flex_justify(justify),
-    flex_align(align),
-    flex_wrap(wrap)
-  ))
+flex.shiny.tag <- function(x, align = "stretch", order = 1, grow = NULL,
+                           shrink = NULL) {
+  a <- dash("align-self", responsive(align))
+  o <- dash("order", responsive(order))
+  g <- dash("flex-grow", responsive(grow))
+  s <- dash("flex-shrink", responsive(shrink))
+
+  tag_class_add(x, a, o, g, s)
 }
 
 #' @export
-flex.default <- function(x, direction = NULL, justify = NULL, align = NULL,
-                         wrap = NULL, reverse = NULL) {
-  tag_class_add(x, c(
-    flex_direction(direction, reverse),
-    flex_justify(justify),
-    flex_align(align),
-    flex_wrap(wrap)
-  ))
-}
+flex.default <- function(x, align = "stretch", order = 1, grow = NULL,
+                         shrink = NULL) {
 
-flex_direction <- function(direction, reverse) {
-  direction <- resp_construct(direction, c("row", "column"))
-
-  if (!is.null(names(reverse))) {
-    direction[names2(reverse)] <- lapply(names2(reverse), function(n) {
-      # This is necessary because "row" may be implied and not explicitly
-      # passed in `direction`
-      prev <- direction[[n]] %||% "row"
-
-      if (reverse[[n]]) {
-        sprintf("%s-reverse", prev)
-      } else {
-        prev
-      }
-    })
-  }
-
-  resp_classes(direction, "flex")
-}
-
-flex_justify <- function(justify) {
-  j <- resp_construct(justify, c("start", "end", "center", "between", "around"))
-
-  resp_classes(j, "justify-content")
-}
-
-flex_align <- function(align) {
-  a <- resp_construct(align, c("start", "end", "center", "baseline", "stretch"))
-
-  resp_classes(a, "align-items")
-}
-
-flex_wrap <- function(wrap) {
-  w <- resp_construct(wrap, c(TRUE, FALSE))
-
-  if (length(w)) {
-    w <- lapply(w, function(w) if (w) "wrap" else "nowrap")
-  }
-
-  resp_classes(w, "flex")
 }

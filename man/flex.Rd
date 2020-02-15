@@ -2,46 +2,38 @@
 % Please edit documentation in R/flex.R
 \name{flex}
 \alias{flex}
-\title{Flex layout}
+\title{Flex items}
 \usage{
-flex(
-  x,
-  direction = NULL,
-  justify = NULL,
-  align = NULL,
-  wrap = NULL,
-  reverse = NULL
-)
+flex(x, align = "stretch", order = 1, grow = NULL, shrink = NULL)
 }
 \arguments{
-\item{direction}{A \link{responsive} argument. One of \code{"row"} or \code{"column"}
-specifying the placement of flex items, defaults to \code{NULL}. If \code{"row"}
-items are placed vertically, if \code{"column"} items are placed horizontally.
-Browsers place items vertically by default.}
+\item{x}{A tag element or \link{.style} pronoun.}
 
-\item{justify}{A \link{responsive} argument. One of \code{"start"}, \code{"end"},
-\code{"center"}, \code{"between"}, or \code{"around"} specifying how items are
-horizontally aligned, defaults to \code{NULL}. See the \strong{justify} section below
-for more on how the different values affect horizontal spacing.}
+\item{align}{A \link{responsive} argument.
 
-\item{align}{A \link{responsive} argument. One of \code{"start"}, \code{"end"}, \code{"center"},
-\code{"baseline"}, or \code{"stretch"} specifying how items are vertically aligned,
-defaults to \code{NULL}. See the \strong{align} section below for more on how the
-different values affect vertical spacing.}
+One of \code{"auto"}, \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or
+\code{"stretch"} specifying how to align the item on the cross axis, defaults
+to \code{"stretch"}. Overrides the \code{\link[=flexbox]{flexbox()}} \code{align} argument.}
 
-\item{wrap}{A \link{responsive} argument. One of \code{TRUE} or \code{FALSE} specifying
-whether to wrap flex items inside the flex container, \code{tag}, defaults to
-\code{NULL}. If \code{TRUE} items wrap inside the container, if \code{FALSE} items will
-not wrap. See the \strong{wrap} section below for more.}
+\item{order}{A \link{responsive} argument.
 
-\item{reverse}{A \link{responsive} argument. One of \code{TRUE} or \code{FALSE} specifying
-if flex items are placed in reverse order, defaults to \code{NULL}. If \code{TRUE}
-items are placed from right to left when \code{direction} is \code{"row"} or bottom
-to top when \code{direction} is \code{"column"}.}
+One of \Sexpr[results=rd,stage=render]{rd_num_lst(0:7)} specifying the
+order of the item, defaults to \code{1}. Items of the same order are then sorted
+by their source code order.}
+
+\item{grow}{A \link{responsive} argument.
+
+One of \code{TRUE} or \code{FALSE}, defaults to \code{NULL}, in which case the argument
+is ignored.}
+
+\item{shrink}{A \link{responsive} argument.
+
+One of \code{TRUE} or \code{FALSE}, defaults to \code{NULL}, in which case the argument
+is ignored.}
 }
 \description{
-Use \code{flex()} to control how a flex container tag element places its flex
-items or child tag elements. For more on turning a tag element into a flex
-container see \code{\link[=display]{display()}}. By default tag elements within a flex container
-are treated as flex items.
+The \code{flex()} function adjusts a flex item. Unlike \code{\link[=flexbox]{flexbox()}}, which adjusts
+the flex box layout through the flex container element, \code{flex()} is used to
+change specific flex items. A flex item may be reordered, expanded, or
+shrunk.
 }
