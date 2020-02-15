@@ -1,12 +1,13 @@
 #' Fixed position elements
 #'
-#' The `fixed()` function applies Bootstrap classes to fix elements to the top
-#' or bottom of a page.
+#' The `fixed()` function permanently fixes an element at the top or bottom of
+#' the page. Fixed elements may cover up other elements on the page. Use
+#' [padding()] or [margin()] to adjust any covered elements.
 #'
-#' @param .tag A tag element or [.style] pronoun.
+#' @inheritParams background
 #'
-#' @param position One of `"top"` or `"bottom"` specifying the fixed behavior of
-#'   an element.
+#' @param position One of `"top"` or `"bottom"` specifying the fixed behaviour
+#'   of an element.
 #'
 #' @export
 fixed <- function(x, position) {
@@ -15,7 +16,7 @@ fixed <- function(x, position) {
 
 #' @export
 fixed.cascadess_style_pronoun <- function(x, position) {
-  pronoun_class_add(x, fixed_position(position))
+  pronoun_class_add(x, dash("fixed", position))
 }
 
 #' @export
@@ -25,18 +26,10 @@ fixed.cascadess_pronoun_box <- function(x, position) {
 
 #' @export
 fixed.shiny.tag <- function(x, position) {
-  tag_class_add(x, fixed_position(position))
+  tag_class_add(x, dash("fixed", position))
 }
 
 #' @export
 fixed.default <- function(x, position) {
-  ## tag_class_add(x, affix_position(position))
-}
 
-fixed_position <- function(position) {
-  if (position == "sticky") {
-    "sticky-top"
-  } else {
-    sprintf("fixed-%s", position)
-  }
 }

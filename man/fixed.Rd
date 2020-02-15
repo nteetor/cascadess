@@ -7,12 +7,13 @@
 fixed(x, position)
 }
 \arguments{
-\item{position}{One of \code{"top"} or \code{"bottom"} specifying the fixed behavior of
-an element.}
+\item{x}{A tag element or \link{.style} pronoun.}
 
-\item{.tag}{A tag element or \link{.style} pronoun.}
+\item{position}{One of \code{"top"} or \code{"bottom"} specifying the fixed behaviour
+of an element.}
 }
 \description{
-The \code{fixed()} function applies Bootstrap classes to fix elements to the top
-or bottom of a page.
+The \code{fixed()} function permanently fixes an element at the top or bottom of
+the page. Fixed elements may cover up other elements on the page. Use
+\code{\link[=padding]{padding()}} or \code{\link[=margin]{margin()}} to adjust any covered elements.
 }
