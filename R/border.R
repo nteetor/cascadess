@@ -30,7 +30,7 @@ border.cascadess_style_pronoun <- function(x, color = NULL,
                                            NULL, left = NULL) {
   s <- sides(all, top, right, bottom, left)
 
-  pronoun_class_add(x, dash("border", s), dash("border", color))
+  pronoun_class_add(x, dash("border", s), dash("border", color) %||% "border")
 }
 
 #' @export
@@ -46,7 +46,7 @@ border.shiny.tag <- function(x, color = NULL, all = !is.null(color), top = NULL,
                              right = NULL, bottom = NULL, left = NULL) {
   s <- sides(all, top, right, bottom, left)
 
-  tag_class_add(x, dash("border", s), dash("border", color))
+  tag_class_add(x, dash("border", s), dash("border", color) %||% "border")
 }
 
 #' @export

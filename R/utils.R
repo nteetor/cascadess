@@ -1,5 +1,10 @@
 dash <- function(...) {
   args <- compact(list(...))
+
+  if (length(args) != dots_n(...)) {
+    return(NULL)
+  }
+
   exec(paste, !!!args, sep = "-")
 }
 
@@ -8,7 +13,7 @@ sides <- function(all, top, right, bottom, left) {
   true <- which_true(s)
   null <- which_null(s)
 
-  if (is_true(all) && all(null)) {
+  if (all(null | !true)) {
     return(NULL)
   }
 
