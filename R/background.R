@@ -10,7 +10,7 @@ theme_colors <- c(
 #' @param x A tag element or [.style] pronoun.
 #'
 #' @param color One of
-#'   \Sexpr[results=rd,stage=render]{rd_quoted(theme_colors)}.
+#'   \Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}.
 #'
 #' @export
 background <- function(x, color) {

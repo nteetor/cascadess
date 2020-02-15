@@ -10,7 +10,7 @@ align(x, vertical)
 \item{x}{A tag element or \link{.style} pronoun.}
 
 \item{vertical}{One of
-\Sexpr[results=rd,stage=render]{rd_quoted(align_values)}.}
+\Sexpr[results=rd,stage=render]{rd_chr_lst(align_values)}.}
 }
 \description{
 The \code{align()} function adjusts the CSS \code{vertical-align} property of an

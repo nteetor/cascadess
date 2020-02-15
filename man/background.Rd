@@ -10,7 +10,7 @@ background(x, color)
 \item{x}{A tag element or \link{.style} pronoun.}
 
 \item{color}{One of
-\Sexpr[results=rd,stage=render]{rd_quoted(theme_colors)}.}
+\Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}.}
 }
 \description{
 Use \code{background()} to modify the background color of a tag element.

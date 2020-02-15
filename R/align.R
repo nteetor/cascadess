@@ -21,7 +21,7 @@ align_values <- c(
 #' @param x A tag element or [.style] pronoun.
 #'
 #' @param vertical One of
-#'   \Sexpr[results=rd,stage=render]{rd_quoted(align_values)}.
+#'   \Sexpr[results=rd,stage=render]{rd_chr_lst(align_values)}.
 #'
 #' @export
 align <- function(x, vertical) {
