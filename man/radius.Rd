@@ -4,30 +4,16 @@
 \alias{radius}
 \title{Border radius}
 \usage{
-radius(
-  x,
-  round = "medium",
-  all = TRUE,
-  top = NULL,
-  right = NULL,
-  bottom = NULL,
-  left = NULL
-)
+radius(x, round, sides = TRUE)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{round}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"},
-\code{"circle"}, \code{"pill"}, or \code{"none"}, defaults to \code{"medium"}.}
+\item{round}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, \code{"circle"}, \code{"pill"}, or \code{"none"}.}
 
-\item{all}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"},
-\code{"b"}, or \code{"left"}, \code{"l"}, specifying which sides' corners to round,
-defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may be used as shorthands
-for all sides or no sides, respectively.}
-
-\item{top, right, bottom, left}{One of \code{TRUE} or \code{FALSE} specifying if a sides'
-radii are adjusted, defaults to \code{NULL}, in which case the argument is
-ignored.}
+\item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, \code{"l"}, or \code{"all"} specifying
+which sides' corners to round, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may
+be used as shorthands for all sides or no sides, respectively.}
 }
 \description{
 The \code{radius()} function adjusts the border radius of a tag element.

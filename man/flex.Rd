@@ -11,15 +11,14 @@ flex(x, align = "stretch", order = 1, grow = NULL, shrink = NULL)
 
 \item{align}{A \link{responsive} argument.
 
-One of \code{"auto"}, \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or
-\code{"stretch"} specifying how to align the item on the cross axis, defaults
-to \code{"stretch"}. Overrides the \code{\link[=flexbox]{flexbox()}} \code{align} argument.}
+One of \code{"auto"}, \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"} specifying how to align the item on the
+cross axis, defaults to \code{"stretch"}. Overrides the \code{\link[=flexbox]{flexbox()}} \code{align}
+argument.}
 
 \item{order}{A \link{responsive} argument.
 
-One of \Sexpr[results=rd,stage=render]{rd_num_lst(0:7)} specifying the
-order of the item, defaults to \code{1}. Items of the same order are then sorted
-by their source code order.}
+One of \code{0}, \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, \code{6}, or \code{7} specifying the order of the item, defaults to
+\code{1}. Items of the same order are then sorted by their source code order.}
 
 \item{grow}{A \link{responsive} argument.
 

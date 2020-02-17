@@ -20,25 +20,26 @@ str.cascadess_style_pronoun <- function(object, ...) {
   invisible(NULL)
 }
 
-print.cascadess_pronoun_box <- function(x, ...) {
-  cat("<pronoun>\n")
-  invisible(x)
-}
-
-str.cascadess_pronoun_box <- function(object, ...) {
-  cat("<pronoun>\n")
-  invisible(NULL)
-}
-
 style_prefix <- function(x, default = NULL) {
   (x %@% prefix) %||% default
 }
 
 pronoun_class_add <- function(x, ...) {
   x$class <- paste(c(x$class, ...), collapse = " ")
-  x <- splice(x)
-  class(x) <- unique(c("cascadess_pronoun_box", class(x)))
-  x
+  splice(x)
+}
+
+pronoun_box_class_add <- function(x, ...) {
+  x <- unbox(x)
+
+  if (!is_style_pronoun(x)) {
+    abort(
+      "expecting style pronoun",
+      trace = trace_back(bottom = caller_env())
+    )
+  }
+
+  pronoun_class_add(x, ...)
 }
 
 tag_class_add <- function(x, ...) {

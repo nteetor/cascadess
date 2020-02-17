@@ -1,3 +1,76 @@
+flexbox_direction <- c(
+  row = "row",
+  column = "column"
+)
+
+flexbox_justify <- c(
+  start = "start",
+  end = "end",
+  center = "center",
+  around = "around",
+  between = "between"
+)
+
+flexbox_align <- c(
+  start = "start",
+  end = "end",
+  center = "center",
+  baseline = "baseline",
+  stretch = "stretch"
+)
+
+html_class_flexbox <- function(direction, justify, align, wrap) {
+  direction <- responsive(direction)
+  justify <- responsive(justify)
+  align <- responsive(align)
+  wrap <- responsive(wrap)
+
+  c(html_class("flex", pick(flexbox_direction, direction)),
+    html_class("justify-content", pick(flexbox_justify, justify)),
+    html_class("align-items", pick(flexbox_align, align)),
+    html_class("flex", ifelse(wrap, "wrap", "nowrap")))
+}
+
+flex_align <- c(
+  auto = "auto",
+  start = "start",
+  end = "end",
+  center = "center",
+  baseline = "baseline",
+  stretch = "stretch"
+)
+
+flex_order <- c(
+  `0` = 0,
+  `1` = 1,
+  `2` = 2,
+  `3` = 3,
+  `4` = 4,
+  `5` = 5,
+  `6` = 6,
+  `7` = 7
+)
+
+flex_grow <- c(
+
+)
+
+flex_shrink <- c(
+
+)
+
+html_class_flex <- function(align, order, grow, shrink) {
+  align <- responsive(align)
+  order <- responsive(order)
+  grow <- responsive(grow)
+  shrink <- responsive(shrink)
+
+  c(html_class("align-self", pick(flex_align, align)),
+    html_class("order", pick(flex_order, order)),
+    html_class("flex-grow", ifelse(grow, 1, 0)),
+    html_class("flex-shrink", ifelse(shrink, 1, 0)))
+}
+
 #' Flexbox
 #'
 #' @description
@@ -15,8 +88,8 @@
 #'
 #' @param direction A [responsive] argument.
 #'
-#'   One of `"row"` or `"column"` specifying the main axis of flex items,
-#'   defaults to `"row"`.
+#'   One of `r rd_chr_lst(names(flexbox_direction))` specifying the main axis of
+#'   flex items, defaults to `"row"`.
 #'
 #'   If `"row"`, the main axis is horizontal and items are arranged from left to
 #'   right. The cross axis is the vertical.
@@ -26,17 +99,16 @@
 #'
 #' @param justify A [responsive] argument.
 #'
-#'   One of `"start"`, `"end"`, `"center"`, `"between"`, or `"around"`
-#'   specifying how items are arranged on the main axis, defaults to `"start"`.
+#'   One of `r rd_chr_lst(names(flexbox_justify))` specifying how items are
+#'   arranged on the main axis, defaults to `"start"`.
 #'
 #'   If `"between"` or `"around"`, items are arranged by evenly sharing the
 #'   space between or around the items.
 #'
 #' @param align A [responsive] argument.
 #'
-#'   One of `"start"`, `"end"`, `"center"`, `"baseline"`, or `"stretch"`
-#'   specifying how items are arranged on the cross axis, defaults to
-#'   `"stretch"`.
+#'   One of `r rd_chr_lst(names(flexbox_align))` specifying how items are
+#'   arranged on the cross axis, defaults to `"stretch"`.
 #'
 #' @param wrap A [responsive] argument.
 #'
@@ -55,30 +127,19 @@ flexbox <- function(x, direction = "row", justify = "start", align = "stretch",
 flexbox.cascadess_style_pronoun <- function(x, direction = "row",
                                             justify = "start",
                                             align = "stretch", wrap = FALSE) {
-  d <- dash("flex", responsive(direction))
-  j <- dash("justify-content", responsive(justify))
-  a <- dash("align-items", responsive(align))
-  w <- dash("flex", responsive(ifelse(wrap, "wrap", "nowrap")))
-
-  pronoun_class_add(x, d, j, a, w)
+  pronoun_class_add(x, html_class_flexbox(direction, justify, align, wrap))
 }
 
 #' @export
-flexbox.cascadess_pronoun_box <- function(x, direction = "row",
-                                          justify = "start",
-                                          align = "stretch", wrap = FALSE) {
-  flexbox(unbox(x), direction, justify, align, wrap)
+flexbox.rlang_box_splice <- function(x, direction = "row", justify = "start",
+                                     align = "stretch", wrap = FALSE) {
+  pronoun_box_class_add(x, html_class_flexbox(direction, justify, align, wrap))
 }
 
 #' @export
 flexbox.shiny.tag <- function(x, direction = "row", justify = "start",
                               align = "stretch", wrap = FALSE) {
-  d <- dash("flex", responsive(direction))
-  j <- dash("justify-content", responsive(justify))
-  a <- dash("align-items", responsive(align))
-  w <- dash("flex", responsive(ifelse(wrap, "wrap", "nowrap")))
-
-  tag_class_add(x, d, j, a, w)
+  tag_class_add(x, html_class_flexbox(direction, justify, align, wrap))
 }
 
 #' @export
@@ -98,15 +159,14 @@ flexbox.default <- function(x, direction = "row", justify = "start",
 #'
 #' @param align A [responsive] argument.
 #'
-#'   One of `"auto"`, `"start"`, `"end"`, `"center"`, `"baseline"`, or
-#'   `"stretch"` specifying how to align the item on the cross axis, defaults
-#'   to `"stretch"`. Overrides the [flexbox()] `align` argument.
+#'   One of `r rd_chr_lst(names(flex_align))` specifying how to align the item on the
+#'   cross axis, defaults to `"stretch"`. Overrides the [flexbox()] `align`
+#'   argument.
 #'
 #' @param order A [responsive] argument.
 #'
-#'   One of \Sexpr[results=rd,stage=render]{rd_num_lst(0:7)} specifying the
-#'   order of the item, defaults to `1`. Items of the same order are then sorted
-#'   by their source code order.
+#'   One of `r rd_num_lst(0:7)` specifying the order of the item, defaults to
+#'   `1`. Items of the same order are then sorted by their source code order.
 #'
 #' @param grow A [responsive] argument.
 #'
@@ -126,29 +186,19 @@ flex <- function(x, align = "stretch", order = 1, grow = NULL, shrink = NULL) {
 #' @export
 flex.cascadess_style_pronoun <- function(x, align = "stretch", order = 1,
                                          grow = NULL, shrink = NULL) {
-  a <- dash("align-self", responsive(align))
-  o <- dash("order", responsive(order))
-  g <- dash("flex-grow", responsive(grow))
-  s <- dash("flex-shrink", responsive(shrink))
-
-  pronoun_class_add(x, a, o, g, s)
+  pronoun_class_add(x, html_class_flex(align, order, grow, shrink))
 }
 
 #' @export
-flex.cascadess_pronoun_box <- function(x, align = "stretch", order = 1,
+flex.rlang_box_splice <- function(x, align = "stretch", order = 1,
                                        grow = NULL, shrink = NULL) {
-  flex(unbox(x), align, order, grow, shrink)
+  pronoun_box_class_add(x, html_class_flex(align, order, grow, shrink))
 }
 
 #' @export
 flex.shiny.tag <- function(x, align = "stretch", order = 1, grow = NULL,
                            shrink = NULL) {
-  a <- dash("align-self", responsive(align))
-  o <- dash("order", responsive(order))
-  g <- dash("flex-grow", responsive(grow))
-  s <- dash("flex-shrink", responsive(shrink))
-
-  tag_class_add(x, a, o, g, s)
+  tag_class_add(x, html_class_flex(align, order, grow, shrink))
 }
 
 #' @export

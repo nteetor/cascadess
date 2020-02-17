@@ -9,13 +9,11 @@ font(x, color = NULL, weight = NULL, case = NULL, align = NULL)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}
-specifying the font color, defaults to \code{NULL}, in which case the argument is
-ignored.}
+\item{color}{One of \code{"red"}, \code{"purple"}, \code{"indigo"}, \code{"blue"}, \code{"cyan"}, \code{"teal"}, \code{"green"}, \code{"yellow"}, \code{"amber"}, or \code{"orange"} specifying the font
+color, defaults to \code{NULL}, in which case the argument is ignored.}
 
-\item{weight}{One of
-\Sexpr[results=rd,stage=render]{rd_chr_lst(font_weights)} specifying the
-font weight of the element's text, defaults to \code{NULL}.
+\item{weight}{One of \code{""} specifying the font
+weight of the element's text, defaults to \code{NULL}.
 
 If \code{"bolder"} or \code{"lighter"}, the font weight is changed relative to the
 current font weight.}
@@ -26,9 +24,9 @@ the argument is ignored.}
 
 \item{align}{A \link{responsive} argument.
 
-One of \Sexpr[results=rd,stage=render]{rd_chr_lst(font_aligns)} specifying
-the alignment of the tag element's text, defaults to \code{NULL}, in which case
-the argument is ignored.}
+One of \code{""} specifying the alignment of the
+tag element's text, defaults to \code{NULL}, in which case the argument is
+ignored.}
 }
 \description{
 The \code{font()} function adjusts the color, size, weight, case, or alignment of

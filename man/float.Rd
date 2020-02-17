@@ -15,5 +15,5 @@ One of \code{"left"} or \code{"right"} specifying the side to float the element.
 }
 \description{
 The \code{float()} function places an element to the left or right side of its
-parent element. Text and inline elements will wrap around floated elements.
+parent element. Other text and inline elements wrap around floated elements.
 }

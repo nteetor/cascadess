@@ -7,13 +7,22 @@
 padding(x, all = NULL, top = NULL, right = NULL, bottom = NULL, left = NULL)
 }
 \arguments{
-\item{all, top, right, bottom, left}{A \link{responsive} argument. One of \code{0:5} or
-\code{"auto"} specifying padding for one or more sides of the tag element. 0
-removes all inner space and 5 adds the most space.}
+\item{x}{A tag element or \link{.style} pronoun.}
+
+\item{all}{A \link{responsive} argument.
+
+One of \code{1:5} specifying a padding for all sides of the tag element,
+defaults to \code{NULL}, in which case the argument is ignored. 0 removes all
+inner space and 5 adds the most space.}
+
+\item{top, right, bottom, left}{A \link{responsive} argument.
+
+One of \code{1:5} specifying a padding for the element's respective side,
+defaults to \code{NULL}, in which case the argument is ignored. 0 removes all
+inner space and 5 adds the most space.}
 }
 \description{
-The \code{padding} utility changes the inner spacing of a tag element. The padding
-of a tag element is the space between the tag element's border and its
-content or child elements. All arguments default to \code{NULL}, in which case
-they are ignored.
+The \code{padding()} function adjusts the inner spacing of a tag element. The
+padding of a tag element is the space between the tag element's border and
+its content or child elements.
 }

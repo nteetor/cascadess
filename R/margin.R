@@ -1,22 +1,46 @@
+html_class_margin <- function(all, top, right, bottom, left) {
+  all <- responsive(all)
+  top <- responsive(top)
+  right <- responsive(right)
+  bottom <- responsive(bottom)
+  left <- responsive(left)
+
+  classes <- c(
+    html_class("m", all),
+    html_class("mt", top),
+    html_class("mr", right),
+    html_class("mb", bottom),
+    html_class("ml", left))
+
+  gsub("--(\\d)", "-n\\1", classes)
+}
+
 #' Margins
 #'
-#' The `margin` utilty changes the outer spacing of a tag element. The margin of
-#' a tag element is the space outside and around the tag element, its border,
-#' and its content. All arguments default to `NULL`, in which case they are
-#' ignored.
+#' The `margin()` function adjusts the outer spacing of a tag element. The
+#' margin of a tag element is the space outside and around the tag element, its
+#' border, and its content.
 #'
-#' @inheritParams affix
+#' @inheritParams background
 #'
-#' @param all,top,right,bottom,left A [responsive] argument. One of `-5:5` or
-#'   `"auto"` specifying a margin for one or more sides of the tag element. 0
+#' @param all A [responsive] argument.
+#'
+#'   One of `-5:5` or `"auto"` specifying a margin for all sides of the tag
+#'   element, defaults to `NULL`, in which case the argument is ignored. 0
 #'   removes all outer space, 5 adds the most space, and negative values will
-#'   consume space pulling the element in that direction.
+#'   consume space and pull the element in that direction.
+#'
+#' @param top,right,bottom,left A [responsive] argument.
+#'
+#'   One of `-5:5` or `"auto"` specifying a margin for the respective side of
+#'   the tag element. 0 removes all outer space, 5 adds the most space, and
+#'   negative values will consume space and pull the element in that direction.
 #'
 # @includeRmd man/roxygen/margin.Rmd
 #'
 #' @export
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
-                   left = NULL, ...) {
+                   left = NULL) {
   UseMethod("margin", x)
 }
 
@@ -24,98 +48,23 @@ margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
 margin.cascadess_style_pronoun <- function(x, all = NULL, top = NULL,
                                            right = NULL, bottom = NULL,
                                            left = NULL) {
-  NextMethod("margin", x)
+  pronoun_class_add(x, html_class_margin(all, top, right, bottom, left))
 }
 
 #' @export
 margin.rlang_box_splice <- function(x, all = NULL, top = NULL, right = NULL,
                                     bottom = NULL, left = NULL) {
-  NextMethod("margin", unbox(x))
+  pronoun_box_class_add(x, html_class_margin(all, top, right, bottom, left))
 }
 
 #' @export
 margin.shiny.tag <- function(x, all = NULL, top = NULL, right = NULL,
                              bottom = NULL, left = NULL) {
-  tag_class_add(x, c(
-    margin_all(all),
-    margin_top(top),
-    margin_right(right),
-    margin_bottom(bottom),
-    margin_left(left)
-  ))
+  tag_class_add(x, html_class_margin(all, top, right, bottom, left))
 }
 
 #' @export
 margin.default <- function(x, all = NULL, top = NULL, right = NULL,
                            bottom = NULL, left = NULL) {
-  tag_class_add(x, c(
-    margin_all(all),
-    margin_top(top),
-    margin_right(right),
-    margin_bottom(bottom),
-    margin_left(left)
-  ))
-}
 
-margin_top <- function(top) {
-  if (is.null(top)) {
-    return(NULL)
-  }
-
-  top <- lapply(top, margin_negative)
-  top <- resp_construct(top, c(0:5, "auto", "n1", "n2", "n3", "n4", "n5"))
-
-  sprintf("m%s", resp_classes(top, "t"))
-}
-
-margin_right <- function(right) {
-  if (is.null(right)) {
-    return(NULL)
-  }
-
-  right <- lapply(right, margin_negative)
-  right <- resp_construct(right, c(0:5, "auto", "n1", "n2", "n3", "n4", "n5"))
-
-  sprintf("m%s", resp_classes(right, "r"))
-}
-
-margin_bottom <- function(bottom) {
-  if (is.null(bottom)) {
-    return(NULL)
-  }
-
-  bottom <- lapply(bottom, margin_negative)
-  bottom <- resp_construct(bottom, c(0:5, "auto", "n1", "n2", "n3", "n4", "n5"))
-
-  sprintf("m%s", resp_classes(bottom, "b"))
-}
-
-margin_left <- function(left) {
-  if (is.null(left)) {
-    return(NULL)
-  }
-
-  left <- lapply(left, margin_negative)
-  left <- resp_construct(left, c(0:5, "auto", "n1", "n2", "n3", "n4", "n5"))
-
-  sprintf("m%s", resp_classes(left, "l"))
-}
-
-margin_all <- function(all) {
-  if (is.null(all)) {
-    return(NULL)
-  }
-
-  all <- lapply(all, margin_negative)
-  all <- resp_construct(all, c(0:5, "auto", "n1", "n2", "n3", "n4", "n5"))
-
-  resp_classes(all, "m")
-}
-
-margin_negative <- function(x) {
-  if (x < 0) {
-    paste0("n", abs(x))
-  } else {
-    x
-  }
 }

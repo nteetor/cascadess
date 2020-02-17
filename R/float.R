@@ -1,7 +1,13 @@
+html_class_float <- function(side) {
+  side <- html_class("float", responsive(side))
+
+  side
+}
+
 #' Floats
 #'
 #' The `float()` function places an element to the left or right side of its
-#' parent element. Text and inline elements will wrap around floated elements.
+#' parent element. Other text and inline elements wrap around floated elements.
 #'
 #' @inheritParams background
 #'
@@ -18,17 +24,17 @@ float <- function(x, side) {
 
 #' @export
 float.cascadess_style_pronoun <- function(x, side) {
-  pronoun_class_add(x, dash("float", responsive(side)))
+  pronoun_class_add(x, html_class_float(side))
 }
 
 #' @export
-float.cascadess_pronoun_box <- function(x, side) {
-  float(unbox(x), side)
+float.rlang_box_splice <- function(x, side) {
+  pronoun_box_class_add(x, html_class_float(side))
 }
 
 #' @export
 float.shiny.tag <- function(x, side) {
-  tag_class_add(x, dash("float", responsive(side)))
+  tag_class_add(x, html_class_float(side))
 }
 
 #' @export

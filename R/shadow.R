@@ -1,65 +1,49 @@
+shadow_size <- c(
+  none = "none",
+  small = "sm",
+  medium = "",
+  large = "lg"
+)
+
+html_class_shadow <- function(size) {
+  html_class("shadow", pick(shadow_size, size))
+}
+
 #' Shadows
 #'
-#' The `shadow` utility applies a shadow to a tag element. By default many
-#' elements include a shadow to help distinguish them. Use `"none"` to remove an
-#' element's shadow.
+#' The `shadow()` function adjusts the box shadow of a tag element. By default,
+#' many elements include a shadow to help distinguish them or indicate
+#' interactivity. [card()]s are element without a default shadow, but in some
+#' cases popping out the element from the page may be useful.
 #'
-#' @inheritParams affix
+#' @inheritParams background
 #'
-#' @param size One of `"none"`, `"small"`, `"medium"`, or `"large"` specifying
-#'   the amount of shadow added, defaults to `"medium"`.
+#' @param size One of `r rd_chr_lst(names(shadow_size))` specifying the amount
+#'   of shadow added.
 #'
 # @includeRmd man/roxygen/shadow.Rmd
 #'
 #' @export
-shadow <- function(x, size = "medium") {
+shadow <- function(x, size) {
   UseMethod("shadow", x)
 }
 
 #' @export
-shadow.cascadess_style_pronoun <- function(x, size = "medium") {
-  NextMethod("shadow", x)
+shadow.cascadess_style_pronoun <- function(x, size) {
+  pronoun_class_add(x, html_class_shadow(size))
 }
 
 #' @export
-shadow.rlang_box_splice <- function(x, size = "medium") {
-  NextMethod("shadow", unbox(x))
+shadow.rlang_box_splice <- function(x, size) {
+  pronoun_box_class_add(x, html_class_shadow(size))
 }
 
 #' @export
-shadow.shiny.tag <- function(x, size = "medium") {
-  if (size == "regular") {
-    deprecate_soft(
-      "0.2.0", 'yonder::shadow(size = )', 'yonder::shadow(size = )',
-      "Value 'regular' has been replaced by the value 'medium'"
-    )
-
-    size <- "medium"
-  }
-
-  tag_class_add(x, shadow_size(size))
+shadow.shiny.tag <- function(x, size) {
+  tag_class_add(x, html_class_shadow(size))
 }
 
 #' @export
-shadow.default <- function(x, size = "medium") {
-  if (size == "regular") {
-    deprecate_soft(
-      "0.2.0", 'yonder::shadow(size = )', 'yonder::shadow(size = )',
-      "Value 'regular' has been replaced by the value 'medium'"
-    )
+shadow.default <- function(x, size) {
 
-    size <- "medium"
-  }
-
-  tag_class_add(x, shadow_size(size))
-}
-
-shadow_size <- function(size) {
-  switch(
-    size,
-    none = "shadow-none",
-    small = "shadow-sm",
-    medium = "shadow",
-    large = "shadow-lg"
-  )
 }

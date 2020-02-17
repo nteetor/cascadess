@@ -9,11 +9,11 @@ fixed(x, position)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{position}{One of \code{"top"} or \code{"bottom"} specifying the fixed behaviour
-of an element.}
+\item{position}{One of \code{"top"} or \code{"bottom"} specifying the where to fix the
+element on the page.}
 }
 \description{
-The \code{fixed()} function permanently fixes an element at the top or bottom of
-the page. Fixed elements may cover up other elements on the page. Use
-\code{\link[=padding]{padding()}} or \code{\link[=margin]{margin()}} to adjust any covered elements.
+The \code{fixed()} function affixes an element to the top or bottom of the
+page. Because of their nature fixed elements may cover up other elements on
+the page. Use \code{\link[=padding]{padding()}} or \code{\link[=margin]{margin()}} to adjust any covered elements.
 }

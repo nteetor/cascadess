@@ -1,3 +1,10 @@
+font_colors <- c(
+  theme_colors,
+  body = "body",
+  muted = "muted",
+  reset = "reset"
+)
+
 font_weights <- c(
   "light",
   "lighter",
@@ -6,24 +13,25 @@ font_weights <- c(
   "bold"
 )
 
-font_aligns <- c(
+font_align <- c(
   "left",
   "right",
   "center"
 )
 
-cases <- function(x) {
-  if (is_null(x)) {
-    return(NULL)
-  }
+font_cases <- c(
+  upper = "uppercase",
+  lower = "lowercase",
+  captialize = "captialize"
+)
 
-  if (x == "upper")
-    "uppercase"
-  else if (x == "lower") {
-    "lowercase"
-  } else {
-    "capitalize"
-  }
+html_class_font <- function(color, weight, case, align) {
+  align <- responsive(align)
+
+  c(html_class("text", pick(font_colors, color)),
+    html_class("font-weight", pick(font_weights, weight)),
+    html_class("text", pick(font_cases, case)),
+    html_class("text", pick(font_align, align)))
 }
 
 #' Font
@@ -33,13 +41,11 @@ cases <- function(x) {
 #'
 #' @inheritParams background
 #'
-#' @param color One of \Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}
-#'   specifying the font color, defaults to `NULL`, in which case the argument is
-#'   ignored.
+#' @param color One of `r rd_chr_lst(names(theme_colors))` specifying the font
+#'   color, defaults to `NULL`, in which case the argument is ignored.
 #'
-#' @param weight One of
-#'   \Sexpr[results=rd,stage=render]{rd_chr_lst(font_weights)} specifying the
-#'   font weight of the element's text, defaults to `NULL`.
+#' @param weight One of `r rd_chr_lst(names(font_weights))` specifying the font
+#'   weight of the element's text, defaults to `NULL`.
 #'
 #'   If `"bolder"` or `"lighter"`, the font weight is changed relative to the
 #'   current font weight.
@@ -50,9 +56,9 @@ cases <- function(x) {
 #'
 #' @param align A [responsive] argument.
 #'
-#'   One of \Sexpr[results=rd,stage=render]{rd_chr_lst(font_aligns)} specifying
-#'   the alignment of the tag element's text, defaults to `NULL`, in which case
-#'   the argument is ignored.
+#'   One of `r rd_chr_lst(names(font_align))` specifying the alignment of the
+#'   tag element's text, defaults to `NULL`, in which case the argument is
+#'   ignored.
 #'
 # @includeRmd man/roxygen/font.Rmd
 #'
@@ -64,31 +70,19 @@ font <- function(x, color = NULL, weight = NULL, case = NULL, align = NULL) {
 #' @export
 font.cascadess_style_pronoun <- function(x, color = NULL, weight = NULL,
                                          case = NULL, align = NULL) {
-  pronoun_class_add(
-    x,
-    dash("text", color),
-    dash("font-weight", weight),
-    dash("text", cases(case)),
-    dash("text", responsive(align))
-  )
+  pronoun_class_add(x, html_class_font(color, weight, case, align))
 }
 
 #' @export
-font.cascadess_pronoun_box <- function(x, color = NULL, weight = NULL,
-                                       case = NULL, align = NULL) {
-  font(unbox(x), color, size, weight, case, align)
+font.rlang_box_splice <- function(x, color = NULL, weight = NULL, case = NULL,
+                                  align = NULL) {
+  pronoun_box_class_add(x, html_class_font(color, weight, case, align))
 }
 
 #' @export
 font.shiny.tag <- function(x, color = NULL, weight = NULL, case = NULL,
                            align = NULL) {
-  tag_class_add(
-    x,
-    dash("text", color),
-    dash("font-weight", weight),
-    dash("text", cases(case)),
-    dash("text", responsive(align))
-  )
+  tag_class_add(x, html_class_font(color, weight, case, align))
 }
 
 #' @export

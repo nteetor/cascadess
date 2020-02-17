@@ -1,74 +1,73 @@
+radius_round <- c(
+  small = "sm",
+  sm = "sm",
+  medium = "",
+  md = "",
+  large = "lg",
+  lg = "lg",
+  circle = "circle",
+  pill = "pill",
+  none = "0"
+)
+
+radius_sides <- c(
+  top = "top",
+  t = "top",
+  right = "right",
+  r = "right",
+  bottom = "bottom",
+  b = "bottom",
+  left = "left",
+  l = "left",
+  all = ""
+)
+
+html_class_radius <- function(round, sides)  {
+  if (is_true(sides)) {
+    sides <- ""
+  } else if (is_false(sides)) {
+    sides <- NULL
+  } else {
+    sides <- pick(radius_sides, sides)
+  }
+
+  c(html_class("rounded", sides),
+    html_class("rounded", pick(radius_round, round)))
+}
+
 #' Border radius
 #'
 #' The `radius()` function adjusts the border radius of a tag element.
 #'
 #' @inheritParams background
 #'
-#' @param round One of `"small"`, `"sm"`, `"medium"`, `"md"`, `"large"`, `"lg"`,
-#'   `"circle"`, `"pill"`, or `"none"`, defaults to `"medium"`.
+#' @param round One of `r rd_chr_lst(names(radius_round))`.
 #'
-#' @param all One or more of `"top"`, `"t"`, `"right"`, `"r"`, `"bottom"`,
-#'   `"b"`, or `"left"`, `"l"`, specifying which sides' corners to round,
-#'   defaults to `TRUE`. `TRUE` and `FALSE` may be used as shorthands
-#'   for all sides or no sides, respectively.
-#'
-#' @param top,right,bottom,left One of `TRUE` or `FALSE` specifying if a sides'
-#'   radii are adjusted, defaults to `NULL`, in which case the argument is
-#'   ignored.
+#' @param sides One or more of `r rd_chr_lst(names(radius_sides))` specifying
+#'   which sides' corners to round, defaults to `TRUE`. `TRUE` and `FALSE` may
+#'   be used as shorthands for all sides or no sides, respectively.
 #'
 #' @export
-radius <- function(x, round = "medium", all = TRUE, top = NULL, right = NULL,
-                   bottom = NULL, left = NULL) {
+radius <- function(x, round, sides = TRUE) {
   UseMethod("radius", x)
 }
 
 #' @export
-radius.cascadess_style_pronoun <- function(x, round = "medium", all = TRUE,
-                                           top = NULL, right = NULL,
-                                           bottom = NULL, left = NULL) {
-  round <- round_rename(round)
-
-  s <- sides(all, top, right, bottom, left)
-  s <- if (!is.null(s)) dash("rounded", s)
-
-  pronoun_class_add(x, dash("rounded", round), s)
+radius.cascadess_style_pronoun <- function(x, round, sides = TRUE) {
+  pronoun_class_add(x, html_class_radius(round, sides))
 }
 
 #' @export
-radius.cascadess_pronoun_box <- function(x, round = "medium", all = TRUE,
-                                         top = NULL, right = NULL,
-                                         bottom = NULL, left = NULL) {
-  radius(unbox(x), round, all, top, right, bottom, left)
+radius.rlang_box_splice <- function(x, round, sides = TRUE) {
+  pronoun_box_class_add(x, html_class_radius(round, sides))
 }
 
 #' @export
-radius.shiny.tag <- function(x, round = "medium", all = TRUE, top = NULL,
-                             right = NULL, bottom = NULL, left = NULL) {
-  round <- round_rename(round)
-
-  s <- sides(all, top, right, bottom, left)
-  s <- if (!is.null(s)) dash("rounded", s)
-
-  tag_class_add(x, dash("rounded", round), s)
+radius.shiny.tag <- function(x, round, sides = TRUE) {
+  tag_class_add(x, html_class_radius(round, sides))
 }
 
 #' @export
-radius.default <- function(x, round = "medium", all = TRUE, top = NULL,
-                           right = NULL, bottom = NULL, left = NULL) {
+radius.default <- function(x, round, sides = TRUE) {
 
-}
-
-round_rename <- function(x) {
-  switch(
-    x,
-    sm = "sm",
-    small = "sm",
-    md = "md",
-    medium = "md",
-    lg = "lg",
-    large = "lg",
-    circle = "circle",
-    pill = "pill",
-    none = "0"
-  )
 }

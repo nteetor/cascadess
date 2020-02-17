@@ -1,13 +1,22 @@
+fixed_positions <- c(
+  top = "top",
+  bottom = "bottom"
+)
+
+html_class_fixed <- function(position) {
+  html_class("fixed", pick(fixed_positions, position))
+}
+
 #' Fixed position elements
 #'
-#' The `fixed()` function permanently fixes an element at the top or bottom of
-#' the page. Fixed elements may cover up other elements on the page. Use
-#' [padding()] or [margin()] to adjust any covered elements.
+#' The `fixed()` function affixes an element to the top or bottom of the
+#' page. Because of their nature fixed elements may cover up other elements on
+#' the page. Use [padding()] or [margin()] to adjust any covered elements.
 #'
 #' @inheritParams background
 #'
-#' @param position One of `"top"` or `"bottom"` specifying the fixed behaviour
-#'   of an element.
+#' @param position One of `"top"` or `"bottom"` specifying the where to fix the
+#'   element on the page.
 #'
 #' @export
 fixed <- function(x, position) {
@@ -16,17 +25,17 @@ fixed <- function(x, position) {
 
 #' @export
 fixed.cascadess_style_pronoun <- function(x, position) {
-  pronoun_class_add(x, dash("fixed", position))
+  pronoun_class_add(x, html_class_fixed(position))
 }
 
 #' @export
-fixed.cascadess_pronoun_box <- function(x, position) {
-  fixed(unbox(x), position)
+fixed.rlang_box_splice <- function(x, position) {
+  pronoun_box_class_add(x, html_class_fixed(position))
 }
 
 #' @export
 fixed.shiny.tag <- function(x, position) {
-  tag_class_add(x, dash("fixed", position))
+  tag_class_add(x, html_class_fixed(position))
 }
 
 #' @export

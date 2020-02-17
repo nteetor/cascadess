@@ -1,16 +1,36 @@
 theme_colors <- c(
-  "red", "purple", "indigo", "blue", "cyan", "teal", "green",
-  "yellow", "amber", "orange", "grey", "black", "white"
+  red = "red",
+  purple = "purple",
+  indigo = "indigo",
+  blue = "blue",
+  cyan = "cyan",
+  teal = "teal",
+  green = "green",
+  yellow = "yellow",
+  amber = "amber",
+  orange = "orange"
 )
+
+background_colors <- c(
+  theme_colors,
+  body = "body",
+  white = "white",
+  transparent = "transparent"
+)
+
+html_class_background <- function(prefix, color) {
+  prefix <- prefix %||% "bg"
+
+  html_class(prefix, pick(background_colors, color))
+}
 
 #' Backgrounds
 #'
-#' Use `background()` to modify the background color of a tag element.
+#' The `background()` function adjusts the background color of a tag element.
 #'
 #' @param x A tag element or [.style] pronoun.
 #'
-#' @param color One of
-#'   \Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}.
+#' @param color One of `r rd_chr_lst(names(background_colors))`.
 #'
 #' @export
 background <- function(x, color) {
@@ -19,17 +39,17 @@ background <- function(x, color) {
 
 #' @export
 background.cascadess_style_pronoun <- function(x, color) {
-  pronoun_class_add(x, dash(style_prefix(x, "bg"), color))
+  pronoun_class_add(x, html_class_background(style_prefix(x), color))
 }
 
 #' @export
-background.cascadess_pronoun_box <- function(x, color) {
-  background(unbox(x), color)
+background.rlang_box_splice <- function(x, color) {
+  pronoun_box_class_add(x, html_class_background(style_prefix(x), color))
 }
 
 #' @export
 background.shiny.tag <- function(x, color) {
-  tag_class_add(x, dash("bg", color))
+  tag_class_add(x, html_class_background(style_prefix(x), color))
 }
 
 #' @export

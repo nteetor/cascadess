@@ -9,9 +9,8 @@ background(x, color)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of
-\Sexpr[results=rd,stage=render]{rd_chr_lst(theme_colors)}.}
+\item{color}{One of \code{"red"}, \code{"purple"}, \code{"indigo"}, \code{"blue"}, \code{"cyan"}, \code{"teal"}, \code{"green"}, \code{"yellow"}, \code{"amber"}, \code{"orange"}, \code{"body"}, \code{"white"}, or \code{"transparent"}.}
 }
 \description{
-Use \code{background()} to modify the background color of a tag element.
+The \code{background()} function adjusts the background color of a tag element.
 }

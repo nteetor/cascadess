@@ -11,11 +11,9 @@ display(x, type)
 
 \item{type}{A \link{responsive} argument.
 
-One of \code{"inline"}, \code{"inline-block"}, \code{"block"}, \code{"table"}, \code{"table-row"},
-\code{"table-cell"}, \code{"flex"}, \code{"inline-flex"}, or \code{"none"}.}
+One of \code{"inline"}, \code{"inline-block"}, \code{"block"}, \code{"table"}, \code{"table-row"}, \code{"table-cell"}, \code{"flex"}, \code{"inline-flex"}, or \code{"none"}.}
 }
 \description{
-The \code{display()} function adjusts how a tag element is rendered. All arguments
-are responsive allowing you to hide elements on small screens or convert
-elements from inline to block on large screens.
+The \code{display()} function adjusts how a tag element is rendered. For example,
+to use the flex box layout the display must be \code{"flex"}.
 }

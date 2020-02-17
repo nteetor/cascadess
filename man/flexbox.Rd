@@ -17,8 +17,8 @@ flexbox(
 
 \item{direction}{A \link{responsive} argument.
 
-One of \code{"row"} or \code{"column"} specifying the main axis of flex items,
-defaults to \code{"row"}.
+One of \code{"row"} or \code{"column"} specifying the main axis of
+flex items, defaults to \code{"row"}.
 
 If \code{"row"}, the main axis is horizontal and items are arranged from left to
 right. The cross axis is the vertical.
@@ -28,17 +28,16 @@ bottom. The cross axis is the horizontal.}
 
 \item{justify}{A \link{responsive} argument.
 
-One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"between"}, or \code{"around"}
-specifying how items are arranged on the main axis, defaults to \code{"start"}.
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"around"}, or \code{"between"} specifying how items are
+arranged on the main axis, defaults to \code{"start"}.
 
 If \code{"between"} or \code{"around"}, items are arranged by evenly sharing the
 space between or around the items.}
 
 \item{align}{A \link{responsive} argument.
 
-One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"}
-specifying how items are arranged on the cross axis, defaults to
-\code{"stretch"}.}
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"} specifying how items are
+arranged on the cross axis, defaults to \code{"stretch"}.}
 
 \item{wrap}{A \link{responsive} argument.
 

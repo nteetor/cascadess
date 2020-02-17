@@ -1,14 +1,29 @@
+overflow_scroll <- c(
+  auto = "auto",
+  hidden = "hidden"
+)
+
+html_class_overflow <- function(scroll) {
+  if (is_true(scroll)) {
+    scroll <- "auto"
+  } else if (is_false(scroll)) {
+    scroll <- "hidden"
+  }
+
+  html_class("overflow", pick(overflow_scroll, scroll))
+}
+
 #' Overflow
 #'
-#' The `overflow()` function specifies an element's content should scroll
-#' instead of extending the height or width of the element. The height of the
-#' element must be set.
+#' The `overflow()` function adjust how an element's content scrolls. Scrolling
+#' an element's contents may be helpful to prevent child elements from extending
+#' the height or width of the element. The height of the element must be set.
 #'
 #' @inheritParams background
 #'
 #' @param scroll One of `"auto"` or `"hidden"` specifying if the content of the
-#'   element scrolls, defaults to `"auto"`. `TRUE` and `FALSE` may be used in
-#'   place of `"auto"` or `"hidden"`, respectively.
+#'   element scrolls. `TRUE` and `FALSE` may be used in place of `"auto"` or
+#'   `"hidden"`, respectively.
 #'
 #' @export
 overflow <- function(x, scroll = "auto") {
@@ -16,21 +31,21 @@ overflow <- function(x, scroll = "auto") {
 }
 
 #' @export
-overflow.cascadess_style_pronoun <- function(x, scroll = "auto") {
-  pronoun_class_add(x, dash("overflow", scroll))
+overflow.cascadess_style_pronoun <- function(x, scroll) {
+  pronoun_class_add(x, html_class_overflow(scroll))
 }
 
 #' @export
-scroll.cascadess_pronoun_box <- function(x, scroll = "auto") {
-  overflow(unbox(x), scroll)
+overflow.rlang_box_splice <- function(x, scroll) {
+  pronoun_box_class_add(x, html_class_overflow(scroll))
 }
 
 #' @export
-scroll.shiny.tag <- function(x, scroll = "auto") {
-  tag_class_add(x, dash("overflow", scroll))
+overflow.shiny.tag <- function(x, scroll) {
+  tag_class_add(x, html_class_overflow(scroll))
 }
 
 #' @export
-scroll.default <- function(x, scroll = "auto") {
+overflow.default <- function(x, scroll) {
 
 }

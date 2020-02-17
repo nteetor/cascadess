@@ -9,14 +9,12 @@ align(x, vertical)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{vertical}{One of
-\Sexpr[results=rd,stage=render]{rd_chr_lst(align_values)}.}
+\item{vertical}{One of \code{"baseline"}, \code{"top"}, \code{"middle"}, \code{"bottom"}, \code{"text-bottom"}, or \code{"text-top"}.}
 }
 \description{
-The \code{align()} function adjusts the CSS \code{vertical-align} property of an
-element. This property applies to \strong{inline} elements and may be used to
-adjust the alignment of an image in a line of text or the contents of a table
-cell.
+The \code{align()} function adjusts the inline alignment of an element.  This
+applies only to inline elements and may be used to adjust the vertical
+alignment of an image in a line of text or the contents of a table cell.
 
-For broader alignment purposes use flex box, see \code{display()} and \code{flex()}.
+For broader alignment purposes use flex box, see \code{\link[=flexbox]{flexbox()}}.
 }

@@ -2,32 +2,19 @@
 % Please edit documentation in R/border.R
 \name{border}
 \alias{border}
-\title{Borders and border colors}
+\title{Borders}
 \usage{
-border(
-  x,
-  color = NULL,
-  all = !is.null(color),
-  top = NULL,
-  right = NULL,
-  bottom = NULL,
-  left = NULL
-)
+border(x, color, sides = TRUE)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of the theme colors, defaults to \code{NULL}.}
+\item{color}{One of \code{"red"}, \code{"purple"}, \code{"indigo"}, \code{"blue"}, \code{"cyan"}, \code{"teal"}, \code{"green"}, \code{"yellow"}, \code{"amber"}, \code{"orange"}, or \code{"white"}.}
 
-\item{all}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"},
-\code{"b"}, or \code{"left"}, \code{"l"}, specifying which sides to add borders to,
-defaults to \code{!is.null(color)}. \code{TRUE} and \code{FALSE} may be used as shorthands
-for all sides or no sides, respectively.}
-
-\item{top, right, bottom, left}{One of \code{TRUE} or \code{FALSE} specifying if a border
-is added or removed to the tag element side, defaults to \code{NULL}, in which
-case the argument is ignored.}
+\item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, or \code{"l"} specifying
+which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may
+be used as shorthands for all sides or no sides, respectively.}
 }
 \description{
-The \code{border()} functions adds or modifies tag element borders.
+The \code{border()} function adjusts a tag element's borders.
 }

@@ -10,11 +10,11 @@ overflow(x, scroll = "auto")
 \item{x}{A tag element or \link{.style} pronoun.}
 
 \item{scroll}{One of \code{"auto"} or \code{"hidden"} specifying if the content of the
-element scrolls, defaults to \code{"auto"}. \code{TRUE} and \code{FALSE} may be used in
-place of \code{"auto"} or \code{"hidden"}, respectively.}
+element scrolls. \code{TRUE} and \code{FALSE} may be used in place of \code{"auto"} or
+\code{"hidden"}, respectively.}
 }
 \description{
-The \code{overflow()} function specifies an element's content should scroll
-instead of extending the height or width of the element. The height of the
-element must be set.
+The \code{overflow()} function adjust how an element's content scrolls. Scrolling
+an element's contents may be helpful to prevent child elements from extending
+the height or width of the element. The height of the element must be set.
 }

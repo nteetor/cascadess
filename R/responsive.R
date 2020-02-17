@@ -43,57 +43,55 @@ responsive <- function(x) {
 #'
 #' @description
 #'
-#' A responsive argument may be a single value or a named list. Possible names
-#' includes `default` or `xs`, `sm`, `md`, `lg`, and `xl`. Specifying a single
-#' unnamed value is equivalent to specifying `default` or `xs`. The possible
-#' values will be described in the specific help page. Most responsive arguments
-#' will default to `NULL` in which case no corresponding style is applied.
-#'
 #' Responsive arguments allow you to apply styles to tag elements based on the
-#' size of the viewport. This is important when developing applications for both
-#' web and mobile.  Specifying a single unnamed value the style will be applied
-#' for all viewport sizes. Use the names above to apply a style for viewports of
-#' that size and larger. For example, specifying `list(default = x, md = y)`
-#' will apply `x` on extra small and small viewports, but for medium, large, and
-#' extra large viewports `y` is applied.
+#' size of the viewport (e.g. browser screen). This is important when developing
+#' applications for both web and mobile.  Specifying a single unnamed value the
+#' style will be applied for all viewport sizes. Use the names below to apply a
+#' style for viewports of that size and larger. For example, specifying
+#' `c(default = "center", md = "left")` will apply `"center"` on extra small and
+#' small viewports, but for medium, large, and extra large viewports `"left"` is
+#' applied. Styles for larger viewports take precedence.
 #'
-#' Styles for larger viewports take precedence. See below for details about each
-#' breakpoint.
+#' A responsive argument may be a single value or a named list. Specifying a
+#' single unnamed value is equivalent to specifying `default` or `xs`. The
+#' possible values will be described in the specific help page. Most responsive
+#' arguments default to `NULL` in which case the argument is ignored.
+#'
+#' ## Breakpoints
 #'
 #' **extra small**
 #'
-#' How: pass a single value, use name `xs`, or use name `default`.
+#' Use the breakpoint with `default =` or `sm = `.
 #'
-#' When: the style is always applied, unless supplanted by a style for any other
-#' viewport size.
+#' The style is always applied, unless supplanted by a style for any other
+#' breakpoint.
 #'
 #' **small**
 #'
-#' How: use name `sm`.
+#' Use the breakpoint with `small =` or `sm =`.
 #'
-#' When: the style is applied when the viewport is at least 576px wide, think
+#' The style is applied when the viewport is at least 576px wide, think
 #' landscape phones.
 #'
 #' **medium**
 #'
-#' How: use name `md`.
+#' Use the breakpoint with `medium =` or `md =`.
 #'
-#' When: the style is applied when the viewport is at least 768px wide, think
-#' tablets.
+#' The style is applied when the viewport is at least 768px wide, think tablets.
 #'
 #' **large**
 #'
-#' How: use name `lg`.
+#' Use the breakpoint with `large =` or `lg =`.
 #'
-#' When: the style is applied when the viewport is at least 992px wide, think
-#' laptop or smaller desktops.
+#' The style is applied when the viewport is at least 992px wide, think laptop
+#' or smaller desktops.
 #'
 #' **extra large**
 #'
-#' How: use name `xl`.
+#' Use the breakpoint with `\`extra-large\` =` or `xl =`.
 #'
-#' When: the style is applied when the viewport is at least 1200px wide, think
-#' large desktops.
+#' The style is applied when the viewport is at least 1200px wide, think large
+#' desktops.
 #'
 #' @name responsive
 NULL

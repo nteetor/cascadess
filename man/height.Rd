@@ -7,24 +7,27 @@
 height(x, size)
 }
 \arguments{
-\item{size}{A character string or number specifying the height of the tag
-element. Possible values:
+\item{x}{A tag element or \link{.style} pronoun.}
 
-One of 25, 50, 75, 100 specifying the element's height as a
-percentage of its parent's height. The height of the parent element must
-also be specified. Percentages do not account for margins or padding and
-may cause an element to extend beyond its parent element.
+\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, "auto", or "viewport" specifying
+the height of the tag element.
 
-\code{"auto"}, in which case the element's height is determined by the browser.
-The browser will take into account the height, padding, margins, and border
-of the tag element's parent to keep the element from extending beyond its
+If \code{25}, \code{50}, \code{75}, or \code{100}, the element's height is a percentage of the
+height of the parent element must also be specified.
+
+These percentages do not account for margins or padding and may cause an
+element to extend beyond its parent element.
+
+If \code{"auto"}, the element's height is determined by the browser.  The
+browser will take into account the height, padding, margins, and border of
+the tag element's parent to keep the element from extending beyond its
 parent.
 
-\code{"viewport"}, in which case the element's height is determined by the size
-of the browser window.}
+If \code{"viewport"}, the element's height is determined by the size of the
+browser window.}
 }
 \description{
-Utility function to change a tag element's height. Heights are specified
-relative the height of a parent element, an element's content, or the
-size of the browser window.
+The \code{height()} function adjusts a tag element's height. Heights are specified
+relative the height of a parent element, an element's content, or the size of
+the browser window.
 }
