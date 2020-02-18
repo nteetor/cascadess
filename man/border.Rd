@@ -9,7 +9,7 @@ border(x, color, sides = TRUE)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"red"}, \code{"purple"}, \code{"indigo"}, \code{"blue"}, \code{"cyan"}, \code{"teal"}, \code{"green"}, \code{"yellow"}, \code{"amber"}, \code{"orange"}, or \code{"white"}.}
+\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, or \code{"white"}.}
 
 \item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, or \code{"l"} specifying
 which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may

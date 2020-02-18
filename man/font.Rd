@@ -9,7 +9,7 @@ font(x, color = NULL, weight = NULL, case = NULL, align = NULL)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"red"}, \code{"purple"}, \code{"indigo"}, \code{"blue"}, \code{"cyan"}, \code{"teal"}, \code{"green"}, \code{"yellow"}, \code{"amber"}, or \code{"orange"} specifying the font
+\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, or \code{"cyan"} specifying the font
 color, defaults to \code{NULL}, in which case the argument is ignored.}
 
 \item{weight}{One of \code{""} specifying the font

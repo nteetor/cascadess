@@ -1,14 +1,13 @@
 theme_colors <- c(
-  red = "red",
-  purple = "purple",
-  indigo = "indigo",
   blue = "blue",
-  cyan = "cyan",
-  teal = "teal",
-  green = "green",
+  indigo = "indigo",
+  purple = "purple",
+  red = "red",
+  orange = "orange",
   yellow = "yellow",
-  amber = "amber",
-  orange = "orange"
+  green = "green",
+  teal = "teal",
+  cyan = "cyan"
 )
 
 background_colors <- c(
