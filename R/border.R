@@ -1,12 +1,12 @@
 border_sides <- c(
-  top = "t",
-  t = "t",
-  right = "r",
-  r = "r",
-  bottom = "b",
-  b = "b",
-  left = "l",
-  l = "l"
+  top = "top",
+  t = "top",
+  right = "right",
+  r = "right",
+  bottom = "bottom",
+  b = "bottom",
+  left = "left",
+  l = "left"
 )
 
 border_colors <- c(
