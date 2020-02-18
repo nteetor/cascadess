@@ -28,6 +28,8 @@ dash <- function(...) {
   args <- compact(args)
   pieces <- args[are_truthy(args)]
 
+  pieces <- c("cas", pieces)
+
   exec(paste, !!!pieces, sep = "-")
 }
 

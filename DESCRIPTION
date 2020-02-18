@@ -24,7 +24,10 @@ Depends:
 Imports:
     magrittr,
     rlang,
-    crayon
+    crayon,
+    htmltools (>= 0.4.0),
+    shiny,
+    utils
 Suggests:
     testthat (>= 2.1.0),
     rmarkdown

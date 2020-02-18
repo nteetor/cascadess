@@ -1,0 +1,27 @@
+{
+  "name": "cascadess",
+  "version": "0.0.1",
+  "description": "A grammar of style.",
+  "main": "dist/cascadess.css",
+  "scripts": {
+    "css": "npm-run-all -s css-bootstrap css-prefix css-vend",
+    "css-bootstrap": "cd vendors/bootstrap && npm run css",
+    "css-prefix": "postcss --config build/ vendors/bootstrap/dist/css/bootstrap-utilities.min.css -o dist/cascadess.min.css && sed -i.old '2,5d' dist/cascadess.min.css && rm dist/*.old",
+    "css-vend": "cp dist/cascadess.min.css ../inst/www/cascadess/ && cp dist/cascadess.min.css.map ../inst/www/cascadess/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nteetor/cascadess.git"
+  },
+  "author": "Nathan Teetor",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/nteetor/cascadess/issues"
+  },
+  "homepage": "https://github.com/nteetor/cascadess#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^7.1.0",
+    "postcss-prefixer": "^2.1.2"
+  }
+}
