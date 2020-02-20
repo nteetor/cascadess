@@ -54,17 +54,17 @@ radius <- function(x, round, sides = TRUE) {
 
 #' @export
 radius.cascadess_style_pronoun <- function(x, round, sides = TRUE) {
-  pronoun_class_add(x, html_class_radius(round, sides))
+  pronoun_add_class(x, html_class_radius(round, sides))
 }
 
 #' @export
 radius.rlang_box_splice <- function(x, round, sides = TRUE) {
-  pronoun_box_class_add(x, html_class_radius(round, sides))
+  pronoun_box_add_class(x, html_class_radius(round, sides))
 }
 
 #' @export
 radius.shiny.tag <- function(x, round, sides = TRUE) {
-  tag_class_add(x, html_class_radius(round, sides))
+  tag_add_class(x, html_class_radius(round, sides))
 }
 
 #' @export

@@ -34,17 +34,17 @@ display <- function(x, type) {
 
 #' @export
 display.cascadess_style_pronoun <- function(x, type) {
-  pronoun_class_add(x, html_class_display(type))
+  pronoun_add_class(x, html_class_display(type))
 }
 
 #' @export
 display.rlang_box_splice <- function(x, type) {
-  pronoun_box_class_add(x, html_class_display(type))
+  pronoun_box_add_class(x, html_class_display(type))
 }
 
 #' @export
 display.shiny.tag <- function(x, type) {
-  tag_class_add(x, html_class_display(type))
+  tag_add_class(x, html_class_display(type))
 }
 
 #' @export

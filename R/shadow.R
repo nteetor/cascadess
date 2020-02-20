@@ -30,17 +30,17 @@ shadow <- function(x, size) {
 
 #' @export
 shadow.cascadess_style_pronoun <- function(x, size) {
-  pronoun_class_add(x, html_class_shadow(size))
+  pronoun_add_class(x, html_class_shadow(size))
 }
 
 #' @export
 shadow.rlang_box_splice <- function(x, size) {
-  pronoun_box_class_add(x, html_class_shadow(size))
+  pronoun_box_add_class(x, html_class_shadow(size))
 }
 
 #' @export
 shadow.shiny.tag <- function(x, size) {
-  tag_class_add(x, html_class_shadow(size))
+  tag_add_class(x, html_class_shadow(size))
 }
 
 #' @export

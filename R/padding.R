@@ -47,19 +47,19 @@ padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
 padding.cascadess_style_pronoun <- function(x, all = NULL, top = NULL,
                                             right = NULL, bottom = NULL,
                                             left = NULL) {
-  pronoun_class_add(x, html_class_padding(all, top, right, bottom, left))
+  pronoun_add_class(x, html_class_padding(all, top, right, bottom, left))
 }
 
 #' @export
 padding.rlang_box_splice <- function(x, all = NULL, top = NULL, right = NULL,
                                      bottom = NULL, left = NULL) {
-  pronoun_box_class_add(x, html_class_padding(all, top, right, bottom, left))
+  pronoun_box_add_class(x, html_class_padding(all, top, right, bottom, left))
 }
 
 #' @export
 padding.shiny.tag <- function(x, all = NULL, top = NULL, right = NULL,
                               bottom = NULL, left = NULL) {
-  tag_class_add(x, html_class_padding(all, top, right, bottom, left))
+  tag_add_class(x, html_class_padding(all, top, right, bottom, left))
 }
 
 #' @export

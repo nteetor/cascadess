@@ -25,17 +25,17 @@ fixed <- function(x, position) {
 
 #' @export
 fixed.cascadess_style_pronoun <- function(x, position) {
-  pronoun_class_add(x, html_class_fixed(position))
+  pronoun_add_class(x, html_class_fixed(position))
 }
 
 #' @export
 fixed.rlang_box_splice <- function(x, position) {
-  pronoun_box_class_add(x, html_class_fixed(position))
+  pronoun_box_add_class(x, html_class_fixed(position))
 }
 
 #' @export
 fixed.shiny.tag <- function(x, position) {
-  tag_class_add(x, html_class_fixed(position))
+  tag_add_class(x, html_class_fixed(position))
 }
 
 #' @export

@@ -50,17 +50,17 @@ width <- function(x, size) {
 
 #' @export
 width.cascadess_style_pronoun <- function(x, size) {
-  pronoun_class_add(x, html_class_width(size))
+  pronoun_add_class(x, html_class_width(size))
 }
 
 #' @export
 width.rlang_box_splice <- function(x, size) {
-  pronoun_box_class_add(x, html_class_width(size))
+  pronoun_box_add_class(x, html_class_width(size))
 }
 
 #' @export
 width.shiny.tag <- function(x, size) {
-  tag_class_add(x, html_class_width(size))
+  tag_add_class(x, html_class_width(size))
 }
 
 #' @export

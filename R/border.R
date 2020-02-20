@@ -14,16 +14,18 @@ border_colors <- c(
   white = "white"
 )
 
-html_class_border <- function(color, sides) {
+html_class_border <- function(pronoun, default, sides) {
   if (is_true(sides)) {
     sides <- c("t", "r", "b", "l")
   } else if (is_false(sides)) {
     sides <- NULL
   }
 
+  nm <- env_get(caller_env(), ".Generic")
+  prefix <- style_get_prefix(pronoun, nm, default)
 
-  c(html_class("border", pick(border_sides, sides)),
-    html_class("border", pick(border_colors, color)))
+  c(html_class(prefix, pick(border_sides, sides)),
+    html_class(prefix, pick(border_colors, color)))
 }
 
 #' Borders
@@ -47,17 +49,18 @@ border <- function(x, color, sides = TRUE) {
 
 #' @export
 border.cascadess_style_pronoun <- function(x, color, sides = TRUE) {
-  pronoun_class_add(x, html_class_border(color, sides))
+  pronoun_add_class(x, html_class_border(color, sides))
 }
 
 #' @export
 border.rlang_box_splice <- function(x, color, sides = TRUE) {
-  pronoun_box_class_add(x, html_class_border(color, sides))
+  pronoun <-
+  pronoun_box_add_class(x, html_class_border(color, sides))
 }
 
 #' @export
 border.shiny.tag <- function(x, color, sides = TRUE) {
-  tag_class_add(x, html_class_border(color, sides))
+  tag_add_class(x, html_class_border(color, sides))
 }
 
 #' @export

@@ -127,19 +127,19 @@ flexbox <- function(x, direction = "row", justify = "start", align = "stretch",
 flexbox.cascadess_style_pronoun <- function(x, direction = "row",
                                             justify = "start",
                                             align = "stretch", wrap = FALSE) {
-  pronoun_class_add(x, html_class_flexbox(direction, justify, align, wrap))
+  pronoun_add_class(x, html_class_flexbox(direction, justify, align, wrap))
 }
 
 #' @export
 flexbox.rlang_box_splice <- function(x, direction = "row", justify = "start",
                                      align = "stretch", wrap = FALSE) {
-  pronoun_box_class_add(x, html_class_flexbox(direction, justify, align, wrap))
+  pronoun_box_add_class(x, html_class_flexbox(direction, justify, align, wrap))
 }
 
 #' @export
 flexbox.shiny.tag <- function(x, direction = "row", justify = "start",
                               align = "stretch", wrap = FALSE) {
-  tag_class_add(x, html_class_flexbox(direction, justify, align, wrap))
+  tag_add_class(x, html_class_flexbox(direction, justify, align, wrap))
 }
 
 #' @export
@@ -186,19 +186,19 @@ flex <- function(x, align = "stretch", order = 1, grow = NULL, shrink = NULL) {
 #' @export
 flex.cascadess_style_pronoun <- function(x, align = "stretch", order = 1,
                                          grow = NULL, shrink = NULL) {
-  pronoun_class_add(x, html_class_flex(align, order, grow, shrink))
+  pronoun_add_class(x, html_class_flex(align, order, grow, shrink))
 }
 
 #' @export
 flex.rlang_box_splice <- function(x, align = "stretch", order = 1,
                                        grow = NULL, shrink = NULL) {
-  pronoun_box_class_add(x, html_class_flex(align, order, grow, shrink))
+  pronoun_box_add_class(x, html_class_flex(align, order, grow, shrink))
 }
 
 #' @export
 flex.shiny.tag <- function(x, align = "stretch", order = 1, grow = NULL,
                            shrink = NULL) {
-  tag_class_add(x, html_class_flex(align, order, grow, shrink))
+  tag_add_class(x, html_class_flex(align, order, grow, shrink))
 }
 
 #' @export

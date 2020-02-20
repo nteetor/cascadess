@@ -32,17 +32,17 @@ overflow <- function(x, scroll = "auto") {
 
 #' @export
 overflow.cascadess_style_pronoun <- function(x, scroll) {
-  pronoun_class_add(x, html_class_overflow(scroll))
+  pronoun_add_class(x, html_class_overflow(scroll))
 }
 
 #' @export
 overflow.rlang_box_splice <- function(x, scroll) {
-  pronoun_box_class_add(x, html_class_overflow(scroll))
+  pronoun_box_add_class(x, html_class_overflow(scroll))
 }
 
 #' @export
 overflow.shiny.tag <- function(x, scroll) {
-  tag_class_add(x, html_class_overflow(scroll))
+  tag_add_class(x, html_class_overflow(scroll))
 }
 
 #' @export

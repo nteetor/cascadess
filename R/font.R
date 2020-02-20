@@ -70,19 +70,19 @@ font <- function(x, color = NULL, weight = NULL, case = NULL, align = NULL) {
 #' @export
 font.cascadess_style_pronoun <- function(x, color = NULL, weight = NULL,
                                          case = NULL, align = NULL) {
-  pronoun_class_add(x, html_class_font(color, weight, case, align))
+  pronoun_add_class(x, html_class_font(color, weight, case, align))
 }
 
 #' @export
 font.rlang_box_splice <- function(x, color = NULL, weight = NULL, case = NULL,
                                   align = NULL) {
-  pronoun_box_class_add(x, html_class_font(color, weight, case, align))
+  pronoun_box_add_class(x, html_class_font(color, weight, case, align))
 }
 
 #' @export
 font.shiny.tag <- function(x, color = NULL, weight = NULL, case = NULL,
                            align = NULL) {
-  tag_class_add(x, html_class_font(color, weight, case, align))
+  tag_add_class(x, html_class_font(color, weight, case, align))
 }
 
 #' @export

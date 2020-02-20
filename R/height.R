@@ -51,17 +51,17 @@ height <- function(x, size) {
 
 #' @export
 height.cascadess_style_pronoun <- function(x, size) {
-  pronoun_class_add(x, html_class_height(size))
+  pronoun_add_class(x, html_class_height(size))
 }
 
 #' @export
 height.cascadess_pronoun_box <- function(x, size) {
-  pronoun_box_class_add(x, html_class_height(size))
+  pronoun_box_add_class(x, html_class_height(size))
 }
 
 #' @export
 height.shiny.tag <- function(x, size) {
-  tag_class_add(x, html_class_height(size))
+  tag_add_class(x, html_class_height(size))
 }
 
 #' @export

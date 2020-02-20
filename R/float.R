@@ -24,17 +24,17 @@ float <- function(x, side) {
 
 #' @export
 float.cascadess_style_pronoun <- function(x, side) {
-  pronoun_class_add(x, html_class_float(side))
+  pronoun_add_class(x, html_class_float(side))
 }
 
 #' @export
 float.rlang_box_splice <- function(x, side) {
-  pronoun_box_class_add(x, html_class_float(side))
+  pronoun_box_add_class(x, html_class_float(side))
 }
 
 #' @export
 float.shiny.tag <- function(x, side) {
-  tag_class_add(x, html_class_float(side))
+  tag_add_class(x, html_class_float(side))
 }
 
 #' @export

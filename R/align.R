@@ -32,17 +32,17 @@ align <- function(x, vertical) {
 
 #' @export
 align.cascadess_style_pronoun <- function(x, vertical) {
-  pronoun_class_add(x, html_class_align(vertical))
+  pronoun_add_class(x, html_class_align(vertical))
 }
 
 #' @export
 align.rlang_box_splice <- function(x, vertical) {
-  pronoun_box_class_add(x, html_class_align(vertical))
+  pronoun_box_add_class(x, html_class_align(vertical))
 }
 
 #' @export
 align.shiny.tag <- function(x, vertical) {
-  tag_class_add(x, html_class_align(vertical))
+  tag_add_class(x, html_class_align(vertical))
 }
 
 #' @export
