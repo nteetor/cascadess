@@ -1,10 +1,11 @@
 {
   "name": "cascadess",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A grammar of style.",
   "main": "dist/cascadess.css",
   "scripts": {
-    "css": "npm-run-all -s css-bootstrap css-prefix css-vend",
+    "check-bootstrap": "[ -d 'vendors/bootstrap' ] || { echo '\\033[0;31mMissing vendors/bootstrap directory\\033[0m'; exit 1; }",
+    "css": "npm-run-all -s check-bootstrap css-bootstrap css-prefix css-vend",
     "css-bootstrap": "cd vendors/bootstrap && npm run css",
     "css-prefix": "postcss --config build/ vendors/bootstrap/dist/css/bootstrap-utilities.min.css -o dist/cascadess.min.css && sed -i.old '2,5d' dist/cascadess.min.css && rm dist/*.old",
     "css-vend": "cp dist/cascadess.min.css ../inst/www/cascadess/ && cp dist/cascadess.min.css.map ../inst/www/cascadess/"
