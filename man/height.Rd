@@ -4,13 +4,13 @@
 \alias{height}
 \title{Height}
 \usage{
-height(x, size)
+height(x, size, min = NULL, max = NULL)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, "auto", or "viewport" specifying
-the height of the tag element.
+\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, \code{"auto"}, or \code{"viewport"} specifying the height of
+the tag element.
 
 If \code{25}, \code{50}, \code{75}, or \code{100}, the element's height is a percentage of the
 height of the parent element must also be specified.
@@ -22,6 +22,30 @@ If \code{"auto"}, the element's height is determined by the browser.  The
 browser will take into account the height, padding, margins, and border of
 the tag element's parent to keep the element from extending beyond its
 parent.
+
+If \code{"viewport"}, the element's height is determined by the size of the
+browser window.}
+
+\item{min}{One of \code{25}, \code{50}, \code{75}, \code{100}, "auto", or "viewport" specifying
+the height of the tag element.
+
+If \code{25}, \code{50}, \code{75}, or \code{100}, the element's height is a percentage of the
+height of the parent element must also be specified.
+
+These percentages do not account for margins or padding and may cause an
+element to extend beyond its parent element.
+
+If \code{"viewport"}, the element's height is determined by the size of the
+browser window.}
+
+\item{max}{One of \code{25}, \code{50}, \code{75}, \code{100}, or "viewport" specifying
+the height of the tag element.
+
+If \code{25}, \code{50}, \code{75}, or \code{100}, the element's height is a percentage of the
+height of the parent element must also be specified.
+
+These percentages do not account for margins or padding and may cause an
+element to extend beyond its parent element.
 
 If \code{"viewport"}, the element's height is determined by the size of the
 browser window.}

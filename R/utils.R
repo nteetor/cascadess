@@ -1,7 +1,3 @@
-named_list <- function(...) {
-  lapply(quos(..., .named = TRUE), eval_tidy, env = caller_env())
-}
-
 is_truthy <- function(x) {
   !(!nzchar(x) || is_na(x) || is_null(x) || is_false(x))
 }
@@ -18,17 +14,51 @@ compact <- function(x) {
   x[!are_null(x)]
 }
 
-html_class <- function(...) {
+available <- function(x) {
+  x[are_truthy(x)]
+}
+
+compose <- function(..., .sep = "-") {
   args <- list(...)
 
-  if (any(are_null(args))) {
+  if (is_empty(args) || !all(are_truthy(args))) {
     return(NULL)
   }
 
-  args <- compact(args)
-  pieces <- args[are_truthy(args)]
+  paste(args, collapse = .sep)
+}
 
-  exec(paste, !!!pieces, sep = "-")
+html_class <- function(prefix, body) {
+  if (is_empty(body) || any(are_null(body))) {
+    return(NULL)
+  }
+
+  body <- body[are_truthy(body)]
+
+  if (is_empty(body)) {
+    return(prefix)
+  }
+
+  paste(prefix, unlist(body), sep = "-")
+}
+
+prefix <- function(prefix, ...) {
+  args <- available(list(...))
+  pronoun <- style_get_pronoun()
+
+  if (!is.null(pronoun)) {
+    prefix <- style_get_prefix(pronoun, prefix)
+  }
+
+  vapply(args, function(arg) compose(prefix, arg), character(1))
+}
+
+compose_class <- function(ns, ...) {
+  args <- list(...)
+  pronoun <- style_get_pronoun()
+  prefix <- style_get_prefix(pronoun, ns)
+
+  unlist(lapply(args, html_class, prefix = prefix))
 }
 
 pick <- function(from, x) {
@@ -36,18 +66,16 @@ pick <- function(from, x) {
     return(NULL)
   }
 
+  nms <- names(x)
   x <- as.character(x)
-
   picked <- from[x]
 
-  if (any(are_na(picked))) {
+  if (anyNA(picked)) {
     invalid <- setdiff(x, names(from))[1]
     abortf("invalid value %s", invalid)
   }
 
-  if (is_named(x)) {
-    names(picked) <- names(x)
-  }
+  names(picked) <- nms
 
   picked
 }
@@ -81,6 +109,12 @@ local_exit <- function(expr, frame = caller_env()) {
   invisible(expr)
 }
 
+assert_subject <- function(x) {
+  if (!(is_style_pronoun(x) || is_pronoun_box(x) || is_tag(x))) {
+    abortf("cannot apply style to a %s", class(x))
+  }
+}
+
 is_style_pronoun <- function(x) {
   inherits_only(x, "cascadess_style_pronoun")
 }
@@ -93,6 +127,16 @@ is_tag <- function(x) {
   inherits_any(x, "shiny.tag")
 }
 
+add_class <- function(x, ...) {
+  if (is_style_pronoun(x)) {
+    pronoun_add_class(x, ...)
+  } else if (is_pronoun_box(x)) {
+    pronoun_box_add_class(x, ...)
+  } else if (is_tag(x)) {
+    tag_add_class(x, ...)
+  }
+}
+
 pronoun_add_class <- function(x, ...) {
   x$class <- paste(c(x$class, ...), collapse = " ")
   splice(x)
@@ -102,10 +146,7 @@ pronoun_box_add_class <- function(x, ...) {
   x <- unbox(x)
 
   if (!is_style_pronoun(x)) {
-    abort(
-      "expecting style pronoun",
-      trace = trace_back(bottom = caller_env())
-    )
+    abortf("unexpected pronoun box contents %s", class(x))
   }
 
   pronoun_add_class(x, ...)
@@ -114,34 +155,4 @@ pronoun_box_add_class <- function(x, ...) {
 tag_add_class <- function(x, ...) {
   x$attribs$class <- paste(c(x$attribs$class, ...), collapse = " ")
   x
-}
-
-html_class_fn <- function(generic, default, ...) {
-  args <- enexprs(...)
-
-  formals <- rep_along(args, list(missing_arg()))
-  names(formals) <- names(args)
-
-  formals <- pairlist2(x = , !!!formals)
-
-  classes <- lapply(names(args), function(nm) {
-    call2("pick", args[[nm]], sym(nm))
-  })
-
-  html <- call2("html_class", quote(prefix), !!!classes)
-
-  new_function(formals, bquote({
-    pronoun <- style_get_pronoun()
-    prefix <- style_get_prefix(pronoun, .(generic), .(default))
-
-    class <- .(html)
-
-    if (is_style_pronoun(x)) {
-      pronoun_add_class(x, class)
-    } else if (is_pronoun_box(x)) {
-      pronoun_box_add_class(x, class)
-    } else if (is_tag(x)) {
-      tag_add_class(x, class)
-    }
-  }), caller_env())
 }

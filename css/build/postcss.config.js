@@ -1,7 +1,17 @@
-const prefixer = require("postcss-prefixer");
+'use strict'
 
-module.exports = {
-  plugins: [
-    prefixer({ prefix: "cas-" })
-  ]
-};
+module.exports = ctx => ({
+  map: {
+    inline: false,
+    annotation: true,
+    sourcesContent: true
+  },
+  plugins: {
+    autoprefixer: {
+      cascade: false
+    },
+    "postcss-prefixer": {
+      prefix: "cas-"
+    }
+  }
+})

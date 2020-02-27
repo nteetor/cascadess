@@ -11,7 +11,7 @@ Use cascadess in your shiny app.
 }
 \examples{
 
-\\dontrun{
+\dontrun{
 library(shiny)
 
 shinyApp(

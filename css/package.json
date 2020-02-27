@@ -4,11 +4,14 @@
   "description": "A grammar of style.",
   "main": "dist/cascadess.css",
   "scripts": {
-    "check-bootstrap": "[ -d 'vendors/bootstrap' ] || { echo '\\033[0;31mMissing vendors/bootstrap directory\\033[0m'; exit 1; }",
-    "css": "npm-run-all -s check-bootstrap css-bootstrap css-prefix css-vend",
-    "css-bootstrap": "cd vendors/bootstrap && npm run css",
-    "css-prefix": "postcss --config build/ vendors/bootstrap/dist/css/bootstrap-utilities.min.css -o dist/cascadess.min.css && sed -i.old '2,5d' dist/cascadess.min.css && rm dist/*.old",
-    "css-vend": "cp dist/cascadess.min.css ../inst/www/cascadess/ && cp dist/cascadess.min.css.map ../inst/www/cascadess/"
+    "vendors": "run-s vendors-root vendors-bootstrap",
+    "vendors-root": "[ -d 'vendors' ] || { echo '\\033[0;31mMissing vendors/ directory\\033[0m'; exit 1; }",
+    "vendors-bootstrap": "[ -d 'vendors/bootstrap' ] || { echo '\\033[0;31mMissing vendors/bootstrap directory\\033[0m'; exit 1; }",
+    "css": "run-s vendors css-compile css-prefix css-minify css-vend",
+    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/ -o dist/",
+    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/cascadess.min.css dist/cascadess.css",
+    "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
+    "css-vend": "cp dist/* ../inst/www/cascadess/"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,9 @@
   },
   "homepage": "https://github.com/nteetor/cascadess#readme",
   "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.13.1",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^7.1.0",
     "postcss-prefixer": "^2.1.2"

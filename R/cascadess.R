@@ -10,7 +10,7 @@ NULL
 #' @export
 #' @examples
 #'
-#' \\dontrun{
+#' \dontrun{
 #' library(shiny)
 #'
 #' shinyApp(

@@ -11,7 +11,7 @@ border(x, color, sides = TRUE)
 
 \item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, or \code{"white"}.}
 
-\item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, or \code{"l"} specifying
+\item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, \code{"l"}, \code{"all"}, or \code{"none"} specifying
 which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may
 be used as shorthands for all sides or no sides, respectively.}
 }

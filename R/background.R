@@ -10,12 +10,16 @@ theme_colors <- c(
   cyan = "cyan"
 )
 
-background_colors <- c(
+background_color_ <- c(
   theme_colors,
   body = "body",
   white = "white",
   transparent = "transparent"
 )
+
+background_color <- function(color) {
+  pick(color, from = background_color_)
+}
 
 #' Backgrounds
 #'
@@ -23,39 +27,17 @@ background_colors <- c(
 #'
 #' @param x A tag element or [.style] pronoun.
 #'
-#' @param color One of `r rd_chr_lst(names(background_colors))`.
+#' @param color One of `r rd_chr_lst(names(background_color_))`.
 #'
 #' @include utils.R
 #' @export
-background <- html_class_fn("background", "bg",
-                            color = background_colors)
+background <- function(x, color) {
+  assert_subject(x)
 
-##   function(x, color) {
-##   UseMethod("background", x)
-## }
+  cls <- prefix(
+    "background",
+    background_color(color)
+  )
 
-## #' @export
-## background.cascadess_style_pronoun <- class_("background", "bg",
-##                                              color = background_colors)
-
-## ##   function(x, color) {
-## ##   pronoun <- style_get_pronoun()
-## ##   class <- html_class_background(pronoun, "bg", color)
-
-## ##   pronoun_add_class(x, class)
-## ## }
-
-## #' @export
-## background.rlang_box_splice <- function(x, color) {
-##   pronoun_box_add_class(x, html_class_background(color))
-## }
-
-## #' @export
-## background.shiny.tag <- function(x, color) {
-##   tag_add_class(x, html_class_background(color))
-## }
-
-## #' @export
-## background.default <- function(x, color) {
-
-## }
+  add_class(x, cls)
+}

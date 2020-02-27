@@ -1,4 +1,4 @@
-border_sides <- c(
+border_sides_ <- c(
   top = "top",
   t = "top",
   right = "right",
@@ -6,26 +6,30 @@ border_sides <- c(
   bottom = "bottom",
   b = "bottom",
   left = "left",
-  l = "left"
+  l = "left",
+  all = "all",
+  none = "none"
 )
 
-border_colors <- c(
+border_sides <- function(sides) {
+  if (is_true(sides)) {
+    sides <- "all"
+  }
+
+  if (is_false(sides)) {
+    sides <- "none"
+  }
+
+  pick(sides, from = border_sides_)
+}
+
+border_color_ <- c(
   theme_colors,
   white = "white"
 )
 
-html_class_border <- function(pronoun, default, sides) {
-  if (is_true(sides)) {
-    sides <- c("t", "r", "b", "l")
-  } else if (is_false(sides)) {
-    sides <- NULL
-  }
-
-  nm <- env_get(caller_env(), ".Generic")
-  prefix <- style_get_prefix(pronoun, nm, default)
-
-  c(html_class(prefix, pick(border_sides, sides)),
-    html_class(prefix, pick(border_colors, color)))
+border_color <- function(color) {
+  pick(color, from = border_color_)
 }
 
 #' Borders
@@ -34,9 +38,9 @@ html_class_border <- function(pronoun, default, sides) {
 #'
 #' @inheritParams background
 #'
-#' @param color One of `r rd_chr_lst(names(border_colors))`.
+#' @param color One of `r rd_chr_lst(names(border_color_))`.
 #'
-#' @param sides One or more of `r rd_chr_lst(names(border_sides))` specifying
+#' @param sides One or more of `r rd_chr_lst(names(border_sides_))` specifying
 #'   which sides to add borders to, defaults to `TRUE`. `TRUE` and `FALSE` may
 #'   be used as shorthands for all sides or no sides, respectively.
 #'
@@ -44,26 +48,13 @@ html_class_border <- function(pronoun, default, sides) {
 #'
 #' @export
 border <- function(x, color, sides = TRUE) {
-  UseMethod("border", x)
-}
+  assert_subject(x)
 
-#' @export
-border.cascadess_style_pronoun <- function(x, color, sides = TRUE) {
-  pronoun_add_class(x, html_class_border(color, sides))
-}
+  cls <- prefix(
+    "border",
+    border_color(color),
+    border_sides(sides)
+  )
 
-#' @export
-border.rlang_box_splice <- function(x, color, sides = TRUE) {
-  pronoun <-
-  pronoun_box_add_class(x, html_class_border(color, sides))
-}
-
-#' @export
-border.shiny.tag <- function(x, color, sides = TRUE) {
-  tag_add_class(x, html_class_border(color, sides))
-}
-
-#' @export
-border.default <- function(x, color, sides = TRUE) {
-
+  add_class(x, cls)
 }

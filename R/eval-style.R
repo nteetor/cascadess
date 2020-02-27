@@ -1,28 +1,27 @@
-env_has_pronoun <- function(env) {
-  env_has(env, ".__cascadess__style_pronoun__.")
+style_peek_pronoun <- function(env) {
+  env[[".__cascadess__style_pronoun__."]]
 }
 
 style_get_pronoun <- function() {
   frames <- lapply(seq_len(sys.nframe()), caller_env)
-  possible <- frames[!duplicated(frames)]
+  envs <- frames[!duplicated(frames)]
+  pronouns <- compact(lapply(envs, style_peek_pronoun))
 
-  envs <- possible[vapply(possible, env_has_pronoun, logical(1))]
-
-  if (length(envs) == 0) {
+  if (length(pronouns) == 0) {
     return(NULL)
   }
 
-  env_get(envs[[1]], ".__cascadess__style_pronoun__.")
+  pronouns[[1]]
 }
 
-style_get_prefix <- function(pronoun, nm, default) {
-  default <- sprintf("cas-%s", default)
+style_get_prefix <- function(pronoun, ns) {
+  default <- sprintf("cas-%s", ns)
 
-  if (is.null(pronoun)) {
-    return(default)
+  if (is_scalar_atomic(pronoun[[ns]])) {
+    return(pronoun[[ns]])
   }
 
-  env_get(pronoun, nm, default)
+  default
 }
 
 print.cascadess_style_pronoun <- function(x, ...) {

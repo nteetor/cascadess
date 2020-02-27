@@ -1,7 +1,12 @@
-html_class_float <- function(side) {
-  side <- html_class("float", responsive(side))
+float_side_ <- c(
+  left = "left",
+  l = "left",
+  right = "right",
+  r = "right"
+)
 
-  side
+float_side <- function(side) {
+  responsive(pick(side, from = float_side_))
 }
 
 #' Floats
@@ -19,25 +24,12 @@ html_class_float <- function(side) {
 #'
 #' @export
 float <- function(x, side) {
-  UseMethod("float", x)
-}
+  assert_subject(x)
 
-#' @export
-float.cascadess_style_pronoun <- function(x, side) {
-  pronoun_add_class(x, html_class_float(side))
-}
+  cls <- prefix(
+    "float",
+    float_side(side)
+  )
 
-#' @export
-float.rlang_box_splice <- function(x, side) {
-  pronoun_box_add_class(x, html_class_float(side))
-}
-
-#' @export
-float.shiny.tag <- function(x, side) {
-  tag_add_class(x, html_class_float(side))
-}
-
-#' @export
-float.default <- function(x, side) {
-
+  add_class(x, cls)
 }

@@ -1,18 +1,36 @@
-html_class_margin <- function(all, top, right, bottom, left) {
-  all <- responsive(all)
-  top <- responsive(top)
-  right <- responsive(right)
-  bottom <- responsive(bottom)
-  left <- responsive(left)
+margin_all_ <- list(
+  `-5` = "n5",
+  `-4` = "n4",
+  `-3` = "n3",
+  `-2` = "n2",
+  `-1` = "n1",
+  `0` = 0,
+  `1` = 1,
+  `2` = 2,
+  `3` = 3,
+  `4` = 4,
+  `5` = 5,
+  auto = "auto"
+)
 
-  classes <- c(
-    html_class("m", all),
-    html_class("mt", top),
-    html_class("mr", right),
-    html_class("mb", bottom),
-    html_class("ml", left))
+margin_all <- function(all) {
+  compose("all", responsive(pick(all, from = margin_all_)))
+}
 
-  gsub("--(\\d)", "-n\\1", classes)
+margin_top <- function(top) {
+  compose("top", responsive(pick(top, from = margin_all_)))
+}
+
+margin_right <- function(right) {
+  compose("right", responsive(pick(right, from = margin_all_)))
+}
+
+margin_bottom <- function(bottom) {
+  compose("bottom", responsive(pick(bottom, from = margin_all_)))
+}
+
+margin_left <- function(left) {
+  compose("left", responsive(pick(left, from = margin_all_)))
 }
 
 #' Margins
@@ -41,30 +59,16 @@ html_class_margin <- function(all, top, right, bottom, left) {
 #' @export
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                    left = NULL) {
-  UseMethod("margin", x)
-}
+  assert_subject(x)
 
-#' @export
-margin.cascadess_style_pronoun <- function(x, all = NULL, top = NULL,
-                                           right = NULL, bottom = NULL,
-                                           left = NULL) {
-  pronoun_add_class(x, html_class_margin(all, top, right, bottom, left))
-}
+  cls <- prefix(
+    "margin",
+    margin_all(all),
+    margin_top(top),
+    margin_right(right),
+    margin_bottom(bottom),
+    margin_left(left)
+  )
 
-#' @export
-margin.rlang_box_splice <- function(x, all = NULL, top = NULL, right = NULL,
-                                    bottom = NULL, left = NULL) {
-  pronoun_box_add_class(x, html_class_margin(all, top, right, bottom, left))
-}
-
-#' @export
-margin.shiny.tag <- function(x, all = NULL, top = NULL, right = NULL,
-                             bottom = NULL, left = NULL) {
-  tag_add_class(x, html_class_margin(all, top, right, bottom, left))
-}
-
-#' @export
-margin.default <- function(x, all = NULL, top = NULL, right = NULL,
-                           bottom = NULL, left = NULL) {
-
+  add_class(x, cls)
 }

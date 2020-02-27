@@ -2,3 +2,4 @@
 ^renv\.lock$
 ^LICENSE\.md$
 ^css$
+^docs$

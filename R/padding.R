@@ -1,18 +1,31 @@
-html_class_padding <- function(all, top, right, bottom, left) {
-  all <- responsive(all)
-  top <- responsive(top)
-  right <- responsive(right)
-  bottom <- responsive(bottom)
-  left <- responsive(left)
+padding_all_ <- list(
+  `0` = 0,
+  `1` = 1,
+  `2` = 2,
+  `3` = 3,
+  `4` = 4,
+  `5` = 5,
+  auto = "auto"
+)
 
-  classes <- c(
-    html_class("p", all),
-    html_class("pt", top),
-    html_class("pr", right),
-    html_class("pb", bottom),
-    html_class("pl", left))
+padding_all <- function(all) {
+  compose("all", responsive(pick(all, from = padding_all_)))
+}
 
-  gsub("--(\\d)", "-n\\1", classes)
+padding_top <- function(top) {
+  compose("top", responsive(pick(top, from = padding_all_)))
+}
+
+padding_right <- function(right) {
+  compose("right", responsive(pick(right, from = padding_all_)))
+}
+
+padding_bottom <- function(bottom) {
+  compose("bottom", responsive(pick(bottom, from = padding_all_)))
+}
+
+padding_left <- function(left) {
+  compose("left", responsive(pick(left, from = padding_all_)))
 }
 
 #' Padding
@@ -40,30 +53,16 @@ html_class_padding <- function(all, top, right, bottom, left) {
 #' @export
 padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                     left = NULL) {
-  UseMethod("padding", x)
-}
+  assert_subject(x)
 
-#' @export
-padding.cascadess_style_pronoun <- function(x, all = NULL, top = NULL,
-                                            right = NULL, bottom = NULL,
-                                            left = NULL) {
-  pronoun_add_class(x, html_class_padding(all, top, right, bottom, left))
-}
+  cls <- prefix(
+    "padding",
+    padding_all(all),
+    padding_top(top),
+    padding_right(right),
+    padding_bottom(bottom),
+    padding_left(left)
+  )
 
-#' @export
-padding.rlang_box_splice <- function(x, all = NULL, top = NULL, right = NULL,
-                                     bottom = NULL, left = NULL) {
-  pronoun_box_add_class(x, html_class_padding(all, top, right, bottom, left))
-}
-
-#' @export
-padding.shiny.tag <- function(x, all = NULL, top = NULL, right = NULL,
-                              bottom = NULL, left = NULL) {
-  tag_add_class(x, html_class_padding(all, top, right, bottom, left))
-}
-
-#' @export
-padding.default <- function(x, all = NULL, top = NULL, right = NULL,
-                            bottom = NULL, left = NULL) {
-
+  add_class(x, cls)
 }

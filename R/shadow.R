@@ -13,12 +13,11 @@ html_class_shadow <- function(size) {
 #'
 #' The `shadow()` function adjusts the box shadow of a tag element. By default,
 #' many elements include a shadow to help distinguish them or indicate
-#' interactivity. [card()]s are element without a default shadow, but in some
-#' cases popping out the element from the page may be useful.
+#' interactivity.
 #'
 #' @inheritParams background
 #'
-#' @param size One of `r rd_chr_lst(names(shadow_size))` specifying the amount
+#' @param size One of `r rd_list(names(shadow_size))` specifying the amount
 #'   of shadow added.
 #'
 # @includeRmd man/roxygen/shadow.Rmd
