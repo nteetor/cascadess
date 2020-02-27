@@ -9,11 +9,10 @@ shadow(x, size)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{"none"}, \code{"small"}, \code{"medium"}, or \code{"large"} specifying the amount
+\item{size}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, or \code{"none"} specifying the amount
 of shadow added.}
 }
 \description{
-The \code{shadow()} function adjusts the box shadow of a tag element. By default,
-many elements include a shadow to help distinguish them or indicate
-interactivity.
+The \code{shadow()} function adjusts the box shadow of a tag element. Shadows help
+distinguish elements or indicate interactivity.
 }

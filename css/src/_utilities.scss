@@ -16,7 +16,10 @@ $utilities: (
 
   "overflow": (
     property: overflow,
-    values: auto hidden,
+    values: (
+      auto: auto,
+      hidden: hidden
+    )
   ),
 
   "display": (
@@ -31,13 +34,13 @@ $utilities: (
     class: shadow,
     values: (
       sm: $box-shadow-sm,
-      null: $box-shadow,
+      md: $box-shadow,
       lg: $box-shadow-lg,
       none: none,
     )
   ),
 
-    "background-color": (
+  "background-color": (
     property: background-color,
     class: background,
     values: map-merge(
@@ -431,27 +434,13 @@ $utilities: (
     )
   ),
 
-
-  // Interactions
-  "user-select": (
-    property: user-select,
-    values: all auto none
-  ),
-
   // Border
-    "border": (
+  "border": (
     property: border,
-    class: border-all,
+    class: border,
     values: (
-      null: $border-width solid $border-color
-    )
-  ),
-
-  "border-none": (
-    property: border,
-    class: border-none,
-    values: (
-      0: 0
+      all: $border-width solid $border-color,
+      none: 0
     )
   ),
 
@@ -489,13 +478,11 @@ $utilities: (
     values: map-merge($theme-colors, ("white": $white))
   ),
 
-  // Border radius
-  "rounded": (
+  "border-radius": (
     property: border-radius,
-    class: rounded,
     values: (
-      null: $border-radius,
       sm: $border-radius-sm,
+      md: $border-radius,
       lg: $border-radius-lg,
       circle: 50%,
       pill: $rounded-pill,
@@ -503,30 +490,7 @@ $utilities: (
     )
   ),
 
-  "rounded-top": (
-    property: border-top-left-radius border-top-right-radius,
-    class: rounded-top,
-    values: (null: $border-radius)
-  ),
-
-  "rounded-right": (
-    property: border-top-right-radius border-bottom-right-radius,
-    class: rounded-right,
-    values: (null: $border-radius)
-  ),
-
-  "rounded-bottom": (
-    property: border-bottom-right-radius border-bottom-left-radius,
-    class: rounded-bottom,
-    values: (null: $border-radius)
-  ),
-
-  "rounded-left": (
-    property: border-bottom-left-radius border-top-left-radius,
-    class: rounded-left,
-    values: (null: $border-radius)
-  ),
-
+  // Misc
   "visibility": (
     property: visibility,
     class: null,
@@ -534,5 +498,10 @@ $utilities: (
       visible: visible,
       invisible: hidden,
     )
+  ),
+
+  "user-select": (
+    property: user-select,
+    values: all auto none
   )
 );

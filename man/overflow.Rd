@@ -4,7 +4,7 @@
 \alias{overflow}
 \title{Overflow}
 \usage{
-overflow(x, scroll = "auto")
+overflow(x, scroll)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}

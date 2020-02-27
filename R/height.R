@@ -60,29 +60,15 @@ height_max <- function(max) {
 #'   If `"viewport"`, the element's height is determined by the size of the
 #'   browser window.
 #'
-#' @param min One of `25`, `50`, `75`, `100`, "auto", or "viewport" specifying
-#'   the height of the tag element.
+#' @param min One of `r rd_list(names(height_min_))` specifying the minimum
+#'   height of the tag element.
 #'
-#'   If `25`, `50`, `75`, or `100`, the element's height is a percentage of the
-#'   height of the parent element must also be specified.
+#'   See `size` for details.
 #'
-#'   These percentages do not account for margins or padding and may cause an
-#'   element to extend beyond its parent element.
+#' @param max One of `r rd_list(names(height_max_))` specifying the maximum
+#'   height of the tag element.
 #'
-#'   If `"viewport"`, the element's height is determined by the size of the
-#'   browser window.
-#'
-#' @param max One of `25`, `50`, `75`, `100`, or "viewport" specifying
-#'   the height of the tag element.
-#'
-#'   If `25`, `50`, `75`, or `100`, the element's height is a percentage of the
-#'   height of the parent element must also be specified.
-#'
-#'   These percentages do not account for margins or padding and may cause an
-#'   element to extend beyond its parent element.
-#'
-#'   If `"viewport"`, the element's height is determined by the size of the
-#'   browser window.
+#'   See `size` for details.
 #'
 #' @export
 height <- function(x, size, min = NULL, max = NULL) {

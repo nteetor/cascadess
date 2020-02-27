@@ -4,12 +4,16 @@
 \alias{border}
 \title{Borders}
 \usage{
-border(x, color, sides = TRUE)
+border(x, color, radius = "medium", sides = TRUE)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, or \code{"white"}.}
+\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, or \code{"white"} specifying the border
+color.}
+
+\item{radius}{One of \verb{rd rd_list(names(border_radius_))} specifying the
+border radius, defaults to \code{"medium"}.}
 
 \item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, \code{"l"}, \code{"all"}, or \code{"none"} specifying
 which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may

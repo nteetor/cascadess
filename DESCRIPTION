@@ -49,7 +49,6 @@ Collate:
     'margin.R'
     'overflow.R'
     'padding.R'
-    'radius.R'
     'reexports.R'
     'responsive.R'
     'shadow.R'

@@ -85,7 +85,7 @@
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.cas-shadow {
+.cas-shadow-md {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -970,32 +970,11 @@
   white-space: nowrap !important;
 }
 
-.cas-user-select-all {
-  -webkit-user-select: all !important;
-  -moz-user-select: all !important;
-  -ms-user-select: all !important;
-  user-select: all !important;
-}
-
-.cas-user-select-auto {
-  -webkit-user-select: auto !important;
-  -moz-user-select: auto !important;
-  -ms-user-select: auto !important;
-  user-select: auto !important;
-}
-
-.cas-user-select-none {
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
-}
-
 .cas-border-all {
   border: 1px solid #dee2e6 !important;
 }
 
-.cas-border-none-0 {
+.cas-border-none {
   border: 0 !important;
 }
 
@@ -1055,48 +1034,28 @@
   border-color: #fff !important;
 }
 
-.cas-rounded {
-  border-radius: 0.25rem !important;
-}
-
-.cas-rounded-sm {
+.cas-border-radius-sm {
   border-radius: 0.2rem !important;
 }
 
-.cas-rounded-lg {
+.cas-border-radius-md {
+  border-radius: 0.25rem !important;
+}
+
+.cas-border-radius-lg {
   border-radius: 0.3rem !important;
 }
 
-.cas-rounded-circle {
+.cas-border-radius-circle {
   border-radius: 50% !important;
 }
 
-.cas-rounded-pill {
+.cas-border-radius-pill {
   border-radius: 50rem !important;
 }
 
-.cas-rounded-0 {
+.cas-border-radius-0 {
   border-radius: 0 !important;
-}
-
-.cas-rounded-top {
-  border-top-left-radius: 0.25rem !important;
-  border-top-right-radius: 0.25rem !important;
-}
-
-.cas-rounded-right {
-  border-top-right-radius: 0.25rem !important;
-  border-bottom-right-radius: 0.25rem !important;
-}
-
-.cas-rounded-bottom {
-  border-bottom-right-radius: 0.25rem !important;
-  border-bottom-left-radius: 0.25rem !important;
-}
-
-.cas-rounded-left {
-  border-bottom-left-radius: 0.25rem !important;
-  border-top-left-radius: 0.25rem !important;
 }
 
 .cas-visible {
@@ -1105,6 +1064,27 @@
 
 .cas-invisible {
   visibility: hidden !important;
+}
+
+.cas-user-select-all {
+  -webkit-user-select: all !important;
+  -moz-user-select: all !important;
+  -ms-user-select: all !important;
+  user-select: all !important;
+}
+
+.cas-user-select-auto {
+  -webkit-user-select: auto !important;
+  -moz-user-select: auto !important;
+  -ms-user-select: auto !important;
+  user-select: auto !important;
+}
+
+.cas-user-select-none {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
 }
 
 @media (min-width: 576px) {

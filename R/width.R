@@ -1,4 +1,4 @@
-width_size <- c(
+width_size_ <- c(
   `25` = 25,
   `50` = 50,
   `75` = 75,
@@ -7,15 +7,32 @@ width_size <- c(
   viewport = "viewport"
 )
 
-html_class_width <- function(size) {
-  if (size == "viewport") {
-    size <- 100
-    prefix <- "vw"
-  } else {
-    prefix <- "w"
-  }
+width_size <- function(size) {
+  pick(size, from = width_size_)
+}
 
-  html_class(prefix, pick(width_size, size))
+width_min_ <- c(
+  `25` = 25,
+  `50` = 50,
+  `75` = 75,
+  `100` = 100,
+  viewport = "viewport"
+)
+
+width_min <- function(min) {
+  pick(min, from = width_min_)
+}
+
+width_max_ <- c(
+  `25` = 25,
+  `50` = 50,
+  `75` = 75,
+  `100` = 100,
+  viewport = "viewport"
+)
+
+width_max <- function(max) {
+  pick(max, from = width_max_)
 }
 
 #' Width
@@ -26,8 +43,8 @@ html_class_width <- function(size) {
 #'
 #' @inheritParams background
 #'
-#' @param size One of `25`, `50`, `75`, `100`, "auto", or "viewport" specifying
-#'   the height of the tag element.
+#' @param size One of `r rd_list(names(width_size_))` specifying the width of
+#'   the tag element.
 #'
 #'   If `25`, `50`, `75`, `100`, the element's width is a percentage of the
 #'   width of the parent element must also be specified.
@@ -43,27 +60,28 @@ html_class_width <- function(size) {
 #'   If `"viewport"`, the element's height is determined by the size of the
 #'   browser window.
 #'
+#' @param min One of `r rd_list(names(width_min_))` specifying the minimum width
+#'   of the tag element, defaults to `NULL`, in which case the argument is
+#'   ignored.
+#'
+#'   See `size` for details.
+#'
+#' @param max One of `r rd_list(names(width_max_))` specifying the maximum width
+#'   of the tag element, defaults to `NULL`, in which case the argument is
+#'   ignored.
+#'
+#'   See `size` for details.
+#'
 #' @export
-width <- function(x, size) {
-  UseMethod("width", x)
-}
+width <- function(x, size, min = NULL, max = NULL) {
+  assert_subject(x)
 
-#' @export
-width.cascadess_style_pronoun <- function(x, size) {
-  pronoun_add_class(x, html_class_width(size))
-}
+  cls <- prefix(
+    "width",
+    width_size(size),
+    width_min(min),
+    width_max(max)
+  )
 
-#' @export
-width.rlang_box_splice <- function(x, size) {
-  pronoun_box_add_class(x, html_class_width(size))
-}
-
-#' @export
-width.shiny.tag <- function(x, size) {
-  tag_add_class(x, html_class_width(size))
-}
-
-#' @export
-width.default <- function(x, size) {
-
+  add_class(x, cls)
 }
