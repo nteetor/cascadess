@@ -1,5 +1,5 @@
-```{r, include = FALSE}
-set.seed(3030)
+```{r setup, include = FALSE}
+library(htmltools)
 
 knitr::opts_chunk$set(
   results = "asis",

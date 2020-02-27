@@ -1,2 +1,33 @@
 ```{r, child = "_setup.Rmd", include = FALSE}
 ```
+
+## Background color
+
+```{r}
+span(
+  .style %>%
+    padding(4) %>%
+    background("teal")  # <-
+)
+```
+
+### Possible colors
+
+```{r color, echo=FALSE}
+div(
+  .style %>%
+    display("flex") %>%
+    flex(justify = "between", wrap = TRUE),
+  lapply(names(background_color_), function(color) {
+    div(
+      .style %>% margin(2),
+      div(color) %>% text(align = "center"),
+      div(
+        .style %>%
+          padding(3) %>%
+          background(color)
+      )
+    )
+  })
+)
+```

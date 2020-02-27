@@ -14,3 +14,272 @@ background(x, color)
 \description{
 The \code{background()} function adjusts the background color of a tag element.
 }
+\details{
+\subsection{Background color}{\if{html}{\out{<div class="r">}}\preformatted{span(
+  .style \%>\%
+    padding(4) \%>\%
+    background("teal")  # <-
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+
+
+\if{html}{\out{<span class="cas-padding-all-4 cas-background-teal">}}\if{html}{\out{</span>}}\if{html}{\out{<!--/html_preserve-->}}
+\subsection{Possible colors}{\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-wrap">
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+blue\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-blue">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+indigo\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-indigo">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+purple\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-purple">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+red\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-red">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+orange\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-orange">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+yellow\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-yellow">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+green\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-green">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+teal\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-teal">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+cyan\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-cyan">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+body\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-body">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+white\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-white">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+transparent\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-margin-all-1 cas-background-transparent">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+}
+
+}
+}
