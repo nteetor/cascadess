@@ -9,12 +9,10 @@ shadow(x, size)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{"none"}, \code{"small"}, \code{"medium"}, or \code{"large"} specifying the amount
+\item{size}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, or \code{"none"} specifying the amount
 of shadow added.}
 }
 \description{
-The \code{shadow()} function adjusts the box shadow of a tag element. By default,
-many elements include a shadow to help distinguish them or indicate
-interactivity. \code{\link[=card]{card()}}s are element without a default shadow, but in some
-cases popping out the element from the page may be useful.
+The \code{shadow()} function adjusts the box shadow of a tag element. Shadows help
+distinguish elements or indicate interactivity.
 }

@@ -1,4 +1,4 @@
-border_sides <- c(
+border_sides_ <- c(
   top = "top",
   t = "top",
   right = "right",
@@ -6,24 +6,46 @@ border_sides <- c(
   bottom = "bottom",
   b = "bottom",
   left = "left",
-  l = "left"
+  l = "left",
+  all = "all",
+  none = "none"
 )
 
-border_colors <- c(
+border_sides <- function(sides) {
+  if (is_true(sides)) {
+    sides <- "all"
+  }
+
+  if (is_false(sides)) {
+    sides <- "none"
+  }
+
+  pick(sides, from = border_sides_)
+}
+
+border_radius_ <- c(
+  small = "sm",
+  sm = "sm",
+  medium = "md",
+  md = "md",
+  large = "lg",
+  lg = "lg",
+  circle = "circle",
+  pill = "pill",
+  none = "0"
+)
+
+border_radius <- function(radius) {
+  compose("radius", pick(radius, from = border_radius_))
+}
+
+border_color_ <- c(
   theme_colors,
   white = "white"
 )
 
-html_class_border <- function(color, sides) {
-  if (is_true(sides)) {
-    sides <- c("t", "r", "b", "l")
-  } else if (is_false(sides)) {
-    sides <- NULL
-  }
-
-
-  c(html_class("border", pick(border_sides, sides)),
-    html_class("border", pick(border_colors, color)))
+border_color <- function(color) {
+  pick(color, from = border_color_)
 }
 
 #' Borders
@@ -32,35 +54,28 @@ html_class_border <- function(color, sides) {
 #'
 #' @inheritParams background
 #'
-#' @param color One of `r rd_chr_lst(names(border_colors))`.
+#' @param color One of `r rd_list(names(border_color_))` specifying the border
+#'   color.
 #'
-#' @param sides One or more of `r rd_chr_lst(names(border_sides))` specifying
+#' @param radius One of `rd rd_list(names(border_radius_))` specifying the
+#'   border radius, defaults to `"medium"`.
+#'
+#' @param sides One or more of `r rd_list(names(border_sides_))` specifying
 #'   which sides to add borders to, defaults to `TRUE`. `TRUE` and `FALSE` may
 #'   be used as shorthands for all sides or no sides, respectively.
 #'
 # @includeRmd man/roxygen/border.Rmd
 #'
 #' @export
-border <- function(x, color, sides = TRUE) {
-  UseMethod("border", x)
-}
+border <- function(x, color, radius = "medium", sides = TRUE) {
+  assert_subject(x)
 
-#' @export
-border.cascadess_style_pronoun <- function(x, color, sides = TRUE) {
-  pronoun_class_add(x, html_class_border(color, sides))
-}
+  cls <- prefix(
+    "border",
+    border_color(color),
+    border_sides(sides),
+    border_radius(radius)
+  )
 
-#' @export
-border.rlang_box_splice <- function(x, color, sides = TRUE) {
-  pronoun_box_class_add(x, html_class_border(color, sides))
-}
-
-#' @export
-border.shiny.tag <- function(x, color, sides = TRUE) {
-  tag_class_add(x, html_class_border(color, sides))
-}
-
-#' @export
-border.default <- function(x, color, sides = TRUE) {
-
+  add_class(x, cls)
 }

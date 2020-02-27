@@ -4,13 +4,13 @@
 \alias{height}
 \title{Height}
 \usage{
-height(x, size)
+height(x, size, min = NULL, max = NULL)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, "auto", or "viewport" specifying
-the height of the tag element.
+\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, \code{"auto"}, or \code{"viewport"} specifying the height of
+the tag element.
 
 If \code{25}, \code{50}, \code{75}, or \code{100}, the element's height is a percentage of the
 height of the parent element must also be specified.
@@ -25,6 +25,16 @@ parent.
 
 If \code{"viewport"}, the element's height is determined by the size of the
 browser window.}
+
+\item{min}{One of \code{25}, \code{50}, \code{75}, \code{100}, or \code{"viewport"} specifying the minimum
+height of the tag element.
+
+See \code{size} for details.}
+
+\item{max}{One of \code{25}, \code{50}, \code{75}, \code{100}, or \code{"viewport"} specifying the maximum
+height of the tag element.
+
+See \code{size} for details.}
 }
 \description{
 The \code{height()} function adjusts a tag element's height. Heights are specified

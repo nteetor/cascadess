@@ -16,5 +16,5 @@ The \code{align()} function adjusts the inline alignment of an element.  This
 applies only to inline elements and may be used to adjust the vertical
 alignment of an image in a line of text or the contents of a table cell.
 
-For broader alignment purposes use flex box, see \code{\link[=flexbox]{flexbox()}}.
+For broader alignment purposes use flex box, see \code{\link[=flex]{flex()}}.
 }

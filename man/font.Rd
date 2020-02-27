@@ -4,31 +4,27 @@
 \alias{font}
 \title{Font}
 \usage{
-font(x, color = NULL, weight = NULL, case = NULL, align = NULL)
+font(x, weight = NULL, style = NULL, case = NULL, family = NULL)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, or \code{"cyan"} specifying the font
-color, defaults to \code{NULL}, in which case the argument is ignored.}
-
-\item{weight}{One of \code{""} specifying the font
-weight of the element's text, defaults to \code{NULL}.
+\item{weight}{One of \code{"light"}, \code{"lighter"}, \code{"normal"}, \code{"bolder"}, or \code{"bold"} specifying the font
+weight, defaults to \code{NULL}, in which case the argument is ignored.
 
 If \code{"bolder"} or \code{"lighter"}, the font weight is changed relative to the
 current font weight.}
 
-\item{case}{One of \code{"upper"}, \code{"lower"}, or \code{"title"} specifying a
-transformation of the tag element's text, default to \code{NULL}, in which case
-the argument is ignored.}
+\item{style}{One of \code{"italic"} or \code{"normal"} specifying the font
+style, defaults to \code{NULL}, in which case the argument is ignored.}
 
-\item{align}{A \link{responsive} argument.
+\item{case}{One of \code{"upper"}, \code{"lower"}, or \code{"title"} specifying the font case,
+default to \code{NULL}, in which case the argument is ignored.}
 
-One of \code{""} specifying the alignment of the
-tag element's text, defaults to \code{NULL}, in which case the argument is
-ignored.}
+\item{family}{One of \code{"sans-serif"} or \code{"monospace"} specifying the font
+family, defaults to \code{NULL}, in which case the argument is ignored.}
 }
 \description{
-The \code{font()} function adjusts the color, size, weight, case, or alignment of
-a tag element's text.
+The \code{font()} function adjusts the size, weight, style, case, and family of
+the font of a tag element.
 }

@@ -1,49 +1,37 @@
-shadow_size <- c(
-  none = "none",
+shadow_size_ <- c(
   small = "sm",
-  medium = "",
-  large = "lg"
+  sm = "sm",
+  medium = "md",
+  md = "md",
+  large = "lg",
+  lg = "lg",
+  none = "none"
 )
 
-html_class_shadow <- function(size) {
-  html_class("shadow", pick(shadow_size, size))
+shadow_size <- function(size) {
+  pick(size, from = shadow_size_)
 }
 
 #' Shadows
 #'
-#' The `shadow()` function adjusts the box shadow of a tag element. By default,
-#' many elements include a shadow to help distinguish them or indicate
-#' interactivity. [card()]s are element without a default shadow, but in some
-#' cases popping out the element from the page may be useful.
+#' The `shadow()` function adjusts the box shadow of a tag element. Shadows help
+#' distinguish elements or indicate interactivity.
 #'
 #' @inheritParams background
 #'
-#' @param size One of `r rd_chr_lst(names(shadow_size))` specifying the amount
+#' @param size One of `r rd_list(names(shadow_size_))` specifying the amount
 #'   of shadow added.
 #'
 # @includeRmd man/roxygen/shadow.Rmd
 #'
 #' @export
 shadow <- function(x, size) {
-  UseMethod("shadow", x)
-}
+  assert_subject(x)
 
-#' @export
-shadow.cascadess_style_pronoun <- function(x, size) {
-  pronoun_class_add(x, html_class_shadow(size))
-}
+  cls <- prefix(
+    "shadow",
+    shadow_size(size)
+  )
 
-#' @export
-shadow.rlang_box_splice <- function(x, size) {
-  pronoun_box_class_add(x, html_class_shadow(size))
-}
-
-#' @export
-shadow.shiny.tag <- function(x, size) {
-  tag_class_add(x, html_class_shadow(size))
-}
-
-#' @export
-shadow.default <- function(x, size) {
-
+  add_class(x, cls)
 }

@@ -1,4 +1,4 @@
-display_types <- c(
+display_type_ <- c(
   inline = "inline",
   `inline-block` = "inline-block",
   block = "block",
@@ -10,10 +10,8 @@ display_types <- c(
   none = "none"
 )
 
-html_class_display <- function(type) {
-  type <- responsive(type)
-
-  html_class("d", pick(display_types, type))
+display_type <- function(type) {
+  responsive(pick(type, from = display_type_))
 }
 
 #' Display
@@ -25,29 +23,16 @@ html_class_display <- function(type) {
 #'
 #' @param type A [responsive] argument.
 #'
-#'   One of `r rd_chr_lst(names(display_types))`.
+#'   One of `r rd_list(names(display_type_))`.
 #'
 #' @export
 display <- function(x, type) {
-  UseMethod("display", x)
-}
+  assert_subject(x)
 
-#' @export
-display.cascadess_style_pronoun <- function(x, type) {
-  pronoun_class_add(x, html_class_display(type))
-}
+  cls <- prefix(
+    "display",
+    display_type(type)
+  )
 
-#' @export
-display.rlang_box_splice <- function(x, type) {
-  pronoun_box_class_add(x, html_class_display(type))
-}
-
-#' @export
-display.shiny.tag <- function(x, type) {
-  tag_class_add(x, html_class_display(type))
-}
-
-#' @export
-display.default <- function(x, type) {
-
+  add_class(x, cls)
 }

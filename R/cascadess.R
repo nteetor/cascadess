@@ -1,5 +1,4 @@
 #' @import rlang
-#' @import lifecycle
 #' @importFrom crayon
 #'   red bold
 NULL
@@ -11,7 +10,7 @@ NULL
 #' @export
 #' @examples
 #'
-#' \\dontrun{
+#' \dontrun{
 #' library(shiny)
 #'
 #' shinyApp(

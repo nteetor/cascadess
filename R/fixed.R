@@ -1,10 +1,10 @@
-fixed_positions <- c(
+fixed_position_ <- c(
   top = "top",
   bottom = "bottom"
 )
 
-html_class_fixed <- function(position) {
-  html_class("fixed", pick(fixed_positions, position))
+fixed_position <- function(position) {
+  pick(position, from = fixed_position_)
 }
 
 #' Fixed position elements
@@ -15,30 +15,17 @@ html_class_fixed <- function(position) {
 #'
 #' @inheritParams background
 #'
-#' @param position One of `"top"` or `"bottom"` specifying the where to fix the
-#'   element on the page.
+#' @param position One of `r rd_list(names(fixed_position_))` specifying the
+#'   where to fix the element on the page.
 #'
 #' @export
 fixed <- function(x, position) {
-  UseMethod("affix", x)
-}
+  assert_subject(x)
 
-#' @export
-fixed.cascadess_style_pronoun <- function(x, position) {
-  pronoun_class_add(x, html_class_fixed(position))
-}
+  cls <- prefix(
+    "fixed",
+    fixed_position(position)
+  )
 
-#' @export
-fixed.rlang_box_splice <- function(x, position) {
-  pronoun_box_class_add(x, html_class_fixed(position))
-}
-
-#' @export
-fixed.shiny.tag <- function(x, position) {
-  tag_class_add(x, html_class_fixed(position))
-}
-
-#' @export
-fixed.default <- function(x, position) {
-
+  add_class(x, cls)
 }

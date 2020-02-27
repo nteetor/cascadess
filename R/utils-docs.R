@@ -7,6 +7,18 @@ rd_code <- function(x) {
 }
 
 rd_list <- function(x, last = "or") {
+  x <- vapply(x, function(i) {
+    if (is_na(suppressWarnings(as.numeric(i)))) {
+      rd_code(rd_quote(i))
+    } else {
+      rd_code(i)
+    }
+  }, character(1))
+
+  if (!is_truthy(last)) {
+    return(paste(x, collapse = ", "))
+  }
+
   if (length(x) == 1) {
     x
   } else if (length(x) == 2) {
@@ -21,10 +33,10 @@ rd_list <- function(x, last = "or") {
   }
 }
 
-rd_chr_lst <- function(x) {
-  rd_list(rd_code(rd_quote(x)))
+rd_chr_lst <- function(x, last = "or") {
+  rd_list(x, last = last)
 }
 
-rd_num_lst <- function(x) {
-  rd_list(rd_code(x))
+rd_num_lst <- function(x, last = "or") {
+  rd_list(x, last = last)
 }

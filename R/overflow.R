@@ -1,16 +1,10 @@
-overflow_scroll <- c(
+overflow_scroll_ <- c(
   auto = "auto",
   hidden = "hidden"
 )
 
-html_class_overflow <- function(scroll) {
-  if (is_true(scroll)) {
-    scroll <- "auto"
-  } else if (is_false(scroll)) {
-    scroll <- "hidden"
-  }
-
-  html_class("overflow", pick(overflow_scroll, scroll))
+overflow_scroll <- function(scroll) {
+  pick(scroll, from = overflow_scroll_)
 }
 
 #' Overflow
@@ -26,26 +20,13 @@ html_class_overflow <- function(scroll) {
 #'   `"hidden"`, respectively.
 #'
 #' @export
-overflow <- function(x, scroll = "auto") {
-  UseMethod("overflow", x)
-}
+overflow <- function(x, scroll) {
+  assert_subject(x)
 
-#' @export
-overflow.cascadess_style_pronoun <- function(x, scroll) {
-  pronoun_class_add(x, html_class_overflow(scroll))
-}
+  cls <- prefix(
+    "overflow",
+    overflow_scroll(scroll)
+  )
 
-#' @export
-overflow.rlang_box_splice <- function(x, scroll) {
-  pronoun_box_class_add(x, html_class_overflow(scroll))
-}
-
-#' @export
-overflow.shiny.tag <- function(x, scroll) {
-  tag_class_add(x, html_class_overflow(scroll))
-}
-
-#' @export
-overflow.default <- function(x, scroll) {
-
+  add_class(x, cls)
 }

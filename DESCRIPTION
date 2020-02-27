@@ -1,6 +1,6 @@
 Package: cascadess
 Type: Package
-Title: A Grammar of Style
+Title: A Style Pronoun for 'htmltools' Tags
 Version: 0.1.0
 Authors@R: c(
     person("Nathan", "Teetor", role = c("aut", "cre"),
@@ -10,8 +10,10 @@ Authors@R: c(
     person(family = "Twitter, Inc", role = "cph",
       comment = "Bootstrap library")
     )
-Description: Apply CSS classes to tag elements or the provided
-    style pronoun.
+Description: Apply styles to tag elements directly or with the
+    .style pronoun. Using the pronoun, styles are created within
+    the context of a tag element. Borders, background colors,
+    margins, layouts, and more may be styled.
 License: GPL-3
 URL: https://github.com/nteetor/cascadess
 BugReports: https://github.com/nteetor/cascadess/issues
@@ -31,3 +33,26 @@ Imports:
 Suggests:
     testthat (>= 2.1.0),
     rmarkdown
+Collate:
+    'align.R'
+    'utils.R'
+    'background.R'
+    'border.R'
+    'cascadess.R'
+    'display.R'
+    'eval-style.R'
+    'fixed.R'
+    'flex.R'
+    'float.R'
+    'font.R'
+    'height.R'
+    'margin.R'
+    'overflow.R'
+    'padding.R'
+    'reexports.R'
+    'responsive.R'
+    'shadow.R'
+    'text.R'
+    'utils-docs.R'
+    'width.R'
+    'zzz.R'

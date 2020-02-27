@@ -2,37 +2,49 @@
 % Please edit documentation in R/flex.R
 \name{flex}
 \alias{flex}
-\title{Flex items}
+\title{Flex}
 \usage{
-flex(x, align = "stretch", order = 1, grow = NULL, shrink = NULL)
+flex(x, direction = "row", justify = "start", align = "stretch", wrap = FALSE)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
+\item{direction}{A \link{responsive} argument.
+
+One of \code{"row"} or \code{"column"} specifying the main axis of
+flex items, defaults to \code{"row"}.
+
+If \code{"row"}, the main axis is horizontal and items are arranged from left to
+right. The cross axis is the vertical.
+
+If \code{"column"}, the main axis is vertical and items are arranged from top to
+bottom. The cross axis is the horizontal.}
+
+\item{justify}{A \link{responsive} argument.
+
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"around"}, or \code{"between"} specifying how items are
+arranged on the main axis, defaults to \code{"start"}.
+
+If \code{"between"} or \code{"around"}, items are arranged by evenly sharing the
+space between or around the items.}
+
 \item{align}{A \link{responsive} argument.
 
-One of \code{"auto"}, \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"} specifying how to align the item on the
-cross axis, defaults to \code{"stretch"}. Overrides the \code{\link[=flexbox]{flexbox()}} \code{align}
-argument.}
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"} specifying how items are
+arranged on the cross axis, defaults to \code{"stretch"}.}
 
-\item{order}{A \link{responsive} argument.
+\item{wrap}{A \link{responsive} argument.
 
-One of \code{0}, \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, \code{6}, or \code{7} specifying the order of the item, defaults to
-\code{1}. Items of the same order are then sorted by their source code order.}
-
-\item{grow}{A \link{responsive} argument.
-
-One of \code{TRUE} or \code{FALSE}, defaults to \code{NULL}, in which case the argument
-is ignored.}
-
-\item{shrink}{A \link{responsive} argument.
-
-One of \code{TRUE} or \code{FALSE}, defaults to \code{NULL}, in which case the argument
-is ignored.}
+One of \code{TRUE} or \code{FALSE} specifying if items are forced onto one line
+or allowed to wrap onto multiple lines, defaults to \code{FALSE}.}
 }
 \description{
-The \code{flex()} function adjusts a flex item. Unlike \code{\link[=flexbox]{flexbox()}}, which adjusts
-the flex box layout through the flex container element, \code{flex()} is used to
-change specific flex items. A flex item may be reordered, expanded, or
-shrunk.
+The \code{flex()} function adjusts the flex box layout of an element. To use
+the flex box layout the element must also use the flex display, see
+\code{\link[=display]{display()}}. The flex box layout is incredibly powerful and allows centering
+of elements vertically or horizontally, automatic adjustment of space between
+or around child elements, and more.
+
+Direct child elements of a flex box container are automatically considered
+flex items and may be adjusted with \code{\link[=item]{item()}}.
 }

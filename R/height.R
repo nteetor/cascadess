@@ -1,4 +1,4 @@
-height_size <- c(
+height_size_ <- list(
   `25` = 25,
   `50` = 50,
   `75` = 75,
@@ -7,15 +7,32 @@ height_size <- c(
   viewport = "viewport"
 )
 
-html_class_height <- function(size) {
-  if (size == "viewport") {
-    size <- 100
-    prefix <- "vh"
-  } else {
-    prefix <- "h"
-  }
+height_size <- function(size) {
+  pick(size, from = height_size_)
+}
 
-  html_class(prefix, pick(height_size, size))
+height_min_ <- list(
+  `25` = 25,
+  `50` = 50,
+  `75` = 75,
+  `100` = 100,
+  viewport = "viewport"
+)
+
+height_min <- function(min) {
+  compose("min", pick(min, from = height_min_))
+}
+
+height_max_ <- list(
+  `25` = 25,
+  `50` = 50,
+  `75` = 75,
+  `100` = 100,
+  viewport = "viewport"
+)
+
+height_max <- function(max) {
+  compose("max", pick(max, from = height_max_))
 }
 
 #' Height
@@ -26,12 +43,11 @@ html_class_height <- function(size) {
 #'
 #' @inheritParams background
 #'
-#' @param size One of `25`, `50`, `75`, `100`, "auto", or "viewport" specifying
-#'   the height of the tag element.
+#' @param size One of `r rd_list(names(height_size_))` specifying the height of
+#'   the tag element.
 #'
 #'   If `25`, `50`, `75`, or `100`, the element's height is a percentage of the
 #'   height of the parent element must also be specified.
-#'
 #'
 #'   These percentages do not account for margins or padding and may cause an
 #'   element to extend beyond its parent element.
@@ -44,27 +60,26 @@ html_class_height <- function(size) {
 #'   If `"viewport"`, the element's height is determined by the size of the
 #'   browser window.
 #'
+#' @param min One of `r rd_list(names(height_min_))` specifying the minimum
+#'   height of the tag element.
+#'
+#'   See `size` for details.
+#'
+#' @param max One of `r rd_list(names(height_max_))` specifying the maximum
+#'   height of the tag element.
+#'
+#'   See `size` for details.
+#'
 #' @export
-height <- function(x, size) {
-  UseMethod("height", x)
-}
+height <- function(x, size, min = NULL, max = NULL) {
+  assert_subject(x)
 
-#' @export
-height.cascadess_style_pronoun <- function(x, size) {
-  pronoun_class_add(x, html_class_height(size))
-}
+  cls <- prefix(
+    "height",
+    height_size(size),
+    height_min(min),
+    height_max(max)
+  )
 
-#' @export
-height.cascadess_pronoun_box <- function(x, size) {
-  pronoun_box_class_add(x, html_class_height(size))
-}
-
-#' @export
-height.shiny.tag <- function(x, size) {
-  tag_class_add(x, html_class_height(size))
-}
-
-#' @export
-height.default <- function(x, size) {
-
+  add_class(x, cls)
 }

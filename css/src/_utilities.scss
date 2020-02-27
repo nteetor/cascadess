@@ -1,0 +1,507 @@
+// Utilities
+
+// stylelint-disable-next-line scss/dollar-variable-default
+$utilities: (
+  "align": (
+    property: vertical-align,
+    class: align,
+    values: baseline top middle bottom text-bottom text-top
+  ),
+
+  "float": (
+    responsive: true,
+    property: float,
+    values: left right none
+  ),
+
+  "overflow": (
+    property: overflow,
+    values: (
+      auto: auto,
+      hidden: hidden
+    )
+  ),
+
+  "display": (
+    responsive: true,
+    print: true,
+    property: display,
+    values: none inline inline-block block table table-row table-cell flex inline-flex
+  ),
+
+  "shadow": (
+    property: box-shadow,
+    class: shadow,
+    values: (
+      sm: $box-shadow-sm,
+      md: $box-shadow,
+      lg: $box-shadow-lg,
+      none: none,
+    )
+  ),
+
+  "background-color": (
+    property: background-color,
+    class: background,
+    values: map-merge(
+      $theme-colors,
+      (
+        "body": $body-bg,
+        "white": $white,
+        "transparent": transparent
+      )
+    )
+  ),
+
+  "position": (
+    property: position,
+    values: static relative absolute fixed sticky
+  ),
+
+  // Sizing utilities
+  "width": (
+    property: width,
+    class: width,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+      viewport: 100vw
+    )
+  ),
+
+  "min-width": (
+    property: min-width,
+    class: width-min,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      viewport: 100vw
+    )
+  ),
+
+  "max-width": (
+    property: max-width,
+    class: width-max,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      viewport: 100vw
+    )
+  ),
+
+  "height": (
+    property: height,
+    class: height,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      auto: auto,
+      viewport: 100vh
+    )
+  ),
+
+  "min-height": (
+    property: min-height,
+    class: height-min,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      viewport: 100vh
+    )
+  ),
+
+  "max-height": (
+    property: max-height,
+    class: height-max,
+    values: (
+      25: 25%,
+      50: 50%,
+      75: 75%,
+      100: 100%,
+      viewport: 100vh
+    )
+  ),
+
+  // Flex utilities
+  "flex": (
+    responsive: true,
+    property: flex,
+    class: item,
+    values: (
+      fill: 1 1 auto
+    )
+  ),
+
+  "flex-direction": (
+    responsive: true,
+    property: flex-direction,
+    class: flex,
+    values: row column row-reverse column-reverse
+  ),
+
+  "flex-grow": (
+    responsive: true,
+    property: flex-grow,
+    class: item,
+    values: (
+      grow-0: 0,
+      grow-1: 1,
+    )
+  ),
+
+  "flex-shrink": (
+    responsive: true,
+    property: flex-shrink,
+    class: item,
+    values: (
+      shrink-0: 0,
+      shrink-1: 1,
+    )
+  ),
+
+  "flex-wrap": (
+    responsive: true,
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap wrap-reverse
+  ),
+
+  "justify-content": (
+    responsive: true,
+    property: justify-content,
+    class: flex-content,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around,
+    )
+  ),
+
+  "align-items": (
+    responsive: true,
+    property: align-items,
+    class: flex-items,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+      stretch: stretch,
+    )
+  ),
+
+  "align-content": (
+    responsive: true,
+    property: align-content,
+    class: flex-content,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around,
+      stretch: stretch,
+    )
+  ),
+
+  "align-self": (
+    responsive: true,
+    property: align-self,
+    class: item-self,
+    values: (
+      auto: auto,
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+      stretch: stretch,
+    )
+  ),
+
+  "order": (
+    responsive: true,
+    property: order,
+    class: item-order,
+    values: (
+      first: -1,
+      0: 0,
+      1: 1,
+      2: 2,
+      3: 3,
+      4: 4,
+      5: 5,
+      last: 6,
+    ),
+
+  ),
+
+  // Margin utilities
+  "margin": (
+    responsive: true,
+    property: margin,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-top": (
+    responsive: true,
+    property: margin-top,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-right": (
+    responsive: true,
+    property: margin-right,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-bottom": (
+    responsive: true,
+    property: margin-bottom,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-left": (
+    responsive: true,
+    property: margin-left,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  // Negative margin utilities
+  "negative-margin": (
+    responsive: true,
+    property: margin,
+    values: $negative-spacers
+  ),
+
+  "negative-margin-top": (
+    responsive: true,
+    property: margin-top,
+    values: $negative-spacers
+  ),
+
+  "negative-margin-right": (
+    responsive: true,
+    property: margin-right,
+    values: $negative-spacers
+  ),
+
+  "negative-margin-bottom": (
+    responsive: true,
+    property: margin-bottom,
+    values: $negative-spacers
+  ),
+
+  "negative-margin-left": (
+    responsive: true,
+    property: margin-left,
+    values: $negative-spacers
+  ),
+
+  // Padding utilities
+  "padding": (
+    responsive: true,
+    property: padding,
+    values: $spacers
+  ),
+
+  "padding-top": (
+    responsive: true,
+    property: padding-top,
+    values: $spacers
+  ),
+
+  "padding-right": (
+    responsive: true,
+    property: padding-right,
+    values: $spacers
+  ),
+
+  "padding-bottom": (
+    responsive: true,
+    property: padding-bottom,
+    values: $spacers
+  ),
+
+  "padding-left": (
+    responsive: true,
+    property: padding-left,
+    values: $spacers
+  ),
+
+  // Font
+  "font-weight": (
+    property: font-weight,
+    values: (
+      light: $font-weight-light,
+      lighter: $font-weight-lighter,
+      normal: $font-weight-normal,
+      bold: $font-weight-bold,
+      bolder: $font-weight-bolder
+    )
+  ),
+
+  "font-style": (
+    property: font-style,
+    class: font,
+    values: (
+      italic: italic,
+      normal: normal
+    )
+  ),
+
+  "font-transform": (
+    property: text-transform,
+    class: font-case,
+    values: (
+      lower: lowercase,
+      upper: uppercase,
+      title: capitalize
+    )
+  ),
+
+  "font-family": (
+    property: font-family,
+    class: font-family,
+    values: (
+      sans-serif: $font-family-sans-serif,
+      monospace: $font-family-monospace
+    )
+  ),
+
+  // Text
+  "text-decoration": (
+    property: text-decoration,
+    values: (
+      none: none,
+      underline: underline,
+      strikethrough: line-through
+    )
+  ),
+
+  "text-align": (
+    responsive: true,
+    property: text-align,
+    values: left right center
+  ),
+
+  "color": (
+    property: color,
+    class: text-color,
+    values: map-merge(
+      $theme-colors,
+      (
+        "white": $white,
+        "body": $body-color,
+        "muted": $text-muted,
+        "black-50": rgba($black, .5),
+
+        "white-50": rgba($white, .5),
+
+        "reset": inherit,
+      )
+    )
+  ),
+
+  "line-height": (
+    property: line-height,
+    class: text-spacing,
+    values: (
+      sm: $line-height-sm,
+      // base: $line-height-base,
+      lg: $line-height-lg,
+    )
+  ),
+
+  "white-space": (
+    property: white-space,
+    class: text,
+    values: (
+      wrap: normal,
+      nowrap: nowrap,
+    )
+  ),
+
+  // Border
+  "border": (
+    property: border,
+    class: border,
+    values: (
+      all: $border-width solid $border-color,
+      none: 0
+    )
+  ),
+
+  "border-top": (
+    property: border-top,
+    values: (
+      null: $border-width solid $border-color,
+    )
+  ),
+
+  "border-right": (
+    property: border-right,
+    values: (
+      null: $border-width solid $border-color
+    )
+  ),
+
+  "border-bottom": (
+    property: border-bottom,
+    values: (
+      null: $border-width solid $border-color
+    )
+  ),
+
+  "border-left": (
+    property: border-left,
+    values: (
+      null: $border-width solid $border-color
+    )
+  ),
+
+  "border-color": (
+    property: border-color,
+    class: border,
+    values: map-merge($theme-colors, ("white": $white))
+  ),
+
+  "border-radius": (
+    property: border-radius,
+    values: (
+      sm: $border-radius-sm,
+      md: $border-radius,
+      lg: $border-radius-lg,
+      circle: 50%,
+      pill: $rounded-pill,
+      0: 0,
+    )
+  ),
+
+  // Misc
+  "visibility": (
+    property: visibility,
+    class: null,
+    values: (
+      visible: visible,
+      invisible: hidden,
+    )
+  ),
+
+  "user-select": (
+    property: user-select,
+    values: all auto none
+  )
+);

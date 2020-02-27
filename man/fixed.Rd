@@ -9,8 +9,8 @@ fixed(x, position)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{position}{One of \code{"top"} or \code{"bottom"} specifying the where to fix the
-element on the page.}
+\item{position}{One of \code{"top"} or \code{"bottom"} specifying the
+where to fix the element on the page.}
 }
 \description{
 The \code{fixed()} function affixes an element to the top or bottom of the
