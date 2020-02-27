@@ -462,31 +462,31 @@
   order: 6 !important;
 }
 
-.cas-margin-0 {
+.cas-margin-all-0 {
   margin: 0 !important;
 }
 
-.cas-margin-1 {
+.cas-margin-all-1 {
   margin: 0.25rem !important;
 }
 
-.cas-margin-2 {
+.cas-margin-all-2 {
   margin: 0.5rem !important;
 }
 
-.cas-margin-3 {
+.cas-margin-all-3 {
   margin: 1rem !important;
 }
 
-.cas-margin-4 {
+.cas-margin-all-4 {
   margin: 1.5rem !important;
 }
 
-.cas-margin-5 {
+.cas-margin-all-5 {
   margin: 3rem !important;
 }
 
-.cas-margin-auto {
+.cas-margin-all-auto {
   margin: auto !important;
 }
 
@@ -602,23 +602,23 @@
   margin-left: auto !important;
 }
 
-.cas-margin-n1 {
+.cas-margin-all-n1 {
   margin: -0.25rem !important;
 }
 
-.cas-margin-n2 {
+.cas-margin-all-n2 {
   margin: -0.5rem !important;
 }
 
-.cas-margin-n3 {
+.cas-margin-all-n3 {
   margin: -1rem !important;
 }
 
-.cas-margin-n4 {
+.cas-margin-all-n4 {
   margin: -1.5rem !important;
 }
 
-.cas-margin-n5 {
+.cas-margin-all-n5 {
   margin: -3rem !important;
 }
 
@@ -702,27 +702,27 @@
   margin-left: -3rem !important;
 }
 
-.cas-padding-0 {
+.cas-padding-all-0 {
   padding: 0 !important;
 }
 
-.cas-padding-1 {
+.cas-padding-all-1 {
   padding: 0.25rem !important;
 }
 
-.cas-padding-2 {
+.cas-padding-all-2 {
   padding: 0.5rem !important;
 }
 
-.cas-padding-3 {
+.cas-padding-all-3 {
   padding: 1rem !important;
 }
 
-.cas-padding-4 {
+.cas-padding-all-4 {
   padding: 1.5rem !important;
 }
 
-.cas-padding-5 {
+.cas-padding-all-5 {
   padding: 3rem !important;
 }
 
@@ -1250,25 +1250,25 @@
   .cas-item-order-sm-last {
     order: 6 !important;
   }
-  .cas-margin-sm-0 {
+  .cas-margin-all-sm-0 {
     margin: 0 !important;
   }
-  .cas-margin-sm-1 {
+  .cas-margin-all-sm-1 {
     margin: 0.25rem !important;
   }
-  .cas-margin-sm-2 {
+  .cas-margin-all-sm-2 {
     margin: 0.5rem !important;
   }
-  .cas-margin-sm-3 {
+  .cas-margin-all-sm-3 {
     margin: 1rem !important;
   }
-  .cas-margin-sm-4 {
+  .cas-margin-all-sm-4 {
     margin: 1.5rem !important;
   }
-  .cas-margin-sm-5 {
+  .cas-margin-all-sm-5 {
     margin: 3rem !important;
   }
-  .cas-margin-sm-auto {
+  .cas-margin-all-sm-auto {
     margin: auto !important;
   }
   .cas-margin-top-sm-0 {
@@ -1355,19 +1355,19 @@
   .cas-margin-left-sm-auto {
     margin-left: auto !important;
   }
-  .cas-margin-sm-n1 {
+  .cas-margin-all-sm-n1 {
     margin: -0.25rem !important;
   }
-  .cas-margin-sm-n2 {
+  .cas-margin-all-sm-n2 {
     margin: -0.5rem !important;
   }
-  .cas-margin-sm-n3 {
+  .cas-margin-all-sm-n3 {
     margin: -1rem !important;
   }
-  .cas-margin-sm-n4 {
+  .cas-margin-all-sm-n4 {
     margin: -1.5rem !important;
   }
-  .cas-margin-sm-n5 {
+  .cas-margin-all-sm-n5 {
     margin: -3rem !important;
   }
   .cas-margin-top-sm-n1 {
@@ -1430,22 +1430,22 @@
   .cas-margin-left-sm-n5 {
     margin-left: -3rem !important;
   }
-  .cas-padding-sm-0 {
+  .cas-padding-all-sm-0 {
     padding: 0 !important;
   }
-  .cas-padding-sm-1 {
+  .cas-padding-all-sm-1 {
     padding: 0.25rem !important;
   }
-  .cas-padding-sm-2 {
+  .cas-padding-all-sm-2 {
     padding: 0.5rem !important;
   }
-  .cas-padding-sm-3 {
+  .cas-padding-all-sm-3 {
     padding: 1rem !important;
   }
-  .cas-padding-sm-4 {
+  .cas-padding-all-sm-4 {
     padding: 1.5rem !important;
   }
-  .cas-padding-sm-5 {
+  .cas-padding-all-sm-5 {
     padding: 3rem !important;
   }
   .cas-padding-top-sm-0 {
@@ -1694,25 +1694,25 @@
   .cas-item-order-md-last {
     order: 6 !important;
   }
-  .cas-margin-md-0 {
+  .cas-margin-all-md-0 {
     margin: 0 !important;
   }
-  .cas-margin-md-1 {
+  .cas-margin-all-md-1 {
     margin: 0.25rem !important;
   }
-  .cas-margin-md-2 {
+  .cas-margin-all-md-2 {
     margin: 0.5rem !important;
   }
-  .cas-margin-md-3 {
+  .cas-margin-all-md-3 {
     margin: 1rem !important;
   }
-  .cas-margin-md-4 {
+  .cas-margin-all-md-4 {
     margin: 1.5rem !important;
   }
-  .cas-margin-md-5 {
+  .cas-margin-all-md-5 {
     margin: 3rem !important;
   }
-  .cas-margin-md-auto {
+  .cas-margin-all-md-auto {
     margin: auto !important;
   }
   .cas-margin-top-md-0 {
@@ -1799,19 +1799,19 @@
   .cas-margin-left-md-auto {
     margin-left: auto !important;
   }
-  .cas-margin-md-n1 {
+  .cas-margin-all-md-n1 {
     margin: -0.25rem !important;
   }
-  .cas-margin-md-n2 {
+  .cas-margin-all-md-n2 {
     margin: -0.5rem !important;
   }
-  .cas-margin-md-n3 {
+  .cas-margin-all-md-n3 {
     margin: -1rem !important;
   }
-  .cas-margin-md-n4 {
+  .cas-margin-all-md-n4 {
     margin: -1.5rem !important;
   }
-  .cas-margin-md-n5 {
+  .cas-margin-all-md-n5 {
     margin: -3rem !important;
   }
   .cas-margin-top-md-n1 {
@@ -1874,22 +1874,22 @@
   .cas-margin-left-md-n5 {
     margin-left: -3rem !important;
   }
-  .cas-padding-md-0 {
+  .cas-padding-all-md-0 {
     padding: 0 !important;
   }
-  .cas-padding-md-1 {
+  .cas-padding-all-md-1 {
     padding: 0.25rem !important;
   }
-  .cas-padding-md-2 {
+  .cas-padding-all-md-2 {
     padding: 0.5rem !important;
   }
-  .cas-padding-md-3 {
+  .cas-padding-all-md-3 {
     padding: 1rem !important;
   }
-  .cas-padding-md-4 {
+  .cas-padding-all-md-4 {
     padding: 1.5rem !important;
   }
-  .cas-padding-md-5 {
+  .cas-padding-all-md-5 {
     padding: 3rem !important;
   }
   .cas-padding-top-md-0 {
@@ -2138,25 +2138,25 @@
   .cas-item-order-lg-last {
     order: 6 !important;
   }
-  .cas-margin-lg-0 {
+  .cas-margin-all-lg-0 {
     margin: 0 !important;
   }
-  .cas-margin-lg-1 {
+  .cas-margin-all-lg-1 {
     margin: 0.25rem !important;
   }
-  .cas-margin-lg-2 {
+  .cas-margin-all-lg-2 {
     margin: 0.5rem !important;
   }
-  .cas-margin-lg-3 {
+  .cas-margin-all-lg-3 {
     margin: 1rem !important;
   }
-  .cas-margin-lg-4 {
+  .cas-margin-all-lg-4 {
     margin: 1.5rem !important;
   }
-  .cas-margin-lg-5 {
+  .cas-margin-all-lg-5 {
     margin: 3rem !important;
   }
-  .cas-margin-lg-auto {
+  .cas-margin-all-lg-auto {
     margin: auto !important;
   }
   .cas-margin-top-lg-0 {
@@ -2243,19 +2243,19 @@
   .cas-margin-left-lg-auto {
     margin-left: auto !important;
   }
-  .cas-margin-lg-n1 {
+  .cas-margin-all-lg-n1 {
     margin: -0.25rem !important;
   }
-  .cas-margin-lg-n2 {
+  .cas-margin-all-lg-n2 {
     margin: -0.5rem !important;
   }
-  .cas-margin-lg-n3 {
+  .cas-margin-all-lg-n3 {
     margin: -1rem !important;
   }
-  .cas-margin-lg-n4 {
+  .cas-margin-all-lg-n4 {
     margin: -1.5rem !important;
   }
-  .cas-margin-lg-n5 {
+  .cas-margin-all-lg-n5 {
     margin: -3rem !important;
   }
   .cas-margin-top-lg-n1 {
@@ -2318,22 +2318,22 @@
   .cas-margin-left-lg-n5 {
     margin-left: -3rem !important;
   }
-  .cas-padding-lg-0 {
+  .cas-padding-all-lg-0 {
     padding: 0 !important;
   }
-  .cas-padding-lg-1 {
+  .cas-padding-all-lg-1 {
     padding: 0.25rem !important;
   }
-  .cas-padding-lg-2 {
+  .cas-padding-all-lg-2 {
     padding: 0.5rem !important;
   }
-  .cas-padding-lg-3 {
+  .cas-padding-all-lg-3 {
     padding: 1rem !important;
   }
-  .cas-padding-lg-4 {
+  .cas-padding-all-lg-4 {
     padding: 1.5rem !important;
   }
-  .cas-padding-lg-5 {
+  .cas-padding-all-lg-5 {
     padding: 3rem !important;
   }
   .cas-padding-top-lg-0 {
@@ -2582,25 +2582,25 @@
   .cas-item-order-xl-last {
     order: 6 !important;
   }
-  .cas-margin-xl-0 {
+  .cas-margin-all-xl-0 {
     margin: 0 !important;
   }
-  .cas-margin-xl-1 {
+  .cas-margin-all-xl-1 {
     margin: 0.25rem !important;
   }
-  .cas-margin-xl-2 {
+  .cas-margin-all-xl-2 {
     margin: 0.5rem !important;
   }
-  .cas-margin-xl-3 {
+  .cas-margin-all-xl-3 {
     margin: 1rem !important;
   }
-  .cas-margin-xl-4 {
+  .cas-margin-all-xl-4 {
     margin: 1.5rem !important;
   }
-  .cas-margin-xl-5 {
+  .cas-margin-all-xl-5 {
     margin: 3rem !important;
   }
-  .cas-margin-xl-auto {
+  .cas-margin-all-xl-auto {
     margin: auto !important;
   }
   .cas-margin-top-xl-0 {
@@ -2687,19 +2687,19 @@
   .cas-margin-left-xl-auto {
     margin-left: auto !important;
   }
-  .cas-margin-xl-n1 {
+  .cas-margin-all-xl-n1 {
     margin: -0.25rem !important;
   }
-  .cas-margin-xl-n2 {
+  .cas-margin-all-xl-n2 {
     margin: -0.5rem !important;
   }
-  .cas-margin-xl-n3 {
+  .cas-margin-all-xl-n3 {
     margin: -1rem !important;
   }
-  .cas-margin-xl-n4 {
+  .cas-margin-all-xl-n4 {
     margin: -1.5rem !important;
   }
-  .cas-margin-xl-n5 {
+  .cas-margin-all-xl-n5 {
     margin: -3rem !important;
   }
   .cas-margin-top-xl-n1 {
@@ -2762,22 +2762,22 @@
   .cas-margin-left-xl-n5 {
     margin-left: -3rem !important;
   }
-  .cas-padding-xl-0 {
+  .cas-padding-all-xl-0 {
     padding: 0 !important;
   }
-  .cas-padding-xl-1 {
+  .cas-padding-all-xl-1 {
     padding: 0.25rem !important;
   }
-  .cas-padding-xl-2 {
+  .cas-padding-all-xl-2 {
     padding: 0.5rem !important;
   }
-  .cas-padding-xl-3 {
+  .cas-padding-all-xl-3 {
     padding: 1rem !important;
   }
-  .cas-padding-xl-4 {
+  .cas-padding-all-xl-4 {
     padding: 1.5rem !important;
   }
-  .cas-padding-xl-5 {
+  .cas-padding-all-xl-5 {
     padding: 3rem !important;
   }
   .cas-padding-top-xl-0 {

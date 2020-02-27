@@ -252,6 +252,7 @@ $utilities: (
   "margin": (
     responsive: true,
     property: margin,
+    class: margin-all,
     values: map-merge($spacers, (auto: auto))
   ),
 
@@ -283,6 +284,7 @@ $utilities: (
   "negative-margin": (
     responsive: true,
     property: margin,
+    class: margin-all,
     values: $negative-spacers
   ),
 
@@ -314,6 +316,7 @@ $utilities: (
   "padding": (
     responsive: true,
     property: padding,
+    class: padding-all,
     values: $spacers
   ),
 

@@ -48,6 +48,8 @@ prefix <- function(prefix, ...) {
 
   if (!is.null(pronoun)) {
     prefix <- style_get_prefix(pronoun, prefix)
+  } else {
+    prefix <- sprintf("cas-%s", prefix)
   }
 
   vapply(args, function(arg) compose(prefix, arg), character(1))
