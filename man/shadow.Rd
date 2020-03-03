@@ -16,3 +16,87 @@ of shadow added.}
 The \code{shadow()} function adjusts the box shadow of a tag element. Shadows help
 distinguish elements or indicate interactivity.
 }
+\details{
+\subsection{Shadow sizes}{\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\% display("flex"),
+  lapply(names(shadow_size_), function(size) \{
+    div(
+      .style \%>\%
+        margin(3) \%>\%
+        padding(4) \%>\%
+        shadow(size),
+      size
+    )
+  \})
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex">
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-sm">
+}}
+
+
+small\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-sm">
+}}
+
+
+sm\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-md">
+}}
+
+
+medium\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-md">
+}}
+
+
+md\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-lg">
+}}
+
+
+large\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-lg">
+}}
+
+
+lg\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-none">
+}}
+
+
+none\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+}
+}

@@ -25,21 +25,11 @@ compose <- function(..., .sep = "-") {
     return(NULL)
   }
 
-  paste(args, collapse = .sep)
+  paste(..., sep = .sep)
 }
 
-html_class <- function(prefix, body) {
-  if (is_empty(body) || any(are_null(body))) {
-    return(NULL)
-  }
-
-  body <- body[are_truthy(body)]
-
-  if (is_empty(body)) {
-    return(prefix)
-  }
-
-  paste(prefix, unlist(body), sep = "-")
+endash <- function(...) {
+  paste(..., sep = "-", collapse = " ")
 }
 
 prefix <- function(prefix, ...) {
@@ -49,18 +39,10 @@ prefix <- function(prefix, ...) {
   if (!is.null(pronoun)) {
     prefix <- style_get_prefix(pronoun, prefix)
   } else {
-    prefix <- sprintf("cas-%s", prefix)
+    prefix <- endash("cas", prefix)
   }
 
-  vapply(args, function(arg) compose(prefix, arg), character(1))
-}
-
-compose_class <- function(ns, ...) {
-  args <- list(...)
-  pronoun <- style_get_pronoun()
-  prefix <- style_get_prefix(pronoun, ns)
-
-  unlist(lapply(args, html_class, prefix = prefix))
+  vapply(args, function(arg) endash(prefix, arg), character(1))
 }
 
 pick <- function(from, x) {

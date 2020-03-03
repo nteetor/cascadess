@@ -1,44 +1,62 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-## Getting started
+## Examples
+
+Center an input above a larger element or next to the element if space allows.
+
+```{r}
+div(
+  .style %>%
+    display("flex") %>%
+    flex(direction = c(default = "column", md = "row")),
+
+  radioButtons("id", "A sample input", c("Choice 1", "Choice 2")) %>%
+    margin(h = c(xs = "auto", md = 0)),
+
+  div(
+    .style %>%
+      width(100) %>%
+      background("indigo") %>%
+      text("white"),
+    "Plot placeholder"
+  )
+)
+```
+
+## Arguments in detail
 
 This section needs pretty specific examples of how to use flex. I don't know
 that people will want a tutorial on flex.
 
-```{r, eval = FALSE}
-flex(
+For the sake of the demo let's create a flex item help function.
 
-)
+```{r}
+flexItem <- function(...) {
+  div(
+    .style %>% padding(3) %>% border("blue"),
+    "A flex item",
+    ...
+  )
+}
 ```
 
 ## Different `direction`s
 
-Many of `flex()`'s arguments are viewport responsive and below we will see how
-useful this can be. On small screens the flex items are placed vertically and
-can occupy the full width of the mobile device. On medium or larger screens the
-items are placed horizontally once again.
+Many of `flex()`'s arguments are viewport responsive. On small screens the flex
+items are placed vertically and can occupy the full width of the mobile
+device. On medium or larger screens the items are placed horizontally.
 
 ```{r}
-library(htmltools)
-
 div(
   .style %>%
     display("flex") %>%
     flex(
-      direction = list(xs = "column", md = "row")  # <-
-    ) %>%
-    background("secondary") %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+      direction = c(xs = "column", md = "row")  # <-
+    ),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -50,16 +68,10 @@ You can keep items as a column by specifying only `"column"`.
 div(
   .style %>%
     display("flex") %>%
-    flex("column"),  # <-
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+    flex(direction = "column"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -74,18 +86,10 @@ div(
   .style %>%
     display("flex") %>%
     flex(justify = "start"),  # <-
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -96,18 +100,10 @@ div(
   .style %>%
     display("flex") %>%
     flex(justify = "end"),  # <-
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -118,18 +114,10 @@ div(
   .style %>%
     display("flex") %>%
     flex(justify = "center"),  # <-
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -140,18 +128,10 @@ div(
   .style %>%
     display("flex") %>%
     flex(justify = "between"),  # <-
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -162,18 +142,10 @@ div(
   .style %>%
     display("flex") %>%
     flex(justify = "around"),  # <-
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```
 
@@ -189,17 +161,9 @@ div(
   .style %>%
     display("flex") %>%
     flex(wrap = TRUE),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border(),
-  div("A flex item") %>%
-    padding(3) %>%
-    border()
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
 )
 ```

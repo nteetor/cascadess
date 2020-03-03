@@ -1,0 +1,36 @@
+```{r, child="_setup.Rmd"}
+```
+
+## Why display matters
+
+```{r}
+div(
+  div(
+    .style %>%
+      border("blue"),
+    "block"
+  ),
+  div(
+    .style %>%
+      border("blue"),
+    "block"
+  )
+)
+```
+
+```{r}
+div(
+  div(
+    .style %>%
+      border("blue") %>%
+      display("inline"),
+    "inline"
+  ),
+  div(
+    .style %>%
+      border("blue") %>%
+      display("inline"),
+    "inline"
+  )
+)
+```

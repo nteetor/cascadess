@@ -12,7 +12,7 @@ border(x, color, radius = "medium", sides = TRUE)
 \item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, or \code{"white"} specifying the border
 color.}
 
-\item{radius}{One of \verb{rd rd_list(names(border_radius_))} specifying the
+\item{radius}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, \code{"circle"}, \code{"pill"}, or \code{"none"} specifying the
 border radius, defaults to \code{"medium"}.}
 
 \item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, \code{"l"}, \code{"all"}, or \code{"none"} specifying
@@ -21,4 +21,211 @@ be used as shorthands for all sides or no sides, respectively.}
 }
 \description{
 The \code{border()} function adjusts a tag element's borders.
+}
+\details{
+\subsection{Possible colors}{\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\% display("flex"),
+  lapply(names(border_color_), function(color) \{
+    div(
+      .style \%>\%
+        padding(4) \%>\%
+        margin(3) \%>\%
+        border(color),
+      color
+    )
+  \})
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+blue\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-indigo cas-border-all cas-border-radius-md">
+}}
+
+
+indigo\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-purple cas-border-all cas-border-radius-md">
+}}
+
+
+purple\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-red cas-border-all cas-border-radius-md">
+}}
+
+
+red\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-orange cas-border-all cas-border-radius-md">
+}}
+
+
+orange\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-yellow cas-border-all cas-border-radius-md">
+}}
+
+
+yellow\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-green cas-border-all cas-border-radius-md">
+}}
+
+
+green\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-teal cas-border-all cas-border-radius-md">
+}}
+
+
+teal\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-cyan cas-border-all cas-border-radius-md">
+}}
+
+
+cyan\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-white cas-border-all cas-border-radius-md">
+}}
+
+
+white\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+}
+
+\subsection{Possible radii}{\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\% display("flex"),
+  lapply(names(border_radius_), function(radius) \{
+    div(
+      .style \%>\%
+        padding(4) \%>\%
+        margin(3) \%>\%
+        border("blue", radius = radius),
+      radius
+    )
+  \})
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-sm">
+}}
+
+
+small\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-sm">
+}}
+
+
+sm\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+medium\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+md\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-lg">
+}}
+
+
+large\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-lg">
+}}
+
+
+lg\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-circle">
+}}
+
+
+circle\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-pill">
+}}
+
+
+pill\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-0">
+}}
+
+
+none\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+}
 }

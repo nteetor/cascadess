@@ -22,7 +22,7 @@ shadow_size <- function(size) {
 #' @param size One of `r rd_list(names(shadow_size_))` specifying the amount
 #'   of shadow added.
 #'
-# @includeRmd man/roxygen/shadow.Rmd
+#' @includeRmd man/roxygen/shadow.Rmd
 #'
 #' @export
 shadow <- function(x, size) {

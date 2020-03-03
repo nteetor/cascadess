@@ -169,12 +169,464 @@ or allowed to wrap onto multiple lines, defaults to <code>FALSE</code>.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<h3>Examples</h3>
+
+
+<p>Center an input above a larger element or next to the element if space
+allows.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(direction = c(default = "column", md = "row")),
+
+  radioButtons("id", "A sample input", c("Choice 1", "Choice 2")) %&gt;%
+    margin(h = c(xs = "auto", md = 0)),
+
+  div(
+    .style %&gt;%
+      width(100) %&gt;%
+      background("indigo") %&gt;%
+      text("white"),
+    "Plot placeholder"
+  )
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-margin-h-auto cas-margin-h-md-0"></p>
+
+<p><label class="control-label" for="id">A sample input</label>
+<div class="shiny-options-group">
+
+
+<div class="radio">
+
+
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+
+
+</div>
+
+
+<div class="radio"></p>
+
+<p><label> <input type="radio" name="id" value="Choice 2"/> <span>Choice
+2</span> </label>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<div class="cas-width-100 cas-background-indigo cas-text-color-white"></p>
+
+<p>Plot placeholder
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<h3>Arguments in detail</h3>
+
+
+<p>This section needs pretty specific examples of how to use flex. I don’t
+know that people will want a tutorial on flex.</p>
+<p>For the sake of the demo let’s create a flex item help function.<div class="r"></p><pre>flexItem &lt;- function(...) {
+  div(
+    .style %&gt;% padding(3) %&gt;% border("blue"),
+    "A flex item",
+    ...
+  )
+}
+</pre><p></div></p>
+
+<h3>Different <code>direction</code>s</h3>
+
+
+<p>Many of <code>flex()</code>’s arguments are viewport responsive. On small screens
+the flex items are placed vertically and can occupy the full width of
+the mobile device. On medium or larger screens the items are placed
+horizontally.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(
+      direction = c(xs = "column", md = "row")  # &lt;-
+    ),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p><em>Resize the browser for this example.</em></p>
+<p>You can keep items as a column by specifying only <code>"column"</code>.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(direction = "column"),  # &lt;-
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-column cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<h3>Spacing items with <code>justify</code></h3>
+
+
+<p>Below is a series of examples showing how to change the horizontal
+alignment of your flex items. Let’s start by pushing items to the
+beginning of their parent container.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(justify = "start"),  # &lt;-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>We can also push items to the <strong>end</strong>.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(justify = "end"),  # &lt;-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-row cas-flex-content-end cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>Without using a table layout we can <strong>center</strong> items.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(justify = "center"),  # &lt;-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-row cas-flex-content-center cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>You can also put space <strong>between</strong> items<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(justify = "between"),  # &lt;-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-row cas-flex-content-between cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>… or put space <strong>around</strong> items.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(justify = "around"),  # &lt;-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-row cas-flex-content-around cas-flex-items-stretch cas-flex-nowrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>The <code>"between"</code> and <code>"around"</code> values come from the original CSS values
+<code>"space-between"</code> and <code>"space-around"</code>.</p><h3>Wrap onto new lines</h3>
+
+
+<p>Using flexbox we can also control how items wrap onto new lines.<div class="r"></p><pre>div(
+  .style %&gt;%
+    display("flex") %&gt;%
+    flex(wrap = TRUE),
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex cas-flex-row cas-flex-content-start cas-flex-items-stretch cas-flex-wrap">
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>A flex item
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

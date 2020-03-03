@@ -134,12 +134,91 @@ to use the flex box layout the display must be <code>"flex"</code>.</p>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<h3>Why display matters</h3>
+<p><div class="r"></p><pre>div(
+  div(
+    .style %&gt;%
+      border("blue"),
+    "block"
+  ),
+  div(
+    .style %&gt;%
+      border("blue"),
+    "block"
+  )
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div>
+
+
+<div class="cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>block
+</div>
+
+
+<div class="cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>block
+</div>
+
+
+</div>
+
+
+<!--/html_preserve-->
+
+<div class="r"></p><pre>div(
+  div(
+    .style %&gt;%
+      border("blue") %&gt;%
+      display("inline"),
+    "inline"
+  ),
+  div(
+    .style %&gt;%
+      border("blue") %&gt;%
+      display("inline"),
+    "inline"
+  )
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div>
+
+
+<div class="cas-border-blue cas-border-all cas-border-radius-md cas-display-inline"></p>
+
+<p>inline
+</div>
+
+
+<div class="cas-border-blue cas-border-all cas-border-radius-md cas-display-inline"></p>
+
+<p>inline
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

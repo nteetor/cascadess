@@ -33,6 +33,14 @@ margin_left <- function(left) {
   compose("left", responsive(pick(left, from = margin_all_)))
 }
 
+margin_horizontal <- function(horizontal) {
+  compose("h", responsive(pick(horizontal, from = margin_all_)))
+}
+
+margin_vertical <- function(vertical) {
+  compose("v", responsive(pick(vertical, from = margin_all_)))
+}
+
 #' Margins
 #'
 #' The `margin()` function adjusts the outer spacing of a tag element. The
@@ -58,7 +66,7 @@ margin_left <- function(left) {
 #'
 #' @export
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
-                   left = NULL) {
+                   left = NULL, horizontal = NULL, vertical = NULL) {
   assert_subject(x)
 
   cls <- prefix(
@@ -67,7 +75,9 @@ margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
     margin_top(top),
     margin_right(right),
     margin_bottom(bottom),
-    margin_left(left)
+    margin_left(left),
+    margin_horizontal(horizontal),
+    margin_vertical(vertical)
   )
 
   add_class(x, cls)

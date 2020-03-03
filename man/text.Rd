@@ -16,7 +16,7 @@ text(
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"body"}, \code{"muted"}, or \code{"reset"} specifying the text
+\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"black-50"}, \code{"white-50"}, \code{"white"}, \code{"muted"}, \code{"body"}, or \code{"reset"} specifying the text
 color, defaults to \code{NULL}, in which case the argument is ignored.}
 
 \item{align}{One of \code{"left"}, \code{"right"}, or \code{"center"} specifying the}

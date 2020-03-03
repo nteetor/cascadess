@@ -1,29 +1,19 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-### Shadow sizes
+## Shadow sizes
 
 ```{r}
-library(htmltools)
-
 div(
-  div(
-    .style %>%
-      margin(2) %>%
-      shadow("small"),  # <-
-    "Small"
-  ),
-  div(
-    .style %>%
-      margin(2) %>%
-      shadow("medium"),  # <-
-    "Medium"
-  ),
-  div(
-    .style %>%
-      margin(2) %>%
-      shadow("large"),  # <-
-    "Large"
-  )
+  .style %>% display("flex"),
+  lapply(names(shadow_size_), function(size) {
+    div(
+      .style %>%
+        margin(3) %>%
+        padding(4) %>%
+        shadow(size),
+      size
+    )
+  })
 )
 ```

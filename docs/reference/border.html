@@ -132,7 +132,7 @@ color.</p></td>
     </tr>
     <tr>
       <th>radius</th>
-      <td><p>One of <code>rd rd_list(names(border_radius_))</code> specifying the
+      <td><p>One of <code>"small"</code>, <code>"sm"</code>, <code>"medium"</code>, <code>"md"</code>, <code>"large"</code>, <code>"lg"</code>, <code>"circle"</code>, <code>"pill"</code>, or <code>"none"</code> specifying the
 border radius, defaults to <code>"medium"</code>.</p></td>
     </tr>
     <tr>
@@ -143,12 +143,180 @@ be used as shorthands for all sides or no sides, respectively.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<h3>Possible colors</h3>
+<p><div class="r"></p><pre>div(
+  .style %&gt;% display("flex"),
+  lapply(names(border_color_), function(color) {
+    div(
+      .style %&gt;%
+        padding(4) %&gt;%
+        margin(3) %&gt;%
+        border(color),
+      color
+    )
+  })
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex">
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>blue
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-indigo cas-border-all cas-border-radius-md"></p>
+
+<p>indigo
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-purple cas-border-all cas-border-radius-md"></p>
+
+<p>purple
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-red cas-border-all cas-border-radius-md"></p>
+
+<p>red
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-orange cas-border-all cas-border-radius-md"></p>
+
+<p>orange
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-yellow cas-border-all cas-border-radius-md"></p>
+
+<p>yellow
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-green cas-border-all cas-border-radius-md"></p>
+
+<p>green
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-teal cas-border-all cas-border-radius-md"></p>
+
+<p>teal
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-cyan cas-border-all cas-border-radius-md"></p>
+
+<p>cyan
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-white cas-border-all cas-border-radius-md"></p>
+
+<p>white
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<h3>Possible radii</h3>
+<p><div class="r"></p><pre>div(
+  .style %&gt;% display("flex"),
+  lapply(names(border_radius_), function(radius) {
+    div(
+      .style %&gt;%
+        padding(4) %&gt;%
+        margin(3) %&gt;%
+        border("blue", radius = radius),
+      radius
+    )
+  })
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="cas-display-flex">
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-sm"></p>
+
+<p>small
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-sm"></p>
+
+<p>sm
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>medium
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md"></p>
+
+<p>md
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-lg"></p>
+
+<p>large
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-lg"></p>
+
+<p>lg
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-circle"></p>
+
+<p>circle
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-pill"></p>
+
+<p>pill
+</div>
+
+
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-0"></p>
+
+<p>none
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

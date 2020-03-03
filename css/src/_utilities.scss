@@ -53,6 +53,14 @@ $utilities: (
     )
   ),
 
+  "background-hover": (
+    property: background-color,
+    class: hover,
+    values: (
+      "green:hover": darken($green, 10%)
+    )
+  ),
+
   "position": (
     property: position,
     values: static relative absolute fixed sticky
@@ -174,7 +182,11 @@ $utilities: (
     responsive: true,
     property: flex-wrap,
     class: flex,
-    values: wrap nowrap wrap-reverse
+    values: (
+      wrap: wrap,
+      nowrap: nowrap,
+      wrap-reverse: wrap-reverse
+    )
   ),
 
   "justify-content": (
@@ -277,6 +289,20 @@ $utilities: (
   "margin-left": (
     responsive: true,
     property: margin-left,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-horizontal": (
+    responsive: true,
+    property: margin-left margin-right,
+    class: margin-h,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-vertical": (
+    responsive: true,
+    property: margin-top margin-bottom,
+    class: margin-v,
     values: map-merge($spacers, (auto: auto))
   ),
 

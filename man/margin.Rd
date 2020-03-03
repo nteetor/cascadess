@@ -4,7 +4,16 @@
 \alias{margin}
 \title{Margins}
 \usage{
-margin(x, all = NULL, top = NULL, right = NULL, bottom = NULL, left = NULL)
+margin(
+  x,
+  all = NULL,
+  top = NULL,
+  right = NULL,
+  bottom = NULL,
+  left = NULL,
+  horizontal = NULL,
+  vertical = NULL
+)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}

@@ -1,12 +1,15 @@
 text_color_ <- c(
   theme_colors,
-  body = "body",
+  `black-50` = "black-50",
+  `white-50` = "white-50",
+  white = "white",
   muted = "muted",
+  body = "body",
   reset = "reset"
 )
 
 text_color <- function(color) {
-  pick(color, from = text_color_)
+  compose("color", pick(color, from = text_color_))
 }
 
 text_align_ <- c(

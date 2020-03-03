@@ -1,22 +1,36 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-## Borders
+## Possible colors
 
-```{r}
-library(htmltools)
-
-print(
-  .style %>%
-    border("primary") %>%
-    font("primary")
+```{r colors}
+div(
+  .style %>% display("flex"),
+  lapply(names(border_color_), function(color) {
+    div(
+      .style %>%
+        padding(4) %>%
+        margin(3) %>%
+        border(color),
+      color
+    )
+  })
 )
+```
 
-## div(
-##   .style %>%
-##     border("primary") %>%
-##     font("primary"),
-##   p("Cras justo odio, dapibus ac facilisis in, egestas eget quam."),
-##   p("Etiam porta sem malesuada magna mollis euismod.")
-## )
+## Possible radii
+
+```{r radii}
+div(
+  .style %>% display("flex"),
+  lapply(names(border_radius_), function(radius) {
+    div(
+      .style %>%
+        padding(4) %>%
+        margin(3) %>%
+        border("blue", radius = radius),
+      radius
+    )
+  })
+)
 ```

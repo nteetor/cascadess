@@ -134,23 +134,105 @@
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     
-<h3>Background color</h3>
-<p><div class="r"></p><pre>span(
-  .style %&gt;%
-    padding(4) %&gt;%
-    background("teal")  # &lt;-
+<h3>Action buttons</h3>
+
+
+<p>Use <code>background()</code> to modify shiny’s action buttons.<div class="r"></p><pre>actionButton("id", "Take action") %&gt;%
+  background("green")
+</pre><p></div>
+<!--html_preserve-->
+
+
+<button id="id" type="button" class="btn btn-default action-button cas-background-green"></p>
+
+<p>Take action
+</button>
+
+
+<!--/html_preserve--></p>
+
+<p>With a couple other functions we can take our improvement a step
+further.<div class="r"></p><pre>actionButton("id", "Take action") %&gt;%
+  background("green") %&gt;%
+  border("green") %&gt;%
+  shadow("small")
+</pre><p></div>
+<!--html_preserve-->
+
+
+<button id="id" type="button" class="btn btn-default action-button cas-background-green cas-border-green cas-border-all cas-border-radius-md cas-shadow-sm"></p>
+
+<p>Take action
+</button>
+
+
+<!--/html_preserve--></p>
+
+<h3>Panel background</h3>
+<p><div class="r"></p><pre>sidebarLayout(
+  sidebarPanel(
+    .style %&gt;%
+      background("blue"),
+    "It's alive"
+  ),
+  mainPanel(
+    .style %&gt;%
+      background("red"),
+    "It's panel"
+  )
 )
 </pre><p></div>
-<!--html_preserve--></p>
+<!--html_preserve-->
 
-<p><span class="cas-padding-all-4 cas-background-teal"></span><!--/html_preserve--></p><h3>Possible colors</h3>
+
+<div class="row">
+
+
+<div class="col-sm-4">
+
+
+<form class="well cas-background-blue"></p>
+
+<p>It’s alive
+</form>
+
+
+</div>
+
+
+<div class="col-sm-8 cas-background-red"></p>
+
+<p>It’s panel
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<h3>Download buttons</h3>
+
+
+<p>Shiny’s download buttons include <code>...</code>, so we can use the <code>.style</code>
+pronoun!<div class="r"></p><pre>downloadButton(
+  .style %&gt;%
+    background("white") %&gt;%
+    border("blue"),
+  outputId = "dwnld",
+  label = "Do a download",
+  class = NULL
+)
+</pre><p></div></p>
+
+<h3>Possible colors</h3>
 <p><!--html_preserve-->
 
 
-<div class="cas-display-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-display-flex cas-flex-row cas-flex-content-between cas-flex-items-stretch cas-flex-wrap">
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -159,7 +241,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-blue">
+<div class="cas-padding-all-5 cas-background-blue">
 
 
 </div>
@@ -168,7 +250,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -177,7 +259,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-indigo">
+<div class="cas-padding-all-5 cas-background-indigo">
 
 
 </div>
@@ -186,7 +268,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -195,7 +277,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-purple">
+<div class="cas-padding-all-5 cas-background-purple">
 
 
 </div>
@@ -204,7 +286,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -213,7 +295,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-red">
+<div class="cas-padding-all-5 cas-background-red">
 
 
 </div>
@@ -222,7 +304,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -231,7 +313,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-orange">
+<div class="cas-padding-all-5 cas-background-orange">
 
 
 </div>
@@ -240,7 +322,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -249,7 +331,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-yellow">
+<div class="cas-padding-all-5 cas-background-yellow">
 
 
 </div>
@@ -258,7 +340,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -267,7 +349,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-green">
+<div class="cas-padding-all-5 cas-background-green">
 
 
 </div>
@@ -276,7 +358,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -285,7 +367,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-teal">
+<div class="cas-padding-all-5 cas-background-teal">
 
 
 </div>
@@ -294,7 +376,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -303,7 +385,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-cyan">
+<div class="cas-padding-all-5 cas-background-cyan">
 
 
 </div>
@@ -312,7 +394,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -321,7 +403,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-body">
+<div class="cas-padding-all-5 cas-background-body">
 
 
 </div>
@@ -330,7 +412,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -339,7 +421,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-white">
+<div class="cas-padding-all-5 cas-background-white">
 
 
 </div>
@@ -348,7 +430,7 @@
 </div>
 
 
-<div>
+<div class="cas-margin-all-3">
 
 
 <div class="cas-text-align-center"></p>
@@ -357,7 +439,7 @@
 </div>
 
 
-<div class="cas-padding-all-3 cas-margin-all-1 cas-background-transparent">
+<div class="cas-padding-all-5 cas-background-transparent">
 
 
 </div>
@@ -370,8 +452,6 @@
 
 
 <!--/html_preserve--></p>
-
-
 
 
   </div>
