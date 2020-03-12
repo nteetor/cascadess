@@ -59,8 +59,17 @@ margin_vertical <- function(vertical) {
 #' @param top,right,bottom,left A [responsive] argument.
 #'
 #'   One of `-5:5` or `"auto"` specifying a margin for the respective side of
-#'   the tag element. 0 removes all outer space, 5 adds the most space, and
-#'   negative values will consume space and pull the element in that direction.
+#'   the tag element.
+#'
+#' @param horizontal A [responsive] argument.
+#'
+#'   One of `-5:5` or `"auto"` specifying a margin for the left and right sides
+#'   of the tag element.
+#'
+#' @param vertical A [responsive] argument.
+#'
+#'   One of `-5:5` or `"auto"` specifying a margin for the top and bottom sides
+#'   of the tag element.
 #'
 #' @includeRmd man/roxygen/margin.Rmd
 #'

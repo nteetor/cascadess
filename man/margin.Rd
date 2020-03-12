@@ -28,8 +28,17 @@ consume space and pull the element in that direction.}
 \item{top, right, bottom, left}{A \link{responsive} argument.
 
 One of \code{-5:5} or \code{"auto"} specifying a margin for the respective side of
-the tag element. 0 removes all outer space, 5 adds the most space, and
-negative values will consume space and pull the element in that direction.}
+the tag element.}
+
+\item{horizontal}{A \link{responsive} argument.
+
+One of \code{-5:5} or \code{"auto"} specifying a margin for the left and right sides
+of the tag element.}
+
+\item{vertical}{A \link{responsive} argument.
+
+One of \code{-5:5} or \code{"auto"} specifying a margin for the top and bottom sides
+of the tag element.}
 }
 \description{
 The \code{margin()} function adjusts the outer spacing of a tag element. The
