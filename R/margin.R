@@ -62,7 +62,7 @@ margin_vertical <- function(vertical) {
 #'   the tag element. 0 removes all outer space, 5 adds the most space, and
 #'   negative values will consume space and pull the element in that direction.
 #'
-# @includeRmd man/roxygen/margin.Rmd
+#' @includeRmd man/roxygen/margin.Rmd
 #'
 #' @export
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,

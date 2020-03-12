@@ -1,7 +1,7 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-## Examples
+# Centering elements
 
 Center an input above a larger element or next to the element if space allows.
 
@@ -24,7 +24,7 @@ div(
 )
 ```
 
-## Arguments in detail
+# Details
 
 This section needs pretty specific examples of how to use flex. I don't know
 that people will want a tutorial on flex.
@@ -152,7 +152,7 @@ div(
 The `"between"` and `"around"` values come from the original CSS values
 `"space-between"` and `"space-around"`.
 
-### Wrap onto new lines
+## `wrap` onto new lines
 
 Using flexbox we can also control how items wrap onto new lines.
 

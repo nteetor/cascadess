@@ -48,9 +48,7 @@ or around child elements, and more.
 Direct child elements of a flex box container are automatically considered
 flex items and may be adjusted with \code{\link[=item]{item()}}.
 }
-\details{
-\subsection{Examples}{
-
+\section{Centering elements}{
 Center an input above a larger element or next to the element if space
 allows.\if{html}{\out{<div class="r">}}\preformatted{div(
   .style \%>\%
@@ -122,11 +120,9 @@ Plot placeholder\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
-
 }
 
-\subsection{Arguments in detail}{
-
+\section{Details}{
 This section needs pretty specific examples of how to use flex. I don’t
 know that people will want a tutorial on flex.
 
@@ -138,8 +134,6 @@ For the sake of the demo let’s create a flex item help function.\if{html}{\out
   )
 \}
 }\if{html}{\out{</div>}}
-}
-
 \subsection{Different \code{direction}s}{
 
 Many of \code{flex()}’s arguments are viewport responsive. On small screens
@@ -523,7 +517,9 @@ A flex item\if{html}{\out{
 
 The \code{"between"} and \code{"around"} values come from the original CSS values
 \code{"space-between"} and \code{"space-around"}.
-\subsection{Wrap onto new lines}{
+}
+
+\subsection{\code{wrap} onto new lines}{
 
 Using flexbox we can also control how items wrap onto new lines.\if{html}{\out{<div class="r">}}\preformatted{div(
   .style \%>\%
@@ -580,6 +576,5 @@ A flex item\if{html}{\out{
 }}
 
 }
+}
 
-}
-}

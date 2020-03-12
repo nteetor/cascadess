@@ -14,9 +14,7 @@ background(x, color)
 \description{
 The \code{background()} function adjusts the background color of a tag element.
 }
-\details{
-\subsection{Action buttons}{
-
+\section{Buttons}{
 Use \code{background()} to modify shiny’s action buttons.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take action") \%>\%
   background("green")
 }\if{html}{\out{</div>}}\if{html}{\out{
@@ -55,9 +53,21 @@ Take action\if{html}{\out{
 <!--/html_preserve-->
 }}
 
+
+Shiny’s download buttons include \code{...}, so we can use the \code{.style}
+pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
+  .style \%>\%
+    background("white") \%>\%
+    border("blue"),
+  outputId = "dwnld",
+  label = "Do a download",
+  class = NULL
+)
+}\if{html}{\out{</div>}}
 }
 
-\subsection{Panel background}{\if{html}{\out{<div class="r">}}\preformatted{sidebarLayout(
+\section{Panels}{
+\if{html}{\out{<div class="r">}}\preformatted{sidebarLayout(
   sidebarPanel(
     .style \%>\%
       background("blue"),
@@ -103,24 +113,10 @@ It’s panel\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
-
 }
 
-\subsection{Download buttons}{
-
-Shiny’s download buttons include \code{...}, so we can use the \code{.style}
-pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
-  .style \%>\%
-    background("white") \%>\%
-    border("blue"),
-  outputId = "dwnld",
-  label = "Do a download",
-  class = NULL
-)
-}\if{html}{\out{</div>}}
-}
-
-\subsection{Possible colors}{\if{html}{\out{
+\section{Colors}{
+\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
@@ -372,6 +368,5 @@ transparent\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
+}
 
-}
-}

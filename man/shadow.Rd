@@ -16,20 +16,8 @@ of shadow added.}
 The \code{shadow()} function adjusts the box shadow of a tag element. Shadows help
 distinguish elements or indicate interactivity.
 }
-\details{
-\subsection{Shadow sizes}{\if{html}{\out{<div class="r">}}\preformatted{div(
-  .style \%>\% display("flex"),
-  lapply(names(shadow_size_), function(size) \{
-    div(
-      .style \%>\%
-        margin(3) \%>\%
-        padding(4) \%>\%
-        shadow(size),
-      size
-    )
-  \})
-)
-}\if{html}{\out{</div>}}\if{html}{\out{
+\section{Sizes}{
+\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
@@ -97,6 +85,5 @@ none\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
+}
 
-}
-}

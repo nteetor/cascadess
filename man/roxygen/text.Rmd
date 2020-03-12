@@ -1,0 +1,16 @@
+```{r, child = "_setup.Rmd"}
+```
+
+# Colors
+
+```{r}
+div(
+  .style %>%
+    text("blue") %>%  # <-
+    border("blue"),
+  p("Nullam tristique diam non turpis.",
+    "Pellentesque dapibus suscipit ligula.",
+    "Nullam eu ante vel est convallis dignissim."),
+  p("Aliquam posuere.")
+)
+```

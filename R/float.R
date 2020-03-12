@@ -20,8 +20,6 @@ float_side <- function(side) {
 #'
 #'   One of `"left"` or `"right"` specifying the side to float the element.
 #'
-# @includeRmd man/roxygen/float.Rmd
-#'
 #' @export
 float <- function(x, side) {
   assert_subject(x)

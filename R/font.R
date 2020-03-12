@@ -60,7 +60,7 @@ font_family <- function(family) {
 #' @param family One of `r rd_list(names(font_family_))` specifying the font
 #'   family, defaults to `NULL`, in which case the argument is ignored.
 #'
-# @includeRmd man/roxygen/font.Rmd
+#' @includeRmd man/roxygen/font.Rmd
 #'
 #' @export
 font <- function(x, weight = NULL, style = NULL, case = NULL,

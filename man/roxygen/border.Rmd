@@ -1,9 +1,9 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-## Possible colors
+# Colors
 
-```{r colors}
+```{r colors, echo=FALSE}
 div(
   .style %>% display("flex"),
   lapply(names(border_color_), function(color) {
@@ -18,9 +18,9 @@ div(
 )
 ```
 
-## Possible radii
+# Radii
 
-```{r radii}
+```{r radii, echo=FALSE}
 div(
   .style %>% display("flex"),
   lapply(names(border_radius_), function(radius) {

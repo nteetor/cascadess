@@ -145,12 +145,180 @@ inner space and 5 adds the most space.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    
+<h3>Examples</h3>
+
+
+<p>Well panels.<div class="r"></p><pre>wellPanel(
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  )
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="well">
+
+
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container"></p>
+
+<p><label class="control-label" for="id">Radio input</label>
+<div class="shiny-options-group">
+
+
+<div class="radio">
+
+
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+
+
+</div>
+
+
+<div class="radio"></p>
+
+<p><label> <input type="radio" name="id" value="Choice 2"/> <span>Choice
+2</span> </label>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>Shrink well padding.<div class="r"></p><pre>wellPanel(
+  .style %&gt;%
+    padding(1),
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  )
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="well cas-padding-all-1">
+
+
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container"></p>
+
+<p><label class="control-label" for="id">Radio input</label>
+<div class="shiny-options-group">
+
+
+<div class="radio">
+
+
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+
+
+</div>
+
+
+<div class="radio"></p>
+
+<p><label> <input type="radio" name="id" value="Choice 2"/> <span>Choice
+2</span> </label>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
+<p>Auto width.<div class="r"></p><pre>wellPanel(
+  .style %&gt;%
+    padding(1),
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  ) %&gt;%
+    width("auto")
+)
+</pre><p></div>
+<!--html_preserve-->
+
+
+<div class="well cas-padding-all-1">
+
+
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-width-auto"></p>
+
+<p><label class="control-label" for="id">Radio input</label>
+<div class="shiny-options-group">
+
+
+<div class="radio">
+
+
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+
+
+</div>
+
+
+<div class="radio"></p>
+
+<p><label> <input type="radio" name="id" value="Choice 2"/> <span>Choice
+2</span> </label>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<!--/html_preserve--></p>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

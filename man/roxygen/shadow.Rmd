@@ -1,9 +1,9 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-## Shadow sizes
+# Sizes
 
-```{r}
+```{r sizes, echo=FALSE}
 div(
   .style %>% display("flex"),
   lapply(names(shadow_size_), function(size) {

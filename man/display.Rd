@@ -17,8 +17,8 @@ One of \code{"inline"}, \code{"inline-block"}, \code{"block"}, \code{"table"}, \
 The \code{display()} function adjusts how a tag element is rendered. For example,
 to use the flex box layout the display must be \code{"flex"}.
 }
-\details{
-\subsection{Why display matters}{\if{html}{\out{<div class="r">}}\preformatted{div(
+\section{Block vs inline}{
+\if{html}{\out{<div class="r">}}\preformatted{div(
   div(
     .style \%>\%
       border("blue"),
@@ -100,6 +100,5 @@ inline\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
+}
 
-}
-}

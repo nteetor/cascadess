@@ -1,0 +1,54 @@
+```{r, child="_setup.Rmd"}
+```
+
+# Panels
+
+Well panels.
+
+```{r}
+wellPanel(
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  )
+)
+```
+
+Shrink well padding.
+
+```{r}
+wellPanel(
+  .style %>%
+    padding(1),
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  )
+)
+```
+
+Auto width.
+
+```{r}
+wellPanel(
+  .style %>%
+    padding(1),
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  ) %>%
+    width("auto")
+)
+```

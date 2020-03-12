@@ -22,20 +22,8 @@ be used as shorthands for all sides or no sides, respectively.}
 \description{
 The \code{border()} function adjusts a tag element's borders.
 }
-\details{
-\subsection{Possible colors}{\if{html}{\out{<div class="r">}}\preformatted{div(
-  .style \%>\% display("flex"),
-  lapply(names(border_color_), function(color) \{
-    div(
-      .style \%>\%
-        padding(4) \%>\%
-        margin(3) \%>\%
-        border(color),
-      color
-    )
-  \})
-)
-}\if{html}{\out{</div>}}\if{html}{\out{
+\section{Colors}{
+\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
@@ -127,22 +115,10 @@ white\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
-
 }
 
-\subsection{Possible radii}{\if{html}{\out{<div class="r">}}\preformatted{div(
-  .style \%>\% display("flex"),
-  lapply(names(border_radius_), function(radius) \{
-    div(
-      .style \%>\%
-        padding(4) \%>\%
-        margin(3) \%>\%
-        border("blue", radius = radius),
-      radius
-    )
-  \})
-)
-}\if{html}{\out{</div>}}\if{html}{\out{
+\section{Radii}{
+\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
@@ -226,6 +202,5 @@ none\if{html}{\out{
 \if{html}{\out{
 <!--/html_preserve-->
 }}
+}
 
-}
-}

@@ -36,3 +36,29 @@ The \code{margin()} function adjusts the outer spacing of a tag element. The
 margin of a tag element is the space outside and around the tag element, its
 border, and its content.
 }
+\section{Auto margins}{
+In most modern browsers you want to horizontally center a tag element
+using the flex layout. Alternatively, you can horizontally center an
+element using \code{margin(.., horizontal = "auto")}.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    margin(v = 2, h = "auto") \%>\%  # <-
+    padding(3) \%>\%
+    background("teal"),
+  "Nam a sapien. Integer placerat tristique nisl."
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-margin-h-auto cas-margin-v-2 cas-padding-all-3 cas-background-teal">
+}}
+
+
+Nam a sapien. Integer placerat tristique nisl.\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+

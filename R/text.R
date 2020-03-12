@@ -74,6 +74,8 @@ text_wrap <- function(wrap) {
 #'   wrap onto new lines, defaults to `NULL`, in which case the argument
 #'   is ignored.
 #'
+#' @includeRmd man/roxygen/text.Rmd
+#'
 #' @export
 text <- function(x, color = NULL, align = NULL, spacing = NULL,
                  decoration = NULL, wrap = NULL) {

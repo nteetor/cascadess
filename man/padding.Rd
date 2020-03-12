@@ -26,3 +26,183 @@ The \code{padding()} function adjusts the inner spacing of a tag element. The
 padding of a tag element is the space between the tag element's border and
 its content or child elements.
 }
+\section{Panels}{
+Well panels.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  )
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="well">
+}}
+\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
+}}
+
+
+\if{html}{\out{<label class="control-label" for="id">}}Radio input\if{html}{\out{</label>}}\if{html}{\out{
+<div class="shiny-options-group">
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+\if{html}{\out{
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+
+
+\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
+2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+Shrink well padding.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
+  .style \%>\%
+    padding(1),
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  )
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="well cas-padding-all-1">
+}}
+\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
+}}
+
+
+\if{html}{\out{<label class="control-label" for="id">}}Radio input\if{html}{\out{</label>}}\if{html}{\out{
+<div class="shiny-options-group">
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+\if{html}{\out{
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+
+
+\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
+2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+Auto width.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
+  .style \%>\%
+    padding(1),
+  radioButtons(
+    inputId = "id",
+    label = "Radio input",
+    choices = c(
+      "Choice 1",
+      "Choice 2"
+    )
+  ) \%>\%
+    width("auto")
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="well cas-padding-all-1">
+}}
+\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-width-auto">
+}}
+
+
+\if{html}{\out{<label class="control-label" for="id">}}Radio input\if{html}{\out{</label>}}\if{html}{\out{
+<div class="shiny-options-group">
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+\if{html}{\out{
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+
+
+\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
+2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+

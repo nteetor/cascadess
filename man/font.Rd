@@ -28,3 +28,44 @@ family, defaults to \code{NULL}, in which case the argument is ignored.}
 The \code{font()} function adjusts the size, weight, style, case, and family of
 the font of a tag element.
 }
+\section{Weights}{
+\if{html}{\out{<div class="r">}}\preformatted{p(
+  .style \%>\%
+    font(weight = "bold"),
+  "Curabitur lacinia pulvinar nibh."
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<p class="cas-font-weight-bold">
+}}
+
+
+Curabitur lacinia pulvinar nibh.\if{html}{\out{
+</p>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+\if{html}{\out{<div class="r">}}\preformatted{p(
+  .style \%>\%
+    font(weight = "light"),
+  "Proin quam nisl, tincidunt et."
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<p class="cas-font-weight-light">
+}}
+
+
+Proin quam nisl, tincidunt et.\if{html}{\out{
+</p>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+
