@@ -53,14 +53,6 @@ $utilities: (
     )
   ),
 
-  "background-hover": (
-    property: background-color,
-    class: hover,
-    values: (
-      "green:hover": darken($green, 10%)
-    )
-  ),
-
   "position": (
     property: position,
     values: static relative absolute fixed sticky
