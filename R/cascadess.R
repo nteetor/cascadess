@@ -5,7 +5,12 @@ NULL
 
 #' Cascadess
 #'
-#' Use cascadess in your shiny app.
+#' @description
+#'
+#' Styles for htmltools tags.
+#'
+#' For styles to be applied you must include a call to `cascadess()` in your
+#' shiny application or htmltools tags.
 #'
 #' @export
 #' @examples
