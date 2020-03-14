@@ -1,0 +1,21 @@
+---
+always_allow_html: yes
+output:
+  github_document:
+    pandoc_args: ["--wrap=preserve", "--to", "html5", "--quiet"]
+---
+
+```{r setup, echo=FALSE, include=FALSE}
+library(htmltools)
+library(cascadess)
+```
+
+# cascadess
+
+```{r}
+div(
+  .style %>%
+    font("bold"),
+  "Apply a little style to your htmltools tags!"
+)
+```

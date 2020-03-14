@@ -16,7 +16,7 @@ text(
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"body"}, \code{"muted"}, or \code{"reset"} specifying the text
+\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"black-50"}, \code{"white-50"}, \code{"white"}, \code{"muted"}, \code{"body"}, or \code{"reset"} specifying the text
 color, defaults to \code{NULL}, in which case the argument is ignored.}
 
 \item{align}{One of \code{"left"}, \code{"right"}, or \code{"center"} specifying the}
@@ -36,3 +36,44 @@ is ignored.}
 The \code{text()} function adjusts the text color, alignment, line spacing, line
 wrapping, and decoration of a tag element.
 }
+\section{Colors}{
+\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    text("blue") \%>\%  # <-
+    border("blue"),
+  p("Nullam tristique diam non turpis.",
+    "Pellentesque dapibus suscipit ligula.",
+    "Nullam eu ante vel est convallis dignissim."),
+  p("Aliquam posuere.")
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-text-color-blue cas-border-blue cas-border-all cas-border-radius-md">
+}}
+\if{html}{\out{
+<p>
+}}
+
+
+Nullam tristique diam non turpis. Pellentesque dapibus suscipit ligula.
+Nullam eu ante vel est convallis dignissim.\if{html}{\out{
+</p>
+}}
+\if{html}{\out{
+<p>
+}}
+
+
+Aliquam posuere.\if{html}{\out{
+</p>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+

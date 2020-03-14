@@ -1,2 +1,72 @@
 ```{r, child = "_setup.Rmd", include = FALSE}
 ```
+
+# Buttons
+
+Use `background()` to modify shiny's action buttons.
+
+```{r}
+actionButton("id", "Take action") %>%
+  background("green")
+```
+
+With a couple other functions we can take our improvement a step further.
+
+```{r}
+actionButton("id", "Take action") %>%
+  background("green") %>%
+  border("green") %>%
+  shadow("small")
+```
+
+Shiny's download buttons include `...`, so we can use the `.style` pronoun!
+
+```{r}
+downloadButton(
+  .style %>%
+    background("white") %>%
+    border("blue"),
+  outputId = "dwnld",
+  label = "Do a download",
+  class = NULL
+)
+```
+
+# Panels
+
+```{r}
+sidebarLayout(
+  sidebarPanel(
+    .style %>%
+      background("blue"),
+    "It's alive"
+  ),
+  mainPanel(
+    .style %>%
+      background("red"),
+    "It's panel"
+  )
+)
+```
+
+# Colors
+
+```{r colors, echo=FALSE}
+div(
+  .style %>%
+    display("flex") %>%
+    flex(justify = "between", wrap = TRUE),
+  lapply(names(background_color_), function(color) {
+    div(
+      .style %>%
+        margin(3),
+      div(color) %>% text(align = "center"),
+      div(
+        .style %>%
+          padding(5) %>%
+          background(color)
+      )
+    )
+  })
+)
+```

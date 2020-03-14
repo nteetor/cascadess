@@ -1,25 +1,7 @@
 ```{r, child = "_setup.Rmd"}
 ```
 
-### Getting started
-
-### Changing text color
-
-```{r}
-library(htmltools)
-
-div(
-  .style %>%
-    font("primary") %>%
-    border("primary"),
-  p("Nullam tristique diam non turpis.",
-    "Pellentesque dapibus suscipit ligula.",
-    "Nullam eu ante vel est convallis dignissim."),
-  p("Aliquam posuere.")
-)
-```
-
-### Changing font weight
+# Weights
 
 ```{r}
 p(

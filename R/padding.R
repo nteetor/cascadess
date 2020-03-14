@@ -48,7 +48,7 @@ padding_left <- function(left) {
 #'   defaults to `NULL`, in which case the argument is ignored. 0 removes all
 #'   inner space and 5 adds the most space.
 #'
-# @includeRmd man/roxygen/margin.Rmd
+#' @includeRmd man/roxygen/padding.Rmd
 #'
 #' @export
 padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,

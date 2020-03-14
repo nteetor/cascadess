@@ -1,12 +1,15 @@
 text_color_ <- c(
   theme_colors,
-  body = "body",
+  `black-50` = "black-50",
+  `white-50` = "white-50",
+  white = "white",
   muted = "muted",
+  body = "body",
   reset = "reset"
 )
 
 text_color <- function(color) {
-  pick(color, from = text_color_)
+  compose("color", pick(color, from = text_color_))
 }
 
 text_align_ <- c(
@@ -70,6 +73,8 @@ text_wrap <- function(wrap) {
 #' @param wrap One of `TRUE` or `FALSE` specifying if an element's text should
 #'   wrap onto new lines, defaults to `NULL`, in which case the argument
 #'   is ignored.
+#'
+#' @includeRmd man/roxygen/text.Rmd
 #'
 #' @export
 text <- function(x, color = NULL, align = NULL, spacing = NULL,

@@ -33,6 +33,14 @@ margin_left <- function(left) {
   compose("left", responsive(pick(left, from = margin_all_)))
 }
 
+margin_horizontal <- function(horizontal) {
+  compose("h", responsive(pick(horizontal, from = margin_all_)))
+}
+
+margin_vertical <- function(vertical) {
+  compose("v", responsive(pick(vertical, from = margin_all_)))
+}
+
 #' Margins
 #'
 #' The `margin()` function adjusts the outer spacing of a tag element. The
@@ -51,14 +59,23 @@ margin_left <- function(left) {
 #' @param top,right,bottom,left A [responsive] argument.
 #'
 #'   One of `-5:5` or `"auto"` specifying a margin for the respective side of
-#'   the tag element. 0 removes all outer space, 5 adds the most space, and
-#'   negative values will consume space and pull the element in that direction.
+#'   the tag element.
 #'
-# @includeRmd man/roxygen/margin.Rmd
+#' @param horizontal A [responsive] argument.
+#'
+#'   One of `-5:5` or `"auto"` specifying a margin for the left and right sides
+#'   of the tag element.
+#'
+#' @param vertical A [responsive] argument.
+#'
+#'   One of `-5:5` or `"auto"` specifying a margin for the top and bottom sides
+#'   of the tag element.
+#'
+#' @includeRmd man/roxygen/margin.Rmd
 #'
 #' @export
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
-                   left = NULL) {
+                   left = NULL, horizontal = NULL, vertical = NULL) {
   assert_subject(x)
 
   cls <- prefix(
@@ -67,7 +84,9 @@ margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
     margin_top(top),
     margin_right(right),
     margin_bottom(bottom),
-    margin_left(left)
+    margin_left(left),
+    margin_horizontal(horizontal),
+    margin_vertical(vertical)
   )
 
   add_class(x, cls)

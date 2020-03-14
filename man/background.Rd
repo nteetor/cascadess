@@ -14,3 +14,359 @@ background(x, color)
 \description{
 The \code{background()} function adjusts the background color of a tag element.
 }
+\section{Buttons}{
+Use \code{background()} to modify shiny’s action buttons.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take action") \%>\%
+  background("green")
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<button id="id" type="button" class="btn btn-default action-button cas-background-green">
+}}
+
+
+Take action\if{html}{\out{
+</button>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+With a couple other functions we can take our improvement a step
+further.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take action") \%>\%
+  background("green") \%>\%
+  border("green") \%>\%
+  shadow("small")
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<button id="id" type="button" class="btn btn-default action-button cas-background-green cas-border-green cas-border-all cas-border-radius-md cas-shadow-sm">
+}}
+
+
+Take action\if{html}{\out{
+</button>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+Shiny’s download buttons include \code{...}, so we can use the \code{.style}
+pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
+  .style \%>\%
+    background("white") \%>\%
+    border("blue"),
+  outputId = "dwnld",
+  label = "Do a download",
+  class = NULL
+)
+}\if{html}{\out{</div>}}
+}
+
+\section{Panels}{
+\if{html}{\out{<div class="r">}}\preformatted{sidebarLayout(
+  sidebarPanel(
+    .style \%>\%
+      background("blue"),
+    "It's alive"
+  ),
+  mainPanel(
+    .style \%>\%
+      background("red"),
+    "It's panel"
+  )
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="row">
+}}
+\if{html}{\out{
+<div class="col-sm-4">
+}}
+\if{html}{\out{
+<form class="well cas-background-blue">
+}}
+
+
+It’s alive\if{html}{\out{
+</form>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="col-sm-8 cas-background-red">
+}}
+
+
+It’s panel\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+
+\section{Colors}{
+\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-between cas-flex-items-stretch cas-flex-wrap">
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+blue\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-blue">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+indigo\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-indigo">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+purple\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-purple">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+red\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-red">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+orange\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-orange">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+yellow\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-yellow">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+green\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-green">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+teal\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-teal">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+cyan\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-cyan">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+body\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-body">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+white\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-white">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-margin-all-3">
+}}
+\if{html}{\out{
+<div class="cas-text-align-center">
+}}
+
+
+transparent\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-5 cas-background-transparent">
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+

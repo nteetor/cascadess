@@ -7,7 +7,10 @@
 cascadess()
 }
 \description{
-Use cascadess in your shiny app.
+Styles for htmltools tags.
+
+For styles to be applied you must include a call to \code{cascadess()} in your
+shiny application or htmltools tags.
 }
 \examples{
 

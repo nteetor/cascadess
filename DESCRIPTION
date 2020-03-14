@@ -3,17 +3,16 @@ Type: Package
 Title: A Style Pronoun for 'htmltools' Tags
 Version: 0.1.0
 Authors@R: c(
-    person("Nathan", "Teetor", role = c("aut", "cre"),
-      email = "nathanteetor@gmail.com"),
-    person(family = "The Bootstrap Authors", role = "cph",
-      comment = "Bootstrap library"),
-    person(family = "Twitter, Inc", role = "cph",
-      comment = "Bootstrap library")
-    )
+  person("Nathan", "Teetor", email = "nathanteetor@gmail.com",
+         role = c("aut", "cre")),
+  person(family = "The Bootstrap Authors", comment = "Bootstrap library",
+         role = "cph"),
+  person(family = "Twitter, Inc", comment = "Bootstrap library",
+         role = "cph"))
 Description: Apply styles to tag elements directly or with the
-    .style pronoun. Using the pronoun, styles are created within
-    the context of a tag element. Borders, background colors,
-    margins, layouts, and more may be styled.
+  .style pronoun. Using the pronoun, styles are created within
+  the context of a tag element. Borders, background colors,
+  margins, layouts, and more may be styled.
 License: GPL-3
 URL: https://github.com/nteetor/cascadess
 BugReports: https://github.com/nteetor/cascadess/issues
@@ -24,15 +23,15 @@ RoxygenNote: 7.1.0
 Depends:
     R (>= 3.2)
 Imports:
-    magrittr,
-    rlang,
     crayon,
     htmltools (>= 0.4.0),
-    shiny,
+    magrittr,
+    rlang,
     utils
 Suggests:
-    testthat (>= 2.1.0),
-    rmarkdown
+    rmarkdown,
+    shiny,
+    testthat (>= 2.1.0)
 Collate:
     'align.R'
     'utils.R'

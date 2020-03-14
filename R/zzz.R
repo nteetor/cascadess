@@ -1,3 +1,5 @@
 .onLoad <- function(lib, pkg) {
-  shiny::addResourcePath("cascadess", system.file("www", package = "cascadess"))
+  if (requireNamespace("shiny", quietly = TRUE)) {
+    shiny::addResourcePath("cascadess", system.file("www", package = "cascadess"))
+  }
 }

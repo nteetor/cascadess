@@ -29,7 +29,8 @@ background_color <- function(color) {
 #'
 #' @param color One of `r rd_chr_lst(names(background_color_))`.
 #'
-#' @include utils.R
+#' @includeRmd man/roxygen/background.Rmd
+#'
 #' @export
 background <- function(x, color) {
   assert_subject(x)

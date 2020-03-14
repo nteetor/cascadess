@@ -4,7 +4,16 @@
 \alias{margin}
 \title{Margins}
 \usage{
-margin(x, all = NULL, top = NULL, right = NULL, bottom = NULL, left = NULL)
+margin(
+  x,
+  all = NULL,
+  top = NULL,
+  right = NULL,
+  bottom = NULL,
+  left = NULL,
+  horizontal = NULL,
+  vertical = NULL
+)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
@@ -19,11 +28,46 @@ consume space and pull the element in that direction.}
 \item{top, right, bottom, left}{A \link{responsive} argument.
 
 One of \code{-5:5} or \code{"auto"} specifying a margin for the respective side of
-the tag element. 0 removes all outer space, 5 adds the most space, and
-negative values will consume space and pull the element in that direction.}
+the tag element.}
+
+\item{horizontal}{A \link{responsive} argument.
+
+One of \code{-5:5} or \code{"auto"} specifying a margin for the left and right sides
+of the tag element.}
+
+\item{vertical}{A \link{responsive} argument.
+
+One of \code{-5:5} or \code{"auto"} specifying a margin for the top and bottom sides
+of the tag element.}
 }
 \description{
 The \code{margin()} function adjusts the outer spacing of a tag element. The
 margin of a tag element is the space outside and around the tag element, its
 border, and its content.
 }
+\section{Auto margins}{
+In most modern browsers you want to horizontally center a tag element
+using the flex layout. Alternatively, you can horizontally center an
+element using \code{margin(.., horizontal = "auto")}.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    margin(v = 2, h = "auto") \%>\%  # <-
+    padding(3) \%>\%
+    background("teal"),
+  "Nam a sapien. Integer placerat tristique nisl."
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-margin-h-auto cas-margin-v-2 cas-padding-all-3 cas-background-teal">
+}}
+
+
+Nam a sapien. Integer placerat tristique nisl.\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+

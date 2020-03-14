@@ -17,3 +17,88 @@ One of \code{"inline"}, \code{"inline-block"}, \code{"block"}, \code{"table"}, \
 The \code{display()} function adjusts how a tag element is rendered. For example,
 to use the flex box layout the display must be \code{"flex"}.
 }
+\section{Block vs inline}{
+\if{html}{\out{<div class="r">}}\preformatted{div(
+  div(
+    .style \%>\%
+      border("blue"),
+    "block"
+  ),
+  div(
+    .style \%>\%
+      border("blue"),
+    "block"
+  )
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+block\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+block\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+\if{html}{\out{<div class="r">}}\preformatted{div(
+  div(
+    .style \%>\%
+      border("blue") \%>\%
+      display("inline"),
+    "inline"
+  ),
+  div(
+    .style \%>\%
+      border("blue") \%>\%
+      display("inline"),
+    "inline"
+  )
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div>
+}}
+\if{html}{\out{
+<div class="cas-border-blue cas-border-all cas-border-radius-md cas-display-inline">
+}}
+
+
+inline\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-border-blue cas-border-all cas-border-radius-md cas-display-inline">
+}}
+
+
+inline\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+

@@ -48,3 +48,533 @@ or around child elements, and more.
 Direct child elements of a flex box container are automatically considered
 flex items and may be adjusted with \code{\link[=item]{item()}}.
 }
+\section{Centering elements}{
+Center an input above a larger element or next to the element if space
+allows.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(direction = c(default = "column", md = "row")),
+
+  radioButtons("id", "A sample input", c("Choice 1", "Choice 2")) \%>\%
+    margin(h = c(xs = "auto", md = 0)),
+
+  div(
+    .style \%>\%
+      width(100) \%>\%
+      background("indigo") \%>\%
+      text("white"),
+    "Plot placeholder"
+  )
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-margin-h-auto cas-margin-h-md-0">
+}}
+
+
+\if{html}{\out{<label class="control-label" for="id">}}A sample input\if{html}{\out{</label>}}\if{html}{\out{
+<div class="shiny-options-group">
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+\if{html}{\out{
+<label>
+<input type="radio" name="id" value="Choice 1" checked="checked"/>
+<span>Choice 1</span> </label>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="radio">
+}}
+
+
+\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
+2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-width-100 cas-background-indigo cas-text-color-white">
+}}
+
+
+Plot placeholder\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+}
+
+\section{Details}{
+This section needs pretty specific examples of how to use flex. I don’t
+know that people will want a tutorial on flex.
+
+For the sake of the demo let’s create a flex item help function.\if{html}{\out{<div class="r">}}\preformatted{flexItem <- function(...) \{
+  div(
+    .style \%>\% padding(3) \%>\% border("blue"),
+    "A flex item",
+    ...
+  )
+\}
+}\if{html}{\out{</div>}}
+\subsection{Different \code{direction}s}{
+
+Many of \code{flex()}’s arguments are viewport responsive. On small screens
+the flex items are placed vertically and can occupy the full width of
+the mobile device. On medium or larger screens the items are placed
+horizontally.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(
+      direction = c(xs = "column", md = "row")  # <-
+    ),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+\emph{Resize the browser for this example.}
+
+You can keep items as a column by specifying only \code{"column"}.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(direction = "column"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-column cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+}
+
+\subsection{Spacing items with \code{justify}}{
+
+Below is a series of examples showing how to change the horizontal
+alignment of your flex items. Let’s start by pushing items to the
+beginning of their parent container.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "start"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+We can also push items to the \strong{end}.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "end"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-end cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+Without using a table layout we can \strong{center} items.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "center"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-center cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+You can also put space \strong{between} items\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "between"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-between cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+… or put space \strong{around} items.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "around"),  # <-
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-around cas-flex-items-stretch cas-flex-nowrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+
+The \code{"between"} and \code{"around"} values come from the original CSS values
+\code{"space-between"} and \code{"space-around"}.
+}
+
+\subsection{\code{wrap} onto new lines}{
+
+Using flexbox we can also control how items wrap onto new lines.\if{html}{\out{<div class="r">}}\preformatted{div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(wrap = TRUE),
+  flexItem(),
+  flexItem(),
+  flexItem(),
+  flexItem()
+)
+}\if{html}{\out{</div>}}\if{html}{\out{
+<!--html_preserve-->
+}}
+\if{html}{\out{
+<div class="cas-display-flex cas-flex-row cas-flex-content-start cas-flex-items-stretch cas-flex-wrap">
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+}}
+
+
+A flex item\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+</div>
+}}
+\if{html}{\out{
+<!--/html_preserve-->
+}}
+
+}
+}
+

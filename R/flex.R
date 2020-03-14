@@ -4,7 +4,7 @@ flex_direction_ <- c(
 )
 
 flex_direction <- function(direction) {
-  responsive(pick(direction, from = flex_direction_))
+  compose(responsive(pick(direction, from = flex_direction_)))
 }
 
 flex_justify_ <- c(
@@ -16,7 +16,7 @@ flex_justify_ <- c(
 )
 
 flex_justify <- function(justify) {
-  compose("justify", responsive(pick(justify, from = flex_justify_)))
+  compose("content", responsive(pick(justify, from = flex_justify_)))
 }
 
 flex_align_ <- c(
@@ -79,7 +79,7 @@ flex_wrap <- function(wrap) {
 #'   One of `TRUE` or `FALSE` specifying if items are forced onto one line
 #'   or allowed to wrap onto multiple lines, defaults to `FALSE`.
 #'
-# @includeRmd man/roxygen/flex.Rmd
+#' @includeRmd man/roxygen/flex.Rmd
 #'
 #' @export
 flex <- function(x, direction = "row", justify = "start", align = "stretch",

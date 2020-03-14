@@ -25,6 +25,8 @@ display_type <- function(type) {
 #'
 #'   One of `r rd_list(names(display_type_))`.
 #'
+#' @includeRmd man/roxygen/display.Rmd
+#'
 #' @export
 display <- function(x, type) {
   assert_subject(x)
