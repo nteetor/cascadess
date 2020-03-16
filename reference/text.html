@@ -10,12 +10,12 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
@@ -163,14 +163,14 @@ is ignored.</p></td>
 
     <h2 class="hasAnchor" id="colors"><a class="anchor" href="#colors"></a>Colors</h2>
 
-    <p><div class="r"></p><pre><span class='fu'>div</span>(
+    <p><div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>text</span>(<span class='st'>"blue"</span>) <span class='kw'>%&amp;gt;%</span>  <span class='co'># &amp;lt;-</span>
     <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"blue"</span>),
-  <span class='fu'>p</span>(<span class='st'>"Nullam tristique diam non turpis."</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Nullam tristique diam non turpis."</span>,
     <span class='st'>"Pellentesque dapibus suscipit ligula."</span>,
     <span class='st'>"Nullam eu ante vel est convallis dignissim."</span>),
-  <span class='fu'>p</span>(<span class='st'>"Aliquam posuere."</span>)
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Aliquam posuere."</span>)
 )</pre><p></div>
 <!--html_preserve-->
 
@@ -196,12 +196,35 @@ Nullam eu ante vel est convallis dignissim.
 
 <!--/html_preserve--></p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
+  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
+    <span class='fu'>text</span>(<span class='kw'>spacing</span> <span class='kw'>=</span> <span class='st'>"small"</span>),
+  <span class='st'>"Nam vestibulum accumsan nisl."</span>,
+  <span class='st'>"Fusce commodo."</span>
+)</div><div class='output co'>#&gt; <span class='error'>Error in from[x]: object of type 'closure' is not subsettable</span></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
+  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
+    <span class='fu'>text</span>(<span class='kw'>spacing</span> <span class='kw'>=</span> <span class='st'>"large"</span>),
+  <span class='st'>"Suspendisse potenti."</span>,
+  <span class='st'>"Pellentesque tristique imperdiet tortor."</span>
+)</div><div class='output co'>#&gt; <span class='error'>Error in from[x]: object of type 'closure' is not subsettable</span></div><div class='input'>
+<span class='no'>tags</span>$<span class='fu'>button</span>(
+  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
+    <span class='fu'>text</span>(<span class='kw'>wrap</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>),
+  <span class='st'>"Aliquam feugiat tellus ut neque."</span>
+)</div><div class='output co'>#&gt; &lt;button class="cas-text-nowrap"&gt;Aliquam feugiat tellus ut neque.&lt;/button&gt;</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#colors">Colors</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

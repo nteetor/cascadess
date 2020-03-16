@@ -10,12 +10,12 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.1/css/all.min.css" integrity="sha256-PbSmjxuVAzJ6FPvNYsrXygfGhNJYyZ2GktDbkMBqQZg=" crossorigin="anonymous" />
@@ -171,7 +171,7 @@ or allowed to wrap onto multiple lines, defaults to <code>FALSE</code>.</p></td>
     <h2 class="hasAnchor" id="centering-elements"><a class="anchor" href="#centering-elements"></a>Centering elements</h2>
 
     <p>Center an input above a larger element or next to the element if space
-allows.<div class="r"></p><pre><span class='fu'>div</span>(
+allows.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>direction</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>default</span> <span class='kw'>=</span> <span class='st'>"column"</span>, <span class='kw'>md</span> <span class='kw'>=</span> <span class='st'>"row"</span>)),
@@ -179,7 +179,7 @@ allows.<div class="r"></p><pre><span class='fu'>div</span>(
   <span class='fu'>radioButtons</span>(<span class='st'>"id"</span>, <span class='st'>"A sample input"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Choice 1"</span>, <span class='st'>"Choice 2"</span>)) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='margin.html'>margin</a></span>(<span class='kw'>h</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>xs</span> <span class='kw'>=</span> <span class='st'>"auto"</span>, <span class='kw'>md</span> <span class='kw'>=</span> <span class='fl'>0</span>)),
 
-  <span class='fu'>div</span>(
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
     <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
       <span class='fu'><a href='width.html'>width</a></span>(<span class='fl'>100</span>) <span class='kw'>%&amp;gt;%</span>
       <span class='fu'><a href='background.html'>background</a></span>(<span class='st'>"indigo"</span>) <span class='kw'>%&amp;gt;%</span>
@@ -238,7 +238,7 @@ allows.<div class="r"></p><pre><span class='fu'>div</span>(
     <p>This section needs pretty specific examples of how to use flex. I don’t
 know that people will want a tutorial on flex.</p>
 <p>For the sake of the demo let’s create a flex item help function.<div class="r"></p><pre><span class='no'>flexItem</span> <span class='kw'>&amp;</span><span class='no'>lt</span>;- <span class='kw'>function</span>(<span class='no'>...</span>) {
-  <span class='fu'>div</span>(
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
     <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span> <span class='fu'><a href='padding.html'>padding</a></span>(<span class='fl'>3</span>) <span class='kw'>%&amp;gt;%</span> <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"blue"</span>),
     <span class='st'>"A flex item"</span>,
     <span class='no'>...</span>
@@ -249,7 +249,7 @@ know that people will want a tutorial on flex.</p>
 <p>Many of <code>flex()</code>’s arguments are viewport responsive. On small screens
 the flex items are placed vertically and can occupy the full width of
 the mobile device. On medium or larger screens the items are placed
-horizontally.<div class="r"></p><pre><span class='fu'>div</span>(
+horizontally.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(
@@ -289,7 +289,7 @@ horizontally.<div class="r"></p><pre><span class='fu'>div</span>(
 <!--/html_preserve--></p>
 
 <p><em>Resize the browser for this example.</em></p>
-<p>You can keep items as a column by specifying only <code>"column"</code>.<div class="r"></p><pre><span class='fu'>div</span>(
+<p>You can keep items as a column by specifying only <code>"column"</code>.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>direction</span> <span class='kw'>=</span> <span class='st'>"column"</span>),  <span class='co'># &amp;lt;-</span>
@@ -331,7 +331,7 @@ horizontally.<div class="r"></p><pre><span class='fu'>div</span>(
 
 <p>Below is a series of examples showing how to change the horizontal
 alignment of your flex items. Let’s start by pushing items to the
-beginning of their parent container.<div class="r"></p><pre><span class='fu'>div</span>(
+beginning of their parent container.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>justify</span> <span class='kw'>=</span> <span class='st'>"start"</span>),  <span class='co'># &amp;lt;-</span>
@@ -375,7 +375,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
 
 <!--/html_preserve--></p>
 
-<p>We can also push items to the <strong>end</strong>.<div class="r"></p><pre><span class='fu'>div</span>(
+<p>We can also push items to the <strong>end</strong>.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>justify</span> <span class='kw'>=</span> <span class='st'>"end"</span>),  <span class='co'># &amp;lt;-</span>
@@ -419,7 +419,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
 
 <!--/html_preserve--></p>
 
-<p>Without using a table layout we can <strong>center</strong> items.<div class="r"></p><pre><span class='fu'>div</span>(
+<p>Without using a table layout we can <strong>center</strong> items.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>justify</span> <span class='kw'>=</span> <span class='st'>"center"</span>),  <span class='co'># &amp;lt;-</span>
@@ -463,7 +463,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
 
 <!--/html_preserve--></p>
 
-<p>You can also put space <strong>between</strong> items<div class="r"></p><pre><span class='fu'>div</span>(
+<p>You can also put space <strong>between</strong> items<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>justify</span> <span class='kw'>=</span> <span class='st'>"between"</span>),  <span class='co'># &amp;lt;-</span>
@@ -507,7 +507,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
 
 <!--/html_preserve--></p>
 
-<p>… or put space <strong>around</strong> items.<div class="r"></p><pre><span class='fu'>div</span>(
+<p>… or put space <strong>around</strong> items.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>justify</span> <span class='kw'>=</span> <span class='st'>"around"</span>),  <span class='co'># &amp;lt;-</span>
@@ -557,7 +557,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
 <h3><code>wrap</code> onto new lines</h3>
 
 
-<p>Using flexbox we can also control how items wrap onto new lines.<div class="r"></p><pre><span class='fu'>div</span>(
+<p>Using flexbox we can also control how items wrap onto new lines.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
   <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&amp;gt;%</span>
     <span class='fu'>flex</span>(<span class='kw'>wrap</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>),
@@ -602,6 +602,21 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
 <!--/html_preserve--></p>
 
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
+  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
+    <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>) <span class='kw'>%&gt;%</span>
+    <span class='fu'>flex</span>(<span class='kw'>justify</span> <span class='kw'>=</span> <span class='st'>"end"</span>),
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(<span class='st'>"Aliquam posuere."</span>),
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(<span class='st'>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."</span>)
+)</div><div class='output co'>#&gt; &lt;div class="cas-display-flex cas-flex-row cas-flex-content-end cas-flex-items-stretch cas-flex-nowrap"&gt;
+#&gt;   &lt;div&gt;Aliquam posuere.&lt;/div&gt;
+#&gt;   &lt;div&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;
+#&gt; &lt;/div&gt;</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <h2>Contents</h2>
@@ -609,6 +624,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'>div
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#centering-elements">Centering elements</a></li>
       <li><a href="#details">Details</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
