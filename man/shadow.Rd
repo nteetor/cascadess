@@ -87,3 +87,21 @@ none\if{html}{\out{
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    shadow("md"),
+  "Donec posuere augue in quam."
+)
+
+div(
+  .style \%>\%
+    border("red") \%>\%
+    shadow("small"),
+  "Praesent augue."
+)
+
+}

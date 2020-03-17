@@ -18,3 +18,13 @@ alignment of an image in a line of text or the contents of a table cell.
 
 For broader alignment purposes use flex box, see \code{\link[=flex]{flex()}}.
 }
+\examples{
+
+library(htmltools)
+
+div(
+  "Text",
+  span("Above") \%>\% align("top")
+)
+
+}

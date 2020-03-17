@@ -370,3 +370,17 @@ transparent\if{html}{\out{
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    background("white") \%>\%
+    border("blue") \%>\%
+    text("white"),
+  "Nunc porta vulputate tellus.",
+  "Suspendisse potenti."
+)
+
+}

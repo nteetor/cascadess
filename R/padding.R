@@ -51,6 +51,19 @@ padding_left <- function(left) {
 #' @includeRmd man/roxygen/padding.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     margin(2) %>%
+#'     border("green") %>%
+#'     padding(2) %>%
+#'     background("red"),
+#'   "Donec vitae dolor."
+#' )
+#'
 padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                     left = NULL) {
   assert_subject(x)

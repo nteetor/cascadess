@@ -4,6 +4,12 @@ overflow_scroll_ <- c(
 )
 
 overflow_scroll <- function(scroll) {
+  if (is_true(scroll)) {
+    scroll <- "auto"
+  } else if (is_false(scroll)) {
+    scroll <- "hidden"
+  }
+
   pick(scroll, from = overflow_scroll_)
 }
 
@@ -20,6 +26,17 @@ overflow_scroll <- function(scroll) {
 #'   `"hidden"`, respectively.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     width(25) %>%
+#'     overflow(FALSE),
+#'   "Nullam libero mauris, consequat quis, varius et, dictum id, arcu."
+#' )
+#'
 overflow <- function(x, scroll) {
   assert_subject(x)
 

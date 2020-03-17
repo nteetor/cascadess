@@ -4,7 +4,7 @@
 \alias{border}
 \title{Borders}
 \usage{
-border(x, color, radius = "medium", sides = TRUE)
+border(x, color, sides = TRUE, radius = "medium")
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
@@ -12,12 +12,12 @@ border(x, color, radius = "medium", sides = TRUE)
 \item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, or \code{"white"} specifying the border
 color.}
 
-\item{radius}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, \code{"circle"}, \code{"pill"}, or \code{"none"} specifying the
-border radius, defaults to \code{"medium"}.}
-
 \item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, \code{"l"}, \code{"all"}, or \code{"none"} specifying
 which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may
 be used as shorthands for all sides or no sides, respectively.}
+
+\item{radius}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, \code{"circle"}, \code{"pill"}, or \code{"none"} specifying the border
+radius, defaults to \code{"medium"}.}
 }
 \description{
 The \code{border()} function adjusts a tag element's borders.
@@ -204,3 +204,15 @@ none\if{html}{\out{
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+h3(
+  .style \%>\%
+    border("red", "bottom") \%>\%
+    text("red"),
+  "A bold heading!"
+)
+
+}

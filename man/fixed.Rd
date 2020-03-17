@@ -17,3 +17,15 @@ The \code{fixed()} function affixes an element to the top or bottom of the
 page. Because of their nature fixed elements may cover up other elements on
 the page. Use \code{\link[=padding]{padding()}} or \code{\link[=margin]{margin()}} to adjust any covered elements.
 }
+\examples{
+
+library(htmltools)
+
+tags$nav(
+  .style \%>\%
+    fixed("top") \%>\%
+    background("blue"),
+  tags$a(href = "home.html", "Home")
+)
+
+}

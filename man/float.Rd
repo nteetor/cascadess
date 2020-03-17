@@ -17,3 +17,22 @@ One of \code{"left"} or \code{"right"} specifying the side to float the element.
 The \code{float()} function places an element to the left or right side of its
 parent element. Other text and inline elements wrap around floated elements.
 }
+\examples{
+
+library(htmltools)
+
+div(
+  div(
+    .style \%>\%
+      border("red") \%>\%
+      float("left"),
+    "Warning"
+  ),
+  div(
+    "Nam a sapien.",
+    "Phasellus neque orci, porta a, aliquet quis, semper a, massa.",
+    "Phasellus lacus."
+  )
+)
+
+}

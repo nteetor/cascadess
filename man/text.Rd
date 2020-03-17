@@ -77,3 +77,28 @@ Aliquam posuere.\if{html}{\out{
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    text(spacing = "small"),
+  "Nam vestibulum accumsan nisl.",
+  "Fusce commodo."
+)
+
+div(
+  .style \%>\%
+    text(spacing = "large"),
+  "Suspendisse potenti.",
+  "Pellentesque tristique imperdiet tortor."
+)
+
+tags$button(
+  .style \%>\%
+    text(wrap = FALSE),
+  "Aliquam feugiat tellus ut neque."
+)
+
+}

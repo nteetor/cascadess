@@ -73,6 +73,19 @@ width_max <- function(max) {
 #'   See `size` for details.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     width(c(xs = 100, md = 50)) %>%
+#'     margin(c(xs = 2, md = "auto")),
+#'   "In id erat non orci commodo lobortis.",
+#'   "Suspendisse potenti.",
+#'   "Nam euismod tellus id erat."
+#' )
+#'
 width <- function(x, size, min = NULL, max = NULL) {
   assert_subject(x)
 

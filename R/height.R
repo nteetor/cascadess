@@ -71,6 +71,20 @@ height_max <- function(max) {
 #'   See `size` for details.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'      height("auto", max = "viewport") %>%
+#'      overflow("auto"),
+#'   "Vivamus id enim.",
+#'   "Nunc rutrum turpis sed pede.",
+#'   "Nunc aliquet, augue nec adipiscing interdum, ",
+#'   "lacus tellus malesuada massa, quis varius mi purus non odio."
+#' )
+#'
 height <- function(x, size, min = NULL, max = NULL) {
   assert_subject(x)
 

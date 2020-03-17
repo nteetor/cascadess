@@ -63,6 +63,17 @@ font_family <- function(family) {
 #' @includeRmd man/roxygen/font.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' p(
+#'   .style %>%
+#'     text("indigo") %>%
+#'     font("bold"),
+#'   "Phasellus at dui in ligula mollis ultricies."
+#' )
+#'
 font <- function(x, weight = NULL, style = NULL, case = NULL,
                  family = NULL) {
   assert_subject(x)

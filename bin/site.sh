@@ -12,6 +12,8 @@ output_dir = 'pkgdown'
 )
 "
 
+rm $PKGDOWN/index.html
+
 Rscript -e "pkgdown::build_site(
   override = list(
     destination = '$PKGDOWN/site'

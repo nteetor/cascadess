@@ -102,3 +102,16 @@ inline\if{html}{\out{
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+# When using flex make sure you specify the flex display.
+div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "center"),
+  "Powerful stuff"
+)
+
+}

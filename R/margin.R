@@ -74,6 +74,36 @@ margin_vertical <- function(vertical) {
 #' @includeRmd man/roxygen/margin.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     margin(left = 3, right = 3),
+#'   "Mauris mollis tincidunt felis."
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     margin(horizontal = 3),
+#'   "Nulla posuere."
+#' )
+#'
+#'
+#' div(
+#'   .style %>%
+#'     margin(l = 2, b = 1),
+#'   "Sed bibendum."
+#' )
+#'
+#'
+#' div(
+#'   .style %>%
+#'     margin(h = "auto"),
+#'   "Sed id ligula quis est convallis tempor."
+#' )
+#'
 margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                    left = NULL, horizontal = NULL, vertical = NULL) {
   assert_subject(x)

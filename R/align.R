@@ -26,6 +26,15 @@ align_vertical <- function(vertical) {
 #' @param vertical One of `r rd_list(names(align_vertical_))`.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   "Text",
+#'   span("Above") %>% align("top")
+#' )
+#'
 align <- function(x, vertical) {
   assert_subject(x)
 

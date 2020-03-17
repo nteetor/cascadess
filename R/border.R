@@ -57,17 +57,28 @@ border_color <- function(color) {
 #' @param color One of `r rd_list(names(border_color_))` specifying the border
 #'   color.
 #'
-#' @param radius One of `r rd_list(names(border_radius_))` specifying the
-#'   border radius, defaults to `"medium"`.
-#'
 #' @param sides One or more of `r rd_list(names(border_sides_))` specifying
 #'   which sides to add borders to, defaults to `TRUE`. `TRUE` and `FALSE` may
 #'   be used as shorthands for all sides or no sides, respectively.
 #'
+#' @param radius One of `r rd_list(names(border_radius_))` specifying the border
+#'   radius, defaults to `"medium"`.
+#'
 #' @includeRmd man/roxygen/border.Rmd
 #'
 #' @export
-border <- function(x, color, radius = "medium", sides = TRUE) {
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' h3(
+#'   .style %>%
+#'     border("red", "bottom") %>%
+#'     text("red"),
+#'   "A bold heading!"
+#' )
+#'
+border <- function(x, color, sides = TRUE, radius = "medium") {
   assert_subject(x)
 
   cls <- prefix(

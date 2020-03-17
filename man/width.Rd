@@ -43,3 +43,17 @@ The `width() function adjusts a tag element's width. Widths are specified
 relative the width of a parent element, an element's content, or the size of
 the browser window.
 }
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    width(c(xs = 100, md = 50)) \%>\%
+    margin(c(xs = 2, md = "auto")),
+  "In id erat non orci commodo lobortis.",
+  "Suspendisse potenti.",
+  "Nam euismod tellus id erat."
+)
+
+}

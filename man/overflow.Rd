@@ -18,3 +18,15 @@ The \code{overflow()} function adjust how an element's content scrolls. Scrollin
 an element's contents may be helpful to prevent child elements from extending
 the height or width of the element. The height of the element must be set.
 }
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    width(25) \%>\%
+    overflow(FALSE),
+  "Nullam libero mauris, consequat quis, varius et, dictum id, arcu."
+)
+
+}

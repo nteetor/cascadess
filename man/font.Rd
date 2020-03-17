@@ -69,3 +69,15 @@ Proin quam nisl, tincidunt et.\if{html}{\out{
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+p(
+  .style \%>\%
+    text("indigo") \%>\%
+    font("bold"),
+  "Phasellus at dui in ligula mollis ultricies."
+)
+
+}

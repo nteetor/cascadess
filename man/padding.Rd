@@ -206,3 +206,17 @@ Auto width.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
 }}
 }
 
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    margin(2) \%>\%
+    border("green") \%>\%
+    padding(2) \%>\%
+    background("red"),
+  "Donec vitae dolor."
+)
+
+}

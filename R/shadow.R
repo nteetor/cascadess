@@ -25,6 +25,23 @@ shadow_size <- function(size) {
 #' @includeRmd man/roxygen/shadow.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     shadow("md"),
+#'   "Donec posuere augue in quam."
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     border("red") %>%
+#'     shadow("small"),
+#'   "Praesent augue."
+#' )
+#'
 shadow <- function(x, size) {
   assert_subject(x)
 

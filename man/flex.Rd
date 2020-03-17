@@ -578,3 +578,16 @@ A flex item\if{html}{\out{
 }
 }
 
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    display("flex") \%>\%
+    flex(justify = "end"),
+  div("Aliquam posuere."),
+  div("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.")
+)
+
+}

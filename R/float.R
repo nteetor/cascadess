@@ -21,6 +21,24 @@ float_side <- function(side) {
 #'   One of `"left"` or `"right"` specifying the side to float the element.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   div(
+#'     .style %>%
+#'       border("red") %>%
+#'       float("left"),
+#'     "Warning"
+#'   ),
+#'   div(
+#'     "Nam a sapien.",
+#'     "Phasellus neque orci, porta a, aliquet quis, semper a, massa.",
+#'     "Phasellus lacus."
+#'   )
+#' )
+#'
 float <- function(x, side) {
   assert_subject(x)
 

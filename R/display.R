@@ -28,6 +28,18 @@ display_type <- function(type) {
 #' @includeRmd man/roxygen/display.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' # When using flex make sure you specify the flex display.
+#' div(
+#'   .style %>%
+#'     display("flex") %>%
+#'     flex(justify = "center"),
+#'   "Powerful stuff"
+#' )
+#'
 display <- function(x, type) {
   assert_subject(x)
 

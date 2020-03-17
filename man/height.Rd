@@ -41,3 +41,18 @@ The \code{height()} function adjusts a tag element's height. Heights are specifi
 relative the height of a parent element, an element's content, or the size of
 the browser window.
 }
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+     height("auto", max = "viewport") \%>\%
+     overflow("auto"),
+  "Vivamus id enim.",
+  "Nunc rutrum turpis sed pede.",
+  "Nunc aliquet, augue nec adipiscing interdum, ",
+  "lacus tellus malesuada massa, quis varius mi purus non odio."
+)
+
+}

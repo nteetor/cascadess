@@ -36,3 +36,21 @@ the flex box layout through the flex container element, \code{item()} is used to
 change specific flex items. A flex item may be reordered, expanded, or
 shrunk.
 }
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    display("flex"),
+  div(
+    .style \%>\%
+      item(order = 2),
+    "Second"
+  ),
+  div(
+    "First"
+  )
+)
+
+}

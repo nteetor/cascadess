@@ -19,6 +19,17 @@ fixed_position <- function(position) {
 #'   where to fix the element on the page.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' tags$nav(
+#'   .style %>%
+#'     fixed("top") %>%
+#'     background("blue"),
+#'   tags$a(href = "home.html", "Home")
+#' )
+#'
 fixed <- function(x, position) {
   assert_subject(x)
 

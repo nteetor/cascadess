@@ -30,7 +30,7 @@ text_spacing_ <- c(
 )
 
 text_spacing <- function(spacing) {
-  compose("spacing", pick(spacing, from = text_spacing))
+  compose("spacing", pick(spacing, from = text_spacing_))
 }
 
 text_decoration_ <- c(
@@ -77,6 +77,30 @@ text_wrap <- function(wrap) {
 #' @includeRmd man/roxygen/text.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     text(spacing = "small"),
+#'   "Nam vestibulum accumsan nisl.",
+#'   "Fusce commodo."
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     text(spacing = "large"),
+#'   "Suspendisse potenti.",
+#'   "Pellentesque tristique imperdiet tortor."
+#' )
+#'
+#' tags$button(
+#'   .style %>%
+#'     text(wrap = FALSE),
+#'   "Aliquam feugiat tellus ut neque."
+#' )
+#'
 text <- function(x, color = NULL, align = NULL, spacing = NULL,
                  decoration = NULL, wrap = NULL) {
   assert_subject(x)

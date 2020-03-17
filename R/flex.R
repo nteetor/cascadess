@@ -82,6 +82,18 @@ flex_wrap <- function(wrap) {
 #' @includeRmd man/roxygen/flex.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     display("flex") %>%
+#'     flex(justify = "end"),
+#'   div("Aliquam posuere."),
+#'   div("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.")
+#' )
+#'
 flex <- function(x, direction = "row", justify = "start", align = "stretch",
                  wrap = FALSE) {
   assert_subject(x)
@@ -164,6 +176,23 @@ item_shrink <- function(shrink) {
 #'   is ignored.
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     display("flex"),
+#'   div(
+#'     .style %>%
+#'       item(order = 2),
+#'     "Second"
+#'   ),
+#'   div(
+#'     "First"
+#'   )
+#' )
+#'
 item <- function(x, align = "stretch", order = 1, grow = NULL, shrink = NULL) {
   assert_subject(x)
 

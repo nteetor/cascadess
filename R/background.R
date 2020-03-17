@@ -32,6 +32,19 @@ background_color <- function(color) {
 #' @includeRmd man/roxygen/background.Rmd
 #'
 #' @export
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     background("white") %>%
+#'     border("blue") %>%
+#'     text("white"),
+#'   "Nunc porta vulputate tellus.",
+#'   "Suspendisse potenti."
+#' )
+#'
 background <- function(x, color) {
   assert_subject(x)
 
