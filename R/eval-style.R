@@ -2,6 +2,14 @@ style_peek_pronoun <- function(env) {
   env[[".__cascadess__style_pronoun__."]]
 }
 
+style_poke_pronoun <- function(env, pronoun) {
+  env_bind(env, ".__cascadess__style_pronoun__." = pronoun)
+}
+
+style_del_pronoun <- function(env) {
+  env_unbind(env, ".__cascadess__style_pronoun__.")
+}
+
 style_get_pronoun <- function() {
   frames <- lapply(seq_len(sys.nframe()), caller_env)
   envs <- frames[!duplicated(frames)]
@@ -83,11 +91,11 @@ str.cascadess_style_pronoun <- function(object, ...) {
 #' @export
 local_style <- function(..., .env = caller_env()) {
   pronoun <- child_env(empty_env(), ...)
-  prev <- env_get(.env, ".__cascadess__style_pronoun__.", NULL, TRUE)
+  prev <- style_peek_pronoun(.env)
 
-  env_bind(.env, ".__cascadess__style_pronoun__." = pronoun)
+  style_poke_pronoun(.env, pronoun)
 
-  unbind <- call2(quote(env_unbind), .env, ".__cascadess__style_pronoun__.")
+  unbind <- call2(quote(style_del_pronoun), .env)
   local_exit(!!unbind, .env)
 
   invisible(prev)
