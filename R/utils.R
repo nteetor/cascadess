@@ -1,5 +1,12 @@
+is_empty_string <- function(x) {
+  is_scalar_character(x) && x == ""
+}
+
 is_truthy <- function(x) {
-  !(!nzchar(x) || is_na(x) || is_null(x) || is_false(x))
+  !(is_empty_string(x) ||
+      is_na(x) ||
+      is_null(x) ||
+      is_false(x))
 }
 
 are_truthy <- function(x) {
