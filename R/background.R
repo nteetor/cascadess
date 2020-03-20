@@ -27,7 +27,7 @@ background_color <- function(color) {
 #'
 #' @param x A tag element or [.style] pronoun.
 #'
-#' @param color One of `r rd_chr_lst(names(background_color_))`.
+#' @param color One of `r rd_list(names(background_color_))`.
 #'
 #' @includeRmd man/roxygen/background.Rmd
 #'

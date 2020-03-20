@@ -3,6 +3,8 @@
 #'   red bold
 NULL
 
+## nocov start
+
 #' Cascadess
 #'
 #' @description
@@ -46,3 +48,5 @@ cascadess <- function() {
     stylesheet = "cascadess.min.css"
   )
 }
+
+## nocov end

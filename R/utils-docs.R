@@ -1,3 +1,5 @@
+## nocov start
+
 rd_quote <- function(x) {
   paste0("\"", x, "\"")
 }
@@ -33,10 +35,4 @@ rd_list <- function(x, last = "or") {
   }
 }
 
-rd_chr_lst <- function(x, last = "or") {
-  rd_list(x, last = last)
-}
-
-rd_num_lst <- function(x, last = "or") {
-  rd_list(x, last = last)
-}
+## nocov end
