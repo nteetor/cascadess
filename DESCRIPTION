@@ -11,8 +11,8 @@ Authors@R: c(
          role = "cph"))
 Description: Apply styles to tag elements directly or with the
   .style pronoun. Using the pronoun, styles are created within
-  the context of a tag element. Borders, background colors,
-  margins, layouts, and more may be styled.
+  the context of a tag element. Change borders, background colors,
+  margins, layouts, and more.
 License: GPL-3
 URL: https://github.com/nteetor/cascadess
 BugReports: https://github.com/nteetor/cascadess/issues
