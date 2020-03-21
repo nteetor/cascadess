@@ -1,5 +1,8 @@
 # cascadess
 
+![r-cmd-check](https://github.com/nteetor/cascadess/workflows/r-cmd-check/badge.svg)
+[![codecov](https://codecov.io/gh/nteetor/cascadess/branch/master/graph/badge.svg)](https://codecov.io/gh/nteetor/cascadess)
+
 A standalone package for [yonder](https://github.com/nteetor/yonder)'s design
 functions.
 
