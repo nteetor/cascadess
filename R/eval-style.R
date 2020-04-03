@@ -95,7 +95,7 @@ local_style <- function(..., .env = caller_env()) {
 
   style_poke_pronoun(.env, pronoun)
 
-  unbind <- call2(quote(style_del_pronoun), .env)
+  unbind <- call2(style_del_pronoun, .env)
   local_exit(!!unbind, .env)
 
   invisible(prev)
