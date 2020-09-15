@@ -122,12 +122,12 @@ wrapping, and decoration of a tag element.</p>
     </div>
 
     <pre class="usage"><span class='fu'>text</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>color</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>align</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>spacing</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>decoration</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>wrap</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>x</span>,
+  color = <span class='kw'>NULL</span>,
+  align = <span class='kw'>NULL</span>,
+  spacing = <span class='kw'>NULL</span>,
+  decoration = <span class='kw'>NULL</span>,
+  wrap = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -168,14 +168,15 @@ is ignored.</p></td>
     <h2 class="hasAnchor" id="colors"><a class="anchor" href="#colors"></a>Colors</h2>
 
     <p><div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
-    <span class='fu'>text</span>(<span class='st'>"blue"</span>) <span class='kw'>%&amp;gt;%</span>  <span class='co'># &amp;lt;-</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span>(<span class='st'>"blue"</span>) <span class='op'>%&gt;%</span>  <span class='co'># &lt;-</span>
     <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"blue"</span>),
   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Nullam tristique diam non turpis."</span>,
     <span class='st'>"Pellentesque dapibus suscipit ligula."</span>,
     <span class='st'>"Nullam eu ante vel est convallis dignissim."</span>),
   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Aliquam posuere."</span>)
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -202,31 +203,34 @@ Nullam eu ante vel est convallis dignissim.
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>text</span>(<span class='kw'>spacing</span> <span class='kw'>=</span> <span class='st'>"small"</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span>(spacing = <span class='st'>"small"</span>),
   <span class='st'>"Nam vestibulum accumsan nisl."</span>,
   <span class='st'>"Fusce commodo."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-text-spacing-sm"&gt;
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-text-spacing-sm"&gt;
 #&gt;   Nam vestibulum accumsan nisl.
 #&gt;   Fusce commodo.
 #&gt; &lt;/div&gt;</div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>text</span>(<span class='kw'>spacing</span> <span class='kw'>=</span> <span class='st'>"large"</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span>(spacing = <span class='st'>"large"</span>),
   <span class='st'>"Suspendisse potenti."</span>,
   <span class='st'>"Pellentesque tristique imperdiet tortor."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-text-spacing-lg"&gt;
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-text-spacing-lg"&gt;
 #&gt;   Suspendisse potenti.
 #&gt;   Pellentesque tristique imperdiet tortor.
 #&gt; &lt;/div&gt;</div><div class='input'>
-<span class='no'>tags</span>$<span class='fu'>button</span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>text</span>(<span class='kw'>wrap</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>),
+<span class='kw'>tags</span><span class='op'>$</span><span class='fu'>button</span>(
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span>(wrap = <span class='fl'>FALSE</span>),
   <span class='st'>"Aliquam feugiat tellus ut neque."</span>
-)</div><div class='output co'>#&gt; &lt;button class="cas-text-nowrap"&gt;Aliquam feugiat tellus ut neque.&lt;/button&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;button class="cas-text-nowrap"&gt;Aliquam feugiat tellus ut neque.&lt;/button&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -243,7 +247,7 @@ Nullam eu ante vel est convallis dignissim.
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

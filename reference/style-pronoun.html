@@ -44,16 +44,18 @@
 <meta property="og:title" content="Style pronoun — style-pronoun" />
 <meta property="og:description" content="The .style pronoun allows you to define styles for a tag element within the
 context of the element. Without the .style pronoun tag styles are applied
-outside and after constructing a tag element.div(&quot;. . .&quot;) %&amp;amp;gt;% background(&quot;primary&quot;) %&amp;amp;gt;% display(&quot;flex&quot;)
+outside and after constructing a tag element.div(&quot;. . .&quot;) %&amp;gt;% background(&quot;primary&quot;) %&amp;gt;% display(&quot;flex&quot;)
+
 However, once the content of a tag element grows to more than a few lines,
 associating the element's styles with the element becomes increasingly
 unintuitive. In these situations, make use of the .style pronoun.div(
-  .style %&amp;amp;gt;%
-    border(&quot;primary&quot;) %&amp;amp;gt;%
+  .style %&amp;gt;%
+    border(&quot;primary&quot;) %&amp;gt;%
     font(&quot;primary&quot;),
   p(&quot;. . .&quot;),
   p(&quot;. . .&quot;)
-)" />
+)
+" />
 
 
 
@@ -129,19 +131,21 @@ unintuitive. In these situations, make use of the .style pronoun.div(
     <div class="ref-description">
     <p>The <code>.style</code> pronoun allows you to define styles for a tag element within the
 context of the element. Without the <code>.style</code> pronoun tag styles are applied
-outside and after constructing a tag element.<div class="R"></p><pre><span class='fu'>div</span>(<span class='st'>". . ."</span>) <span class='kw'>%&amp;gt;%</span> <span class='fu'><a href='background.html'>background</a></span>(<span class='st'>"primary"</span>) <span class='kw'>%&amp;gt;%</span> <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>)</pre><p></div></p>
+outside and after constructing a tag element.<div class="R"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(<span class='st'>". . ."</span>) <span class='op'>%&gt;%</span> <span class='fu'><a href='background.html'>background</a></span>(<span class='st'>"primary"</span>) <span class='op'>%&gt;%</span> <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>)
+</pre><p></div></p>
 <p>However, once the content of a tag element grows to more than a few lines,
 associating the element's styles with the element becomes increasingly
-unintuitive. In these situations, make use of the <code>.style</code> pronoun.<div class="R"></p><pre><span class='fu'>div</span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
-    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"primary"</span>) <span class='kw'>%&amp;gt;%</span>
+unintuitive. In these situations, make use of the <code>.style</code> pronoun.<div class="R"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"primary"</span>) <span class='op'>%&gt;%</span>
     <span class='fu'><a href='font.html'>font</a></span>(<span class='st'>"primary"</span>),
-  <span class='fu'>p</span>(<span class='st'>". . ."</span>),
-  <span class='fu'>p</span>(<span class='st'>". . ."</span>)
-)</pre><p></div></p>
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>". . ."</span>),
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>". . ."</span>)
+)
+</pre><p></div></p>
     </div>
 
-    <pre class="usage"><span class='no'>.style</span></pre>
+    <pre class="usage"><span class='kw'>.style</span></pre>
 
 
     <h2 class="hasAnchor" id="prefixing"><a class="anchor" href="#prefixing"></a>Prefixing</h2>
@@ -149,7 +153,7 @@ unintuitive. In these situations, make use of the <code>.style</code> pronoun.<d
     
 
 
-<p>Complex components such as <code><a href='https://rdrr.io/pkg/shiny/man/radioButtons.html'>shiny::radioButtons()</a></code> or
+<p>Complex components such as <code><a href='https://shiny.rstudio.com/reference/shiny/latest/radioButtons.html'>shiny::radioButtons()</a></code> or
 <code>yonder::listGroupInput()</code> may need a non-standard prefix for the CSS
 classes applied by cascadess' functions.</p>
 
@@ -168,7 +172,7 @@ classes applied by cascadess' functions.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

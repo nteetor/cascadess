@@ -123,7 +123,7 @@ padding of a tag element is the space between the tag element's border and
 its content or child elements.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>padding</span>(<span class='no'>x</span>, <span class='kw'>all</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>top</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>right</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>bottom</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>left</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>padding</span>(<span class='kw'>x</span>, all = <span class='kw'>NULL</span>, top = <span class='kw'>NULL</span>, right = <span class='kw'>NULL</span>, bottom = <span class='kw'>NULL</span>, left = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -150,16 +150,17 @@ inner space and 5 adds the most space.</p></td>
 
     <h2 class="hasAnchor" id="panels"><a class="anchor" href="#panels"></a>Panels</h2>
 
-    <p>Well panels.<div class="r"></p><pre><span class='fu'>wellPanel</span>(
-  <span class='fu'>radioButtons</span>(
-    <span class='kw'>inputId</span> <span class='kw'>=</span> <span class='st'>"id"</span>,
-    <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Radio input"</span>,
-    <span class='kw'>choices</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
+    <p>Well panels.<div class="r"></p><pre><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/wellPanel.html'>wellPanel</a></span>(
+  <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/radioButtons.html'>radioButtons</a></span>(
+    inputId = <span class='st'>"id"</span>,
+    label = <span class='st'>"Radio input"</span>,
+    choices = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
       <span class='st'>"Choice 1"</span>,
       <span class='st'>"Choice 2"</span>
     )
   )
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -201,18 +202,19 @@ inner space and 5 adds the most space.</p></td>
 
 <!--/html_preserve--></p>
 
-<p>Shrink well padding.<div class="r"></p><pre><span class='fu'>wellPanel</span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
+<p>Shrink well padding.<div class="r"></p><pre><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/wellPanel.html'>wellPanel</a></span>(
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
     <span class='fu'>padding</span>(<span class='fl'>1</span>),
-  <span class='fu'>radioButtons</span>(
-    <span class='kw'>inputId</span> <span class='kw'>=</span> <span class='st'>"id"</span>,
-    <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Radio input"</span>,
-    <span class='kw'>choices</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
+  <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/radioButtons.html'>radioButtons</a></span>(
+    inputId = <span class='st'>"id"</span>,
+    label = <span class='st'>"Radio input"</span>,
+    choices = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
       <span class='st'>"Choice 1"</span>,
       <span class='st'>"Choice 2"</span>
     )
   )
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -254,19 +256,20 @@ inner space and 5 adds the most space.</p></td>
 
 <!--/html_preserve--></p>
 
-<p>Auto width.<div class="r"></p><pre><span class='fu'>wellPanel</span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
+<p>Auto width.<div class="r"></p><pre><span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/wellPanel.html'>wellPanel</a></span>(
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
     <span class='fu'>padding</span>(<span class='fl'>1</span>),
-  <span class='fu'>radioButtons</span>(
-    <span class='kw'>inputId</span> <span class='kw'>=</span> <span class='st'>"id"</span>,
-    <span class='kw'>label</span> <span class='kw'>=</span> <span class='st'>"Radio input"</span>,
-    <span class='kw'>choices</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
+  <span class='fu'><a href='https://shiny.rstudio.com/reference/shiny/latest/radioButtons.html'>radioButtons</a></span>(
+    inputId = <span class='st'>"id"</span>,
+    label = <span class='st'>"Radio input"</span>,
+    choices = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(
       <span class='st'>"Choice 1"</span>,
       <span class='st'>"Choice 2"</span>
     )
-  ) <span class='kw'>%&amp;gt;%</span>
+  ) <span class='op'>%&gt;%</span>
     <span class='fu'><a href='width.html'>width</a></span>(<span class='st'>"auto"</span>)
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -310,16 +313,17 @@ inner space and 5 adds the most space.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='margin.html'>margin</a></span>(<span class='fl'>2</span>) <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"green"</span>) <span class='kw'>%&gt;%</span>
-    <span class='fu'>padding</span>(<span class='fl'>2</span>) <span class='kw'>%&gt;%</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='margin.html'>margin</a></span>(<span class='fl'>2</span>) <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"green"</span>) <span class='op'>%&gt;%</span>
+    <span class='fu'>padding</span>(<span class='fl'>2</span>) <span class='op'>%&gt;%</span>
     <span class='fu'><a href='background.html'>background</a></span>(<span class='st'>"red"</span>),
   <span class='st'>"Donec vitae dolor."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-margin-all-2 cas-border-green cas-border-all cas-border-radius-md cas-padding-all-2 cas-background-red"&gt;Donec vitae dolor.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-margin-all-2 cas-border-green cas-border-all cas-border-radius-md cas-padding-all-2 cas-background-red"&gt;Donec vitae dolor.&lt;/div&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -336,7 +340,7 @@ inner space and 5 adds the most space.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

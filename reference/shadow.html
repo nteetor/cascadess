@@ -121,7 +121,7 @@ distinguish elements or indicate interactivity." />
 distinguish elements or indicate interactivity.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>shadow</span>(<span class='no'>x</span>, <span class='no'>size</span>)</pre>
+    <pre class="usage"><span class='fu'>shadow</span>(<span class='kw'>x</span>, <span class='kw'>size</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -194,19 +194,21 @@ of shadow added.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
     <span class='fu'>shadow</span>(<span class='st'>"md"</span>),
   <span class='st'>"Donec posuere augue in quam."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-shadow-md"&gt;Donec posuere augue in quam.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-shadow-md"&gt;Donec posuere augue in quam.&lt;/div&gt;</div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"red"</span>) <span class='kw'>%&gt;%</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"red"</span>) <span class='op'>%&gt;%</span>
     <span class='fu'>shadow</span>(<span class='st'>"small"</span>),
   <span class='st'>"Praesent augue."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-border-red cas-border-all cas-border-radius-md cas-shadow-sm"&gt;Praesent augue.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-border-red cas-border-all cas-border-radius-md cas-shadow-sm"&gt;Praesent augue.&lt;/div&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -223,7 +225,7 @@ of shadow added.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

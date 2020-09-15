@@ -124,14 +124,14 @@ border, and its content.</p>
     </div>
 
     <pre class="usage"><span class='fu'>margin</span>(
-  <span class='no'>x</span>,
-  <span class='kw'>all</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>top</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>right</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>bottom</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>left</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>horizontal</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>vertical</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+  <span class='kw'>x</span>,
+  all = <span class='kw'>NULL</span>,
+  top = <span class='kw'>NULL</span>,
+  right = <span class='kw'>NULL</span>,
+  bottom = <span class='kw'>NULL</span>,
+  left = <span class='kw'>NULL</span>,
+  horizontal = <span class='kw'>NULL</span>,
+  vertical = <span class='kw'>NULL</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -174,12 +174,13 @@ of the tag element.</p></td>
     <p>In most modern browsers you want to horizontally center a tag element
 using the flex layout. Alternatively, you can horizontally center an
 element using <code>margin(.., horizontal = "auto")</code>.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
-    <span class='fu'>margin</span>(<span class='kw'>v</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>h</span> <span class='kw'>=</span> <span class='st'>"auto"</span>) <span class='kw'>%&amp;gt;%</span>  <span class='co'># &amp;lt;-</span>
-    <span class='fu'><a href='padding.html'>padding</a></span>(<span class='fl'>3</span>) <span class='kw'>%&amp;gt;%</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>margin</span>(v = <span class='fl'>2</span>, h = <span class='st'>"auto"</span>) <span class='op'>%&gt;%</span>  <span class='co'># &lt;-</span>
+    <span class='fu'><a href='padding.html'>padding</a></span>(<span class='fl'>3</span>) <span class='op'>%&gt;%</span>
     <span class='fu'><a href='background.html'>background</a></span>(<span class='st'>"teal"</span>),
   <span class='st'>"Nam a sapien. Integer placerat tristique nisl."</span>
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -193,30 +194,34 @@ element using <code>margin(.., horizontal = "auto")</code>.<div class="r"></p><p
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>margin</span>(<span class='kw'>left</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>right</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>margin</span>(left = <span class='fl'>3</span>, right = <span class='fl'>3</span>),
   <span class='st'>"Mauris mollis tincidunt felis."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-margin-right-3 cas-margin-left-3"&gt;Mauris mollis tincidunt felis.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-margin-right-3 cas-margin-left-3"&gt;Mauris mollis tincidunt felis.&lt;/div&gt;</div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>margin</span>(<span class='kw'>horizontal</span> <span class='kw'>=</span> <span class='fl'>3</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>margin</span>(horizontal = <span class='fl'>3</span>),
   <span class='st'>"Nulla posuere."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-margin-h-3"&gt;Nulla posuere.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-margin-h-3"&gt;Nulla posuere.&lt;/div&gt;</div><div class='input'>
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>margin</span>(<span class='kw'>l</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>b</span> <span class='kw'>=</span> <span class='fl'>1</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>margin</span>(l = <span class='fl'>2</span>, b = <span class='fl'>1</span>),
   <span class='st'>"Sed bibendum."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-margin-bottom-1 cas-margin-left-2"&gt;Sed bibendum.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-margin-bottom-1 cas-margin-left-2"&gt;Sed bibendum.&lt;/div&gt;</div><div class='input'>
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>margin</span>(<span class='kw'>h</span> <span class='kw'>=</span> <span class='st'>"auto"</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>margin</span>(h = <span class='st'>"auto"</span>),
   <span class='st'>"Sed id ligula quis est convallis tempor."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-margin-h-auto"&gt;Sed id ligula quis est convallis tempor.&lt;/div&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-margin-h-auto"&gt;Sed id ligula quis est convallis tempor.&lt;/div&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -233,7 +238,7 @@ element using <code>margin(.., horizontal = "auto")</code>.<div class="r"></p><p
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

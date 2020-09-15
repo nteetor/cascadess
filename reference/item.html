@@ -125,7 +125,7 @@ change specific flex items. A flex item may be reordered, expanded, or
 shrunk.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>item</span>(<span class='no'>x</span>, <span class='kw'>align</span> <span class='kw'>=</span> <span class='st'>"stretch"</span>, <span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>grow</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>shrink</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>item</span>(<span class='kw'>x</span>, align = <span class='st'>"stretch"</span>, order = <span class='fl'>1</span>, grow = <span class='kw'>NULL</span>, shrink = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,20 +164,21 @@ is ignored.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
     <span class='fu'><a href='display.html'>display</a></span>(<span class='st'>"flex"</span>),
   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-    <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-      <span class='fu'>item</span>(<span class='kw'>order</span> <span class='kw'>=</span> <span class='fl'>2</span>),
+    <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+      <span class='fu'>item</span>(order = <span class='fl'>2</span>),
     <span class='st'>"Second"</span>
   ),
   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
     <span class='st'>"First"</span>
   )
-)</div><div class='output co'>#&gt; &lt;div class="cas-display-flex"&gt;
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-display-flex"&gt;
 #&gt;   &lt;div class="cas-item-self-stretch cas-item-order-2"&gt;Second&lt;/div&gt;
 #&gt;   &lt;div&gt;First&lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'>
@@ -197,7 +198,7 @@ is ignored.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

@@ -121,7 +121,7 @@ the font of a tag element." />
 the font of a tag element.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>font</span>(<span class='no'>x</span>, <span class='kw'>weight</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>style</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>case</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>family</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>font</span>(<span class='kw'>x</span>, weight = <span class='kw'>NULL</span>, style = <span class='kw'>NULL</span>, case = <span class='kw'>NULL</span>, family = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -157,10 +157,11 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
     <h2 class="hasAnchor" id="weights"><a class="anchor" href="#weights"></a>Weights</h2>
 
     <p><div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
-    <span class='fu'>font</span>(<span class='kw'>weight</span> <span class='kw'>=</span> <span class='st'>"bold"</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>font</span>(weight = <span class='st'>"bold"</span>),
   <span class='st'>"Curabitur lacinia pulvinar nibh."</span>
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -173,10 +174,11 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
 <!--/html_preserve-->
 
 <div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&amp;gt;%</span>
-    <span class='fu'>font</span>(<span class='kw'>weight</span> <span class='kw'>=</span> <span class='st'>"light"</span>),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>font</span>(weight = <span class='st'>"light"</span>),
   <span class='st'>"Proin quam nisl, tincidunt et."</span>
-)</pre><p></div>
+)
+</pre><p></div>
 <!--html_preserve-->
 
 
@@ -190,14 +192,15 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='text.html'>text</a></span>(<span class='st'>"indigo"</span>) <span class='kw'>%&gt;%</span>
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='text.html'>text</a></span>(<span class='st'>"indigo"</span>) <span class='op'>%&gt;%</span>
     <span class='fu'>font</span>(<span class='st'>"bold"</span>),
   <span class='st'>"Phasellus at dui in ligula mollis ultricies."</span>
-)</div><div class='output co'>#&gt; &lt;p class="cas-text-color-indigo cas-font-weight-bold"&gt;Phasellus at dui in ligula mollis ultricies.&lt;/p&gt;</div><div class='input'>
+)
+</div><div class='output co'>#&gt; &lt;p class="cas-text-color-indigo cas-font-weight-bold"&gt;Phasellus at dui in ligula mollis ultricies.&lt;/p&gt;</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -214,7 +217,7 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>

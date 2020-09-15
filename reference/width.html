@@ -123,7 +123,7 @@ relative the width of a parent element, an element's content, or the size of
 the browser window.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>width</span>(<span class='no'>x</span>, <span class='no'>size</span>, <span class='kw'>min</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>width</span>(<span class='kw'>x</span>, <span class='kw'>size</span>, min = <span class='kw'>NULL</span>, max = <span class='kw'>NULL</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,16 +166,17 @@ ignored.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>htmltools</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='no'>.style</span> <span class='kw'>%&gt;%</span>
-    <span class='fu'>width</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>xs</span> <span class='kw'>=</span> <span class='fl'>100</span>, <span class='kw'>md</span> <span class='kw'>=</span> <span class='fl'>50</span>)) <span class='kw'>%&gt;%</span>
-    <span class='fu'><a href='margin.html'>margin</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>xs</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>md</span> <span class='kw'>=</span> <span class='st'>"auto"</span>)),
+  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>width</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(xs = <span class='fl'>100</span>, md = <span class='fl'>50</span>)) <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='margin.html'>margin</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(xs = <span class='fl'>2</span>, md = <span class='st'>"auto"</span>)),
   <span class='st'>"In id erat non orci commodo lobortis."</span>,
   <span class='st'>"Suspendisse potenti."</span>,
   <span class='st'>"Nam euismod tellus id erat."</span>
-)</div><div class='output co'>#&gt; &lt;div class="cas-width-100 cas-width-50 cas-margin-all-2 cas-margin-all-md-auto"&gt;
+)
+</div><div class='output co'>#&gt; &lt;div class="cas-width-100 cas-width-50 cas-margin-all-2 cas-margin-all-md-auto"&gt;
 #&gt;   In id erat non orci commodo lobortis.
 #&gt;   Suspendisse potenti.
 #&gt;   Nam euismod tellus id erat.
@@ -196,7 +197,7 @@ ignored.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
 </div>
 
       </footer>
