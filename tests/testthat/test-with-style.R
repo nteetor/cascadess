@@ -20,3 +20,13 @@ test_that("does not pollute env", {
     "not found$"
   )
 })
+
+test_that("basic usage", {
+  d <- with_style(float = "fl", {
+    div(.style %>% float("left"))
+  })
+
+  d %>%
+    expect_s3_class("shiny.tag") %>%
+    expect_html_class("fl-left")
+})
