@@ -32,11 +32,13 @@ style_get_prefix <- function(pronoun, ns) {
   default
 }
 
+#' @export
 print.cascadess_style_pronoun <- function(x, ...) {
   cat("<pronoun>\n")
   invisible(x)
 }
 
+#' @export
 str.cascadess_style_pronoun <- function(object, ...) {
   cat("<pronoun>\n")
   invisible(NULL)
