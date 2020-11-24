@@ -4,7 +4,7 @@
 \alias{border}
 \title{Borders}
 \usage{
-border(x, color, sides = TRUE, radius = "medium")
+border(x, color, sides = TRUE, width = 1, round = "medium")
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
@@ -16,8 +16,11 @@ color.}
 which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may
 be used as shorthands for all sides or no sides, respectively.}
 
-\item{radius}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, \code{"circle"}, \code{"pill"}, or \code{"none"} specifying the border
-radius, defaults to \code{"medium"}.}
+\item{width}{One or more of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5} specifying the width
+of the element's border, defaults to \code{1}.}
+
+\item{round}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, or \code{"none"} specifying how to round
+the corners of the element, defaults to \code{"medium"}.}
 }
 \description{
 The \code{border()} function adjusts a tag element's borders.
@@ -30,7 +33,7 @@ The \code{border()} function adjusts a tag element's borders.
 <div class="cas-display-flex">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -38,7 +41,7 @@ blue\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-indigo cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-indigo cas-border-all cas-border-round-md">
 }}
 
 
@@ -46,7 +49,7 @@ indigo\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-purple cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-purple cas-border-all cas-border-round-md">
 }}
 
 
@@ -54,7 +57,7 @@ purple\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-red cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-red cas-border-all cas-border-round-md">
 }}
 
 
@@ -62,7 +65,7 @@ red\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-orange cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-orange cas-border-all cas-border-round-md">
 }}
 
 
@@ -70,7 +73,7 @@ orange\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-yellow cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-yellow cas-border-all cas-border-round-md">
 }}
 
 
@@ -78,7 +81,7 @@ yellow\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-green cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-green cas-border-all cas-border-round-md">
 }}
 
 
@@ -86,7 +89,7 @@ green\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-teal cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-teal cas-border-all cas-border-round-md">
 }}
 
 
@@ -94,7 +97,7 @@ teal\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-cyan cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-cyan cas-border-all cas-border-round-md">
 }}
 
 
@@ -102,7 +105,7 @@ cyan\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-white cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-white cas-border-all cas-border-round-md">
 }}
 
 
@@ -117,7 +120,7 @@ white\if{html}{\out{
 }}
 }
 
-\section{Radii}{
+\section{Round}{
 \if{html}{\out{
 <!--html_preserve-->
 }}
@@ -125,7 +128,7 @@ white\if{html}{\out{
 <div class="cas-display-flex">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-sm">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-sm">
 }}
 
 
@@ -133,7 +136,7 @@ small\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-sm">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-sm">
 }}
 
 
@@ -141,7 +144,7 @@ sm\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -149,7 +152,7 @@ medium\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -157,7 +160,7 @@ md\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-lg">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-lg">
 }}
 
 
@@ -165,7 +168,7 @@ large\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-lg">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-lg">
 }}
 
 
@@ -173,23 +176,7 @@ lg\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-circle">
-}}
-
-
-circle\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-pill">
-}}
-
-
-pill\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-radius-0">
+<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-none">
 }}
 
 
@@ -212,7 +199,7 @@ h3(
   .style \%>\%
     border("red", "bottom") \%>\%
     text("red"),
-  "A bold heading!"
+  "A bright, underlined heading!"
 )
 
 }

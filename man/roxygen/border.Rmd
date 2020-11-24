@@ -18,18 +18,18 @@ div(
 )
 ```
 
-# Radii
+# Round
 
 ```{r radii, echo=FALSE}
 div(
   .style %>% display("flex"),
-  lapply(names(border_radius_), function(radius) {
+  lapply(names(border_round_), function(round) {
     div(
       .style %>%
         padding(4) %>%
         margin(3) %>%
-        border("blue", radius = radius),
-      radius
+        border("blue", round = round),
+      round
     )
   })
 )

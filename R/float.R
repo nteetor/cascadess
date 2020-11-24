@@ -2,7 +2,8 @@ float_side_ <- c(
   left = "left",
   l = "left",
   right = "right",
-  r = "right"
+  r = "right",
+  none = "none"
 )
 
 float_side <- function(side) {
@@ -13,12 +14,13 @@ float_side <- function(side) {
 #'
 #' The `float()` function places an element to the left or right side of its
 #' parent element. Other text and inline elements wrap around floated elements.
+#' Note, `float()` has no effect on flex items.
 #'
 #' @inheritParams background
 #'
 #' @param side A [responsive] argument.
 #'
-#'   One of `"left"` or `"right"` specifying the side to float the element.
+#'   One of `r rd_list(float_side_)` specifying the side to float the element.
 #'
 #' @export
 #' @examples

@@ -89,12 +89,12 @@ width_max <- function(max) {
 width <- function(x, size, min = NULL, max = NULL) {
   assert_subject(x)
 
-  cls <- prefix(
+  classes <- prefix(
     "width",
     width_size(size),
     width_min(min),
     width_max(max)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

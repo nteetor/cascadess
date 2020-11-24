@@ -5,7 +5,7 @@ $utilities: (
   "align": (
     property: vertical-align,
     class: align,
-    values: baseline top middle bottom text-bottom text-top
+    values: baseline top middle bottom text-bottom text-top,
   ),
 
   "float": (
@@ -16,40 +16,25 @@ $utilities: (
 
   "overflow": (
     property: overflow,
-    values: (
-      auto: auto,
-      hidden: hidden
-    )
+    values: auto hidden visible scroll,
   ),
 
   "display": (
     responsive: true,
     print: true,
     property: display,
-    values: none inline inline-block block table table-row table-cell flex inline-flex
+    class: d,
+    values: inline inline-block block grid table table-row table-cell flex inline-flex none
   ),
 
   "shadow": (
     property: box-shadow,
     class: shadow,
     values: (
+      null: $box-shadow,
       sm: $box-shadow-sm,
-      md: $box-shadow,
       lg: $box-shadow-lg,
       none: none,
-    )
-  ),
-
-  "background-color": (
-    property: background-color,
-    class: background,
-    values: map-merge(
-      $theme-colors,
-      (
-        "body": $body-bg,
-        "white": $white,
-        "transparent": transparent
-      )
     )
   ),
 
@@ -58,89 +43,156 @@ $utilities: (
     values: static relative absolute fixed sticky
   ),
 
-  // Sizing utilities
-  "width": (
-    property: width,
-    class: width,
+  "top": (
+    property: top,
+    class: position-t,
+    values: $position-values
+  ),
+
+  "bottom": (
+    property: bottom,
+    class: position-b,
+    values: $position-values
+  ),
+
+  "left": (
+    property: left,
+    class: position-l,
+    values: $position-values
+  ),
+
+  "right": (
+    property: right,
+    class: position-r,
+    values: $position-values
+  ),
+
+  "translate-middle": (
+    property: transform,
+    class: position-by-center,
     values: (
-      25: 25%,
-      50: 50%,
-      75: 75%,
-      100: 100%,
-      auto: auto,
-      viewport: 100vw
+      null: (translateX(-50%) translateY(-50%))
     )
   ),
 
-  "min-width": (
-    property: min-width,
-    class: width-min,
+  "border": (
+    property: border,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    )
+  ),
+
+  "border-top": (
+    property: border-top,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    )
+  ),
+
+  "border-right": (
+    property: border-right,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    )
+  ),
+
+  "border-bottom": (
+    property: border-bottom,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    )
+  ),
+
+  "border-left": (
+    property: border-left,
+    values: (
+      null: $border-width solid $border-color,
+      0: 0,
+    )
+  ),
+
+  "border-color": (
+    property: border-color,
+    class: border,
+    values: map-merge($theme-colors, ("white": $white))
+  ),
+
+  "border-width": (
+    property: border-width,
+    class: border,
+    values: $border-widths
+  ),
+
+  // Sizing utilities
+  "width": (
+    property: width,
+    class: w,
     values: (
       25: 25%,
       50: 50%,
       75: 75%,
       100: 100%,
-      viewport: 100vw
+      auto: auto
     )
   ),
 
   "max-width": (
     property: max-width,
-    class: width-max,
-    values: (
-      25: 25%,
-      50: 50%,
-      75: 75%,
-      100: 100%,
-      viewport: 100vw
-    )
+    class: mw,
+    values: (100: 100%)
+  ),
+
+  "viewport-width": (
+    property: width,
+    class: vw,
+    values: (100: 100vw)
+  ),
+
+  "min-viewport-width": (
+    property: min-width,
+    class: min-vw,
+    values: (100: 100vw)
   ),
 
   "height": (
     property: height,
-    class: height,
+    class: h,
     values: (
       25: 25%,
       50: 50%,
       75: 75%,
       100: 100%,
-      auto: auto,
-      viewport: 100vh
-    )
-  ),
-
-  "min-height": (
-    property: min-height,
-    class: height-min,
-    values: (
-      25: 25%,
-      50: 50%,
-      75: 75%,
-      100: 100%,
-      viewport: 100vh
+      auto: auto
     )
   ),
 
   "max-height": (
     property: max-height,
-    class: height-max,
-    values: (
-      25: 25%,
-      50: 50%,
-      75: 75%,
-      100: 100%,
-      viewport: 100vh
-    )
+    class: mh,
+    values: (100: 100%)
+  ),
+
+  "viewport-height": (
+    property: height,
+    class: vh,
+    values: (100: 100vh)
+  ),
+
+  "min-viewport-height": (
+    property: min-height,
+    class: min-vh,
+    values: (100: 100vh)
   ),
 
   // Flex utilities
   "flex": (
     responsive: true,
     property: flex,
-    class: item,
-    values: (
-      fill: 1 1 auto
-    )
+    values: (fill: 1 1 auto)
   ),
 
   "flex-direction": (
@@ -153,7 +205,7 @@ $utilities: (
   "flex-grow": (
     responsive: true,
     property: flex-grow,
-    class: item,
+    class: flex,
     values: (
       grow-0: 0,
       grow-1: 1,
@@ -163,7 +215,7 @@ $utilities: (
   "flex-shrink": (
     responsive: true,
     property: flex-shrink,
-    class: item,
+    class: flex,
     values: (
       shrink-0: 0,
       shrink-1: 1,
@@ -174,23 +226,27 @@ $utilities: (
     responsive: true,
     property: flex-wrap,
     class: flex,
-    values: (
-      wrap: wrap,
-      nowrap: nowrap,
-      wrap-reverse: wrap-reverse
-    )
+    values: wrap nowrap wrap-reverse
+  ),
+
+  "gap": (
+    responsive: true,
+    property: gap,
+    class: gap,
+    values: $spacers
   ),
 
   "justify-content": (
     responsive: true,
     property: justify-content,
-    class: flex-content,
+    class: flex-justify,
     values: (
       start: flex-start,
       end: flex-end,
       center: center,
       between: space-between,
       around: space-around,
+      evenly: space-evenly,
     )
   ),
 
@@ -210,7 +266,6 @@ $utilities: (
   "align-content": (
     responsive: true,
     property: align-content,
-    class: flex-content,
     values: (
       start: flex-start,
       end: flex-end,
@@ -224,7 +279,7 @@ $utilities: (
   "align-self": (
     responsive: true,
     property: align-self,
-    class: item-self,
+    class: item-align,
     values: (
       auto: auto,
       start: flex-start,
@@ -240,61 +295,62 @@ $utilities: (
     property: order,
     class: item-order,
     values: (
-      first: -1,
       0: 0,
       1: 1,
       2: 2,
       3: 3,
       4: 4,
       5: 5,
-      last: 6,
     ),
-
   ),
 
   // Margin utilities
   "margin": (
     responsive: true,
     property: margin,
-    class: margin-all,
+    class: m,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-x": (
+    responsive: true,
+    property: margin-right margin-left,
+    class: mx,
+    values: map-merge($spacers, (auto: auto))
+  ),
+
+  "margin-y": (
+    responsive: true,
+    property: margin-top margin-bottom,
+    class: my,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-top": (
     responsive: true,
     property: margin-top,
+    class: mt,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-right": (
     responsive: true,
     property: margin-right,
+    class: mr,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-bottom": (
     responsive: true,
     property: margin-bottom,
+    class: mb,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-left": (
     responsive: true,
     property: margin-left,
-    values: map-merge($spacers, (auto: auto))
-  ),
-
-  "margin-horizontal": (
-    responsive: true,
-    property: margin-left margin-right,
-    class: margin-h,
-    values: map-merge($spacers, (auto: auto))
-  ),
-
-  "margin-vertical": (
-    responsive: true,
-    property: margin-top margin-bottom,
-    class: margin-v,
+    class: ml,
     values: map-merge($spacers, (auto: auto))
   ),
 
@@ -302,31 +358,49 @@ $utilities: (
   "negative-margin": (
     responsive: true,
     property: margin,
-    class: margin-all,
+    class: m,
+    values: $negative-spacers
+  ),
+
+  "negative-margin-x": (
+    responsive: true,
+    property: margin-right margin-left,
+    class: mx,
+    values: $negative-spacers
+  ),
+
+  "negative-margin-y": (
+    responsive: true,
+    property: margin-top margin-bottom,
+    class: my,
     values: $negative-spacers
   ),
 
   "negative-margin-top": (
     responsive: true,
     property: margin-top,
+    class: mt,
     values: $negative-spacers
   ),
 
   "negative-margin-right": (
     responsive: true,
     property: margin-right,
+    class: mr,
     values: $negative-spacers
   ),
 
   "negative-margin-bottom": (
     responsive: true,
     property: margin-bottom,
+    class: mb,
     values: $negative-spacers
   ),
 
   "negative-margin-left": (
     responsive: true,
     property: margin-left,
+    class: ml,
     values: $negative-spacers
   ),
 
@@ -334,37 +408,69 @@ $utilities: (
   "padding": (
     responsive: true,
     property: padding,
-    class: padding-all,
+    class: p,
+    values: $spacers
+  ),
+
+  "padding-x": (
+    responsive: true,
+    property: padding-right padding-left,
+    class: px,
+    values: $spacers
+  ),
+
+  "padding-y": (
+    responsive: true,
+    property: padding-top padding-bottom,
+    class: py,
     values: $spacers
   ),
 
   "padding-top": (
     responsive: true,
     property: padding-top,
+    class: pt,
     values: $spacers
   ),
 
   "padding-right": (
     responsive: true,
     property: padding-right,
+    class: pr,
     values: $spacers
   ),
 
   "padding-bottom": (
     responsive: true,
     property: padding-bottom,
+    class: pb,
     values: $spacers
   ),
 
   "padding-left": (
     responsive: true,
     property: padding-left,
+    class: pl,
     values: $spacers
   ),
 
-  // Font
+  // Text
+  "font-size": (
+    rfs: true,
+    property: font-size,
+    class: fs,
+    values: $font-sizes
+  ),
+
+  "font-style": (
+    property: font-style,
+    class: fst,
+    values: italic normal
+  ),
+
   "font-weight": (
     property: font-weight,
+    class: fw,
     values: (
       light: $font-weight-light,
       lighter: $font-weight-lighter,
@@ -374,53 +480,22 @@ $utilities: (
     )
   ),
 
-  "font-style": (
-    property: font-style,
-    class: font,
-    values: (
-      italic: italic,
-      normal: normal
-    )
-  ),
-
-  "font-transform": (
+  "text-transform": (
     property: text-transform,
-    class: font-case,
-    values: (
-      lower: lowercase,
-      upper: uppercase,
-      title: capitalize
-    )
-  ),
-
-  "font-family": (
-    property: font-family,
-    class: font-family,
-    values: (
-      sans-serif: $font-family-sans-serif,
-      monospace: $font-family-monospace
-    )
-  ),
-
-  // Text
-  "text-decoration": (
-    property: text-decoration,
-    values: (
-      none: none,
-      underline: underline,
-      strikethrough: line-through
-    )
+    class: text,
+    values: lowercase uppercase capitalize
   ),
 
   "text-align": (
     responsive: true,
     property: text-align,
+    class: text,
     values: left right center
   ),
 
   "color": (
     property: color,
-    class: text-color,
+    class: text,
     values: map-merge(
       $theme-colors,
       (
@@ -438,12 +513,32 @@ $utilities: (
 
   "line-height": (
     property: line-height,
-    class: text-spacing,
+    class: lh,
     values: (
+      1: 1,
       sm: $line-height-sm,
-      // base: $line-height-base,
+      base: $line-height-base,
       lg: $line-height-lg,
     )
+  ),
+
+  "background-color": (
+    property: background-color,
+    class: bg,
+    values: map-merge(
+      $theme-colors,
+      (
+        "body": $body-bg,
+        "white": $white,
+        "transparent": transparent
+      )
+    )
+  ),
+
+  "gradient": (
+    property: background-image,
+    class: bg,
+    values: (gradient: var(--#{$variable-prefix}gradient))
   ),
 
   "white-space": (
@@ -455,63 +550,46 @@ $utilities: (
     )
   ),
 
-  // Border
-  "border": (
-    property: border,
-    class: border,
-    values: (
-      all: $border-width solid $border-color,
-      none: 0
-    )
+  "text-decoration": (
+    property: text-decoration,
+    values: none underline line-through
   ),
 
-  "border-top": (
-    property: border-top,
-    values: (
-      null: $border-width solid $border-color,
-    )
+  "word-wrap": (
+    property: word-wrap word-break,
+    class: text,
+    values: (break: break-word)
   ),
 
-  "border-right": (
-    property: border-right,
-    values: (
-      null: $border-width solid $border-color
-    )
+  "font-family": (
+    property: font-family,
+    class: font,
+    values: (monospace: var(--#{$variable-prefix}font-monospace))
   ),
 
-  "border-bottom": (
-    property: border-bottom,
-    values: (
-      null: $border-width solid $border-color
-    )
+  "user-select": (
+    property: user-select,
+    class: text-select,
+    values: all none
   ),
 
-  "border-left": (
-    property: border-left,
-    values: (
-      null: $border-width solid $border-color
-    )
+  "pointer-events": (
+    property: pointer-events,
+    class: pe,
+    values: none auto,
   ),
 
-  "border-color": (
-    property: border-color,
-    class: border,
-    values: map-merge($theme-colors, ("white": $white))
-  ),
-
-  "border-radius": (
+  "rounded": (
     property: border-radius,
+    class: border-round,
     values: (
+      none: 0,
       sm: $border-radius-sm,
       md: $border-radius,
       lg: $border-radius-lg,
-      circle: 50%,
-      pill: $rounded-pill,
-      0: 0,
     )
   ),
 
-  // Misc
   "visibility": (
     property: visibility,
     class: null,
@@ -519,10 +597,5 @@ $utilities: (
       visible: visible,
       invisible: hidden,
     )
-  ),
-
-  "user-select": (
-    property: user-select,
-    values: all auto none
   )
 );

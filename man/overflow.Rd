@@ -9,9 +9,9 @@ overflow(x, scroll)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{scroll}{One of \code{"auto"} or \code{"hidden"} specifying if the content of the
-element scrolls. \code{TRUE} and \code{FALSE} may be used in place of \code{"auto"} or
-\code{"hidden"}, respectively.}
+\item{scroll}{One of \code{"auto"}, \code{"hidden"}, \code{"visible"}, or \code{"scroll"} specifying how the content
+of the element scrolls. \code{TRUE} and \code{FALSE} may be used in place of \code{"scroll"}
+or \code{"hidden"}, respectively.}
 }
 \description{
 The \code{overflow()} function adjust how an element's content scrolls. Scrolling

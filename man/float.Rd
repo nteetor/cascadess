@@ -11,11 +11,12 @@ float(x, side)
 
 \item{side}{A \link{responsive} argument.
 
-One of \code{"left"} or \code{"right"} specifying the side to float the element.}
+One of \code{"left"}, \code{"left"}, \code{"right"}, \code{"right"}, or \code{"none"} specifying the side to float the element.}
 }
 \description{
 The \code{float()} function places an element to the left or right side of its
 parent element. Other text and inline elements wrap around floated elements.
+Note, \code{float()} has no effect on flex items.
 }
 \examples{
 

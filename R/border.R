@@ -1,3 +1,12 @@
+border_color_ <- c(
+  theme_colors,
+  white = "white"
+)
+
+border_color <- function(color) {
+  pick(color, from = border_color_)
+}
+
 border_sides_ <- c(
   top = "top",
   t = "top",
@@ -23,29 +32,34 @@ border_sides <- function(sides) {
   pick(sides, from = border_sides_)
 }
 
-border_radius_ <- c(
+border_width_ <- c(
+  `1` = 1,
+  `2` = 2,
+  `3` = 3,
+  `4` = 4,
+  `5` = 5
+)
+
+border_width <- function(width) {
+  if (width == 1) {
+    return(NULL)
+  }
+
+  pick(as.character(width), from = border_width_)
+}
+
+border_round_ <- c(
   small = "sm",
   sm = "sm",
   medium = "md",
   md = "md",
   large = "lg",
   lg = "lg",
-  circle = "circle",
-  pill = "pill",
-  none = "0"
+  none = "none"
 )
 
-border_radius <- function(radius) {
-  compose("radius", pick(radius, from = border_radius_))
-}
-
-border_color_ <- c(
-  theme_colors,
-  white = "white"
-)
-
-border_color <- function(color) {
-  pick(color, from = border_color_)
+border_round <- function(round) {
+  compose("round", pick(round, from = border_round_))
 }
 
 #' Borders
@@ -61,8 +75,11 @@ border_color <- function(color) {
 #'   which sides to add borders to, defaults to `TRUE`. `TRUE` and `FALSE` may
 #'   be used as shorthands for all sides or no sides, respectively.
 #'
-#' @param radius One of `r rd_list(names(border_radius_))` specifying the border
-#'   radius, defaults to `"medium"`.
+#' @param width One or more of `r rd_list(border_width_)` specifying the width
+#'   of the element's border, defaults to `1`.
+#'
+#' @param round One of `r rd_list(names(border_round_))` specifying how to round
+#'   the corners of the element, defaults to `"medium"`.
 #'
 #' @includeRmd man/roxygen/border.Rmd
 #'
@@ -75,18 +92,19 @@ border_color <- function(color) {
 #'   .style %>%
 #'     border("red", "bottom") %>%
 #'     text("red"),
-#'   "A bold heading!"
+#'   "A bright, underlined heading!"
 #' )
 #'
-border <- function(x, color, sides = TRUE, radius = "medium") {
+border <- function(x, color, sides = TRUE, width = 1, round = "medium") {
   assert_subject(x)
 
-  cls <- prefix(
+  classes <- prefix(
     "border",
     border_color(color),
     border_sides(sides),
-    border_radius(radius)
+    border_width(width),
+    border_round(round)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

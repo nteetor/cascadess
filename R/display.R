@@ -2,9 +2,10 @@ display_type_ <- c(
   inline = "inline",
   `inline-block` = "inline-block",
   block = "block",
+  grid = "grid",
   table = "table",
-  `table-row` = "table-row",
   `table-cell` = "table-cell",
+  `table-row` = "table-row",
   flex = "flex",
   `inline-flex` = "inline-flex",
   none = "none"
@@ -43,10 +44,10 @@ display_type <- function(type) {
 display <- function(x, type) {
   assert_subject(x)
 
-  cls <- prefix(
+  class <- prefix(
     "display",
     display_type(type)
   )
 
-  add_class(x, cls)
+  add_class(x, class)
 }

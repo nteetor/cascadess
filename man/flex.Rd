@@ -22,7 +22,7 @@ bottom. The cross axis is the horizontal.}
 
 \item{justify}{A \link{responsive} argument.
 
-One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"around"}, or \code{"between"} specifying how items are
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"between"}, \code{"around"}, or \code{"evenly"} specifying how items are
 arranged on the main axis, defaults to \code{"start"}.
 
 If \code{"between"} or \code{"around"}, items are arranged by evenly sharing the
@@ -70,7 +70,7 @@ allows.\if{html}{\out{<div class="r">}}\preformatted{div(
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
 <div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-margin-h-auto cas-margin-h-md-0">
@@ -153,10 +153,10 @@ horizontally.\if{html}{\out{<div class="r">}}\preformatted{div(
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-column cas-flex-md-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -164,7 +164,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -172,7 +172,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -201,10 +201,10 @@ You can keep items as a column by specifying only \code{"column"}.\if{html}{\out
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-column cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-column cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -212,7 +212,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -220,7 +220,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -253,10 +253,10 @@ beginning of their parent container.\if{html}{\out{<div class="r">}}\preformatte
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -264,7 +264,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -272,7 +272,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -280,7 +280,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -308,10 +308,10 @@ We can also push items to the \strong{end}.\if{html}{\out{<div class="r">}}\pref
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-end cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-end cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -319,7 +319,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -327,7 +327,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -335,7 +335,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -363,10 +363,10 @@ Without using a table layout we can \strong{center} items.\if{html}{\out{<div cl
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-center cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-center cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -374,7 +374,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -382,7 +382,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -390,7 +390,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -418,10 +418,10 @@ You can also put space \strong{between} items\if{html}{\out{<div class="r">}}\pr
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-between cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -429,7 +429,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -437,7 +437,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -445,7 +445,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -473,10 +473,10 @@ A flex item\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-around cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-around cas-flex-items-stretch cas-flex-nowrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -484,7 +484,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -492,7 +492,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -500,7 +500,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -534,10 +534,10 @@ Using flexbox we can also control how items wrap onto new lines.\if{html}{\out{<
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-start cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-start cas-flex-items-stretch cas-flex-wrap">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -545,7 +545,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -553,7 +553,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 
@@ -561,7 +561,7 @@ A flex item\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-padding-all-3 cas-border-blue cas-border-all cas-border-round-md">
 }}
 
 

@@ -9,7 +9,8 @@ background(x, color)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"body"}, \code{"white"}, or \code{"transparent"}.}
+\item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"white"}, or \code{"transparent"} specifying the
+background color of the tag element.}
 }
 \description{
 The \code{background()} function adjusts the background color of a tag element.
@@ -42,7 +43,7 @@ further.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take a
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<button id="id" type="button" class="btn btn-default action-button cas-background-green cas-border-green cas-border-all cas-border-radius-md cas-shadow-sm">
+<button id="id" type="button" class="btn btn-default action-button cas-background-green cas-border-green cas-border-all cas-border-round-md cas-shadow-sm">
 }}
 
 
@@ -120,7 +121,7 @@ It’s panel\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-content-between cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-display-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-wrap">
 }}
 \if{html}{\out{
 <div class="cas-margin-all-3">
@@ -295,26 +296,6 @@ cyan\if{html}{\out{
 }}
 \if{html}{\out{
 <div class="cas-padding-all-5 cas-background-cyan">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-margin-all-3">
-}}
-\if{html}{\out{
-<div class="cas-text-align-center">
-}}
-
-
-body\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-padding-all-5 cas-background-body">
 }}
 \if{html}{\out{
 </div>

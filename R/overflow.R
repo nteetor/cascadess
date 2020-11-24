@@ -1,11 +1,13 @@
 overflow_scroll_ <- c(
   auto = "auto",
-  hidden = "hidden"
+  hidden = "hidden",
+  visible = "visible",
+  scroll = "scroll"
 )
 
 overflow_scroll <- function(scroll) {
   if (is_true(scroll)) {
-    scroll <- "auto"
+    scroll <- "scroll"
   } else if (is_false(scroll)) {
     scroll <- "hidden"
   }
@@ -21,9 +23,9 @@ overflow_scroll <- function(scroll) {
 #'
 #' @inheritParams background
 #'
-#' @param scroll One of `"auto"` or `"hidden"` specifying if the content of the
-#'   element scrolls. `TRUE` and `FALSE` may be used in place of `"auto"` or
-#'   `"hidden"`, respectively.
+#' @param scroll One of `r rd_list(overflow_scroll_)` specifying how the content
+#'   of the element scrolls. `TRUE` and `FALSE` may be used in place of `"scroll"`
+#'   or `"hidden"`, respectively.
 #'
 #' @export
 #' @examples
@@ -40,10 +42,10 @@ overflow_scroll <- function(scroll) {
 overflow <- function(x, scroll) {
   assert_subject(x)
 
-  cls <- prefix(
+  class <- prefix(
     "overflow",
     overflow_scroll(scroll)
   )
 
-  add_class(x, cls)
+  add_class(x, class)
 }

@@ -45,10 +45,10 @@ shadow_size <- function(size) {
 shadow <- function(x, size) {
   assert_subject(x)
 
-  cls <- prefix(
+  class <- prefix(
     "shadow",
     shadow_size(size)
   )
 
-  add_class(x, cls)
+  add_class(x, class)
 }

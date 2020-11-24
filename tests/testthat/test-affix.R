@@ -9,6 +9,6 @@ test_that("added classes", {
 test_that("valid values", {
   expect_error(
     .style %>% align("wrong"),
-    "^invalid value [^ ]+wrong[^ ]+$"
+    "^invalid value [^ ]*wrong[^ ]*$"
   )
 })

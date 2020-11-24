@@ -4,14 +4,13 @@
   "description": "A grammar of style.",
   "main": "dist/cascadess.css",
   "scripts": {
-    "vendors": "run-s vendors-root vendors-bootstrap",
-    "vendors-root": "[ -d 'vendors' ] || { echo '\\033[0;31mMissing vendors/ directory\\033[0m'; exit 1; }",
-    "vendors-bootstrap": "[ -d 'vendors/bootstrap' ] || { echo '\\033[0;31mMissing vendors/bootstrap directory\\033[0m'; exit 1; }",
-    "css": "run-s vendors css-compile css-prefix css-minify css-vend",
-    "css-compile": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 src/ -o dist/",
-    "css-minify": "cleancss --level 1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/cascadess.min.css dist/cascadess.css",
+    "css": "npm-run-all css-compile css-prefix css-minify",
+    "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css src/:dist/",
+    "css-minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/cascadess.min.css dist/cascadess.css",
     "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
-    "css-vend": "cp dist/* ../inst/www/cascadess/"
+    "css-vend": "cp dist/* ../inst/www/cascadess/",
+    "css-lint": "npm-run-all --continue-on-error --parallel css-lint-*",
+    "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --rd"
   },
   "repository": {
     "type": "git",
@@ -24,11 +23,17 @@
   },
   "homepage": "https://github.com/nteetor/cascadess#readme",
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.8.6",
     "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.0",
-    "postcss-prefixer": "^2.1.2"
+    "postcss-cli": "^7.1.2",
+    "postcss-prefixer": "^2.1.2",
+    "sass": "^1.29.0",
+    "stylelint": "^13.8.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.0.0-alpha3",
+    "popper.js": "^1.16.1"
   }
 }

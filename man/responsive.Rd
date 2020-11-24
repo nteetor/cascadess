@@ -21,36 +21,43 @@ arguments default to \code{NULL} in which case the argument is ignored.
 
 \strong{extra small}
 
-Use the breakpoint with \verb{default =} or \verb{sm = }.
+Use the breakpoint with \verb{default =} or \verb{xs = }.
 
 The style is always applied, unless supplanted by a style for any other
 breakpoint.
 
 \strong{small}
 
-Use the breakpoint with \verb{small =} or \verb{sm =}.
+Use the breakpoint with \verb{sm =}.
 
 The style is applied when the viewport is at least 576px wide, think
 landscape phones.
 
 \strong{medium}
 
-Use the breakpoint with \verb{medium =} or \verb{md =}.
+Use the breakpoint with \verb{md =}.
 
 The style is applied when the viewport is at least 768px wide, think tablets.
 
 \strong{large}
 
-Use the breakpoint with \verb{large =} or \verb{lg =}.
+Use the breakpoint with \verb{lg =}.
 
 The style is applied when the viewport is at least 992px wide, think laptop
 or smaller desktops.
 
 \strong{extra large}
 
-Use the breakpoint with \verb{\\}extra-large\\verb{ =} or \verb{xl =}.
+Use the breakpoint with \verb{xl =}.
 
 The style is applied when the viewport is at least 1200px wide, think large
+desktops.
+
+\strong{extra extra large}
+
+Use the breakpoint with \verb{xxl =}.
+
+The style is applied when the viewport is at least 1400px wide, think large
 desktops.
 }
 }

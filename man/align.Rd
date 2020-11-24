@@ -9,7 +9,7 @@ align(x, vertical)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{vertical}{One of \code{"baseline"}, \code{"top"}, \code{"middle"}, \code{"bottom"}, \code{"text-bottom"}, or \code{"text-top"}.}
+\item{vertical}{One of \code{"baseline"}, \code{"top"}, \code{"middle"}, \code{"bottom"}, \code{"text-top"}, or \code{"text-bottom"}.}
 }
 \description{
 The \code{align()} function adjusts the inline alignment of an element.  This
@@ -24,7 +24,8 @@ library(htmltools)
 
 div(
   "Text",
-  span("Above") \%>\% align("top")
+  span("Above") \%>\% align("top"),
+  span("Below") \%>\% align("bottom")
 )
 
 }

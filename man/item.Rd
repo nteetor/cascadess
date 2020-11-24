@@ -4,7 +4,14 @@
 \alias{item}
 \title{Flex items}
 \usage{
-item(x, align = "stretch", order = 1, grow = NULL, shrink = NULL)
+item(
+  x,
+  align = "stretch",
+  order = NULL,
+  fill = NULL,
+  grow = NULL,
+  shrink = NULL
+)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
@@ -18,7 +25,13 @@ argument.}
 \item{order}{A \link{responsive} argument.
 
 One of \code{0}, \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, \code{6}, or \code{7} specifying the order of the item, defaults to
-\code{1}. Items of the same order are then sorted by their source code order.}
+\code{1}. Items of the same order are then sorted by their source code
+order. Defaults to \code{NULL}, in which case the argument is ignored.}
+
+\item{fill}{A \link{responsive} argument.
+
+If \code{TRUE}, the flex parent element's horizontal space is divided
+proportionally amongst this tag element and all other flex items with \code{fill = TRUE}, defaults to \code{NULL}, in which case the argument is ignored.}
 
 \item{grow}{A \link{responsive} argument.
 

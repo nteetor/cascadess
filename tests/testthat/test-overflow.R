@@ -12,9 +12,11 @@ test_that("adds class", {
 })
 
 test_that("argument scroll shortcuts", {
-  div() %>% overflow(FALSE) %>%
+  div() %>%
+    overflow(FALSE) %>%
     expect_html_class("cas-overflow-hidden")
 
-  div() %>% overflow(TRUE) %>%
-    expect_html_class("cas-overflow-auto")
+  div() %>%
+    overflow(TRUE) %>%
+    expect_html_class("cas-overflow-scroll")
 })

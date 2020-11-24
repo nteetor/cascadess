@@ -3,8 +3,8 @@ align_vertical_ <- c(
   top = "top",
   middle = "middle",
   bottom = "bottom",
-  `text-bottom` = "text-bottom",
-  `text-top` = "text-top"
+  `text-top` = "text-top",
+  `text-bottom` = "text-bottom"
 )
 
 align_vertical <- function(vertical) {
@@ -32,16 +32,17 @@ align_vertical <- function(vertical) {
 #'
 #' div(
 #'   "Text",
-#'   span("Above") %>% align("top")
+#'   span("Above") %>% align("top"),
+#'   span("Below") %>% align("bottom")
 #' )
 #'
 align <- function(x, vertical) {
   assert_subject(x)
 
-  cls <- prefix(
+  class <- prefix(
     "align",
     align_vertical(vertical)
   )
 
-  add_class(x, cls)
+  add_class(x, class)
 }

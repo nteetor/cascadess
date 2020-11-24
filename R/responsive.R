@@ -3,13 +3,10 @@ responsive_rename <- function(x) {
     switch(
       n,
       sm = "sm",
-      small = "sm",
       md = "md",
-      medium = "md",
       lg = "lg",
-      large = "lg",
       xl = "xl",
-      `extra-large` = "xl",
+      xxl = "xxl",
       default = "",
       ""
     )
@@ -61,36 +58,43 @@ responsive <- function(x) {
 #'
 #' **extra small**
 #'
-#' Use the breakpoint with `default =` or `sm = `.
+#' Use the breakpoint with `default =` or `xs = `.
 #'
 #' The style is always applied, unless supplanted by a style for any other
 #' breakpoint.
 #'
 #' **small**
 #'
-#' Use the breakpoint with `small =` or `sm =`.
+#' Use the breakpoint with `sm =`.
 #'
 #' The style is applied when the viewport is at least 576px wide, think
 #' landscape phones.
 #'
 #' **medium**
 #'
-#' Use the breakpoint with `medium =` or `md =`.
+#' Use the breakpoint with `md =`.
 #'
 #' The style is applied when the viewport is at least 768px wide, think tablets.
 #'
 #' **large**
 #'
-#' Use the breakpoint with `large =` or `lg =`.
+#' Use the breakpoint with `lg =`.
 #'
 #' The style is applied when the viewport is at least 992px wide, think laptop
 #' or smaller desktops.
 #'
 #' **extra large**
 #'
-#' Use the breakpoint with `\`extra-large\` =` or `xl =`.
+#' Use the breakpoint with `xl =`.
 #'
 #' The style is applied when the viewport is at least 1200px wide, think large
+#' desktops.
+#'
+#' **extra extra large**
+#'
+#' Use the breakpoint with `xxl =`.
+#'
+#' The style is applied when the viewport is at least 1400px wide, think large
 #' desktops.
 #'
 #' @name responsive

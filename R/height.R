@@ -88,12 +88,12 @@ height_max <- function(max) {
 height <- function(x, size, min = NULL, max = NULL) {
   assert_subject(x)
 
-  cls <- prefix(
+  classes <- prefix(
     "height",
     height_size(size),
     height_min(min),
     height_max(max)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

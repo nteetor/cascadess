@@ -12,7 +12,6 @@ theme_colors <- c(
 
 background_color_ <- c(
   theme_colors,
-  body = "body",
   white = "white",
   transparent = "transparent"
 )
@@ -27,7 +26,8 @@ background_color <- function(color) {
 #'
 #' @param x A tag element or [.style] pronoun.
 #'
-#' @param color One of `r rd_list(names(background_color_))`.
+#' @param color One of `r rd_list(names(background_color_))` specifying the
+#'   background color of the tag element.
 #'
 #' @includeRmd man/roxygen/background.Rmd
 #'
@@ -48,10 +48,10 @@ background_color <- function(color) {
 background <- function(x, color) {
   assert_subject(x)
 
-  cls <- prefix(
+  class <- prefix(
     "background",
     background_color(color)
   )
 
-  add_class(x, cls)
+  add_class(x, class)
 }

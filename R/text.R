@@ -51,6 +51,15 @@ text_wrap <- function(wrap) {
   ifelse(wrap, "wrap", "nowrap")
 }
 
+text_select_ <- c(
+  all = "all",
+  none = "none"
+)
+
+text_select <- function(select) {
+  compose("select", pick(select, from = text_select_))
+}
+
 #' Text
 #'
 #' The `text()` function adjusts the text color, alignment, line spacing, line
@@ -73,6 +82,10 @@ text_wrap <- function(wrap) {
 #' @param wrap One of `TRUE` or `FALSE` specifying if an element's text should
 #'   wrap onto new lines, defaults to `NULL`, in which case the argument
 #'   is ignored.
+#'
+#' @param select One of `r rd_list(text_select_)` specifying how the element's
+#'   text is selected when the user clicks on the element, defaults to `NULL`,
+#'   in which case the argument is ignored.
 #'
 #' @includeRmd man/roxygen/text.Rmd
 #'
@@ -102,17 +115,18 @@ text_wrap <- function(wrap) {
 #' )
 #'
 text <- function(x, color = NULL, align = NULL, spacing = NULL,
-                 decoration = NULL, wrap = NULL) {
+                 decoration = NULL, wrap = NULL, select = NULL) {
   assert_subject(x)
 
-  cls <- prefix(
+  classes <- prefix(
     "text",
     text_color(color),
     text_align(align),
     text_spacing(spacing),
     text_decoration(decoration),
-    text_wrap(wrap)
+    text_wrap(wrap),
+    text_select(select)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

@@ -76,7 +76,7 @@ caller_trace <- function(n = 1) {
 }
 
 abortf <- function(s, ..., trace = caller_trace(2)) {
-  args <- lapply(c(...), function(x) bold$red(x))
+  args <- lapply(list(...), function(x) bold$red(x))
 
   msg <- exec(sprintf, s, !!!args)
 

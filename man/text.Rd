@@ -10,7 +10,8 @@ text(
   align = NULL,
   spacing = NULL,
   decoration = NULL,
-  wrap = NULL
+  wrap = NULL,
+  select = NULL
 )
 }
 \arguments{
@@ -31,6 +32,10 @@ ignored.}
 \item{wrap}{One of \code{TRUE} or \code{FALSE} specifying if an element's text should
 wrap onto new lines, defaults to \code{NULL}, in which case the argument
 is ignored.}
+
+\item{select}{One of \code{"all"} or \code{"none"} specifying how the element's
+text is selected when the user clicks on the element, defaults to \code{NULL},
+in which case the argument is ignored.}
 }
 \description{
 The \code{text()} function adjusts the text color, alignment, line spacing, line
@@ -50,7 +55,7 @@ wrapping, and decoration of a tag element.
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-text-color-blue cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-text-color-blue cas-border-blue cas-border-all cas-border-round-md">
 }}
 \if{html}{\out{
 <p>

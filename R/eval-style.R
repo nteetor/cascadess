@@ -83,7 +83,7 @@ str.cascadess_style_pronoun <- function(object, ...) {
 
 #' Style pronoun contexts
 #'
-#' The `with_style_pronoun()` allows overloading the `.style` pronoun.
+#' The `with_style()` function allows overloading the `.style` pronoun.
 #'
 #' @param pronoun A call to `style_pronoun()`.
 #'
