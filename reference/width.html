@@ -83,12 +83,6 @@ the browser window." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -123,7 +117,7 @@ relative the width of a parent element, an element's content, or the size of
 the browser window.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>width</span>(<span class='kw'>x</span>, <span class='kw'>size</span>, min = <span class='kw'>NULL</span>, max = <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>width</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>size</span>, min <span class='op'>=</span> <span class='cn'>NULL</span>, max <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,16 +160,16 @@ ignored.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>width</span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(xs = <span class='fl'>100</span>, md = <span class='fl'>50</span>)) <span class='op'>%&gt;%</span>
-    <span class='fu'><a href='margin.html'>margin</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(xs = <span class='fl'>2</span>, md = <span class='st'>"auto"</span>)),
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+  <span class='va'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>width</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>xs <span class='op'>=</span> <span class='fl'>100</span>, md <span class='op'>=</span> <span class='fl'>50</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'><a href='margin.html'>margin</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span>xs <span class='op'>=</span> <span class='fl'>2</span>, md <span class='op'>=</span> <span class='st'>"auto"</span><span class='op'>)</span><span class='op'>)</span>,
   <span class='st'>"In id erat non orci commodo lobortis."</span>,
   <span class='st'>"Suspendisse potenti."</span>,
   <span class='st'>"Nam euismod tellus id erat."</span>
-)
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;div class="cas-width-100 cas-width-50 cas-margin-all-2 cas-margin-all-md-auto"&gt;
 #&gt;   In id erat non orci commodo lobortis.
 #&gt;   Suspendisse potenti.

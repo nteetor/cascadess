@@ -43,7 +43,8 @@
 
 <meta property="og:title" content="Floats — float" />
 <meta property="og:description" content="The float() function places an element to the left or right side of its
-parent element. Other text and inline elements wrap around floated elements." />
+parent element. Other text and inline elements wrap around floated elements.
+Note, float() has no effect on flex items." />
 
 
 
@@ -82,12 +83,6 @@ parent element. Other text and inline elements wrap around floated elements." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -118,10 +113,11 @@ parent element. Other text and inline elements wrap around floated elements." />
 
     <div class="ref-description">
     <p>The <code>float()</code> function places an element to the left or right side of its
-parent element. Other text and inline elements wrap around floated elements.</p>
+parent element. Other text and inline elements wrap around floated elements.
+Note, <code>float()</code> has no effect on flex items.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>float</span>(<span class='kw'>x</span>, <span class='kw'>side</span>)</pre>
+    <pre class="usage"><span class='fu'>float</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>side</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,30 +129,30 @@ parent element. Other text and inline elements wrap around floated elements.</p>
     <tr>
       <th>side</th>
       <td><p>A <a href='responsive.html'>responsive</a> argument.</p>
-<p>One of <code>"left"</code> or <code>"right"</code> specifying the side to float the element.</p></td>
+<p>One of <code>"left"</code>, <code>"left"</code>, <code>"right"</code>, <code>"right"</code>, or <code>"none"</code> specifying the side to float the element.</p></td>
     </tr>
     </table>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-    <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
-      <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"red"</span>) <span class='op'>%&gt;%</span>
-      <span class='fu'>float</span>(<span class='st'>"left"</span>),
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+    <span class='va'>.style</span> <span class='op'>%&gt;%</span>
+      <span class='fu'><a href='border.html'>border</a></span><span class='op'>(</span><span class='st'>"red"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+      <span class='fu'>float</span><span class='op'>(</span><span class='st'>"left"</span><span class='op'>)</span>,
     <span class='st'>"Warning"</span>
-  ),
-  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
+  <span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
     <span class='st'>"Nam a sapien."</span>,
     <span class='st'>"Phasellus neque orci, porta a, aliquet quis, semper a, massa."</span>,
     <span class='st'>"Phasellus lacus."</span>
-  )
-)
+  <span class='op'>)</span>
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;div&gt;
-#&gt;   &lt;div class="cas-border-red cas-border-all cas-border-radius-md cas-float-left"&gt;Warning&lt;/div&gt;
+#&gt;   &lt;div class="cas-border-red cas-border-all cas-border-round-md cas-float-left"&gt;Warning&lt;/div&gt;
 #&gt;   &lt;div&gt;
 #&gt;     Nam a sapien.
 #&gt;     Phasellus neque orci, porta a, aliquet quis, semper a, massa.

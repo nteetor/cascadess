@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Height — height • cascadess</title>
+<title>Grid element spacing — gap • cascadess</title>
 
 
 <!-- jquery -->
@@ -41,10 +41,11 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Height — height" />
-<meta property="og:description" content="The height() function adjusts a tag element's height. Heights are specified
-relative the height of a parent element, an element's content, or the size of
-the browser window." />
+<meta property="og:title" content="Grid element spacing — gap" />
+<meta property="og:description" content="The gap() function is used to space child elements of a parent tag element
+with display(&quot;grid&quot;). Instead of specifying a margin for each child element
+a gap may be specified for the parent element. This function will have no
+effect on element's without display set to &quot;grid&quot;." />
 
 
 
@@ -106,18 +107,19 @@ the browser window." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Height</h1>
-    <small class="dont-index">Source: <a href='https://github.com/nteetor/cascadess/blob/master/R/height.R'><code>R/height.R</code></a></small>
-    <div class="hidden name"><code>height.Rd</code></div>
+    <h1>Grid element spacing</h1>
+    <small class="dont-index">Source: <a href='https://github.com/nteetor/cascadess/blob/master/R/gap.R'><code>R/gap.R</code></a></small>
+    <div class="hidden name"><code>gap.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The <code>height()</code> function adjusts a tag element's height. Heights are specified
-relative the height of a parent element, an element's content, or the size of
-the browser window.</p>
+    <p>The <code>gap()</code> function is used to space child elements of a parent tag element
+with <code><a href='display.html'>display("grid")</a></code>. Instead of specifying a margin for each child element
+a gap may be specified for the parent element. This function will have no
+effect on element's without display set to <code>"grid"</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>height</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>size</span>, min <span class='op'>=</span> <span class='cn'>NULL</span>, max <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>gap</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>size</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,33 +130,14 @@ the browser window.</p>
     </tr>
     <tr>
       <th>size</th>
-      <td><p>One of <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>, <code>"auto"</code>, or <code>"viewport"</code> specifying the height of
-the tag element.</p>
-<p>If <code>25</code>, <code>50</code>, <code>75</code>, or <code>100</code>, the element's height is a percentage of the
-height of the parent element must also be specified.</p>
-<p>These percentages do not account for margins or padding and may cause an
-element to extend beyond its parent element.</p>
-<p>If <code>"auto"</code>, the element's height is determined by the browser.  The
-browser will take into account the height, padding, margins, and border of
-the tag element's parent to keep the element from extending beyond its
-parent.</p>
-<p>If <code>"viewport"</code>, the element's height is determined by the size of the
-browser window.</p></td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td><p>One of <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>, or <code>"viewport"</code> specifying the minimum
-height of the tag element.</p>
-<p>See <code>size</code> for details.</p></td>
-    </tr>
-    <tr>
-      <th>max</th>
-      <td><p>One of <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>, or <code>"viewport"</code> specifying the maximum
-height of the tag element.</p>
-<p>See <code>size</code> for details.</p></td>
+      <td><p>A <a href='responsive.html'>responsive</a> argument.</p>
+<p>One of <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, or <code>5</code> specifying the amount of gap space.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Internet Explorer does not support the grid display layout.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
@@ -162,18 +145,16 @@ height of the tag element.</p>
 
 <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
   <span class='va'>.style</span> <span class='op'>%&gt;%</span>
-     <span class='fu'>height</span><span class='op'>(</span><span class='st'>"auto"</span>, max <span class='op'>=</span> <span class='st'>"viewport"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
-     <span class='fu'><a href='overflow.html'>overflow</a></span><span class='op'>(</span><span class='st'>"auto"</span><span class='op'>)</span>,
-  <span class='st'>"Vivamus id enim."</span>,
-  <span class='st'>"Nunc rutrum turpis sed pede."</span>,
-  <span class='st'>"Nunc aliquet, augue nec adipiscing interdum, "</span>,
-  <span class='st'>"lacus tellus malesuada massa, quis varius mi purus non odio."</span>
+    <span class='fu'><a href='display.html'>display</a></span><span class='op'>(</span><span class='st'>"grid"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>gap</span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span><span class='st'>"Child 1"</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span><span class='st'>"Child 2"</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span><span class='st'>"Child 3"</span><span class='op'>)</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;div class="cas-height-auto cas-height-max-viewport cas-overflow-auto"&gt;
-#&gt;   Vivamus id enim.
-#&gt;   Nunc rutrum turpis sed pede.
-#&gt;   Nunc aliquet, augue nec adipiscing interdum, 
-#&gt;   lacus tellus malesuada massa, quis varius mi purus non odio.
+</div><div class='output co'>#&gt; &lt;div class="cas-display-grid cas-gap-2"&gt;
+#&gt;   &lt;div&gt;Child 1&lt;/div&gt;
+#&gt;   &lt;div&gt;Child 2&lt;/div&gt;
+#&gt;   &lt;div&gt;Child 3&lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'>
 </div></pre>
   </div>

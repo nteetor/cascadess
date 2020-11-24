@@ -42,7 +42,7 @@
   
 
 <meta property="og:title" content="Style pronoun contexts — local_style" />
-<meta property="og:description" content="The with_style_pronoun() allows overloading the .style pronoun." />
+<meta property="og:description" content="The with_style() function allows overloading the .style pronoun." />
 
 
 
@@ -81,12 +81,6 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -116,12 +110,12 @@
     </div>
 
     <div class="ref-description">
-    <p>The <code>with_style_pronoun()</code> allows overloading the <code>.style</code> pronoun.</p>
+    <p>The <code>with_style()</code> function allows overloading the <code>.style</code> pronoun.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>local_style</span>(<span class='kw'>...</span>, .env = <span class='fu'>caller_env</span>())
+    <pre class="usage"><span class='fu'>local_style</span><span class='op'>(</span><span class='va'>...</span>, .env <span class='op'>=</span> <span class='fu'>caller_env</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
 
-<span class='fu'>with_style</span>(<span class='kw'>.expr</span>, <span class='kw'>...</span>)</pre>
+<span class='fu'>with_style</span><span class='op'>(</span><span class='va'>.expr</span>, <span class='va'>...</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">

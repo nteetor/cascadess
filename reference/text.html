@@ -82,12 +82,6 @@ wrapping, and decoration of a tag element." />
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
-<li>
   <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
@@ -121,14 +115,15 @@ wrapping, and decoration of a tag element." />
 wrapping, and decoration of a tag element.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>text</span>(
-  <span class='kw'>x</span>,
-  color = <span class='kw'>NULL</span>,
-  align = <span class='kw'>NULL</span>,
-  spacing = <span class='kw'>NULL</span>,
-  decoration = <span class='kw'>NULL</span>,
-  wrap = <span class='kw'>NULL</span>
-)</pre>
+    <pre class="usage"><span class='fu'>text</span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  color <span class='op'>=</span> <span class='cn'>NULL</span>,
+  align <span class='op'>=</span> <span class='cn'>NULL</span>,
+  spacing <span class='op'>=</span> <span class='cn'>NULL</span>,
+  decoration <span class='op'>=</span> <span class='cn'>NULL</span>,
+  wrap <span class='op'>=</span> <span class='cn'>NULL</span>,
+  select <span class='op'>=</span> <span class='cn'>NULL</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -163,24 +158,30 @@ ignored.</p></td>
 wrap onto new lines, defaults to <code>NULL</code>, in which case the argument
 is ignored.</p></td>
     </tr>
+    <tr>
+      <th>select</th>
+      <td><p>One of <code>"all"</code> or <code>"none"</code> specifying how the element's
+text is selected when the user clicks on the element, defaults to <code>NULL</code>,
+in which case the argument is ignored.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="colors"><a class="anchor" href="#colors"></a>Colors</h2>
 
-    <p><div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>text</span>(<span class='st'>"blue"</span>) <span class='op'>%&gt;%</span>  <span class='co'># &lt;-</span>
-    <span class='fu'><a href='border.html'>border</a></span>(<span class='st'>"blue"</span>),
-  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Nullam tristique diam non turpis."</span>,
+    <p><div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+  <span class='va'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span><span class='op'>(</span><span class='st'>"blue"</span><span class='op'>)</span> <span class='op'>%&gt;%</span>  <span class='co'># &lt;-</span>
+    <span class='fu'><a href='border.html'>border</a></span><span class='op'>(</span><span class='st'>"blue"</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Nullam tristique diam non turpis."</span>,
     <span class='st'>"Pellentesque dapibus suscipit ligula."</span>,
-    <span class='st'>"Nullam eu ante vel est convallis dignissim."</span>),
-  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span>(<span class='st'>"Aliquam posuere."</span>)
-)
+    <span class='st'>"Nullam eu ante vel est convallis dignissim."</span><span class='op'>)</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>p</a></span><span class='op'>(</span><span class='st'>"Aliquam posuere."</span><span class='op'>)</span>
+<span class='op'>)</span>
 </pre><p></div>
 <!--html_preserve-->
 
 
-<div class="cas-text-color-blue cas-border-blue cas-border-all cas-border-radius-md">
+<div class="cas-text-color-blue cas-border-blue cas-border-all cas-border-round-md">
 
 
 <p></p>
@@ -203,33 +204,33 @@ Nullam eu ante vel est convallis dignissim.
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='kw'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/rstudio/htmltools'>htmltools</a></span><span class='op'>)</span>
 
-<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>text</span>(spacing = <span class='st'>"small"</span>),
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+  <span class='va'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span><span class='op'>(</span>spacing <span class='op'>=</span> <span class='st'>"small"</span><span class='op'>)</span>,
   <span class='st'>"Nam vestibulum accumsan nisl."</span>,
   <span class='st'>"Fusce commodo."</span>
-)
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;div class="cas-text-spacing-sm"&gt;
 #&gt;   Nam vestibulum accumsan nisl.
 #&gt;   Fusce commodo.
 #&gt; &lt;/div&gt;</div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span>(
-  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>text</span>(spacing = <span class='st'>"large"</span>),
+<span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span>
+  <span class='va'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span><span class='op'>(</span>spacing <span class='op'>=</span> <span class='st'>"large"</span><span class='op'>)</span>,
   <span class='st'>"Suspendisse potenti."</span>,
   <span class='st'>"Pellentesque tristique imperdiet tortor."</span>
-)
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;div class="cas-text-spacing-lg"&gt;
 #&gt;   Suspendisse potenti.
 #&gt;   Pellentesque tristique imperdiet tortor.
 #&gt; &lt;/div&gt;</div><div class='input'>
-<span class='kw'>tags</span><span class='op'>$</span><span class='fu'>button</span>(
-  <span class='kw'>.style</span> <span class='op'>%&gt;%</span>
-    <span class='fu'>text</span>(wrap = <span class='fl'>FALSE</span>),
+<span class='va'>tags</span><span class='op'>$</span><span class='fu'>button</span><span class='op'>(</span>
+  <span class='va'>.style</span> <span class='op'>%&gt;%</span>
+    <span class='fu'>text</span><span class='op'>(</span>wrap <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>,
   <span class='st'>"Aliquam feugiat tellus ut neque."</span>
-)
+<span class='op'>)</span>
 </div><div class='output co'>#&gt; &lt;button class="cas-text-nowrap"&gt;Aliquam feugiat tellus ut neque.&lt;/button&gt;</div><div class='input'>
 </div></pre>
   </div>
