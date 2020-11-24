@@ -69,6 +69,8 @@ position_by <- function(by) {
 #' @export
 #' @examples
 #'
+#' library(htmltools)
+#'
 #' div(
 #'   div(.style %>% position("absolute", t = 0, r = 0))
 #' )

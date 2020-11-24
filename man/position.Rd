@@ -35,6 +35,8 @@ element using \code{top}, \code{right}, \code{bottom}, or \code{left}.
 }
 \examples{
 
+library(htmltools)
+
 div(
   div(.style \%>\% position("absolute", t = 0, r = 0))
 )
