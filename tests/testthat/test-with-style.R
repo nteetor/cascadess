@@ -10,6 +10,18 @@ test_that("can be empty", {
     expect_html_class("cas-display-inline-block")
 })
 
+test_that("pronoun is properly installed", {
+  expect_type(
+    with_style(get(".__cascadess__style_pronoun__.", inherits = FALSE)),
+    "environment"
+  )
+
+  expect_type(
+    with_style(style_get_pronoun()),
+    "environment"
+  )
+})
+
 test_that("does not pollute env", {
   with_style({
     div(.style %>% text("red"))
