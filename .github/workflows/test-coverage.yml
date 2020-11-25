@@ -20,7 +20,7 @@ jobs:
 
       - name: Query dependencies
         run: |
-          install.packages('remotes')
+          install.packages("remotes")
           saveRDS(remotes::dev_package_deps(dependencies = TRUE), ".github/depends.rds", version = 2)
           writeLines(sprintf("R-%i.%i", getRversion()$major, getRversion()$minor), ".github/r-version")
         shell: Rscript {0}
@@ -29,8 +29,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: ${{ runner.os }}-${{ hashFiles(".github/r-version") }}-1-${{ hashFiles(".github/depends.rds") }}
-          restore-keys: ${{ runner.os }}-${{ hashFiles(".github/r-version") }}-1-
+          key: ${{ runner.os }}-${{ hashFiles('.github/r-version') }}-1-${{ hashFiles('.github/depends.rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/r-version') }}-1-
 
       - name: Install dependencies
         run: |
