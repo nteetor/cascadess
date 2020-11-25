@@ -3,7 +3,7 @@ Type: Package
 Title: A Style Pronoun for 'htmltools' Tags
 Version: 0.1.0
 Authors@R: c(
-  person("Nathan", "Teetor", email = "nathanteetor@gmail.com",
+  person("Nathan", "Teetor", email = "nate@haufin.ch",
          role = c("aut", "cre")),
   person(family = "The Bootstrap Authors", comment = "Bootstrap library",
          role = "cph"),
@@ -13,7 +13,7 @@ Description: Apply styles to tag elements directly or with the
   .style pronoun. Using the pronoun, styles are created within
   the context of a tag element. Change borders, background colors,
   margins, layouts, and more.
-License: GPL-3
+License: MIT + file LICENSE
 URL: https://github.com/nteetor/cascadess
 BugReports: https://github.com/nteetor/cascadess/issues
 Encoding: UTF-8
@@ -21,7 +21,7 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Depends:
-    R (>= 3.2)
+    R (>= 3.3)
 Imports:
     crayon,
     htmltools (>= 0.4.0),
