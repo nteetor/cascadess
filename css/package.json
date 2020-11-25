@@ -8,7 +8,7 @@
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css src/:dist/",
     "css-minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/cascadess.min.css dist/cascadess.css",
     "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
-    "css-vend": "cp dist/* ../inst/www/cascadess/",
+    "css-vend": "cp dist/* ../inst/www/cascadess/ && cp dist/cascadess.min.css ../pkgdown/extra.css",
     "css-lint": "npm-run-all --continue-on-error --parallel css-lint-*",
     "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --rd"
   },
