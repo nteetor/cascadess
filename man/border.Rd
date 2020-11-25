@@ -14,7 +14,7 @@ color.}
 
 \item{sides}{One or more of \code{"top"}, \code{"t"}, \code{"right"}, \code{"r"}, \code{"bottom"}, \code{"b"}, \code{"left"}, \code{"l"}, \code{"all"}, or \code{"none"} specifying
 which sides to add borders to, defaults to \code{TRUE}. \code{TRUE} and \code{FALSE} may
-be used as shorthands for all sides or no sides, respectively.}
+be used as shorthand for all sides or no sides, respectively.}
 
 \item{width}{One or more of \code{1}, \code{2}, \code{3}, \code{4}, or \code{5} specifying the width
 of the element's border, defaults to \code{1}.}

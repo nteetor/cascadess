@@ -44,8 +44,8 @@ str.cascadess_style_pronoun <- function(object, ...) {
 #' ```
 #'
 #' However, once the content of a tag element grows to more than a few lines,
-#' associating the element's styles with the element becomes increasingly
-#' unintuitive. In these situations, make use of the `.style` pronoun.
+#' associating the element's styles with the element becomes less and less
+#' intuitive. In these situations, make use of the `.style` pronoun.
 #'
 #' ```R
 #' div(

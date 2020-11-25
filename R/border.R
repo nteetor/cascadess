@@ -73,7 +73,7 @@ border_round <- function(round) {
 #'
 #' @param sides One or more of `r rd_list(names(border_sides_))` specifying
 #'   which sides to add borders to, defaults to `TRUE`. `TRUE` and `FALSE` may
-#'   be used as shorthands for all sides or no sides, respectively.
+#'   be used as shorthand for all sides or no sides, respectively.
 #'
 #' @param width One or more of `r rd_list(border_width_)` specifying the width
 #'   of the element's border, defaults to `1`.

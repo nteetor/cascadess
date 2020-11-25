@@ -15,8 +15,8 @@ outside and after constructing a tag element.\if{html}{\out{<div class="R">}}\pr
 }\if{html}{\out{</div>}}
 
 However, once the content of a tag element grows to more than a few lines,
-associating the element's styles with the element becomes increasingly
-unintuitive. In these situations, make use of the \code{.style} pronoun.\if{html}{\out{<div class="R">}}\preformatted{div(
+associating the element's styles with the element becomes less and less
+intuitive. In these situations, make use of the \code{.style} pronoun.\if{html}{\out{<div class="R">}}\preformatted{div(
   .style \%>\%
     border("primary") \%>\%
     font("primary"),
