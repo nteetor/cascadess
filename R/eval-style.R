@@ -1,32 +1,19 @@
-style_peek_pronoun <- function(env) {
-  env[[".__cascadess__style_pronoun__."]]
+.global <- new_environment()
+
+pronoun_peek <- function() {
+  .global$pronoun
 }
 
-style_poke_pronoun <- function(env, pronoun) {
-  env_bind(env, ".__cascadess__style_pronoun__." = pronoun)
+pronoun_set <- function(new) {
+  env_poke(.global, "pronoun", new)
 }
 
-style_del_pronoun <- function(env) {
-  env_unbind(env, ".__cascadess__style_pronoun__.")
-}
+pronoun_get_prefix <- function(ns) {
+  default <- endash("cas", ns)
+  prefix <- pronoun_peek()[[ns]]
 
-style_get_pronoun <- function() {
-  frames <- lapply(seq_len(sys.nframe()), caller_env)
-  envs <- frames[!duplicated(frames)]
-  pronouns <- compact(lapply(envs, style_peek_pronoun))
-
-  if (length(pronouns) == 0) {
-    return(NULL)
-  }
-
-  pronouns[[1]]
-}
-
-style_get_prefix <- function(pronoun, ns) {
-  default <- sprintf("cas-%s", ns)
-
-  if (is_scalar_atomic(pronoun[[ns]])) {
-    return(pronoun[[ns]])
+  if (is_scalar_atomic(prefix)) {
+    return(prefix)
   }
 
   default
@@ -83,7 +70,9 @@ str.cascadess_style_pronoun <- function(object, ...) {
 
 #' Style pronoun contexts
 #'
-#' The `with_style()` function allows overloading the `.style` pronoun.
+#' The `local_style()` establishes new prefixes and is used to overload the
+#' `.style` pronoun's defaults. The `with_style()` function provides a different
+#' approach to achieve the same utility.
 #'
 #' @param pronoun A call to `style_pronoun()`.
 #'
@@ -92,22 +81,21 @@ str.cascadess_style_pronoun <- function(object, ...) {
 #' @keywords internal
 #' @export
 local_style <- function(..., .env = caller_env()) {
-  pronoun <- child_env(empty_env(), ...)
-  prev <- style_peek_pronoun(.env)
+  new_pronoun <- new_environment(list(...))
+  prev_pronoun <- pronoun_peek()
 
-  style_poke_pronoun(.env, pronoun)
+  pronoun_set(new_pronoun)
 
-  unbind <- call2(style_del_pronoun, .env)
-  local_exit(!!unbind, .env)
+  pronoun_restore <- call2(pronoun_set, prev_pronoun)
+  local_exit(!!pronoun_restore, .env)
 
-  invisible(prev)
+  invisible(prev_pronoun)
 }
 
 #' @rdname local_style
 #' @export
 with_style <- function(.expr, ...) {
-  env <- env(caller_env())
-  local_style(..., .env = env)
+  local_style(..., .env = current_env())
 
-  eval_bare(enexpr(.expr), env)
+  .expr
 }

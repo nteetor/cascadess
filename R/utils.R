@@ -39,15 +39,9 @@ endash <- function(...) {
   paste(..., sep = "-", collapse = " ")
 }
 
-prefix <- function(prefix, ...) {
+prefix <- function(default, ...) {
   args <- available(list(...))
-  pronoun <- style_get_pronoun()
-
-  if (!is.null(pronoun)) {
-    prefix <- style_get_prefix(pronoun, prefix)
-  } else {
-    prefix <- endash("cas", prefix)
-  }
+  prefix <- pronoun_get_prefix(default)
 
   vapply(args, function(arg) endash(prefix, arg), character(1))
 }

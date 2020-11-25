@@ -20,16 +20,17 @@ test_that("rename prefix", {
     expect_html_class("bg-indigo")
 })
 
-test_that("does not pollute env", {
-  f <- function() {
-    local_style(display = "d")
-    div()
+test_that("modifies passed .style", {
+  f <- function(...) {
+    local_style(margin = "margin")
+
+    div(
+      "hello, world!",
+      ...
+    )
   }
 
-  f()
-
-  expect_error(
-    get(".__cascadess__style_pronoun__.", inherits = FALSE),
-    "not found$"
-  )
+  f(.style %>% margin(5)) %>%
+    expect_s3_class("shiny.tag") %>%
+    expect_html_class("margin-all-5")
 })

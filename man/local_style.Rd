@@ -15,6 +15,8 @@ with_style(.expr, ...)
 \item{expr}{An expression.}
 }
 \description{
-The \code{with_style()} function allows overloading the \code{.style} pronoun.
+The \code{local_style()} establishes new prefixes and is used to overload the
+\code{.style} pronoun's defaults. The \code{with_style()} function provides a different
+approach to achieve the same utility.
 }
 \keyword{internal}
