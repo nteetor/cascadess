@@ -1,31 +1,37 @@
+responsive_breakpoints <- function() {
+  c("", "sm", "md", "lg", "xl", "xxl")
+}
+
 responsive_rename <- function(x) {
-  names(x) <- vapply(names2(x), function(n) {
-    switch(
-      n,
-      sm = "sm",
-      md = "md",
-      lg = "lg",
-      xl = "xl",
-      xxl = "xxl",
-      default = "",
-      ""
-    )
-  }, character(1))
+  n <- names2(x)
+  i <- n == "default" | n == "xs"
+  possible <- responsive_breakpoints()
+
+  if (any(i)) {
+    n[i] <- ""
+    names(x) <- n
+  }
+
+  if (!all(n %in% possible)) {
+    incorrect <- n[!(n %in% possible)]
+    abortf("invalid responsive breakpoints %s", incorrect)
+  }
+
   x
 }
 
 responsive_sort <- function(x) {
-  possible <- c("", "sm", "md", "lg", "xl")
-  names <- names2(x)
-  order <- match(possible[possible %in% names], names)
+  n <- names2(x)
+  breakpoints <- responsive_breakpoints()
+  order <- match(breakpoints[breakpoints %in% n], n)
   x[order]
 }
 
 responsive_concat <- function(x) {
-  names <- names2(x)
-  non_empty <- names != ""
-  names[non_empty] <- sprintf("%s-", names[non_empty])
-  paste0(names, x)
+  n <- names2(x)
+  non_empty <- n != ""
+  n[non_empty] <- sprintf("%s-", n[non_empty])
+  paste0(n, x)
 }
 
 responsive <- function(x) {

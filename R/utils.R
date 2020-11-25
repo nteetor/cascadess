@@ -13,14 +13,6 @@ are_truthy <- function(x) {
   vapply(x, is_truthy, logical(1))
 }
 
-are_null <- function(x) {
-  vapply(x, is_null, logical(1))
-}
-
-compact <- function(x) {
-  x[!are_null(x)]
-}
-
 available <- function(x) {
   x[are_truthy(x)]
 }
@@ -69,8 +61,8 @@ caller_trace <- function(n = 1) {
   trace_back(bottom = caller_env(n + 1))
 }
 
-abortf <- function(s, ..., trace = caller_trace(2)) {
-  args <- lapply(list(...), function(x) bold$red(x))
+abortf <- function(s, ..., collapse = ", ", trace = caller_trace(2)) {
+  args <- lapply(list(...), function(x) paste0(bold$red(x), collapse = collapse))
 
   msg <- exec(sprintf, s, !!!args)
 

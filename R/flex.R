@@ -137,15 +137,14 @@ item_order <- function(order) {
 }
 
 item_fill <- function(fill) {
-  if (!is.null(fill) && !all(fill)) {
+  if (!is.null(fill) && !(is_logical(fill) && all(fill))) {
     abortf("invalid value, expecting %s or %s", "NULL", "TRUE")
   }
 
-  ## v <- rep.int("fill", length(fill))
-  ## names(v) <- names(fille)
-  fill[fill] <- "fill"
+  ## fill[fill] <- "fill"
 
-  responsive(fill)
+  ## responsive(fill)
+  responsive(set_names(rep_along(fill, "fill"), names(fill)))
 }
 
 item_grow <- function(grow) {

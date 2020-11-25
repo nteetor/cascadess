@@ -5,3 +5,8 @@ test_that("adds class", {
     expect_s3_class("shiny.tag") %>%
     expect_html_class("cas-position-fixed")
 })
+
+test_that("`by` argument", {
+  div(.style %>% position("absolute", by = "center")) %>%
+    expect_html_class("cas-position-by-center")
+})

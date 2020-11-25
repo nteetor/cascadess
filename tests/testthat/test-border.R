@@ -18,3 +18,8 @@ test_that("argument `sides` shorthand", {
   div(.style %>% border("green", sides = FALSE)) %>%
     expect_html_class("cas-border-none")
 })
+
+test_that("`width` argument", {
+  div(.style %>% border("blue", width = 3)) %>%
+    expect_html_class("cas-border-3")
+})
