@@ -54,7 +54,7 @@ flex_wrap <- function(wrap) {
 #' @param direction A [responsive] argument.
 #'
 #'   One of `r rd_list(names(flex_direction_))` specifying the main axis of
-#'   flex items, defaults to `"row"`.
+#'   flex items, defaults to `NULL`, in which case the argument is ignored.
 #'
 #'   If `"row"`, the main axis is horizontal and items are arranged from left to
 #'   right. The cross axis is the vertical.
@@ -64,21 +64,24 @@ flex_wrap <- function(wrap) {
 #'
 #' @param justify A [responsive] argument.
 #'
-#'   One of `r rd_list(names(flex_justify_))` specifying how items are
-#'   arranged on the main axis, defaults to `"start"`.
+#'   One of `r rd_list(names(flex_justify_))` specifying how items are arranged
+#'   on the main axis, defaults to `NULL`, in which case the argument is
+#'   ignored.
 #'
-#'   If `"between"` or `"around"`, items are arranged by evenly sharing the
-#'   space between or around the items.
+#'   If `"between"`, `"around"`, or `"evenly"` then items are arranged by
+#'   distributing the space available on the main axis in-between the element's
+#'   flex items.
 #'
 #' @param align A [responsive] argument.
 #'
-#'   One of `r rd_list(names(flex_align_))` specifying how items are
-#'   arranged on the cross axis, defaults to `"stretch"`.
+#'   One of `r rd_list(names(flex_align_))` specifying how items are arranged on
+#'   the cross axis, defaults to `NULL`, in which case the argument is ignored.
 #'
 #' @param wrap A [responsive] argument.
 #'
-#'   One of `TRUE` or `FALSE` specifying if items are forced onto one line
-#'   or allowed to wrap onto multiple lines, defaults to `FALSE`.
+#'   One of `TRUE` or `FALSE` specifying if items are forced onto one line or
+#'   allowed to wrap onto multiple lines, defaults to `NULL`, in which case the
+#'   argument is ignored.
 #'
 #' @includeRmd man/roxygen/flex.Rmd
 #'
@@ -95,8 +98,8 @@ flex_wrap <- function(wrap) {
 #'   div("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.")
 #' )
 #'
-flex <- function(x, direction = "row", justify = "start", align = "stretch",
-                 wrap = FALSE) {
+flex <- function(x, direction = NULL, justify = NULL, align = NULL,
+                 wrap = NULL) {
   assert_subject(x)
 
   classes <- prefix(
@@ -141,10 +144,9 @@ item_fill <- function(fill) {
     abortf("invalid value, expecting %s or %s", "NULL", "TRUE")
   }
 
-  ## fill[fill] <- "fill"
+  fill[fill] <- "fill"
 
-  ## responsive(fill)
-  responsive(set_names(rep_along(fill, "fill"), names(fill)))
+  responsive(fill)
 }
 
 item_grow <- function(grow) {

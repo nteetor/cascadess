@@ -4,7 +4,7 @@
 \alias{flex}
 \title{Flex}
 \usage{
-flex(x, direction = "row", justify = "start", align = "stretch", wrap = FALSE)
+flex(x, direction = NULL, justify = NULL, align = NULL, wrap = NULL)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
@@ -12,7 +12,7 @@ flex(x, direction = "row", justify = "start", align = "stretch", wrap = FALSE)
 \item{direction}{A \link{responsive} argument.
 
 One of \code{"row"} or \code{"column"} specifying the main axis of
-flex items, defaults to \code{"row"}.
+flex items, defaults to \code{NULL}, in which case the argument is ignored.
 
 If \code{"row"}, the main axis is horizontal and items are arranged from left to
 right. The cross axis is the vertical.
@@ -22,21 +22,24 @@ bottom. The cross axis is the horizontal.}
 
 \item{justify}{A \link{responsive} argument.
 
-One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"between"}, \code{"around"}, or \code{"evenly"} specifying how items are
-arranged on the main axis, defaults to \code{"start"}.
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"between"}, \code{"around"}, or \code{"evenly"} specifying how items are arranged
+on the main axis, defaults to \code{NULL}, in which case the argument is
+ignored.
 
-If \code{"between"} or \code{"around"}, items are arranged by evenly sharing the
-space between or around the items.}
+If \code{"between"}, \code{"around"}, or \code{"evenly"} then items are arranged by
+distributing the space available on the main axis in-between the element's
+flex items.}
 
 \item{align}{A \link{responsive} argument.
 
-One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"} specifying how items are
-arranged on the cross axis, defaults to \code{"stretch"}.}
+One of \code{"start"}, \code{"end"}, \code{"center"}, \code{"baseline"}, or \code{"stretch"} specifying how items are arranged on
+the cross axis, defaults to \code{NULL}, in which case the argument is ignored.}
 
 \item{wrap}{A \link{responsive} argument.
 
-One of \code{TRUE} or \code{FALSE} specifying if items are forced onto one line
-or allowed to wrap onto multiple lines, defaults to \code{FALSE}.}
+One of \code{TRUE} or \code{FALSE} specifying if items are forced onto one line or
+allowed to wrap onto multiple lines, defaults to \code{NULL}, in which case the
+argument is ignored.}
 }
 \description{
 The \code{flex()} function adjusts the flex box layout of an element. To use
@@ -70,7 +73,7 @@ allows.\if{html}{\out{<div class="r">}}\preformatted{div(
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-column cas-flex-md-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-column cas-flex-md-row">
 }}
 \if{html}{\out{
 <div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-m-h-auto cas-m-h-md-0">
@@ -153,7 +156,7 @@ horizontally.\if{html}{\out{<div class="r">}}\preformatted{div(
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-column cas-flex-md-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-column cas-flex-md-row">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -201,7 +204,7 @@ You can keep items as a column by specifying only \code{"column"}.\if{html}{\out
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-column cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-column">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -253,7 +256,7 @@ beginning of their parent container.\if{html}{\out{<div class="r">}}\preformatte
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-start">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -308,7 +311,7 @@ We can also push items to the \strong{end}.\if{html}{\out{<div class="r">}}\pref
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-end cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-end">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -363,7 +366,7 @@ Without using a table layout we can \strong{center} items.\if{html}{\out{<div cl
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-center cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-center">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -418,7 +421,7 @@ You can also put space \strong{between} items\if{html}{\out{<div class="r">}}\pr
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-between">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -473,7 +476,7 @@ A flex item\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-around cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-around">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -534,7 +537,7 @@ Using flexbox we can also control how items wrap onto new lines.\if{html}{\out{<
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-start cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-d-flex cas-flex-wrap">
 }}
 \if{html}{\out{
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">

@@ -121,7 +121,7 @@ It’s panel\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-d-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-d-flex cas-flex-justify-between cas-flex-wrap">
 }}
 \if{html}{\out{
 <div class="cas-m-3">
