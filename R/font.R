@@ -88,7 +88,7 @@ font_family <- function(family) {
 #' p(
 #'   .style %>%
 #'     text("indigo") %>%
-#'     font("bold"),
+#'     font(weight = "bold"),
 #'   "Phasellus at dui in ligula mollis ultricies."
 #' )
 #'
