@@ -32,8 +32,8 @@ text_spacing_ <- c(
 )
 
 # it's line height
-text_spacing <- function(height) {
-  compose("height", pick(height, from = text_height_))
+text_spacing <- function(spacing) {
+  compose("height", pick(spacing, from = text_spacing_))
 }
 
 text_decoration_ <- c(
