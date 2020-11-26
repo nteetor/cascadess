@@ -9,14 +9,7 @@ pronoun_set <- function(new) {
 }
 
 pronoun_get_prefix <- function(ns) {
-  default <- endash("cas", ns)
-  prefix <- pronoun_peek()[[ns]]
-
-  if (is_scalar_atomic(prefix)) {
-    return(prefix)
-  }
-
-  default
+  pronoun_peek()[[ns]]
 }
 
 #' @export

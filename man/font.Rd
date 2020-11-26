@@ -4,10 +4,15 @@
 \alias{font}
 \title{Font}
 \usage{
-font(x, weight = NULL, style = NULL, case = NULL, family = NULL)
+font(x, size = NULL, weight = NULL, style = NULL, case = NULL, family = NULL)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
+
+\item{size}{One of \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, or \code{6} specifying a font size, defaults
+to \code{NULL}, in which case the argument is ignored. The sizes follow the
+conventions of heading tags, so \code{1} is the largest font and \code{6} the
+smallest.}
 
 \item{weight}{One of \code{"light"}, \code{"lighter"}, \code{"normal"}, \code{"bolder"}, or \code{"bold"} specifying the font
 weight, defaults to \code{NULL}, in which case the argument is ignored.
@@ -38,7 +43,7 @@ the font of a tag element.
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<p class="cas-font-weight-bold">
+<p class="cas-font-bold">
 }}
 
 
@@ -57,7 +62,7 @@ Curabitur lacinia pulvinar nibh.\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<p class="cas-font-weight-light">
+<p class="cas-font-light">
 }}
 
 

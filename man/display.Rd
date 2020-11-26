@@ -37,7 +37,7 @@ to use the flex box layout the display must be \code{"flex"}.
 <div>
 }}
 \if{html}{\out{
-<div class="cas-border-blue cas-border-all cas-border-round-md">
+<div class="cas-border cas-border-blue cas-border-round-md">
 }}
 
 
@@ -45,7 +45,7 @@ block\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-border-blue cas-border-all cas-border-round-md">
+<div class="cas-border cas-border-blue cas-border-round-md">
 }}
 
 
@@ -79,7 +79,7 @@ block\if{html}{\out{
 <div>
 }}
 \if{html}{\out{
-<div class="cas-border-blue cas-border-all cas-border-round-md cas-display-inline">
+<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">
 }}
 
 
@@ -87,7 +87,7 @@ inline\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-border-blue cas-border-all cas-border-round-md cas-display-inline">
+<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">
 }}
 
 

@@ -31,8 +31,8 @@ $utilities: (
     property: box-shadow,
     class: shadow,
     values: (
-      null: $box-shadow,
       sm: $box-shadow-sm,
+      md: $box-shadow,
       lg: $box-shadow-lg,
       none: none,
     )
@@ -315,42 +315,42 @@ $utilities: (
   "margin-x": (
     responsive: true,
     property: margin-right margin-left,
-    class: mx,
+    class: m-h,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-y": (
     responsive: true,
     property: margin-top margin-bottom,
-    class: my,
+    class: m-v,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-top": (
     responsive: true,
     property: margin-top,
-    class: mt,
+    class: m-t,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-right": (
     responsive: true,
     property: margin-right,
-    class: mr,
+    class: m-r,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-bottom": (
     responsive: true,
     property: margin-bottom,
-    class: mb,
+    class: m-b,
     values: map-merge($spacers, (auto: auto))
   ),
 
   "margin-left": (
     responsive: true,
     property: margin-left,
-    class: ml,
+    class: m-l,
     values: map-merge($spacers, (auto: auto))
   ),
 
@@ -362,45 +362,31 @@ $utilities: (
     values: $negative-spacers
   ),
 
-  "negative-margin-x": (
-    responsive: true,
-    property: margin-right margin-left,
-    class: mx,
-    values: $negative-spacers
-  ),
-
-  "negative-margin-y": (
-    responsive: true,
-    property: margin-top margin-bottom,
-    class: my,
-    values: $negative-spacers
-  ),
-
   "negative-margin-top": (
     responsive: true,
     property: margin-top,
-    class: mt,
+    class: m-t,
     values: $negative-spacers
   ),
 
   "negative-margin-right": (
     responsive: true,
     property: margin-right,
-    class: mr,
+    class: m-r,
     values: $negative-spacers
   ),
 
   "negative-margin-bottom": (
     responsive: true,
     property: margin-bottom,
-    class: mb,
+    class: m-b,
     values: $negative-spacers
   ),
 
   "negative-margin-left": (
     responsive: true,
     property: margin-left,
-    class: ml,
+    class: m-l,
     values: $negative-spacers
   ),
 
@@ -412,45 +398,31 @@ $utilities: (
     values: $spacers
   ),
 
-  "padding-x": (
-    responsive: true,
-    property: padding-right padding-left,
-    class: px,
-    values: $spacers
-  ),
-
-  "padding-y": (
-    responsive: true,
-    property: padding-top padding-bottom,
-    class: py,
-    values: $spacers
-  ),
-
   "padding-top": (
     responsive: true,
     property: padding-top,
-    class: pt,
+    class: p-t,
     values: $spacers
   ),
 
   "padding-right": (
     responsive: true,
     property: padding-right,
-    class: pr,
+    class: p-r,
     values: $spacers
   ),
 
   "padding-bottom": (
     responsive: true,
     property: padding-bottom,
-    class: pb,
+    class: p-b,
     values: $spacers
   ),
 
   "padding-left": (
     responsive: true,
     property: padding-left,
-    class: pl,
+    class: p-l,
     values: $spacers
   ),
 
@@ -458,19 +430,19 @@ $utilities: (
   "font-size": (
     rfs: true,
     property: font-size,
-    class: fs,
+    class: font,
     values: $font-sizes
   ),
 
   "font-style": (
     property: font-style,
-    class: fst,
+    class: font,
     values: italic normal
   ),
 
   "font-weight": (
     property: font-weight,
-    class: fw,
+    class: font,
     values: (
       light: $font-weight-light,
       lighter: $font-weight-lighter,
@@ -513,11 +485,10 @@ $utilities: (
 
   "line-height": (
     property: line-height,
-    class: lh,
+    class: text-height,
     values: (
-      1: 1,
       sm: $line-height-sm,
-      base: $line-height-base,
+      md: $line-height-base,
       lg: $line-height-lg,
     )
   ),
@@ -533,12 +504,6 @@ $utilities: (
         "transparent": transparent
       )
     )
-  ),
-
-  "gradient": (
-    property: background-image,
-    class: bg,
-    values: (gradient: var(--#{$variable-prefix}gradient))
   ),
 
   "white-space": (
@@ -558,7 +523,9 @@ $utilities: (
   "word-wrap": (
     property: word-wrap word-break,
     class: text,
-    values: (break: break-word)
+    values: (
+      break: break-word
+    )
   ),
 
   "font-family": (

@@ -30,10 +30,10 @@ The \code{border()} function adjusts a tag element's borders.
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex">
+<div class="cas-d-flex">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">
 }}
 
 
@@ -41,7 +41,7 @@ blue\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-indigo cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-indigo cas-border-round-md">
 }}
 
 
@@ -49,7 +49,7 @@ indigo\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-purple cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-purple cas-border-round-md">
 }}
 
 
@@ -57,7 +57,7 @@ purple\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-red cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-red cas-border-round-md">
 }}
 
 
@@ -65,7 +65,7 @@ red\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-orange cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-orange cas-border-round-md">
 }}
 
 
@@ -73,7 +73,7 @@ orange\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-yellow cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-yellow cas-border-round-md">
 }}
 
 
@@ -81,7 +81,7 @@ yellow\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-green cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-green cas-border-round-md">
 }}
 
 
@@ -89,7 +89,7 @@ green\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-teal cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-teal cas-border-round-md">
 }}
 
 
@@ -97,7 +97,7 @@ teal\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-cyan cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-cyan cas-border-round-md">
 }}
 
 
@@ -105,7 +105,7 @@ cyan\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-white cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-white cas-border-round-md">
 }}
 
 
@@ -125,10 +125,10 @@ white\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex">
+<div class="cas-d-flex">
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-sm">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-sm">
 }}
 
 
@@ -136,7 +136,7 @@ small\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-sm">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-sm">
 }}
 
 
@@ -144,7 +144,7 @@ sm\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">
 }}
 
 
@@ -152,7 +152,7 @@ medium\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-md">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">
 }}
 
 
@@ -160,7 +160,7 @@ md\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-lg">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-lg">
 }}
 
 
@@ -168,7 +168,7 @@ large\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-lg">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-lg">
 }}
 
 
@@ -176,7 +176,7 @@ lg\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-4 cas-margin-all-3 cas-border-blue cas-border-all cas-border-round-none">
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-none">
 }}
 
 

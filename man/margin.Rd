@@ -59,7 +59,7 @@ element using \code{margin(.., horizontal = "auto")}.\if{html}{\out{<div class="
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-margin-h-auto cas-margin-v-2 cas-padding-all-3 cas-background-teal">
+<div class="cas-m-h-auto cas-m-v-2 cas-p-3 cas-bg-teal">
 }}
 
 

@@ -7,7 +7,7 @@ test_that("can be empty", {
   }
 
   f() %>%
-    expect_html_class("cas-background-red")
+    expect_html_class("cas-bg-red")
 })
 
 test_that("rename prefix", {
@@ -32,5 +32,5 @@ test_that("modifies passed .style", {
 
   f(.style %>% margin(5)) %>%
     expect_s3_class("shiny.tag") %>%
-    expect_html_class("margin-all-5")
+    expect_html_class("margin-5")
 })

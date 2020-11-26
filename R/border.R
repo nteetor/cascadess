@@ -22,14 +22,12 @@ border_sides_ <- c(
 
 border_sides <- function(sides) {
   if (is_true(sides)) {
-    sides <- "all"
+    TRUE
+  } else if (is_false(sides)) {
+    "none"
+  } else {
+    pick(sides, from = border_sides_)
   }
-
-  if (is_false(sides)) {
-    sides <- "none"
-  }
-
-  pick(sides, from = border_sides_)
 }
 
 border_width_ <- c(
@@ -100,8 +98,8 @@ border <- function(x, color, sides = TRUE, width = 1, round = "medium") {
 
   classes <- prefix(
     "border",
-    border_color(color),
     border_sides(sides),
+    border_color(color),
     border_width(width),
     border_round(round)
   )

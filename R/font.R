@@ -1,3 +1,16 @@
+font_size_ <- c(
+  `1` = 1,
+  `2` = 2,
+  `3` = 3,
+  `4` = 4,
+  `5` = 5,
+  `6` = 6
+)
+
+font_size <- function(size) {
+  compose("size", pick(size, from = font_size_))
+}
+
 font_weight_ <- c(
   light = "light",
   lighter = "lighter",
@@ -7,7 +20,7 @@ font_weight_ <- c(
 )
 
 font_weight <- function(weight) {
-  compose("weight", pick(weight, from = font_weight_))
+  pick(weight, from = font_weight_)
 }
 
 font_style_ <- c(
@@ -26,7 +39,7 @@ font_case_ <- c(
 )
 
 font_case <- function(case) {
-  compose("case", pick(case, from = font_case_))
+  pick(case, from = font_case_)
 }
 
 font_family_ <- c(
@@ -35,7 +48,7 @@ font_family_ <- c(
 )
 
 font_family <- function(family) {
-  compose("family", pick(family, from = font_family_))
+  pick(family, from = font_family_)
 }
 
 #' Font
@@ -44,6 +57,11 @@ font_family <- function(family) {
 #' the font of a tag element.
 #'
 #' @inheritParams background
+#'
+#' @param size One of `r rd_list(font_size_)` specifying a font size, defaults
+#'   to `NULL`, in which case the argument is ignored. The sizes follow the
+#'   conventions of heading tags, so `1` is the largest font and `6` the
+#'   smallest.
 #'
 #' @param weight One of `r rd_list(names(font_weight_))` specifying the font
 #'   weight, defaults to `NULL`, in which case the argument is ignored.
@@ -74,17 +92,18 @@ font_family <- function(family) {
 #'   "Phasellus at dui in ligula mollis ultricies."
 #' )
 #'
-font <- function(x, weight = NULL, style = NULL, case = NULL,
+font <- function(x, size = NULL, weight = NULL, style = NULL, case = NULL,
                  family = NULL) {
   assert_subject(x)
 
-  cls <- prefix(
+  classes <- prefix(
     "font",
+    font_size(size),
     font_weight(weight),
     font_style(style),
     font_case(case),
     font_family(family)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

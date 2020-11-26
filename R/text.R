@@ -9,7 +9,7 @@ text_color_ <- c(
 )
 
 text_color <- function(color) {
-  compose("color", pick(color, from = text_color_))
+  pick(color, from = text_color_)
 }
 
 text_align_ <- c(
@@ -19,18 +19,21 @@ text_align_ <- c(
 )
 
 text_align <- function(align) {
-  compose("align", responsive(pick(align, from = text_align_)))
+  responsive(pick(align, from = text_align_))
 }
 
 text_spacing_ <- c(
-  small = "sm",
   sm = "sm",
-  large = "lg",
-  lg = "lg"
+  small = "sm",
+  md = "md",
+  medium = "md",
+  lg = "lg",
+  large = "lg"
 )
 
-text_spacing <- function(spacing) {
-  compose("spacing", pick(spacing, from = text_spacing_))
+# it's line height
+text_spacing <- function(height) {
+  compose("height", pick(height, from = text_height_))
 }
 
 text_decoration_ <- c(
@@ -63,14 +66,16 @@ text_select <- function(select) {
 #' Text
 #'
 #' The `text()` function adjusts the text color, alignment, line spacing, line
-#' wrapping, and decoration of a tag element.
+#' wrapping, line height, and decoration of a tag element.
 #'
 #' @inheritParams background
 #'
 #' @param color One of `r rd_list(names(text_color_))` specifying the text
 #'   color, defaults to `NULL`, in which case the argument is ignored.
 #'
-#' @param align One of `r rd_list(names(text_align_))` specifying the
+#' @param align One of `r rd_list(names(text_align_))` specifying the alignment
+#'   of the text within the element, defaults to `NULL`, in which case the
+#'   argument is ignored.
 #'
 #' @param spacing One of `r rd_list(names(text_spacing_))` specifying the text
 #'   line spacing, defaults to `NULL`, in which case the argument is ignored.

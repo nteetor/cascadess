@@ -20,9 +20,11 @@ text(
 \item{color}{One of \code{"blue"}, \code{"indigo"}, \code{"purple"}, \code{"red"}, \code{"orange"}, \code{"yellow"}, \code{"green"}, \code{"teal"}, \code{"cyan"}, \code{"black-50"}, \code{"white-50"}, \code{"white"}, \code{"muted"}, \code{"body"}, or \code{"reset"} specifying the text
 color, defaults to \code{NULL}, in which case the argument is ignored.}
 
-\item{align}{One of \code{"left"}, \code{"right"}, or \code{"center"} specifying the}
+\item{align}{One of \code{"left"}, \code{"right"}, or \code{"center"} specifying the alignment
+of the text within the element, defaults to \code{NULL}, in which case the
+argument is ignored.}
 
-\item{spacing}{One of \code{"small"}, \code{"sm"}, \code{"large"}, or \code{"lg"} specifying the text
+\item{spacing}{One of \code{"sm"}, \code{"small"}, \code{"md"}, \code{"medium"}, \code{"lg"}, or \code{"large"} specifying the text
 line spacing, defaults to \code{NULL}, in which case the argument is ignored.}
 
 \item{decoration}{One of \code{"none"}, \code{"underline"}, or \code{"strikethrough"} specifying how
@@ -39,7 +41,7 @@ in which case the argument is ignored.}
 }
 \description{
 The \code{text()} function adjusts the text color, alignment, line spacing, line
-wrapping, and decoration of a tag element.
+wrapping, line height, and decoration of a tag element.
 }
 \section{Colors}{
 \if{html}{\out{<div class="r">}}\preformatted{div(
@@ -55,7 +57,7 @@ wrapping, and decoration of a tag element.
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-text-color-blue cas-border-blue cas-border-all cas-border-round-md">
+<div class="cas-text-blue cas-border cas-border-blue cas-border-round-md">
 }}
 \if{html}{\out{
 <p>

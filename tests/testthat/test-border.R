@@ -13,7 +13,7 @@ test_that("spliced return", {
 
 test_that("argument `sides` shorthand", {
   div(.style %>% border("blue", sides = TRUE)) %>%
-    expect_html_class("cas-border-all")
+    expect_html_class("cas-border")
 
   div(.style %>% border("green", sides = FALSE)) %>%
     expect_html_class("cas-border-none")

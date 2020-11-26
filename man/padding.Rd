@@ -101,7 +101,7 @@ Shrink well padding.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="well cas-padding-all-1">
+<div class="well cas-p-1">
 }}
 \if{html}{\out{
 <div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
@@ -162,10 +162,10 @@ Auto width.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="well cas-padding-all-1">
+<div class="well cas-p-1">
 }}
 \if{html}{\out{
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-width-auto">
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-w-auto">
 }}
 
 

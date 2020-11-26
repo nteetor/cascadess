@@ -44,10 +44,10 @@ float_side <- function(side) {
 float <- function(x, side) {
   assert_subject(x)
 
-  cls <- prefix(
+  classes <- prefix(
     "float",
     float_side(side)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

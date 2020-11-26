@@ -31,11 +31,31 @@ endash <- function(...) {
   paste(..., sep = "-", collapse = " ")
 }
 
-prefix <- function(default, ...) {
+prefix <- function(...) {
   args <- available(list(...))
-  prefix <- pronoun_get_prefix(default)
 
-  vapply(args, function(arg) endash(prefix, arg), character(1))
+  classes <- args[-1]
+  default <- args[1]
+
+  ns <- names(default)
+
+  if (is.null(ns)) {
+    ns <- default[[1]]
+  }
+
+  pref <- pronoun_get_prefix(ns)
+
+  if (is.null(pref)) {
+    pref <- endash("cas", default[[1]])
+  }
+
+  vapply(classes, function(x) {
+    if (is_true(x)) {
+      pref
+    } else {
+      endash(pref, x)
+    }
+  }, character(1))
 }
 
 pick <- function(from, x) {

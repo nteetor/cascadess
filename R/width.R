@@ -90,7 +90,7 @@ width <- function(x, size, min = NULL, max = NULL) {
   assert_subject(x)
 
   classes <- prefix(
-    "width",
+    width = "w",
     width_size(size),
     width_min(min),
     width_max(max)

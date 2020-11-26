@@ -15,7 +15,7 @@ library(cascadess)
 ```{r}
 div(
   .style %>%
-    font("bold"),
+    font(weight = "bold"),
   "Apply a little style to your htmltools tags!"
 )
 ```

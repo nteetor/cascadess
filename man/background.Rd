@@ -22,7 +22,7 @@ Use \code{background()} to modify shiny’s action buttons.\if{html}{\out{<div c
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<button id="id" type="button" class="btn btn-default action-button cas-background-green">
+<button id="id" type="button" class="btn btn-default action-button cas-bg-green">
 }}
 
 
@@ -43,7 +43,7 @@ further.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take a
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<button id="id" type="button" class="btn btn-default action-button cas-background-green cas-border-green cas-border-all cas-border-round-md cas-shadow-sm">
+<button id="id" type="button" class="btn btn-default action-button cas-bg-green cas-border cas-border-green cas-border-round-md cas-shadow-sm">
 }}
 
 
@@ -90,7 +90,7 @@ pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
 <div class="col-sm-4">
 }}
 \if{html}{\out{
-<form class="well cas-background-blue">
+<form class="well cas-bg-blue">
 }}
 
 
@@ -101,7 +101,7 @@ It’s alive\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="col-sm-8 cas-background-red">
+<div class="col-sm-8 cas-bg-red">
 }}
 
 
@@ -121,13 +121,13 @@ It’s panel\if{html}{\out{
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-d-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-wrap">
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -135,7 +135,7 @@ blue\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-blue">
+<div class="cas-p-5 cas-bg-blue">
 }}
 \if{html}{\out{
 </div>
@@ -144,10 +144,10 @@ blue\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -155,7 +155,7 @@ indigo\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-indigo">
+<div class="cas-p-5 cas-bg-indigo">
 }}
 \if{html}{\out{
 </div>
@@ -164,10 +164,10 @@ indigo\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -175,7 +175,7 @@ purple\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-purple">
+<div class="cas-p-5 cas-bg-purple">
 }}
 \if{html}{\out{
 </div>
@@ -184,10 +184,10 @@ purple\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -195,7 +195,7 @@ red\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-red">
+<div class="cas-p-5 cas-bg-red">
 }}
 \if{html}{\out{
 </div>
@@ -204,10 +204,10 @@ red\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -215,7 +215,7 @@ orange\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-orange">
+<div class="cas-p-5 cas-bg-orange">
 }}
 \if{html}{\out{
 </div>
@@ -224,10 +224,10 @@ orange\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -235,7 +235,7 @@ yellow\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-yellow">
+<div class="cas-p-5 cas-bg-yellow">
 }}
 \if{html}{\out{
 </div>
@@ -244,10 +244,10 @@ yellow\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -255,7 +255,7 @@ green\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-green">
+<div class="cas-p-5 cas-bg-green">
 }}
 \if{html}{\out{
 </div>
@@ -264,10 +264,10 @@ green\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -275,7 +275,7 @@ teal\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-teal">
+<div class="cas-p-5 cas-bg-teal">
 }}
 \if{html}{\out{
 </div>
@@ -284,10 +284,10 @@ teal\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -295,7 +295,7 @@ cyan\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-cyan">
+<div class="cas-p-5 cas-bg-cyan">
 }}
 \if{html}{\out{
 </div>
@@ -304,10 +304,10 @@ cyan\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -315,7 +315,7 @@ white\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-white">
+<div class="cas-p-5 cas-bg-white">
 }}
 \if{html}{\out{
 </div>
@@ -324,10 +324,10 @@ white\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3">
+<div class="cas-m-3">
 }}
 \if{html}{\out{
-<div class="cas-text-align-center">
+<div class="cas-text-center">
 }}
 
 
@@ -335,7 +335,7 @@ transparent\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-padding-all-5 cas-background-transparent">
+<div class="cas-p-5 cas-bg-transparent">
 }}
 \if{html}{\out{
 </div>

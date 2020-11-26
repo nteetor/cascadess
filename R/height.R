@@ -89,7 +89,7 @@ height <- function(x, size, min = NULL, max = NULL) {
   assert_subject(x)
 
   classes <- prefix(
-    "height",
+    height = "h",
     height_size(size),
     height_min(min),
     height_max(max)

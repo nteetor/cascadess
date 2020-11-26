@@ -9,23 +9,23 @@ padding_all_ <- list(
 )
 
 padding_all <- function(all) {
-  compose("all", responsive(pick(all, from = padding_all_)))
+  responsive(pick(all, from = padding_all_))
 }
 
 padding_top <- function(top) {
-  compose("top", responsive(pick(top, from = padding_all_)))
+  compose("t", responsive(pick(top, from = padding_all_)))
 }
 
 padding_right <- function(right) {
-  compose("right", responsive(pick(right, from = padding_all_)))
+  compose("r", responsive(pick(right, from = padding_all_)))
 }
 
 padding_bottom <- function(bottom) {
-  compose("bottom", responsive(pick(bottom, from = padding_all_)))
+  compose("b", responsive(pick(bottom, from = padding_all_)))
 }
 
 padding_left <- function(left) {
-  compose("left", responsive(pick(left, from = padding_all_)))
+  compose("l", responsive(pick(left, from = padding_all_)))
 }
 
 #' Padding
@@ -68,8 +68,8 @@ padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                     left = NULL) {
   assert_subject(x)
 
-  cls <- prefix(
-    "padding",
+  classes <- prefix(
+    padding = "p",
     padding_all(all),
     padding_top(top),
     padding_right(right),
@@ -77,5 +77,5 @@ padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
     padding_left(left)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

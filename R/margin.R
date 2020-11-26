@@ -14,23 +14,23 @@ margin_all_ <- list(
 )
 
 margin_all <- function(all) {
-  compose("all", responsive(pick(all, from = margin_all_)))
+  responsive(pick(all, from = margin_all_))
 }
 
 margin_top <- function(top) {
-  compose("top", responsive(pick(top, from = margin_all_)))
+  compose("t", responsive(pick(top, from = margin_all_)))
 }
 
 margin_right <- function(right) {
-  compose("right", responsive(pick(right, from = margin_all_)))
+  compose("r", responsive(pick(right, from = margin_all_)))
 }
 
 margin_bottom <- function(bottom) {
-  compose("bottom", responsive(pick(bottom, from = margin_all_)))
+  compose("b", responsive(pick(bottom, from = margin_all_)))
 }
 
 margin_left <- function(left) {
-  compose("left", responsive(pick(left, from = margin_all_)))
+  compose("l", responsive(pick(left, from = margin_all_)))
 }
 
 margin_horizontal <- function(horizontal) {
@@ -108,8 +108,8 @@ margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
                    left = NULL, horizontal = NULL, vertical = NULL) {
   assert_subject(x)
 
-  cls <- prefix(
-    "margin",
+  classes <- prefix(
+    margin = "m",
     margin_all(all),
     margin_top(top),
     margin_right(right),
@@ -119,5 +119,5 @@ margin <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
     margin_vertical(vertical)
   )
 
-  add_class(x, cls)
+  add_class(x, classes)
 }

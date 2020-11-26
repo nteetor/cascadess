@@ -7,7 +7,7 @@ test_that("can be empty", {
 
   el %>%
     expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-display-inline-block")
+    expect_html_class("cas-d-inline-block")
 })
 
 test_that("basic usage", {

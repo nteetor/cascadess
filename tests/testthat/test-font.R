@@ -2,11 +2,11 @@ context("font()")
 
 test_that("adds class", {
   div() %>%
-    font("bolder") %>%
+    font(weight = "bolder") %>%
     expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-font-weight-bolder")
+    expect_html_class("cas-font-bolder")
 
-  div(.style %>% font("light")) %>%
+  div(.style %>% font(weight = "light")) %>%
     expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-font-weight-light")
+    expect_html_class("cas-font-light")
 })

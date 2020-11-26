@@ -21,10 +21,10 @@ distinguish elements or indicate interactivity.
 <!--html_preserve-->
 }}
 \if{html}{\out{
-<div class="cas-display-flex">
+<div class="cas-d-flex">
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-sm">
+<div class="cas-m-3 cas-p-4 cas-shadow-sm">
 }}
 
 
@@ -32,7 +32,7 @@ small\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-sm">
+<div class="cas-m-3 cas-p-4 cas-shadow-sm">
 }}
 
 
@@ -40,7 +40,7 @@ sm\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-md">
+<div class="cas-m-3 cas-p-4 cas-shadow-md">
 }}
 
 
@@ -48,7 +48,7 @@ medium\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-md">
+<div class="cas-m-3 cas-p-4 cas-shadow-md">
 }}
 
 
@@ -56,7 +56,7 @@ md\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-lg">
+<div class="cas-m-3 cas-p-4 cas-shadow-lg">
 }}
 
 
@@ -64,7 +64,7 @@ large\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-lg">
+<div class="cas-m-3 cas-p-4 cas-shadow-lg">
 }}
 
 
@@ -72,7 +72,7 @@ lg\if{html}{\out{
 </div>
 }}
 \if{html}{\out{
-<div class="cas-margin-all-3 cas-padding-all-4 cas-shadow-none">
+<div class="cas-m-3 cas-p-4 cas-shadow-none">
 }}
 
 

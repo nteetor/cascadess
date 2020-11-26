@@ -45,7 +45,7 @@ display <- function(x, type) {
   assert_subject(x)
 
   class <- prefix(
-    "display",
+    display = "d",
     display_type(type)
   )
 

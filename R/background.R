@@ -49,7 +49,7 @@ background <- function(x, color) {
   assert_subject(x)
 
   class <- prefix(
-    "background",
+    background = "bg",
     background_color(color)
   )
 
