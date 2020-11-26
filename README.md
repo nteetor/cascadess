@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/nteetor/cascadess/branch/master/graph/badge.svg)](https://codecov.io/gh/nteetor/cascadess)
 [![CRAN status](https://www.r-pkg.org/badges/version/cascadess)](https://CRAN.R-project.org/package=cascadess)
 
-A `.style` pronoun and style utilities for {[htmltools](https://github.com/rstudio/htmltools)} tags.
+A style pronoun and utilities for {[htmltools](https://github.com/rstudio/htmltools)} tags.
 
 ## What can I use cascadess for?
 
