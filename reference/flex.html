@@ -125,7 +125,7 @@ or around child elements, and more.</p>
 flex items and may be adjusted with <code><a href='item.html'>item()</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>flex</span><span class='op'>(</span><span class='va'>x</span>, direction <span class='op'>=</span> <span class='st'>"row"</span>, justify <span class='op'>=</span> <span class='st'>"start"</span>, align <span class='op'>=</span> <span class='st'>"stretch"</span>, wrap <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>flex</span><span class='op'>(</span><span class='va'>x</span>, direction <span class='op'>=</span> <span class='cn'>NULL</span>, justify <span class='op'>=</span> <span class='cn'>NULL</span>, align <span class='op'>=</span> <span class='cn'>NULL</span>, wrap <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -138,7 +138,7 @@ flex items and may be adjusted with <code><a href='item.html'>item()</a></code>.
       <th>direction</th>
       <td><p>A <a href='responsive.html'>responsive</a> argument.</p>
 <p>One of <code>"row"</code> or <code>"column"</code> specifying the main axis of
-flex items, defaults to <code>"row"</code>.</p>
+flex items, defaults to <code>NULL</code>, in which case the argument is ignored.</p>
 <p>If <code>"row"</code>, the main axis is horizontal and items are arranged from left to
 right. The cross axis is the vertical.</p>
 <p>If <code>"column"</code>, the main axis is vertical and items are arranged from top to
@@ -147,22 +147,25 @@ bottom. The cross axis is the horizontal.</p></td>
     <tr>
       <th>justify</th>
       <td><p>A <a href='responsive.html'>responsive</a> argument.</p>
-<p>One of <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"between"</code>, <code>"around"</code>, or <code>"evenly"</code> specifying how items are
-arranged on the main axis, defaults to <code>"start"</code>.</p>
-<p>If <code>"between"</code> or <code>"around"</code>, items are arranged by evenly sharing the
-space between or around the items.</p></td>
+<p>One of <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"between"</code>, <code>"around"</code>, or <code>"evenly"</code> specifying how items are arranged
+on the main axis, defaults to <code>NULL</code>, in which case the argument is
+ignored.</p>
+<p>If <code>"between"</code>, <code>"around"</code>, or <code>"evenly"</code> then items are arranged by
+distributing the space available on the main axis in-between the element's
+flex items.</p></td>
     </tr>
     <tr>
       <th>align</th>
       <td><p>A <a href='responsive.html'>responsive</a> argument.</p>
-<p>One of <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"baseline"</code>, or <code>"stretch"</code> specifying how items are
-arranged on the cross axis, defaults to <code>"stretch"</code>.</p></td>
+<p>One of <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"baseline"</code>, or <code>"stretch"</code> specifying how items are arranged on
+the cross axis, defaults to <code>NULL</code>, in which case the argument is ignored.</p></td>
     </tr>
     <tr>
       <th>wrap</th>
       <td><p>A <a href='responsive.html'>responsive</a> argument.</p>
-<p>One of <code>TRUE</code> or <code>FALSE</code> specifying if items are forced onto one line
-or allowed to wrap onto multiple lines, defaults to <code>FALSE</code>.</p></td>
+<p>One of <code>TRUE</code> or <code>FALSE</code> specifying if items are forced onto one line or
+allowed to wrap onto multiple lines, defaults to <code>NULL</code>, in which case the
+argument is ignored.</p></td>
     </tr>
     </table>
 
@@ -189,7 +192,7 @@ allows.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/pkg/htm
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-column cas-flex-md-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-column cas-flex-md-row">
 
 
 <div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-m-h-auto cas-m-h-md-0">
@@ -271,7 +274,7 @@ horizontally.<div class="r"></p><pre><span class='fu'><a href='https://rdrr.io/p
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-column cas-flex-md-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-column cas-flex-md-row">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -318,7 +321,7 @@ A flex item
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-column cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-column">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -371,7 +374,7 @@ beginning of their parent container.<div class="r"></p><pre><span class='fu'><a 
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-row cas-flex-justify-start cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-start">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -426,7 +429,7 @@ A flex item
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-row cas-flex-justify-end cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-end">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -481,7 +484,7 @@ A flex item
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-row cas-flex-justify-center cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-center">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -536,7 +539,7 @@ A flex item
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-row cas-flex-justify-between cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-between">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -591,7 +594,7 @@ A flex item
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-row cas-flex-justify-around cas-flex-items-stretch cas-flex-nowrap">
+<div class="cas-d-flex cas-flex-justify-around">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -652,7 +655,7 @@ A flex item
 <!--html_preserve-->
 
 
-<div class="cas-d-flex cas-flex-row cas-flex-justify-start cas-flex-items-stretch cas-flex-wrap">
+<div class="cas-d-flex cas-flex-wrap">
 
 
 <div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
@@ -707,7 +710,7 @@ A flex item
   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span><span class='st'>"Aliquam posuere."</span><span class='op'>)</span>,
   <span class='fu'><a href='https://rdrr.io/pkg/htmltools/man/builder.html'>div</a></span><span class='op'>(</span><span class='st'>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."</span><span class='op'>)</span>
 <span class='op'>)</span>
-</div><div class='output co'>#&gt; &lt;div class="cas-d-flex cas-flex-row cas-flex-justify-end cas-flex-items-stretch cas-flex-nowrap"&gt;
+</div><div class='output co'>#&gt; &lt;div class="cas-d-flex cas-flex-justify-end"&gt;
 #&gt;   &lt;div&gt;Aliquam posuere.&lt;/div&gt;
 #&gt;   &lt;div&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;
 #&gt; &lt;/div&gt;</div><div class='input'>
