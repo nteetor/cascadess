@@ -54,5 +54,6 @@ Collate:
     'shadow.R'
     'text.R'
     'utils-docs.R'
+    'visible.R'
     'width.R'
     'zzz.R'
