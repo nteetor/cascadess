@@ -10,7 +10,7 @@ module.exports = ctx => ({
     autoprefixer: {
       cascade: false
     },
-    "postcss-prefixer": {
+    "postcss-rename": {
       prefix: "cas-"
     }
   }
