@@ -79,7 +79,8 @@ inner space and 5 adds the most space.</p></dd>
 </dl></div>
     <div id="panels">
     <h2>Panels</h2>
-    <p>Well panels.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
+    <p>Well panels.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span></span>
 <span>    inputId <span class="op">=</span> <span class="st">"id"</span>,</span>
 <span>    label <span class="op">=</span> <span class="st">"Radio input"</span>,</span>
@@ -88,48 +89,27 @@ inner space and 5 adds the most space.</p></dd>
 <span>      <span class="st">"Choice 2"</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="well">
-
-
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
-
-<p><label class="control-label" for="id">Radio input</label>
-</p><div class="shiny-options-group">
-
-
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">Radio input</label>
+<div class="shiny-options-group">
 <div class="radio">
-
-
 <label>
-<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span> </label>
-
-
+<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span>
+</label>
 </div>
-
-
 <div class="radio">
-
-<p><label> <input type="radio" name="id" value="Choice 2"><span>Choice
-2</span> </label>
-</p></div>
-
-
+<label>
+<input type="radio" name="id" value="Choice 2"><span>Choice 2</span>
+</label>
+</div>
+</div>
+</div>
 </div>
 
-
-</div>
-
-
-</div>
-
-
-<!--/html_preserve-->
-
-<p>Shrink well padding.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
+<p>Shrink well padding.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span></span>
@@ -140,48 +120,27 @@ inner space and 5 adds the most space.</p></dd>
 <span>      <span class="st">"Choice 2"</span></span>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="well cas-p-1">
-
-
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
-
-<p><label class="control-label" for="id">Radio input</label>
-</p><div class="shiny-options-group">
-
-
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">Radio input</label>
+<div class="shiny-options-group">
 <div class="radio">
-
-
 <label>
-<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span> </label>
-
-
+<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span>
+</label>
 </div>
-
-
 <div class="radio">
-
-<p><label> <input type="radio" name="id" value="Choice 2"><span>Choice
-2</span> </label>
-</p></div>
-
-
+<label>
+<input type="radio" name="id" value="Choice 2"><span>Choice 2</span>
+</label>
+</div>
+</div>
+</div>
 </div>
 
-
-</div>
-
-
-</div>
-
-
-<!--/html_preserve-->
-
-<p>Auto width.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
+<p>Auto width.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,</span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span></span>
@@ -193,46 +152,24 @@ inner space and 5 adds the most space.</p></dd>
 <span>    <span class="op">)</span></span>
 <span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/width.html">width</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="well cas-p-1">
-
-
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-w-auto">
-
-<p><label class="control-label" for="id">Radio input</label>
-</p><div class="shiny-options-group">
-
-
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-w-auto" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">Radio input</label>
+<div class="shiny-options-group">
 <div class="radio">
-
-
 <label>
-<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span> </label>
-
-
+<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span>
+</label>
 </div>
-
-
 <div class="radio">
-
-<p><label> <input type="radio" name="id" value="Choice 2"><span>Choice
-2</span> </label>
-</p></div>
-
-
+<label>
+<input type="radio" name="id" value="Choice 2"><span>Choice 2</span>
+</label>
 </div>
-
-
 </div>
-
-
 </div>
-
-
-<!--/html_preserve-->
+</div>
     </div>
 
     <div id="ref-examples">

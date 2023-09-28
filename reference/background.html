@@ -66,48 +66,31 @@ background color of the tag element.</p></dd>
 </dl></div>
     <div id="buttons">
     <h2>Buttons</h2>
-    <p>Use <code>background()</code> to modify shiny’s action buttons.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu">actionButton</span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"Take action"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"green"</span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
-<button id="id" type="button" class="btn btn-default action-button cas-bg-green">
-
-<p>Take action
-</p></button>
-
-
-<!--/html_preserve-->
-
+    <p>Use <code>background()</code> to modify shiny’s action buttons.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu">actionButton</span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"Take action"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"green"</span><span class="op">)</span></span></code></pre><p></p></div>
+<p><button id="id" type="button" class="btn btn-default action-button cas-bg-green">Take action</button></p>
 <p>With a couple other functions we can take our improvement a step
-further.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu">actionButton</span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"Take action"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+further.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu">actionButton</span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"Take action"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"green"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="../reference/border.html">border</a></span><span class="op">(</span><span class="st">"green"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="../reference/shadow.html">shadow</a></span><span class="op">(</span><span class="st">"small"</span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
-<button id="id" type="button" class="btn btn-default action-button cas-bg-green cas-border cas-border-green cas-border-round-md cas-shadow-sm">
-
-<p>Take action
-</p></button>
-
-
-<!--/html_preserve-->
-
+<span>  <span class="fu"><a href="../reference/shadow.html">shadow</a></span><span class="op">(</span><span class="st">"small"</span><span class="op">)</span></span></code></pre><p></p></div>
+<p><button id="id" type="button" class="btn btn-default action-button cas-bg-green cas-border cas-border-green cas-border-round-md cas-shadow-sm">Take action</button></p>
 <p>Shiny’s download buttons include <code>...</code>, so we can use the <code>.style</code>
-pronoun!</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu">downloadButton</span><span class="op">(</span></span>
+pronoun!</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu">downloadButton</span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"white"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/border.html">border</a></span><span class="op">(</span><span class="st">"blue"</span><span class="op">)</span>,</span>
 <span>  outputId <span class="op">=</span> <span class="st">"dwnld"</span>,</span>
 <span>  label <span class="op">=</span> <span class="st">"Do a download"</span>,</span>
 <span>  class <span class="op">=</span> <span class="cn">NULL</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
+<span><span class="op">)</span></span></code></pre><p></p></div>
     </div>
     <div id="panels">
     <h2>Panels</h2>
-    <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu">sidebarLayout</span><span class="op">(</span></span>
+    <p></p><div class="sourceCode r"><pre><code><span><span class="fu">sidebarLayout</span><span class="op">(</span></span>
 <span>  <span class="fu">sidebarPanel</span><span class="op">(</span></span>
 <span>    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>      <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"blue"</span><span class="op">)</span>,</span>
@@ -118,246 +101,62 @@ pronoun!</p><div class="r"><div class="sourceCode"><pre><code><span><span class=
 <span>      <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"red"</span><span class="op">)</span>,</span>
 <span>    <span class="st">"It's panel"</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="row">
-
-
 <div class="col-sm-4">
-
-
-<form class="well cas-bg-blue">
-
-<p>It’s alive
-</p></form>
-
-
+<form class="well cas-bg-blue" role="complementary">It's alive</form>
 </div>
-
-
-<div class="col-sm-8 cas-bg-red">
-
-<p>It’s panel
-</p></div>
-
-
+<div class="col-sm-8 cas-bg-red" role="main">It's panel</div>
 </div>
-
-
-<!--/html_preserve-->
     </div>
     <div id="colors">
     <h2>Colors</h2>
-    <p><!--html_preserve-->
-
-
-</p><div class="cas-d-flex cas-flex-justify-between cas-flex-wrap">
-
-
+    <p></p><div class="cas-d-flex cas-flex-justify-between cas-flex-wrap">
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>blue
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-blue">
-
-
+<div class="cas-text-center">blue</div>
+<div class="cas-p-5 cas-bg-blue"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>indigo
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-indigo">
-
-
+<div class="cas-text-center">indigo</div>
+<div class="cas-p-5 cas-bg-indigo"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>purple
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-purple">
-
-
+<div class="cas-text-center">purple</div>
+<div class="cas-p-5 cas-bg-purple"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>red
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-red">
-
-
+<div class="cas-text-center">red</div>
+<div class="cas-p-5 cas-bg-red"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>orange
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-orange">
-
-
+<div class="cas-text-center">orange</div>
+<div class="cas-p-5 cas-bg-orange"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>yellow
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-yellow">
-
-
+<div class="cas-text-center">yellow</div>
+<div class="cas-p-5 cas-bg-yellow"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>green
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-green">
-
-
+<div class="cas-text-center">green</div>
+<div class="cas-p-5 cas-bg-green"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>teal
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-teal">
-
-
+<div class="cas-text-center">teal</div>
+<div class="cas-p-5 cas-bg-teal"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>cyan
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-cyan">
-
-
+<div class="cas-text-center">cyan</div>
+<div class="cas-p-5 cas-bg-cyan"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>white
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-white">
-
-
+<div class="cas-text-center">white</div>
+<div class="cas-p-5 cas-bg-white"></div>
 </div>
-
-
-</div>
-
-
 <div class="cas-m-3">
-
-
-<div class="cas-text-center">
-
-<p>transparent
-</p></div>
-
-
-<div class="cas-p-5 cas-bg-transparent">
-
-
+<div class="cas-text-center">transparent</div>
+<div class="cas-p-5 cas-bg-transparent"></div>
 </div>
-
-
 </div>
-
-
-</div>
-
-
-<!--/html_preserve-->
     </div>
 
     <div id="ref-examples">

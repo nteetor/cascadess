@@ -107,7 +107,8 @@ argument is ignored.</p></dd>
     <div id="centering-elements">
     <h2>Centering elements</h2>
     <p>Center an input above a larger element or next to the element if space
-allows.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+allows.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>default <span class="op">=</span> <span class="st">"column"</span>, md <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span><span class="op">)</span>,</span>
@@ -122,71 +123,46 @@ allows.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="
 <span>      <span class="fu"><a href="../reference/text.html">text</a></span><span class="op">(</span><span class="st">"white"</span><span class="op">)</span>,</span>
 <span>    <span class="st">"Plot placeholder"</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-column cas-flex-md-row">
-
-
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-m-h-auto cas-m-h-md-0">
-
-<p><label class="control-label" for="id">A sample input</label>
-</p><div class="shiny-options-group">
-
-
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-m-h-auto cas-m-h-md-0" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">A sample input</label>
+<div class="shiny-options-group">
 <div class="radio">
-
-
 <label>
-<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span> </label>
-
-
+<input type="radio" name="id" value="Choice 1" checked><span>Choice 1</span>
+</label>
 </div>
-
-
 <div class="radio">
-
-<p><label> <input type="radio" name="id" value="Choice 2"><span>Choice
-2</span> </label>
-</p></div>
-
-
+<label>
+<input type="radio" name="id" value="Choice 2"><span>Choice 2</span>
+</label>
 </div>
-
-
 </div>
-
-
-<div class="cas-w-100 cas-bg-indigo cas-text-white">
-
-<p>Plot placeholder
-</p></div>
-
-
 </div>
-
-
-<!--/html_preserve-->
+<div class="cas-w-100 cas-bg-indigo cas-text-white">Plot placeholder</div>
+</div>
     </div>
     <div id="details">
     <h2>Details</h2>
     <p>This section needs pretty specific examples of how to use flex. I don’t
 know that people will want a tutorial on flex.</p>
-<p>For the sake of the demo let’s create a flex item help function.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">flexItem</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<p>For the sake of the demo let’s create a flex item help function.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="va">flexItem</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
 <span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="../reference/border.html">border</a></span><span class="op">(</span><span class="st">"blue"</span><span class="op">)</span>,</span>
 <span>    <span class="st">"A flex item"</span>,</span>
 <span>    <span class="va">...</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div><p></p></div><div class="section">
+<span><span class="op">}</span></span></code></pre><p></p></div><div class="section">
 <h3 id="different-directions">Different <code>direction</code>s<a class="anchor" aria-label="anchor" href="#different-directions"></a></h3>
 
 
 <p>Many of <code>flex()</code>’s arguments are viewport responsive. On small screens
 the flex items are placed vertically and can occupy the full width of
 the mobile device. On medium or larger screens the items are placed
-horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+horizontally.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span></span>
@@ -195,73 +171,28 @@ horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span><span c
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-column cas-flex-md-row">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 
-
-<!--/html_preserve-->
-
 <p><em>Resize the browser for this example.</em></p>
-<p>You can keep items as a column by specifying only <code>"column"</code>.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<p>You can keep items as a column by specifying only <code>"column"</code>.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>direction <span class="op">=</span> <span class="st">"column"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-column">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-
-
-<!--/html_preserve-->
 </div>
 
 <div class="section">
@@ -270,7 +201,8 @@ horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span><span c
 
 <p>Below is a series of examples showing how to change the horizontal
 alignment of your flex items. Let’s start by pushing items to the
-beginning of their parent container.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+beginning of their parent container.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"start"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
@@ -278,43 +210,16 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-justify-start">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 
-
-<!--/html_preserve-->
-
-<p>We can also push items to the <strong>end</strong>.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<p>We can also push items to the <strong>end</strong>.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"end"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
@@ -322,43 +227,16 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-justify-end">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 
-
-<!--/html_preserve-->
-
-<p>Without using a table layout we can <strong>center</strong> items.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<p>Without using a table layout we can <strong>center</strong> items.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
@@ -366,43 +244,16 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-justify-center">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 
-
-<!--/html_preserve-->
-
-<p>You can also put space <strong>between</strong> items</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<p>You can also put space <strong>between</strong> items</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"between"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
@@ -410,43 +261,16 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-justify-between">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 
-
-<!--/html_preserve-->
-
-<p>… or put space <strong>around</strong> items.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<p>… or put space <strong>around</strong> items.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"around"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
@@ -454,41 +278,13 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-justify-around">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-
-
-<!--/html_preserve-->
 
 <p>The <code>"between"</code> and <code>"around"</code> values come from the original CSS values
 <code>"space-between"</code> and <code>"space-around"</code>.</p>
@@ -498,7 +294,8 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <h3 id="wrap-onto-new-lines"><code>wrap</code> onto new lines<a class="anchor" aria-label="anchor" href="#wrap-onto-new-lines"></a></h3>
 
 
-<p>Using flexbox we can also control how items wrap onto new lines.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<p>Using flexbox we can also control how items wrap onto new lines.</p>
+<p></p><div class="sourceCode r"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
 <span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
 <span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>wrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
@@ -506,41 +303,13 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
-<!--html_preserve-->
-
-
+<span><span class="op">)</span></span></code></pre><p></p></div>
 <div class="cas-d-flex cas-flex-wrap">
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-
-<p>A flex item
-</p></div>
-
-
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-
-
-<!--/html_preserve-->
 </div>
 
     </div>
