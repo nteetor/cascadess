@@ -18,7 +18,7 @@ The \code{display()} function adjusts how a tag element is rendered. For example
 to use the flex box layout the display must be \code{"flex"}.
 }
 \section{Block vs inline}{
-\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   div(
     .style \%>\%
       border("blue"),
@@ -31,34 +31,14 @@ to use the flex box layout the display must be \code{"flex"}.
   )
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div>
-}}
-\if{html}{\out{
-<div class="cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-block\if{html}{\out{
+<div class="cas-border cas-border-blue cas-border-round-md">block</div>
+<div class="cas-border cas-border-blue cas-border-round-md">block</div>
 </div>
 }}
-\if{html}{\out{
-<div class="cas-border cas-border-blue cas-border-round-md">
-}}
 
 
-block\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   div(
     .style \%>\%
       border("blue") \%>\%
@@ -73,32 +53,10 @@ block\if{html}{\out{
   )
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div>
-}}
-\if{html}{\out{
-<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">
-}}
-
-
-inline\if{html}{\out{
+<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">inline</div>
+<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">inline</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">
-}}
-
-
-inline\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 

@@ -48,7 +48,9 @@ border, and its content.
 \section{Auto margins}{
 In most modern browsers you want to horizontally center a tag element
 using the flex layout. Alternatively, you can horizontally center an
-element using \code{margin(.., horizontal = "auto")}.\if{html}{\out{<div class="r">}}\preformatted{div(
+element using \code{margin(.., horizontal = "auto")}.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     margin(v = 2, h = "auto") \%>\%  # <-
     padding(3) \%>\%
@@ -56,18 +58,7 @@ element using \code{margin(.., horizontal = "auto")}.\if{html}{\out{<div class="
   "Nam a sapien. Integer placerat tristique nisl."
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
-<div class="cas-m-h-auto cas-m-v-2 cas-p-3 cas-bg-teal">
-}}
-
-
-Nam a sapien. Integer placerat tristique nisl.\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
+<div class="cas-m-h-auto cas-m-v-2 cas-p-3 cas-bg-teal">Nam a sapien. Integer placerat tristique nisl.</div>
 }}
 }
 

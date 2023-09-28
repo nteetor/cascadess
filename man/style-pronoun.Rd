@@ -11,12 +11,16 @@
 \description{
 The \code{.style} pronoun allows you to define styles for a tag element within the
 context of the element. Without the \code{.style} pronoun tag styles are applied
-outside and after constructing a tag element.\if{html}{\out{<div class="R">}}\preformatted{div(". . .") \%>\% background("primary") \%>\% display("flex")
+outside and after constructing a tag element.
+
+\if{html}{\out{<div class="sourceCode R">}}\preformatted{div(". . .") \%>\% background("primary") \%>\% display("flex")
 }\if{html}{\out{</div>}}
 
 However, once the content of a tag element grows to more than a few lines,
 associating the element's styles with the element becomes less and less
-intuitive. In these situations, make use of the \code{.style} pronoun.\if{html}{\out{<div class="R">}}\preformatted{div(
+intuitive. In these situations, make use of the \code{.style} pronoun.
+
+\if{html}{\out{<div class="sourceCode R">}}\preformatted{div(
   .style \%>\%
     border("primary") \%>\%
     font("primary"),

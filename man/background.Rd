@@ -16,47 +16,29 @@ background color of the tag element.}
 The \code{background()} function adjusts the background color of a tag element.
 }
 \section{Buttons}{
-Use \code{background()} to modify shiny’s action buttons.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take action") \%>\%
+Use \code{background()} to modify shiny’s action buttons.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{actionButton("id", "Take action") \%>\%
   background("green")
-}\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
-<button id="id" type="button" class="btn btn-default action-button cas-bg-green">
-}}
+}\if{html}{\out{</div>}}
 
-
-Take action\if{html}{\out{
-</button>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-
+\if{html}{\out{<button id="id" type="button" class="btn btn-default action-button cas-bg-green">}}Take action\if{html}{\out{</button>}}
 
 With a couple other functions we can take our improvement a step
-further.\if{html}{\out{<div class="r">}}\preformatted{actionButton("id", "Take action") \%>\%
+further.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{actionButton("id", "Take action") \%>\%
   background("green") \%>\%
   border("green") \%>\%
   shadow("small")
-}\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
-<button id="id" type="button" class="btn btn-default action-button cas-bg-green cas-border cas-border-green cas-border-round-md cas-shadow-sm">
-}}
+}\if{html}{\out{</div>}}
 
-
-Take action\if{html}{\out{
-</button>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-
+\if{html}{\out{<button id="id" type="button" class="btn btn-default action-button cas-bg-green cas-border cas-border-green cas-border-round-md cas-shadow-sm">}}Take action\if{html}{\out{</button>}}
 
 Shiny’s download buttons include \code{...}, so we can use the \code{.style}
-pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
+pronoun!
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{downloadButton(
   .style \%>\%
     background("white") \%>\%
     border("blue"),
@@ -68,7 +50,7 @@ pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
 }
 
 \section{Panels}{
-\if{html}{\out{<div class="r">}}\preformatted{sidebarLayout(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{sidebarLayout(
   sidebarPanel(
     .style \%>\%
       background("blue"),
@@ -81,273 +63,63 @@ pronoun!\if{html}{\out{<div class="r">}}\preformatted{downloadButton(
   )
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="row">
-}}
-\if{html}{\out{
 <div class="col-sm-4">
-}}
-\if{html}{\out{
-<form class="well cas-bg-blue">
-}}
-
-
-It’s alive\if{html}{\out{
-</form>
-}}
-\if{html}{\out{
+<form class="well cas-bg-blue" role="complementary">It's alive</form>
 </div>
-}}
-\if{html}{\out{
-<div class="col-sm-8 cas-bg-red">
-}}
-
-
-It’s panel\if{html}{\out{
+<div class="col-sm-8 cas-bg-red" role="main">It's panel</div>
 </div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 
 \section{Colors}{
 \if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-justify-between cas-flex-wrap">
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-blue\if{html}{\out{
+<div class="cas-text-center">blue</div>
+<div class="cas-p-5 cas-bg-blue"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-blue">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-indigo\if{html}{\out{
+<div class="cas-text-center">indigo</div>
+<div class="cas-p-5 cas-bg-indigo"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-indigo">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-purple\if{html}{\out{
+<div class="cas-text-center">purple</div>
+<div class="cas-p-5 cas-bg-purple"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-purple">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-red\if{html}{\out{
+<div class="cas-text-center">red</div>
+<div class="cas-p-5 cas-bg-red"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-red">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-orange\if{html}{\out{
+<div class="cas-text-center">orange</div>
+<div class="cas-p-5 cas-bg-orange"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-orange">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-yellow\if{html}{\out{
+<div class="cas-text-center">yellow</div>
+<div class="cas-p-5 cas-bg-yellow"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-yellow">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-green\if{html}{\out{
+<div class="cas-text-center">green</div>
+<div class="cas-p-5 cas-bg-green"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-green">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-teal\if{html}{\out{
+<div class="cas-text-center">teal</div>
+<div class="cas-p-5 cas-bg-teal"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-teal">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-cyan\if{html}{\out{
+<div class="cas-text-center">cyan</div>
+<div class="cas-p-5 cas-bg-cyan"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-cyan">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-white\if{html}{\out{
+<div class="cas-text-center">white</div>
+<div class="cas-p-5 cas-bg-white"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-white">
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
 <div class="cas-m-3">
-}}
-\if{html}{\out{
-<div class="cas-text-center">
-}}
-
-
-transparent\if{html}{\out{
+<div class="cas-text-center">transparent</div>
+<div class="cas-p-5 cas-bg-transparent"></div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-5 cas-bg-transparent">
-}}
-\if{html}{\out{
 </div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 

@@ -27,7 +27,9 @@ padding of a tag element is the space between the tag element's border and
 its content or child elements.
 }
 \section{Panels}{
-Well panels.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
+Well panels.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{wellPanel(
   radioButtons(
     inputId = "id",
     label = "Radio input",
@@ -38,54 +40,31 @@ Well panels.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
   )
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="well">
-}}
-\if{html}{\out{
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
-}}
-
-
-\if{html}{\out{<label class="control-label" for="id">}}Radio input\if{html}{\out{</label>}}\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">Radio input</label>
 <div class="shiny-options-group">
-}}
-\if{html}{\out{
 <div class="radio">
-}}
-\if{html}{\out{
 <label>
 <input type="radio" name="id" value="Choice 1" checked="checked"/>
-<span>Choice 1</span> </label>
-}}
-\if{html}{\out{
+<span>Choice 1</span>
+</label>
 </div>
-}}
-\if{html}{\out{
 <div class="radio">
+<label>
+<input type="radio" name="id" value="Choice 2"/>
+<span>Choice 2</span>
+</label>
+</div>
+</div>
+</div>
+</div>
 }}
 
 
-\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
-2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
+Shrink well padding.
 
-
-Shrink well padding.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{wellPanel(
   .style \%>\%
     padding(1),
   radioButtons(
@@ -98,54 +77,31 @@ Shrink well padding.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
   )
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="well cas-p-1">
-}}
-\if{html}{\out{
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container">
-}}
-
-
-\if{html}{\out{<label class="control-label" for="id">}}Radio input\if{html}{\out{</label>}}\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">Radio input</label>
 <div class="shiny-options-group">
-}}
-\if{html}{\out{
 <div class="radio">
-}}
-\if{html}{\out{
 <label>
 <input type="radio" name="id" value="Choice 1" checked="checked"/>
-<span>Choice 1</span> </label>
-}}
-\if{html}{\out{
+<span>Choice 1</span>
+</label>
 </div>
-}}
-\if{html}{\out{
 <div class="radio">
+<label>
+<input type="radio" name="id" value="Choice 2"/>
+<span>Choice 2</span>
+</label>
+</div>
+</div>
+</div>
+</div>
 }}
 
 
-\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
-2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
+Auto width.
 
-
-Auto width.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{wellPanel(
   .style \%>\%
     padding(1),
   radioButtons(
@@ -159,50 +115,25 @@ Auto width.\if{html}{\out{<div class="r">}}\preformatted{wellPanel(
     width("auto")
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="well cas-p-1">
-}}
-\if{html}{\out{
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-w-auto">
-}}
-
-
-\if{html}{\out{<label class="control-label" for="id">}}Radio input\if{html}{\out{</label>}}\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-w-auto" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">Radio input</label>
 <div class="shiny-options-group">
-}}
-\if{html}{\out{
 <div class="radio">
-}}
-\if{html}{\out{
 <label>
 <input type="radio" name="id" value="Choice 1" checked="checked"/>
-<span>Choice 1</span> </label>
-}}
-\if{html}{\out{
+<span>Choice 1</span>
+</label>
 </div>
-}}
-\if{html}{\out{
 <div class="radio">
-}}
-
-
-\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
-2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
+<label>
+<input type="radio" name="id" value="Choice 2"/>
+<span>Choice 2</span>
+</label>
 </div>
-}}
-\if{html}{\out{
 </div>
-}}
-\if{html}{\out{
 </div>
-}}
-\if{html}{\out{
 </div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 

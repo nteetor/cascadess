@@ -34,43 +34,23 @@ The \code{font()} function adjusts the size, weight, style, case, and family of
 the font of a tag element.
 }
 \section{Weights}{
-\if{html}{\out{<div class="r">}}\preformatted{p(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{p(
   .style \%>\%
     font(weight = "bold"),
   "Curabitur lacinia pulvinar nibh."
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
-<p class="cas-font-bold">
+<p class="cas-font-bold">Curabitur lacinia pulvinar nibh.</p>
 }}
 
 
-Curabitur lacinia pulvinar nibh.\if{html}{\out{
-</p>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-\if{html}{\out{<div class="r">}}\preformatted{p(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{p(
   .style \%>\%
     font(weight = "light"),
   "Proin quam nisl, tincidunt et."
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
-<p class="cas-font-light">
-}}
-
-
-Proin quam nisl, tincidunt et.\if{html}{\out{
-</p>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
+<p class="cas-font-light">Proin quam nisl, tincidunt et.</p>
 }}
 }
 

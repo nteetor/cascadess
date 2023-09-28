@@ -44,7 +44,7 @@ The \code{text()} function adjusts the text color, alignment, line spacing, line
 wrapping, line height, and decoration of a tag element.
 }
 \section{Colors}{
-\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     text("blue") \%>\%  # <-
     border("blue"),
@@ -54,33 +54,14 @@ wrapping, line height, and decoration of a tag element.
   p("Aliquam posuere.")
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-text-blue cas-border cas-border-blue cas-border-round-md">
-}}
-\if{html}{\out{
 <p>
-}}
-
-
-Nullam tristique diam non turpis. Pellentesque dapibus suscipit ligula.
-Nullam eu ante vel est convallis dignissim.\if{html}{\out{
+Nullam tristique diam non turpis.
+Pellentesque dapibus suscipit ligula.
+Nullam eu ante vel est convallis dignissim.
 </p>
-}}
-\if{html}{\out{
-<p>
-}}
-
-
-Aliquam posuere.\if{html}{\out{
-</p>
-}}
-\if{html}{\out{
+<p>Aliquam posuere.</p>
 </div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 

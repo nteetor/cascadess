@@ -27,167 +27,32 @@ The \code{border()} function adjusts a tag element's borders.
 }
 \section{Colors}{
 \if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex">
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-blue\if{html}{\out{
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">blue</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-indigo cas-border-round-md">indigo</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-purple cas-border-round-md">purple</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-red cas-border-round-md">red</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-orange cas-border-round-md">orange</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-yellow cas-border-round-md">yellow</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-green cas-border-round-md">green</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-teal cas-border-round-md">teal</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-cyan cas-border-round-md">cyan</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-white cas-border-round-md">white</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-indigo cas-border-round-md">
-}}
-
-
-indigo\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-purple cas-border-round-md">
-}}
-
-
-purple\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-red cas-border-round-md">
-}}
-
-
-red\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-orange cas-border-round-md">
-}}
-
-
-orange\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-yellow cas-border-round-md">
-}}
-
-
-yellow\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-green cas-border-round-md">
-}}
-
-
-green\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-teal cas-border-round-md">
-}}
-
-
-teal\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-cyan cas-border-round-md">
-}}
-
-
-cyan\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-white cas-border-round-md">
-}}
-
-
-white\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 
 \section{Round}{
 \if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex">
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-sm">
-}}
-
-
-small\if{html}{\out{
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-sm">small</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-sm">sm</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">medium</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">md</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-lg">large</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-lg">lg</div>
+<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-none">none</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-sm">
-}}
-
-
-sm\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-medium\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-md\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-lg">
-}}
-
-
-large\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-lg">
-}}
-
-
-lg\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-4 cas-m-3 cas-border cas-border-blue cas-border-round-none">
-}}
-
-
-none\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 

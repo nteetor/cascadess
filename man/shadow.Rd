@@ -18,72 +18,15 @@ distinguish elements or indicate interactivity.
 }
 \section{Sizes}{
 \if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex">
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-sm">
-}}
-
-
-small\if{html}{\out{
+<div class="cas-m-3 cas-p-4 cas-shadow-sm">small</div>
+<div class="cas-m-3 cas-p-4 cas-shadow-sm">sm</div>
+<div class="cas-m-3 cas-p-4 cas-shadow-md">medium</div>
+<div class="cas-m-3 cas-p-4 cas-shadow-md">md</div>
+<div class="cas-m-3 cas-p-4 cas-shadow-lg">large</div>
+<div class="cas-m-3 cas-p-4 cas-shadow-lg">lg</div>
+<div class="cas-m-3 cas-p-4 cas-shadow-none">none</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-sm">
-}}
-
-
-sm\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-md">
-}}
-
-
-medium\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-md">
-}}
-
-
-md\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-lg">
-}}
-
-
-large\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-lg">
-}}
-
-
-lg\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-m-3 cas-p-4 cas-shadow-none">
-}}
-
-
-none\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 

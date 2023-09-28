@@ -53,7 +53,9 @@ flex items and may be adjusted with \code{\link[=item]{item()}}.
 }
 \section{Centering elements}{
 Center an input above a larger element or next to the element if space
-allows.\if{html}{\out{<div class="r">}}\preformatted{div(
+allows.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(direction = c(default = "column", md = "row")),
@@ -70,58 +72,26 @@ allows.\if{html}{\out{<div class="r">}}\preformatted{div(
   )
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-column cas-flex-md-row">
-}}
-\if{html}{\out{
-<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-m-h-auto cas-m-h-md-0">
-}}
-
-
-\if{html}{\out{<label class="control-label" for="id">}}A sample input\if{html}{\out{</label>}}\if{html}{\out{
+<div id="id" class="form-group shiny-input-radiogroup shiny-input-container cas-m-h-auto cas-m-h-md-0" role="radiogroup" aria-labelledby="id-label">
+<label class="control-label" id="id-label" for="id">A sample input</label>
 <div class="shiny-options-group">
-}}
-\if{html}{\out{
 <div class="radio">
-}}
-\if{html}{\out{
 <label>
 <input type="radio" name="id" value="Choice 1" checked="checked"/>
-<span>Choice 1</span> </label>
-}}
-\if{html}{\out{
+<span>Choice 1</span>
+</label>
 </div>
-}}
-\if{html}{\out{
 <div class="radio">
-}}
-
-
-\if{html}{\out{<label>}} \if{html}{\out{<input type="radio" name="id" value="Choice 2"/>}} \if{html}{\out{<span>}}Choice
-2\if{html}{\out{</span>}} \if{html}{\out{</label>}}\if{html}{\out{
+<label>
+<input type="radio" name="id" value="Choice 2"/>
+<span>Choice 2</span>
+</label>
 </div>
-}}
-\if{html}{\out{
 </div>
-}}
-\if{html}{\out{
 </div>
-}}
-\if{html}{\out{
-<div class="cas-w-100 cas-bg-indigo cas-text-white">
-}}
-
-
-Plot placeholder\if{html}{\out{
+<div class="cas-w-100 cas-bg-indigo cas-text-white">Plot placeholder</div>
 </div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 }
 
@@ -129,7 +99,9 @@ Plot placeholder\if{html}{\out{
 This section needs pretty specific examples of how to use flex. I don’t
 know that people will want a tutorial on flex.
 
-For the sake of the demo let’s create a flex item help function.\if{html}{\out{<div class="r">}}\preformatted{flexItem <- function(...) \{
+For the sake of the demo let’s create a flex item help function.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{flexItem <- function(...) \{
   div(
     .style \%>\% padding(3) \%>\% border("blue"),
     "A flex item",
@@ -142,7 +114,9 @@ For the sake of the demo let’s create a flex item help function.\if{html}{\out
 Many of \code{flex()}’s arguments are viewport responsive. On small screens
 the flex items are placed vertically and can occupy the full width of
 the mobile device. On medium or larger screens the items are placed
-horizontally.\if{html}{\out{<div class="r">}}\preformatted{div(
+horizontally.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(
@@ -153,46 +127,19 @@ horizontally.\if{html}{\out{<div class="r">}}\preformatted{div(
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-column cas-flex-md-row">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 
 
 \emph{Resize the browser for this example.}
 
-You can keep items as a column by specifying only \code{"column"}.\if{html}{\out{<div class="r">}}\preformatted{div(
+You can keep items as a column by specifying only \code{"column"}.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(direction = "column"),  # <-
@@ -201,40 +148,11 @@ You can keep items as a column by specifying only \code{"column"}.\if{html}{\out
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-column">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 
 }
@@ -243,7 +161,9 @@ A flex item\if{html}{\out{
 
 Below is a series of examples showing how to change the horizontal
 alignment of your flex items. Let’s start by pushing items to the
-beginning of their parent container.\if{html}{\out{<div class="r">}}\preformatted{div(
+beginning of their parent container.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(justify = "start"),  # <-
@@ -253,52 +173,18 @@ beginning of their parent container.\if{html}{\out{<div class="r">}}\preformatte
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-justify-start">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 }}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
 
 
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
+We can also push items to the \strong{end}.
 
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-
-
-We can also push items to the \strong{end}.\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(justify = "end"),  # <-
@@ -308,52 +194,18 @@ We can also push items to the \strong{end}.\if{html}{\out{<div class="r">}}\pref
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-justify-end">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 }}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
 
 
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
+Without using a table layout we can \strong{center} items.
 
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-
-
-Without using a table layout we can \strong{center} items.\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(justify = "center"),  # <-
@@ -363,52 +215,18 @@ Without using a table layout we can \strong{center} items.\if{html}{\out{<div cl
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-justify-center">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 }}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
 
 
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
+You can also put space \strong{between} items
 
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-
-
-You can also put space \strong{between} items\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(justify = "between"),  # <-
@@ -418,52 +236,18 @@ You can also put space \strong{between} items\if{html}{\out{<div class="r">}}\pr
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-justify-between">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
 }}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
 
 
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
+… or put space \strong{around} items.
 
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
-}}
-
-
-… or put space \strong{around} items.\if{html}{\out{<div class="r">}}\preformatted{div(
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(justify = "around"),  # <-
@@ -473,48 +257,12 @@ A flex item\if{html}{\out{
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-justify-around">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 
 
@@ -524,7 +272,9 @@ The \code{"between"} and \code{"around"} values come from the original CSS value
 
 \subsection{\code{wrap} onto new lines}{
 
-Using flexbox we can also control how items wrap onto new lines.\if{html}{\out{<div class="r">}}\preformatted{div(
+Using flexbox we can also control how items wrap onto new lines.
+
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
   .style \%>\%
     display("flex") \%>\%
     flex(wrap = TRUE),
@@ -534,48 +284,12 @@ Using flexbox we can also control how items wrap onto new lines.\if{html}{\out{<
   flexItem()
 )
 }\if{html}{\out{</div>}}\if{html}{\out{
-<!--html_preserve-->
-}}
-\if{html}{\out{
 <div class="cas-d-flex cas-flex-wrap">
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
+<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">A flex item</div>
 </div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<div class="cas-p-3 cas-border cas-border-blue cas-border-round-md">
-}}
-
-
-A flex item\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-</div>
-}}
-\if{html}{\out{
-<!--/html_preserve-->
 }}
 
 }
