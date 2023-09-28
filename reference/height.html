@@ -54,13 +54,15 @@ the browser window.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">height</span><span class="op">(</span><span class="va">x</span>, <span class="va">size</span>, min <span class="op">=</span> <span class="cn">NULL</span>, max <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">height</span><span class="op">(</span><span class="va">x</span>, <span class="va">size</span>, min <span class="op">=</span> <span class="cn">NULL</span>, max <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
+
+
 <dt>size</dt>
 <dd><p>One of <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>, <code>"auto"</code>, or <code>"viewport"</code> specifying the height of
 the tag element.</p>
@@ -74,37 +76,42 @@ the tag element's parent to keep the element from extending beyond its
 parent.</p>
 <p>If <code>"viewport"</code>, the element's height is determined by the size of the
 browser window.</p></dd>
+
+
 <dt>min</dt>
 <dd><p>One of <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>, or <code>"viewport"</code> specifying the minimum
 height of the tag element.</p>
 <p>See <code>size</code> for details.</p></dd>
+
+
 <dt>max</dt>
 <dd><p>One of <code>25</code>, <code>50</code>, <code>75</code>, <code>100</code>, or <code>"viewport"</code> specifying the maximum
 height of the tag element.</p>
 <p>See <code>size</code> for details.</p></dd>
+
 </dl></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">     <span class="fu">height</span><span class="op">(</span><span class="st">"auto"</span>, max <span class="op">=</span> <span class="st">"viewport"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">     <span class="fu"><a href="overflow.html">overflow</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="st">"Vivamus id enim."</span>,</span>
-<span class="r-in">  <span class="st">"Nunc rutrum turpis sed pede."</span>,</span>
-<span class="r-in">  <span class="st">"Nunc aliquet, augue nec adipiscing interdum, "</span>,</span>
-<span class="r-in">  <span class="st">"lacus tellus malesuada massa, quis varius mi purus non odio."</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>     <span class="fu">height</span><span class="op">(</span><span class="st">"auto"</span>, max <span class="op">=</span> <span class="st">"viewport"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>     <span class="fu"><a href="overflow.html">overflow</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"Vivamus id enim."</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"Nunc rutrum turpis sed pede."</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"Nunc aliquet, augue nec adipiscing interdum, "</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"lacus tellus malesuada massa, quis varius mi purus non odio."</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="cas-h-auto cas-h-max-viewport cas-overflow-auto"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Vivamus id enim.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Nunc rutrum turpis sed pede.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   Nunc aliquet, augue nec adipiscing interdum, </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   lacus tellus malesuada massa, quis varius mi purus non odio.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -119,7 +126,7 @@ height of the tag element.</p>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

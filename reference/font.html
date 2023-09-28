@@ -52,40 +52,51 @@ the font of a tag element.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">font</span><span class="op">(</span><span class="va">x</span>, size <span class="op">=</span> <span class="cn">NULL</span>, weight <span class="op">=</span> <span class="cn">NULL</span>, style <span class="op">=</span> <span class="cn">NULL</span>, case <span class="op">=</span> <span class="cn">NULL</span>, family <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">font</span><span class="op">(</span><span class="va">x</span>, size <span class="op">=</span> <span class="cn">NULL</span>, weight <span class="op">=</span> <span class="cn">NULL</span>, style <span class="op">=</span> <span class="cn">NULL</span>, case <span class="op">=</span> <span class="cn">NULL</span>, family <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
+
+
 <dt>size</dt>
 <dd><p>One of <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, or <code>6</code> specifying a font size, defaults
 to <code>NULL</code>, in which case the argument is ignored. The sizes follow the
 conventions of heading tags, so <code>1</code> is the largest font and <code>6</code> the
 smallest.</p></dd>
+
+
 <dt>weight</dt>
 <dd><p>One of <code>"light"</code>, <code>"lighter"</code>, <code>"normal"</code>, <code>"bolder"</code>, or <code>"bold"</code> specifying the font
 weight, defaults to <code>NULL</code>, in which case the argument is ignored.</p>
 <p>If <code>"bolder"</code> or <code>"lighter"</code>, the font weight is changed relative to the
 current font weight.</p></dd>
+
+
 <dt>style</dt>
 <dd><p>One of <code>"italic"</code> or <code>"normal"</code> specifying the font
 style, defaults to <code>NULL</code>, in which case the argument is ignored.</p></dd>
+
+
 <dt>case</dt>
 <dd><p>One of <code>"upper"</code>, <code>"lower"</code>, or <code>"title"</code> specifying the font case,
 default to <code>NULL</code>, in which case the argument is ignored.</p></dd>
+
+
 <dt>family</dt>
 <dd><p>One of <code>"sans-serif"</code> or <code>"monospace"</code> specifying the font
 family, defaults to <code>NULL</code>, in which case the argument is ignored.</p></dd>
+
 </dl></div>
     <div id="weights">
     <h2>Weights</h2>
-    <p></p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/font.html">font</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,
-  <span class="st">"Curabitur lacinia pulvinar nibh."</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+    <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/font.html">font</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
+<span>  <span class="st">"Curabitur lacinia pulvinar nibh."</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -97,11 +108,11 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
 
 <!--/html_preserve-->
 
-<div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/font.html">font</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="st">"light"</span><span class="op">)</span>,
-  <span class="st">"Proin quam nisl, tincidunt et."</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/font.html">font</a></span><span class="op">(</span>weight <span class="op">=</span> <span class="st">"light"</span><span class="op">)</span>,</span>
+<span>  <span class="st">"Proin quam nisl, tincidunt et."</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -116,17 +127,17 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">p</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="text.html">text</a></span><span class="op">(</span><span class="st">"indigo"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu">font</span><span class="op">(</span>weight <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="st">"Phasellus at dui in ligula mollis ultricies."</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">p</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="text.html">text</a></span><span class="op">(</span><span class="st">"indigo"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu">font</span><span class="op">(</span>weight <span class="op">=</span> <span class="st">"bold"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"Phasellus at dui in ligula mollis ultricies."</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;p class="cas-text-indigo cas-font-bold"&gt;Phasellus at dui in ligula mollis ultricies.&lt;/p&gt;</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -141,7 +152,7 @@ family, defaults to <code>NULL</code>, in which case the argument is ignored.</p
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

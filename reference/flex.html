@@ -62,13 +62,15 @@ flex items and may be adjusted with <code><a href="item.html">item()</a></code>.
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">flex</span><span class="op">(</span><span class="va">x</span>, direction <span class="op">=</span> <span class="cn">NULL</span>, justify <span class="op">=</span> <span class="cn">NULL</span>, align <span class="op">=</span> <span class="cn">NULL</span>, wrap <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">flex</span><span class="op">(</span><span class="va">x</span>, direction <span class="op">=</span> <span class="cn">NULL</span>, justify <span class="op">=</span> <span class="cn">NULL</span>, align <span class="op">=</span> <span class="cn">NULL</span>, wrap <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
+
+
 <dt>direction</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>"row"</code> or <code>"column"</code> specifying the main axis of
@@ -77,6 +79,8 @@ flex items, defaults to <code>NULL</code>, in which case the argument is ignored
 right. The cross axis is the vertical.</p>
 <p>If <code>"column"</code>, the main axis is vertical and items are arranged from top to
 bottom. The cross axis is the horizontal.</p></dd>
+
+
 <dt>justify</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"between"</code>, <code>"around"</code>, or <code>"evenly"</code> specifying how items are arranged
@@ -85,35 +89,40 @@ ignored.</p>
 <p>If <code>"between"</code>, <code>"around"</code>, or <code>"evenly"</code> then items are arranged by
 distributing the space available on the main axis in-between the element's
 flex items.</p></dd>
+
+
 <dt>align</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"baseline"</code>, or <code>"stretch"</code> specifying how items are arranged on
 the cross axis, defaults to <code>NULL</code>, in which case the argument is ignored.</p></dd>
+
+
 <dt>wrap</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>TRUE</code> or <code>FALSE</code> specifying if items are forced onto one line or
 allowed to wrap onto multiple lines, defaults to <code>NULL</code>, in which case the
 argument is ignored.</p></dd>
+
 </dl></div>
     <div id="centering-elements">
     <h2>Centering elements</h2>
     <p>Center an input above a larger element or next to the element if space
-allows.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>default <span class="op">=</span> <span class="st">"column"</span>, md <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span><span class="op">)</span>,
-
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"A sample input"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Choice 1"</span>, <span class="st">"Choice 2"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/margin.html">margin</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="st">"auto"</span>, md <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span>,
-
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-      <span class="fu"><a href="../reference/width.html">width</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-      <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"indigo"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-      <span class="fu"><a href="../reference/text.html">text</a></span><span class="op">(</span><span class="st">"white"</span><span class="op">)</span>,
-    <span class="st">"Plot placeholder"</span>
-  <span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+allows.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>default <span class="op">=</span> <span class="st">"column"</span>, md <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span><span class="st">"id"</span>, <span class="st">"A sample input"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Choice 1"</span>, <span class="st">"Choice 2"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/margin.html">margin</a></span><span class="op">(</span>h <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="st">"auto"</span>, md <span class="op">=</span> <span class="fl">0</span><span class="op">)</span><span class="op">)</span>,</span>
+<span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>      <span class="fu"><a href="../reference/width.html">width</a></span><span class="op">(</span><span class="fl">100</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>      <span class="fu"><a href="../reference/background.html">background</a></span><span class="op">(</span><span class="st">"indigo"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>      <span class="fu"><a href="../reference/text.html">text</a></span><span class="op">(</span><span class="st">"white"</span><span class="op">)</span>,</span>
+<span>    <span class="st">"Plot placeholder"</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -164,29 +173,29 @@ allows.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a
     <h2>Details</h2>
     <p>This section needs pretty specific examples of how to use flex. I don’t
 know that people will want a tutorial on flex.</p>
-<p>For the sake of the demo let’s create a flex item help function.</p><div class="r"><div class="sourceCode"><pre><code><span class="va">flexItem</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="../reference/border.html">border</a></span><span class="op">(</span><span class="st">"blue"</span><span class="op">)</span>,
-    <span class="st">"A flex item"</span>,
-    <span class="va">...</span>
-  <span class="op">)</span>
-<span class="op">}</span></code></pre></div><p></p></div><div class="section">
+<p>For the sake of the demo let’s create a flex item help function.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">flexItem</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">...</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="../reference/border.html">border</a></span><span class="op">(</span><span class="st">"blue"</span><span class="op">)</span>,</span>
+<span>    <span class="st">"A flex item"</span>,</span>
+<span>    <span class="va">...</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span></span></code></pre></div><p></p></div><div class="section">
 <h3 id="different-directions">Different <code>direction</code>s<a class="anchor" aria-label="anchor" href="#different-directions"></a></h3>
 
 
 <p>Many of <code>flex()</code>’s arguments are viewport responsive. On small screens
 the flex items are placed vertically and can occupy the full width of
 the mobile device. On medium or larger screens the items are placed
-horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>
-      direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="st">"column"</span>, md <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span>  <span class="co"># &lt;-</span>
-    <span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span></span>
+<span>      direction <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="st">"column"</span>, md <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span>  <span class="co"># &lt;-</span></span>
+<span>    <span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -217,14 +226,14 @@ horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span class="
 <!--/html_preserve-->
 
 <p><em>Resize the browser for this example.</em></p>
-<p>You can keep items as a column by specifying only <code>"column"</code>.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>direction <span class="op">=</span> <span class="st">"column"</span><span class="op">)</span>,  <span class="co"># &lt;-</span>
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>You can keep items as a column by specifying only <code>"column"</code>.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>direction <span class="op">=</span> <span class="st">"column"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -261,15 +270,15 @@ horizontally.</p><div class="r"><div class="sourceCode"><pre><code><span class="
 
 <p>Below is a series of examples showing how to change the horizontal
 alignment of your flex items. Let’s start by pushing items to the
-beginning of their parent container.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"start"</span><span class="op">)</span>,  <span class="co"># &lt;-</span>
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+beginning of their parent container.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"start"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -305,15 +314,15 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 
 <!--/html_preserve-->
 
-<p>We can also push items to the <strong>end</strong>.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"end"</span><span class="op">)</span>,  <span class="co"># &lt;-</span>
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>We can also push items to the <strong>end</strong>.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"end"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -349,15 +358,15 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 
 <!--/html_preserve-->
 
-<p>Without using a table layout we can <strong>center</strong> items.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span>,  <span class="co"># &lt;-</span>
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>Without using a table layout we can <strong>center</strong> items.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"center"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -393,15 +402,15 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 
 <!--/html_preserve-->
 
-<p>You can also put space <strong>between</strong> items</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"between"</span><span class="op">)</span>,  <span class="co"># &lt;-</span>
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>You can also put space <strong>between</strong> items</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"between"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -437,15 +446,15 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 
 <!--/html_preserve-->
 
-<p>… or put space <strong>around</strong> items.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"around"</span><span class="op">)</span>,  <span class="co"># &lt;-</span>
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>… or put space <strong>around</strong> items.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"around"</span><span class="op">)</span>,  <span class="co"># &lt;-</span></span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -489,15 +498,15 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 <h3 id="wrap-onto-new-lines"><code>wrap</code> onto new lines<a class="anchor" aria-label="anchor" href="#wrap-onto-new-lines"></a></h3>
 
 
-<p>Using flexbox we can also control how items wrap onto new lines.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>wrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,
-  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>Using flexbox we can also control how items wrap onto new lines.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/flex.html">flex</a></span><span class="op">(</span>wrap <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  <span class="fu">flexItem</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -538,21 +547,21 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu">flex</span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"end"</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="st">"Aliquam posuere."</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="st">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu">flex</span><span class="op">(</span>justify <span class="op">=</span> <span class="st">"end"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="st">"Aliquam posuere."</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span><span class="st">"Lorem ipsum dolor sit amet, consectetuer adipiscing elit."</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="cas-d-flex cas-flex-justify-end"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;Aliquam posuere.&lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;Lorem ipsum dolor sit amet, consectetuer adipiscing elit.&lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -567,7 +576,7 @@ beginning of their parent container.</p><div class="r"><div class="sourceCode"><
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

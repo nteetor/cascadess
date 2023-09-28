@@ -56,66 +56,77 @@ shrunk.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">item</span><span class="op">(</span>
-  <span class="va">x</span>,
-  align <span class="op">=</span> <span class="st">"stretch"</span>,
-  order <span class="op">=</span> <span class="cn">NULL</span>,
-  fill <span class="op">=</span> <span class="cn">NULL</span>,
-  grow <span class="op">=</span> <span class="cn">NULL</span>,
-  shrink <span class="op">=</span> <span class="cn">NULL</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">item</span><span class="op">(</span></span>
+<span>  <span class="va">x</span>,</span>
+<span>  align <span class="op">=</span> <span class="st">"stretch"</span>,</span>
+<span>  order <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  fill <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  grow <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  shrink <span class="op">=</span> <span class="cn">NULL</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
+
+
 <dt>align</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>"auto"</code>, <code>"start"</code>, <code>"end"</code>, <code>"center"</code>, <code>"baseline"</code>, or <code>"stretch"</code> specifying how to align the item
 on the cross axis, defaults to <code>"stretch"</code>. Overrides the <code><a href="flex.html">flex()</a></code> <code>align</code>
 argument.</p></dd>
+
+
 <dt>order</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>0</code>, <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, or <code>7</code> specifying the order of the item, defaults to
 <code>1</code>. Items of the same order are then sorted by their source code
 order. Defaults to <code>NULL</code>, in which case the argument is ignored.</p></dd>
+
+
 <dt>fill</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>If <code>TRUE</code>, the flex parent element's horizontal space is divided
 proportionally amongst this tag element and all other flex items with <code>fill = TRUE</code>, defaults to <code>NULL</code>, in which case the argument is ignored.</p></dd>
+
+
 <dt>grow</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>TRUE</code> or <code>FALSE</code>, defaults to <code>NULL</code>, in which case the argument
 is ignored.</p></dd>
+
+
 <dt>shrink</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>TRUE</code> or <code>FALSE</code>, defaults to <code>NULL</code>, in which case the argument
 is ignored.</p></dd>
+
 </dl></div>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">      <span class="fu">item</span><span class="op">(</span>order <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
-<span class="r-in">    <span class="st">"Second"</span></span>
-<span class="r-in">  <span class="op">)</span>,</span>
-<span class="r-in">  <span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">    <span class="st">"First"</span></span>
-<span class="r-in">  <span class="op">)</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="display.html">display</a></span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>      <span class="fu">item</span><span class="op">(</span>order <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="st">"Second"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>    <span class="st">"First"</span></span></span>
+<span class="r-in"><span>  <span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="cas-d-flex"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div class="cas-item-align-stretch cas-item-order-2"&gt;Second&lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;First&lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;/div&gt;</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -130,7 +141,7 @@ is ignored.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

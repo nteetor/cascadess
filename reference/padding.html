@@ -54,36 +54,41 @@ its content or child elements.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">padding</span><span class="op">(</span><span class="va">x</span>, all <span class="op">=</span> <span class="cn">NULL</span>, top <span class="op">=</span> <span class="cn">NULL</span>, right <span class="op">=</span> <span class="cn">NULL</span>, bottom <span class="op">=</span> <span class="cn">NULL</span>, left <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">padding</span><span class="op">(</span><span class="va">x</span>, all <span class="op">=</span> <span class="cn">NULL</span>, top <span class="op">=</span> <span class="cn">NULL</span>, right <span class="op">=</span> <span class="cn">NULL</span>, bottom <span class="op">=</span> <span class="cn">NULL</span>, left <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
+
+
 <dt>all</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>1:5</code> specifying a padding for all sides of the tag element,
 defaults to <code>NULL</code>, in which case the argument is ignored. 0 removes all
 inner space and 5 adds the most space.</p></dd>
+
+
 <dt>top, right, bottom, left</dt>
 <dd><p>A <a href="responsive.html">responsive</a> argument.</p>
 <p>One of <code>1:5</code> specifying a padding for the element's respective side,
 defaults to <code>NULL</code>, in which case the argument is ignored. 0 removes all
 inner space and 5 adds the most space.</p></dd>
+
 </dl></div>
     <div id="panels">
     <h2>Panels</h2>
-    <p>Well panels.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span>
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span>
-    inputId <span class="op">=</span> <span class="st">"id"</span>,
-    label <span class="op">=</span> <span class="st">"Radio input"</span>,
-    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>
-      <span class="st">"Choice 1"</span>,
-      <span class="st">"Choice 2"</span>
-    <span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+    <p>Well panels.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span></span>
+<span>    inputId <span class="op">=</span> <span class="st">"id"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Radio input"</span>,</span>
+<span>    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Choice 1"</span>,</span>
+<span>      <span class="st">"Choice 2"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -124,18 +129,18 @@ inner space and 5 adds the most space.</p></dd>
 
 <!--/html_preserve-->
 
-<p>Shrink well padding.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span>
-    inputId <span class="op">=</span> <span class="st">"id"</span>,
-    label <span class="op">=</span> <span class="st">"Radio input"</span>,
-    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>
-      <span class="st">"Choice 1"</span>,
-      <span class="st">"Choice 2"</span>
-    <span class="op">)</span>
-  <span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>Shrink well padding.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span></span>
+<span>    inputId <span class="op">=</span> <span class="st">"id"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Radio input"</span>,</span>
+<span>    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Choice 1"</span>,</span>
+<span>      <span class="st">"Choice 2"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -176,19 +181,19 @@ inner space and 5 adds the most space.</p></dd>
 
 <!--/html_preserve-->
 
-<p>Auto width.</p><div class="r"><div class="sourceCode"><pre><code><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span>
-  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span>
-    inputId <span class="op">=</span> <span class="st">"id"</span>,
-    label <span class="op">=</span> <span class="st">"Radio input"</span>,
-    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>
-      <span class="st">"Choice 1"</span>,
-      <span class="st">"Choice 2"</span>
-    <span class="op">)</span>
-  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span>
-    <span class="fu"><a href="../reference/width.html">width</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span>
-<span class="op">)</span></code></pre></div><p></p></div>
+<p>Auto width.</p><div class="r"><div class="sourceCode"><pre><code><span><span class="fu"><a href="https://rdrr.io/pkg/shiny/man/wellPanel.html" class="external-link">wellPanel</a></span><span class="op">(</span></span>
+<span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/padding.html">padding</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/shiny/man/radioButtons.html" class="external-link">radioButtons</a></span><span class="op">(</span></span>
+<span>    inputId <span class="op">=</span> <span class="st">"id"</span>,</span>
+<span>    label <span class="op">=</span> <span class="st">"Radio input"</span>,</span>
+<span>    choices <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
+<span>      <span class="st">"Choice 1"</span>,</span>
+<span>      <span class="st">"Choice 2"</span></span>
+<span>    <span class="op">)</span></span>
+<span>  <span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>    <span class="fu"><a href="../reference/width.html">width</a></span><span class="op">(</span><span class="st">"auto"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 <!--html_preserve-->
 
 
@@ -232,19 +237,19 @@ inner space and 5 adds the most space.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">div</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="margin.html">margin</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="border.html">border</a></span><span class="op">(</span><span class="st">"green"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu">padding</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="background.html">background</a></span><span class="op">(</span><span class="st">"red"</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="st">"Donec vitae dolor."</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="margin.html">margin</a></span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="border.html">border</a></span><span class="op">(</span><span class="st">"green"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu">padding</span><span class="op">(</span><span class="fl">2</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="background.html">background</a></span><span class="op">(</span><span class="st">"red"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"Donec vitae dolor."</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="cas-m-2 cas-border cas-border-green cas-border-round-md cas-p-2 cas-bg-red"&gt;Donec vitae dolor.&lt;/div&gt;</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -259,7 +264,7 @@ inner space and 5 adds the most space.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>

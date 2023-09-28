@@ -50,26 +50,35 @@
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">border</span><span class="op">(</span><span class="va">x</span>, <span class="va">color</span>, sides <span class="op">=</span> <span class="cn">TRUE</span>, width <span class="op">=</span> <span class="fl">1</span>, round <span class="op">=</span> <span class="st">"medium"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">border</span><span class="op">(</span><span class="va">x</span>, <span class="va">color</span>, sides <span class="op">=</span> <span class="cn">TRUE</span>, width <span class="op">=</span> <span class="fl">1</span>, round <span class="op">=</span> <span class="st">"medium"</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
     <h2>Arguments</h2>
     <dl><dt>x</dt>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
+
+
 <dt>color</dt>
 <dd><p>One of <code>"blue"</code>, <code>"indigo"</code>, <code>"purple"</code>, <code>"red"</code>, <code>"orange"</code>, <code>"yellow"</code>, <code>"green"</code>, <code>"teal"</code>, <code>"cyan"</code>, or <code>"white"</code> specifying the border
 color.</p></dd>
+
+
 <dt>sides</dt>
 <dd><p>One or more of <code>"top"</code>, <code>"t"</code>, <code>"right"</code>, <code>"r"</code>, <code>"bottom"</code>, <code>"b"</code>, <code>"left"</code>, <code>"l"</code>, <code>"all"</code>, or <code>"none"</code> specifying
 which sides to add borders to, defaults to <code>TRUE</code>. <code>TRUE</code> and <code>FALSE</code> may
 be used as shorthand for all sides or no sides, respectively.</p></dd>
+
+
 <dt>width</dt>
 <dd><p>One or more of <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, or <code>5</code> specifying the width
 of the element's border, defaults to <code>1</code>.</p></dd>
+
+
 <dt>round</dt>
 <dd><p>One of <code>"small"</code>, <code>"sm"</code>, <code>"medium"</code>, <code>"md"</code>, <code>"large"</code>, <code>"lg"</code>, or <code>"none"</code> specifying how to round
 the corners of the element, defaults to <code>"medium"</code>.</p></dd>
+
 </dl></div>
     <div id="colors">
     <h2>Colors</h2>
@@ -202,17 +211,17 @@ the corners of the element, defaults to <code>"medium"</code>.</p></dd>
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/pkg/htmltools/man/builder.html" class="external-link">h3</a></span><span class="op">(</span></span>
-<span class="r-in">  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu">border</span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"bottom"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span class="r-in">    <span class="fu"><a href="text.html">text</a></span><span class="op">(</span><span class="st">"red"</span><span class="op">)</span>,</span>
-<span class="r-in">  <span class="st">"A bright, underlined heading!"</span></span>
-<span class="r-in"><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">h3</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu">border</span><span class="op">(</span><span class="st">"red"</span>, <span class="st">"bottom"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="text.html">text</a></span><span class="op">(</span><span class="st">"red"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"A bright, underlined heading!"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;h3 class="cas-border-bottom cas-border-red cas-border-round-md cas-text-red"&gt;A bright, underlined heading!&lt;/h3&gt;</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -227,7 +236,7 @@ the corners of the element, defaults to <code>"medium"</code>.</p></dd>
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
       </footer></div>
