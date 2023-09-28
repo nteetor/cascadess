@@ -2,7 +2,7 @@
 
 [![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 ![r-cmd-check](https://github.com/nteetor/cascadess/workflows/r-cmd-check/badge.svg)
-[![codecov](https://codecov.io/gh/nteetor/cascadess/branch/master/graph/badge.svg)](https://codecov.io/gh/nteetor/cascadess)
+[![codecov](https://codecov.io/gh/nteetor/cascadess/branch/main/graph/badge.svg)](https://codecov.io/gh/nteetor/cascadess)
 [![CRAN status](https://www.r-pkg.org/badges/version/cascadess)](https://CRAN.R-project.org/package=cascadess)
 
 A style pronoun and utilities for {[htmltools](https://github.com/rstudio/htmltools)} tags.
@@ -66,9 +66,9 @@ The stable version may be installed from CRAN.
 install.packages("cascadess")
 ```
 
-The development version may be installed from the master branch.
+The development version may be installed from the main branch.
 
 ``` R
-## install.packages("devtools")
-devtools::install_github("nteetor/cascadess")
+## install.packages("remotes")
+remotes::install_github("nteetor/cascadess")
 ```
