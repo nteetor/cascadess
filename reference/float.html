@@ -54,7 +54,7 @@ Note, <code>float()</code> has no effect on flex items.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">float</span><span class="op">(</span><span class="va">x</span>, <span class="va">side</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">float</span><span class="op">(</span><span class="va">x</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -63,9 +63,14 @@ Note, <code>float()</code> has no effect on flex items.</p>
 <dd><p>A tag element or <a href="style-pronoun.html">.style</a> pronoun.</p></dd>
 
 
-<dt>side</dt>
-<dd><p>A <a href="responsive.html">responsive</a> argument.</p>
-<p>One of <code>"left"</code>, <code>"left"</code>, <code>"right"</code>, <code>"right"</code>, or <code>"none"</code> specifying the side to float the element.</p></dd>
+<dt>...</dt>
+<dd><p>One of the following,</p><ul><li><p><code>"left"</code></p></li>
+<li><p><code>"l"</code></p></li>
+<li><p><code>"right"</code></p></li>
+<li><p><code>"r"</code></p></li>
+<li><p><code>"none"</code></p>
+<p>Use <a href="breakpoints.html">breakpoints</a> to specify responsive values.</p></li>
+</ul></dd>
 
 </dl></div>
 
@@ -77,9 +82,9 @@ Note, <code>float()</code> has no effect on flex items.</p>
 <span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>      <span class="fu"><a href="border.html">border</a></span><span class="op">(</span><span class="st">"red"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>      <span class="fu"><a href="border_color.html">border_color</a></span><span class="op">(</span><span class="st">"danger"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
 <span class="r-in"><span>      <span class="fu">float</span><span class="op">(</span><span class="st">"left"</span><span class="op">)</span>,</span></span>
-<span class="r-in"><span>    <span class="st">"Warning"</span></span></span>
+<span class="r-in"><span>    <span class="st">"Danger!"</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span>,</span></span>
 <span class="r-in"><span>  <span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>    <span class="st">"Nam a sapien."</span>,</span></span>
@@ -87,8 +92,10 @@ Note, <code>float()</code> has no effect on flex items.</p>
 <span class="r-in"><span>    <span class="st">"Phasellus lacus."</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> border</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> float</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div class="cas-border cas-border-red cas-border-round-md cas-float-left"&gt;Warning&lt;/div&gt;</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div class="border-danger float-left"&gt;Danger!&lt;/div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   &lt;div&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Nam a sapien.</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>     Phasellus neque orci, porta a, aliquet quis, semper a, massa.</span>
