@@ -4,13 +4,13 @@
 \alias{height}
 \title{Height}
 \usage{
-height(x, size, min = NULL, max = NULL)
+height(x, size)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, \code{"auto"}, or \code{"viewport"} specifying the height of
-the tag element.
+\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, \code{"auto"}, or \code{"viewport"} specifying the
+height of the tag element.
 
 If \code{25}, \code{50}, \code{75}, or \code{100}, the element's height is a percentage of the
 height of the parent element must also be specified.
@@ -25,16 +25,6 @@ parent.
 
 If \code{"viewport"}, the element's height is determined by the size of the
 browser window.}
-
-\item{min}{One of \code{25}, \code{50}, \code{75}, \code{100}, or \code{"viewport"} specifying the minimum
-height of the tag element.
-
-See \code{size} for details.}
-
-\item{max}{One of \code{25}, \code{50}, \code{75}, \code{100}, or \code{"viewport"} specifying the maximum
-height of the tag element.
-
-See \code{size} for details.}
 }
 \description{
 The \code{height()} function adjusts a tag element's height. Heights are specified
@@ -45,14 +35,10 @@ the browser window.
 
 library(htmltools)
 
-div(
-  .style \%>\%
-     height("auto", max = "viewport") \%>\%
-     overflow("auto"),
-  "Vivamus id enim.",
-  "Nunc rutrum turpis sed pede.",
-  "Nunc aliquet, augue nec adipiscing interdum, ",
-  "lacus tellus malesuada massa, quis varius mi purus non odio."
-)
+div() \%>\%
+  height(50)
+
+div() \%>\%
+  height("auto")
 
 }

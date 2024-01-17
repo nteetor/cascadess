@@ -5,13 +5,14 @@
 
 ```{r colors, echo=FALSE}
 div(
-  .style %>% display("flex"),
-  lapply(names(border_color_), function(color) {
+  .style %>%
+    flex_display(),
+  lapply(names(border_color_values), function(color) {
     div(
       .style %>%
         padding(4) %>%
         margin(3) %>%
-        border(color),
+        border_color(color),
       color
     )
   })
@@ -22,14 +23,16 @@ div(
 
 ```{r radii, echo=FALSE}
 div(
-  .style %>% display("flex"),
-  lapply(names(border_round_), function(round) {
+  .style %>%
+    flex_display(),
+  lapply(names(border_round_values), function(radius) {
     div(
       .style %>%
         padding(4) %>%
         margin(3) %>%
-        border("blue", round = round),
-      round
+        border_color("primary") %>%
+        rounded(radius)
+      radius
     )
   })
 )

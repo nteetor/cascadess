@@ -1,5 +1,3 @@
-context("print(.style)")
-
 test_that("masked print", {
   expect_output(print(.style), "^<pronoun>$")
 

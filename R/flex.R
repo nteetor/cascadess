@@ -1,13 +1,9 @@
-flex_direction_ <- c(
+flex_direction_values <- chr(
   row = "row",
   column = "column"
 )
 
-flex_direction <- function(direction) {
-  responsive(pick(direction, from = flex_direction_))
-}
-
-flex_justify_ <- c(
+flex_justify_values <- chr(
   start = "start",
   end = "end",
   center = "center",
@@ -16,11 +12,7 @@ flex_justify_ <- c(
   evenly = "evenly"
 )
 
-flex_justify <- function(justify) {
-  compose("justify", responsive(pick(justify, from = flex_justify_)))
-}
-
-flex_align_ <- c(
+flex_align_values <- chr(
   start = "start",
   end = "end",
   center = "center",
@@ -28,93 +20,162 @@ flex_align_ <- c(
   stretch = "stretch"
 )
 
-flex_align <- function(align) {
-  compose("items", responsive(pick(align, from = flex_align_)))
-}
+flex_gap_values <- chr(
+  `0` = "0",
+  `1` = "1",
+  `2` = "2",
+  `3` = "3",
+  `4` = "4",
+  `5` = "5"
+)
 
-flex_wrap <- function(wrap) {
-  responsive(ifelse(wrap, "wrap", "nowrap"))
+flex_wrap_values <- chr(
+  "TRUE" = "wrap",
+  "FALSE" = "nowrap"
+)
+
+flex_content_values <- chr(
+  start = "start",
+  end = "end",
+  center = "center",
+  between = "between",
+  around = "around",
+  stretch = "stretch"
+)
+
+class_flex_content <- function(prefix, content) {
+  compose_class(
+    prefix,
+    prepend_breakpoints(
+      named_match(flex_content_values, content)
+    )
+  )
 }
 
 #' Flex
 #'
 #' @description
 #'
-#' The `flex()` function adjusts the flex box layout of an element. To use
-#' the flex box layout the element must also use the flex display, see
-#' [display()]. The flex box layout is incredibly powerful and allows centering
-#' of elements vertically or horizontally, automatic adjustment of space between
-#' or around child elements, and more.
+#' The `flex_*()` functions adjust the flexbox layout of an element. The flexbox
+#' layout is incredibly powerful and allows centering of elements vertically and
+#' horizontally, automatic adjustment of space between and around child
+#' elements, and more.  To use flexbox make sure to include `flex_display()`
+#' when styling an element. For finer control over an element's display see
+#' [display()].
 #'
 #' Direct child elements of a flex box container are automatically considered
-#' flex items and may be adjusted with [item()].
+#' flex items and may be adjusted with the `item_*()` functions, see
+#' [item_align()].
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param direction A [responsive] argument.
-#'
-#'   One of `r rd_list(names(flex_direction_))` specifying the main axis of
-#'   flex items, defaults to `NULL`, in which case the argument is ignored.
-#'
-#'   If `"row"`, the main axis is horizontal and items are arranged from left to
-#'   right. The cross axis is the vertical.
-#'
-#'   If `"column"`, the main axis is vertical and items are arranged from top to
-#'   bottom. The cross axis is the horizontal.
-#'
-#' @param justify A [responsive] argument.
-#'
-#'   One of `r rd_list(names(flex_justify_))` specifying how items are arranged
-#'   on the main axis, defaults to `NULL`, in which case the argument is
-#'   ignored.
-#'
-#'   If `"between"`, `"around"`, or `"evenly"` then items are arranged by
-#'   distributing the space available on the main axis in-between the element's
-#'   flex items.
-#'
-#' @param align A [responsive] argument.
-#'
-#'   One of `r rd_list(names(flex_align_))` specifying how items are arranged on
-#'   the cross axis, defaults to `NULL`, in which case the argument is ignored.
-#'
-#' @param wrap A [responsive] argument.
-#'
-#'   One of `TRUE` or `FALSE` specifying if items are forced onto one line or
-#'   allowed to wrap onto multiple lines, defaults to `NULL`, in which case the
-#'   argument is ignored.
-#'
-#' @includeRmd man/roxygen/flex.Rmd
+#' @param ... Name-value pairs.
 #'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
 #'
 #' div(
 #'   .style %>%
-#'     display("flex") %>%
-#'     flex(justify = "end"),
-#'   div("Aliquam posuere."),
-#'   div("Lorem ipsum dolor sit amet, consectetuer adipiscing elit.")
+#'     flex_display() %>%
+#'     flex_justify("end"),
+#'   div("Item 1"),
+#'   div("Item 2"),
+#'   div("Item 3")
 #' )
 #'
-flex <- function(x, direction = NULL, justify = NULL, align = NULL,
-                 wrap = NULL) {
-  assert_subject(x)
-
-  classes <- prefix(
-    "flex",
-    flex_direction(direction),
-    flex_justify(justify),
-    flex_align(align),
-    flex_wrap(wrap)
+flex_display <- function(x) {
+  add_class(
+    x,
+    compose_class(
+      "d",
+      display_type_values,
+      "flex"
+    )
   )
-
-  add_class(x, classes)
 }
 
-item_align_ <- c(
-  auto = "auto",
+#' @rdname flex_display
+#' @export
+flex_direction <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "flex",
+      flex_direction_values,
+      ...
+    )
+  )
+}
+
+#' @rdname flex_display
+#' @export
+flex_justify <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "justify-content",
+      flex_justify_values,
+      ...
+    )
+  )
+}
+
+#' @rdname flex_display
+#' @export
+flex_align <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "align-items",
+      flex_align_values,
+      ...
+    )
+  )
+}
+
+#' @rdname flex_display
+#' @export
+flex_gap <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "gap",
+      flex_gap_values,
+      ...
+    )
+  )
+}
+
+#' @rdname flex_display
+#' @export
+flex_wrap <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "flex",
+      flex_wrap_values,
+      ...
+    )
+  )
+}
+
+#' @rdname flex_display
+#' @export
+flex_content <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "align-content",
+      flex_content_values,
+      ...
+    )
+  )
+}
+
+item_align_values <- chr(
   start = "start",
   end = "end",
   center = "center",
@@ -122,108 +183,124 @@ item_align_ <- c(
   stretch = "stretch"
 )
 
-item_align <- function(align) {
-  compose("align", responsive(pick(align, from = item_align_)))
-}
-
-item_order_ <- c(
-  `0` = 0,
-  `1` = 1,
-  `2` = 2,
-  `3` = 3,
-  `4` = 4,
-  `5` = 5
+item_order_values <- chr(
+  "0" = "0",
+  "1" = "1",
+  "2" = "2",
+  "3" = "3",
+  "4" = "4",
+  "5" = "5",
+  "first" = "first",
+  "last" = "last"
 )
 
-item_order <- function(order) {
-  compose("order", responsive(pick(order, from = item_order_)))
-}
+item_fill_values <- chr(
+  "TRUE" = "fill"
+)
 
-item_fill <- function(fill) {
-  if (!is.null(fill) && !(is_logical(fill) && all(fill))) {
-    abortf("invalid value, expecting %s or %s", "NULL", "TRUE")
-  }
+item_grow_values <- chr(
+  "TRUE" = "grow-1",
+  "FALSE" = "grow-0"
+)
 
-  fill[fill] <- "fill"
-
-  responsive(fill)
-}
-
-item_grow <- function(grow) {
-  compose("grow", responsive(ifelse(grow, "1", "0")))
-}
-
-item_shrink <- function(shrink) {
-  compose("shrink", responsive(ifelse(shrink, "1", "0")))
-}
+item_shrink_values <- chr(
+  "TRUE" = "shrink-1",
+  "FALSE" = "shrink-0"
+)
 
 #' Flex items
 #'
-#' The `item()` function adjusts a flex item. Unlike [flex()], which adjusts
-#' the flex box layout through the flex container element, `item()` is used to
-#' change specific flex items. A flex item may be reordered, expanded, or
+#' The `item_*()` functions adjust a flex item element. Unlike the `flex_*()`
+#' utilities, which adjust the flexbox layout of a parent flexbox container, the
+#' `item_*()` functions are applied to individual flex items, child elements of
+#' a flexbox container. A flex item may be realigned, reordered, expanded, or
 #' shrunk.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param align A [responsive] argument.
-#'
-#'   One of `r rd_list(names(item_align_))` specifying how to align the item
-#'   on the cross axis, defaults to `"stretch"`. Overrides the [flex()] `align`
-#'   argument.
-#'
-#' @param order A [responsive] argument.
-#'
-#'   One of `r rd_list(0:7)` specifying the order of the item, defaults to
-#'   `1`. Items of the same order are then sorted by their source code
-#'   order. Defaults to `NULL`, in which case the argument is ignored.
-#'
-#' @param fill A [responsive] argument.
-#'
-#'   If `TRUE`, the flex parent element's horizontal space is divided
-#'   proportionally amongst this tag element and all other flex items with `fill
-#'   = TRUE`, defaults to `NULL`, in which case the argument is ignored.
-#'
-#' @param grow A [responsive] argument.
-#'
-#'   One of `TRUE` or `FALSE`, defaults to `NULL`, in which case the argument
-#'   is ignored.
-#'
-#' @param shrink A [responsive] argument.
-#'
-#'   One of `TRUE` or `FALSE`, defaults to `NULL`, in which case the argument
-#'   is ignored.
+#' @param ... Name-value pairs.
 #'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
 #'
 #' div(
 #'   .style %>%
-#'     display("flex"),
+#'     flex_display(),
 #'   div(
 #'     .style %>%
-#'       item(order = 2),
+#'       item_order("last"),
+#'     "First"
+#'   ),
+#'   div(
 #'     "Second"
 #'   ),
 #'   div(
-#'     "First"
+#'     "Third"
 #'   )
 #' )
 #'
-item <- function(x, align = "stretch", order = NULL, fill = NULL, grow = NULL,
-                 shrink = NULL) {
-  assert_subject(x)
-
-  classes <- prefix(
-    "item",
-    item_align(align),
-    item_order(order),
-    item_fill(fill),
-    item_grow(grow),
-    item_shrink(shrink)
+item_align <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "align-self",
+      item_align_values,
+      ...
+    )
   )
+}
 
-  add_class(x, classes)
+#' @rdname item_align
+#' @export
+item_fill <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "flex",
+      item_fill_values,
+      ...
+    )
+  )
+}
+
+#' @rdname item_align
+#' @export
+item_grow <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "flex",
+      item_grow_values,
+      ...
+    )
+  )
+}
+
+#' @rdname item_align
+#' @export
+item_shrink <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "flex",
+      item_shrink_values,
+      ...
+    )
+  )
+}
+
+#' @rdname item_align
+#' @export
+item_order <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "order",
+      item_order_values,
+      ...
+    )
+  )
 }

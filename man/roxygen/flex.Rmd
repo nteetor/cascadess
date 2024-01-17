@@ -8,18 +8,18 @@ Center an input above a larger element or next to the element if space allows.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(direction = c(default = "column", md = "row")),
+    flex_display() %>%
+    flex_direction("column", md = "row"),
 
-  radioButtons("id", "A sample input", c("Choice 1", "Choice 2")) %>%
-    margin(h = c(xs = "auto", md = 0)),
+  radioButtons("rb1", "Radios", c("Choice 1", "Choice 2")) %>%
+    margin_horizontal("auto", md = 0),
 
   div(
     .style %>%
       width(100) %>%
-      background("indigo") %>%
-      text("white"),
-    "Plot placeholder"
+      background_color("primary") %>%
+      text_color("white"),
+    "Placeholder"
   )
 )
 ```
@@ -34,7 +34,9 @@ For the sake of the demo let's create a flex item help function.
 ```{r}
 flexItem <- function(...) {
   div(
-    .style %>% padding(3) %>% border("blue"),
+    .style %>%
+      padding(3) %>%
+      border_color("primary"),
     "A flex item",
     ...
   )
@@ -50,10 +52,8 @@ device. On medium or larger screens the items are placed horizontally.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(
-      direction = c(xs = "column", md = "row")  # <-
-    ),
+    flex_display() %>%
+    flex_direction("column", md = "row"),
   flexItem(),
   flexItem(),
   flexItem()
@@ -67,8 +67,8 @@ You can keep items as a column by specifying only `"column"`.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(direction = "column"),  # <-
+    flex_display() %>%
+    flex_direction("column"),  # <-
   flexItem(),
   flexItem(),
   flexItem()
@@ -84,8 +84,8 @@ container.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(justify = "start"),  # <-
+    flex_display() %>%
+    flex_justify("start"),  # <-
   flexItem(),
   flexItem(),
   flexItem(),
@@ -98,8 +98,8 @@ We can also push items to the **end**.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(justify = "end"),  # <-
+    flex_display() %>%
+    flex_justify("end"),  # <-
   flexItem(),
   flexItem(),
   flexItem(),
@@ -112,8 +112,8 @@ Without using a table layout we can **center** items.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(justify = "center"),  # <-
+    flex_display() %>%
+    flex_justify("center"),  # <-
   flexItem(),
   flexItem(),
   flexItem(),
@@ -140,8 +140,8 @@ div(
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(justify = "around"),  # <-
+    flex_display() %>%
+    flex_justify("around"),  # <-
   flexItem(),
   flexItem(),
   flexItem(),
@@ -159,8 +159,10 @@ Using flexbox we can also control how items wrap onto new lines.
 ```{r}
 div(
   .style %>%
-    display("flex") %>%
-    flex(wrap = TRUE),
+    flex_display() %>%
+    flex_wrap(),
+  flexItem(),
+  flexItem(),
   flexItem(),
   flexItem(),
   flexItem(),

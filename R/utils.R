@@ -1,114 +1,88 @@
-is_empty_string <- function(x) {
-  is_scalar_character(x) && x == ""
+collapse <- function(x, with = " ") {
+  paste(x, collapse = with)
 }
 
-is_truthy <- function(x) {
-  !(is_empty_string(x) ||
-      is_na(x) ||
-      is_null(x) ||
-      is_false(x))
-}
-
-are_truthy <- function(x) {
-  vapply(x, is_truthy, logical(1))
-}
-
-available <- function(x) {
-  x[are_truthy(x)]
-}
-
-compose <- function(..., .sep = "-") {
-  args <- list(...)
-
-  if (is_empty(args) || !all(are_truthy(args))) {
+named_match <- function(choices, values) {
+  if (length(values) < 1) {
     return(NULL)
   }
 
-  paste(..., sep = .sep)
+  choices_names <- names(choices)
+  values_names <- names(values)
+
+  chr_values <- as.character(values)
+  matched_choices <- choices[chr_values]
+
+  names(matched_choices) <- values_names
+
+  matched_choices
 }
 
-endash <- function(...) {
-  paste(..., sep = "-", collapse = " ")
-}
+compose_class <- function(class_prefix, class_values, ...,
+                          prefix_values = NULL, env = caller_env()) {
+  local_error_call(env)
+  breakpoint_pairs <- c(...)
 
-prefix <- function(...) {
-  args <- available(list(...))
+  assert_breakpoints(breakpoint_pairs)
+  assert_values(breakpoint_pairs, class_values)
+  assert_values(class_prefix, prefix_values)
 
-  classes <- args[-1]
-  default <- args[1]
+  matched_pairs <- named_match(class_values, breakpoint_pairs)
 
-  ns <- names(default)
+  class_suffix <- prepend_breakpoints(matched_pairs)
+  prefix <- pronoun_get_prefix(class_prefix)
 
-  if (is.null(ns)) {
-    ns <- default[[1]]
-  }
+  message(class_prefix)
 
-  pref <- pronoun_get_prefix(ns)
-
-  if (is.null(pref)) {
-    pref <- endash("cas", default[[1]])
-  }
-
-  vapply(classes, function(x) {
-    if (is_true(x)) {
-      pref
+  classes <- {
+    if (prefix == "") {
+      class_suffix
     } else {
-      endash(pref, x)
-    }
-  }, character(1))
-}
-
-pick <- function(from, x) {
-  if (is_null(x)) {
-    return(NULL)
-  }
-
-  nms <- names(x)
-  x <- as.character(x)
-  picked <- from[x]
-
-  if (anyNA(picked)) {
-    invalid <- setdiff(x, names(from))[1]
-    abortf("invalid value %s", invalid)
-  }
-
-  names(picked) <- nms
-
-  picked
-}
-
-caller_trace <- function(n = 1) {
-  trace_back(bottom = caller_env(n + 1))
-}
-
-abortf <- function(s, ..., collapse = ", ", trace = caller_trace(2)) {
-  args <- lapply(list(...), function(x) paste0(bold$red(x), collapse = collapse))
-
-  msg <- exec(sprintf, s, !!!args)
-
-  abort(msg, trace = trace)
-}
-
-# borrowed from rlang
-local_exit <- function(expr, frame = caller_env()) {
-  expr <- enexpr(expr)
-
-   if (is_reference(frame, global_env())) {
-    is_global_frame <- sys.parents() == 0
-    if (sum(is_global_frame) == 1) {
-      abort("Can't add an exit event at top-level")
+      ifelse(
+        class_suffix == "",
+        prefix,
+        paste(prefix, class_suffix, sep = "-")
+      )
     }
   }
 
-  expr <- call2(on.exit, expr, add = TRUE)
-  eval_bare(expr, frame)
-
-  invisible(expr)
+  collapse(classes)
 }
 
-assert_subject <- function(x) {
-  if (!(is_style_pronoun(x) || is_pronoun_box(x) || is_tag(x))) {
-    abortf("cannot apply style to a %s", class(x))
+assert_subject <- function(subject, call = caller_env()) {
+  if (!(is_style_pronoun(subject) ||
+          is_pronoun_box(subject) ||
+          is_tag(subject))) {
+
+    abort(
+      "subject must be the `.style` pronoun or tag element",
+      call = call
+    )
+  }
+}
+
+assert_values <- function(passed_values, values_map, call = caller_env()) {
+  if (length(values_map) < 1) {
+    return()
+  }
+
+  if (is.null(passed_values)) {
+    abort("no values specified", call = call)
+  }
+
+  passed_values <- unname(passed_values)
+  allowed_values <- names2(values_map)
+
+  if (!all(passed_values %in% allowed_values)) {
+    invalid_values <- setdiff(passed_values, allowed_values)
+    quoted_values <- dQuote(invalid_values, FALSE)
+
+    pluralize <- length(invalid_values) > 1
+    msg_fmt <- if (pluralize) "invalid values %s" else "invalid value %s"
+
+    msg <- sprintf(msg_fmt, collapse(quoted_values, ", "))
+
+    abort(msg, call = call)
   }
 }
 
@@ -125,6 +99,8 @@ is_tag <- function(x) {
 }
 
 add_class <- function(x, ...) {
+  assert_subject(x)
+
   if (is_style_pronoun(x)) {
     pronoun_add_class(x, ...)
   } else if (is_pronoun_box(x)) {
@@ -135,7 +111,7 @@ add_class <- function(x, ...) {
 }
 
 pronoun_add_class <- function(x, ...) {
-  x$class <- paste(c(x$class, ...), collapse = " ")
+  x$class <- collapse(c(x$class, ...))
   splice(x)
 }
 
@@ -143,13 +119,13 @@ pronoun_box_add_class <- function(x, ...) {
   x <- unbox(x)
 
   if (!is_style_pronoun(x)) {
-    abortf("unexpected pronoun box contents %s", class(x))
+    abort("unexpected pronoun box contents")
   }
 
   pronoun_add_class(x, ...)
 }
 
 tag_add_class <- function(x, ...) {
-  x$attribs$class <- paste(c(x$attribs$class, ...), collapse = " ")
+  x$attribs$class <- collapse(c(x$attribs$class, ...))
   x
 }

@@ -3,19 +3,19 @@
 
 # Buttons
 
-Use `background()` to modify shiny's action buttons.
+Use `background_*()` to modify shiny's action buttons.
 
 ```{r}
-actionButton("id", "Take action") %>%
-  background("green")
+actionButton("ab1", "Take action") %>%
+  background_color("info")
 ```
 
 With a couple other functions we can take our improvement a step further.
 
 ```{r}
-actionButton("id", "Take action") %>%
-  background("green") %>%
-  border("green") %>%
+actionButton("ab1", "Take action") %>%
+  background_color("info") %>%
+  border_color("info") %>%
   shadow("small")
 ```
 
@@ -24,10 +24,10 @@ Shiny's download buttons include `...`, so we can use the `.style` pronoun!
 ```{r}
 downloadButton(
   .style %>%
-    background("white") %>%
-    border("blue"),
-  outputId = "dwnld",
-  label = "Do a download",
+    background_color("secondary") %>%
+    border_color("secondary"),
+  outputId = "db1",
+  label = "Download",
   class = NULL
 )
 ```
@@ -38,13 +38,13 @@ downloadButton(
 sidebarLayout(
   sidebarPanel(
     .style %>%
-      background("blue"),
-    "It's alive"
+      background_color("primary"),
+    "Sidebar panel"
   ),
   mainPanel(
     .style %>%
-      background("red"),
-    "It's panel"
+      background_color("secondary"),
+    "Main panel"
   )
 )
 ```
@@ -54,17 +54,22 @@ sidebarLayout(
 ```{r colors, echo=FALSE}
 div(
   .style %>%
-    display("flex") %>%
-    flex(justify = "between", wrap = TRUE),
-  lapply(names(background_color_), function(color) {
+    flex_display() %>%
+    flex_justify("between") %>%
+    flex_wrap(),
+  lapply(names(background_color_values), function(color) {
     div(
       .style %>%
         margin(3),
-      div(color) %>% text(align = "center"),
+      div(
+        .style %>%
+          text_align("center"),
+        color
+      ),
       div(
         .style %>%
           padding(5) %>%
-          background(color)
+          background_color(color)
       )
     )
   })

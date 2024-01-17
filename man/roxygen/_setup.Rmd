@@ -1,9 +1,10 @@
-```{r setup, include = FALSE}
+```{r setup, include=FALSE}
 library(htmltools)
 library(shiny)
 
 knitr::opts_chunk$set(
   results = "asis",
-  eval = TRUE
+  eval = TRUE,
+  echo = TRUE
 )
 ```

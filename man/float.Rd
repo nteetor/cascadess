@@ -4,14 +4,21 @@
 \alias{float}
 \title{Floats}
 \usage{
-float(x, side)
+float(x, ...)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{side}{A \link{responsive} argument.
+\item{...}{One of the following,
+\itemize{
+\item \code{"left"}
+\item \code{"l"}
+\item \code{"right"}
+\item \code{"r"}
+\item \code{"none"}
 
-One of \code{"left"}, \code{"left"}, \code{"right"}, \code{"right"}, or \code{"none"} specifying the side to float the element.}
+Use \link{breakpoints} to specify responsive values.
+}}
 }
 \description{
 The \code{float()} function places an element to the left or right side of its
@@ -25,9 +32,9 @@ library(htmltools)
 div(
   div(
     .style \%>\%
-      border("red") \%>\%
+      border_color("danger") \%>\%
       float("left"),
-    "Warning"
+    "Danger!"
   ),
   div(
     "Nam a sapien.",

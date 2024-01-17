@@ -1,108 +1,93 @@
-border_color_ <- c(
-  theme_colors,
-  white = "white"
+border_include_values <- chr(
+  "TRUE" = "",
+  "FALSE" = "0"
 )
-
-border_color <- function(color) {
-  pick(color, from = border_color_)
-}
-
-border_sides_ <- c(
-  top = "top",
-  t = "top",
-  right = "right",
-  r = "right",
-  bottom = "bottom",
-  b = "bottom",
-  left = "left",
-  l = "left",
-  all = "all",
-  none = "none"
-)
-
-border_sides <- function(sides) {
-  if (is_true(sides)) {
-    TRUE
-  } else if (is_false(sides)) {
-    "none"
-  } else {
-    pick(sides, from = border_sides_)
-  }
-}
-
-border_width_ <- c(
-  `1` = 1,
-  `2` = 2,
-  `3` = 3,
-  `4` = 4,
-  `5` = 5
-)
-
-border_width <- function(width) {
-  if (width == 1) {
-    return(NULL)
-  }
-
-  pick(as.character(width), from = border_width_)
-}
-
-border_round_ <- c(
-  small = "sm",
-  sm = "sm",
-  medium = "md",
-  md = "md",
-  large = "lg",
-  lg = "lg",
-  none = "none"
-)
-
-border_round <- function(round) {
-  compose("round", pick(round, from = border_round_))
-}
 
 #' Borders
 #'
-#' The `border()` function adjusts a tag element's borders.
+#' The `border_all()` and `border_<side>()` functions adjusts a tag element's
+#' borders.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param color One of `r rd_list(names(border_color_))` specifying the border
-#'   color.
+#' @param include One of `r rd_list(names(border_include_values))`, defaults to
+#'   `r rd_default(border_all, include)`.
 #'
-#' @param sides One or more of `r rd_list(names(border_sides_))` specifying
-#'   which sides to add borders to, defaults to `TRUE`. `TRUE` and `FALSE` may
-#'   be used as shorthand for all sides or no sides, respectively.
-#'
-#' @param width One or more of `r rd_list(border_width_)` specifying the width
-#'   of the element's border, defaults to `1`.
-#'
-#' @param round One of `r rd_list(names(border_round_))` specifying how to round
-#'   the corners of the element, defaults to `"medium"`.
-#'
-#' @includeRmd man/roxygen/border.Rmd
-#'
+#' @family border
 #' @export
+#'
+#' @include theme.R
 #' @examples
 #'
 #' library(htmltools)
 #'
 #' h3(
 #'   .style %>%
-#'     border("red", "bottom") %>%
-#'     text("red"),
-#'   "A bright, underlined heading!"
+#'     border_bottom() %>%
+#'     border_color(theme_warning()) %>%
+#'     text_color(theme_warning()),
+#'   "Warning"
 #' )
 #'
-border <- function(x, color, sides = TRUE, width = 1, round = "medium") {
-  assert_subject(x)
-
-  classes <- prefix(
-    "border",
-    border_sides(sides),
-    border_color(color),
-    border_width(width),
-    border_round(round)
+border_all <- function(x, include = TRUE) {
+  add_class(
+    x,
+    compose_class(
+      "border",
+      border_include_values,
+      include
+    )
   )
+}
 
-  add_class(x, classes)
+#' @rdname border_all
+#' @export
+border_top <- function(x, include = TRUE) {
+  add_class(
+    x,
+    compose_class(
+      "border-top",
+      border_include_values,
+      include
+    )
+  )
+}
+
+#' @rdname border_all
+#' @export
+border_right <- function(x, include = TRUE) {
+  add_class(
+    x,
+    compose_class(
+      "border-right",
+      border_include_values,
+      include
+    )
+  )
+}
+
+#' @rdname border_all
+#' @export
+border_bottom <- function(x, include = TRUE) {
+  add_class(
+    x,
+    compose_class(
+      "border-bottom",
+      border_include_values,
+      include
+    )
+  )
+}
+
+#' @rdname border_all
+#' @export
+border_left <- function(x, include = TRUE) {
+  add_class(
+    x,
+    compose_class(
+      "border-left",
+      border_include_values,
+      include
+    )
+  )
 }

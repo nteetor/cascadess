@@ -1,109 +1,94 @@
-font_size_ <- c(
-  `1` = 1,
-  `2` = 2,
-  `3` = 3,
-  `4` = 4,
-  `5` = 5,
-  `6` = 6
+font_size_values <- chr(
+  "1" = "1",
+  "2" = "2",
+  "3" = "3",
+  "4" = "4",
+  "5" = "5",
+  "6" = "6"
 )
 
-font_size <- function(size) {
-  compose("size", pick(size, from = font_size_))
-}
-
-font_weight_ <- c(
-  light = "light",
-  lighter = "lighter",
-  normal = "normal",
+font_weight_values <- chr(
+  bold = "bold",
   bolder = "bolder",
-  bold = "bold"
+  semibold = "semibold",
+  medium = "medium",
+  normal = "normal",
+  light = "light",
+  lighter = "lighter"
 )
 
-font_weight <- function(weight) {
-  pick(weight, from = font_weight_)
-}
-
-font_style_ <- c(
+font_style_values <- chr(
   italic = "italic",
   normal = "normal"
 )
 
-font_style <- function(style) {
-  pick(style, from = font_style_)
-}
-
-font_case_ <- c(
-  upper = "upper",
-  lower = "lower",
-  title = "title"
-)
-
-font_case <- function(case) {
-  pick(case, from = font_case_)
-}
-
-font_family_ <- c(
-  `sans-serif` = "sans-serif",
-  monospace = "monospace"
-)
-
-font_family <- function(family) {
-  pick(family, from = font_family_)
-}
-
 #' Font
 #'
-#' The `font()` function adjusts the size, weight, style, case, and family of
-#' the font of a tag element.
+#' The `font_*()` functions adjust the size, weight, and style of a tag
+#' element's font.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param size One of `r rd_list(font_size_)` specifying a font size, defaults
-#'   to `NULL`, in which case the argument is ignored. The sizes follow the
-#'   conventions of heading tags, so `1` is the largest font and `6` the
-#'   smallest.
+#' @param size One of `r rd_list(names(font_size_values))` specifying a font
+#'   size, defaults to `NULL`, in which case the argument is ignored. The sizes
+#'   follow the conventions of heading tags, so `1` is the largest font and `6`
+#'   the smallest.
 #'
-#' @param weight One of `r rd_list(names(font_weight_))` specifying the font
+#' @param weight One of `r rd_list(names(font_weight_values))` specifying the font
 #'   weight, defaults to `NULL`, in which case the argument is ignored.
 #'
 #'   If `"bolder"` or `"lighter"`, the font weight is changed relative to the
 #'   current font weight.
 #'
-#' @param style One of `r rd_list(names(font_style_))` specifying the font
+#' @param style One of `r rd_list(names(font_style_values))` specifying the font
 #'   style, defaults to `NULL`, in which case the argument is ignored.
 #'
-#' @param case One of `r rd_list(names(font_case_))` specifying the font case,
-#'   default to `NULL`, in which case the argument is ignored.
-#'
-#' @param family One of `r rd_list(names(font_family_))` specifying the font
-#'   family, defaults to `NULL`, in which case the argument is ignored.
-#'
-#' @includeRmd man/roxygen/font.Rmd
-#'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
 #'
 #' p(
 #'   .style %>%
-#'     text("indigo") %>%
-#'     font(weight = "bold"),
-#'   "Phasellus at dui in ligula mollis ultricies."
+#'     text_color("info") %>%
+#'     font_weight("bold"),
+#'   "The values above will include more value in v2.0"
 #' )
 #'
-font <- function(x, size = NULL, weight = NULL, style = NULL, case = NULL,
-                 family = NULL) {
-  assert_subject(x)
-
-  classes <- prefix(
-    "font",
-    font_size(size),
-    font_weight(weight),
-    font_style(style),
-    font_case(case),
-    font_family(family)
+font_size <- function(x, size) {
+  add_class(
+    x,
+    compose_class(
+      "fs",
+      font_size_values,
+      size
+    )
   )
+}
 
-  add_class(x, classes)
+#' @rdname font_size
+#' @export
+font_weight <- function(x, weight) {
+  add_class(
+    x,
+    compose_class(
+      "fw",
+      font_weight_values,
+      weight
+    )
+  )
+}
+
+#' @rdname font_size
+#' @export
+font_style <- function(x, style) {
+  add_class(
+    x,
+    compose_class(
+      "fst",
+      font_style_values,
+      style
+    )
+  )
 }

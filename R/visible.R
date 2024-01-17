@@ -1,10 +1,7 @@
-visible_value <- function(value) {
-  if (is_true(value)) {
-    "visible"
-  } else if (is_false(value)) {
-    "invisible"
-  }
-}
+visible_show_values <- chr(
+  "TRUE" = "visible",
+  "FALSE" = "invisible"
+)
 
 #' Element visibility
 #'
@@ -12,12 +9,12 @@ visible_value <- function(value) {
 #' invisible element is both visually hidden and is also hidden from screen
 #' readers.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param value One of `TRUE` or `FALSE` specifying if the element is visible,
-#'   defaults to `TRUE`.
+#' @param show `r rd_list(names(visible_show_values))`.
 #'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
@@ -25,10 +22,13 @@ visible_value <- function(value) {
 #' div("I am hidden") %>%
 #'   visible(FALSE)
 #'
-visible <- function(x, value) {
-  assert_subject(x)
-
-  class <- visible_value(value)
-
-  add_class(x, class)
+visible <- function(x, show) {
+  add_class(
+    x,
+    compose_class(
+      "",
+      visible_show_values,
+      show
+    )
+  )
 }

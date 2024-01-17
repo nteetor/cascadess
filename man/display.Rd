@@ -4,62 +4,17 @@
 \alias{display}
 \title{Display}
 \usage{
-display(x, type)
+display(x, ...)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{type}{A \link{responsive} argument.
-
-One of \code{"inline"}, \code{"inline-block"}, \code{"block"}, \code{"grid"}, \code{"table"}, \code{"table-cell"}, \code{"table-row"}, \code{"flex"}, \code{"inline-flex"}, or \code{"none"}.}
+\item{...}{Name-value pairs specifying \link{breakpoints}.}
 }
 \description{
-The \code{display()} function adjusts how a tag element is rendered. For example,
-to use the flex box layout the display must be \code{"flex"}.
+The \code{display()} function adjusts how a tag element and its contents are
+rendered.
 }
-\section{Block vs inline}{
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
-  div(
-    .style \%>\%
-      border("blue"),
-    "block"
-  ),
-  div(
-    .style \%>\%
-      border("blue"),
-    "block"
-  )
-)
-}\if{html}{\out{</div>}}\if{html}{\out{
-<div>
-<div class="cas-border cas-border-blue cas-border-round-md">block</div>
-<div class="cas-border cas-border-blue cas-border-round-md">block</div>
-</div>
-}}
-
-
-\if{html}{\out{<div class="sourceCode r">}}\preformatted{div(
-  div(
-    .style \%>\%
-      border("blue") \%>\%
-      display("inline"),
-    "inline"
-  ),
-  div(
-    .style \%>\%
-      border("blue") \%>\%
-      display("inline"),
-    "inline"
-  )
-)
-}\if{html}{\out{</div>}}\if{html}{\out{
-<div>
-<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">inline</div>
-<div class="cas-border cas-border-blue cas-border-round-md cas-d-inline">inline</div>
-</div>
-}}
-}
-
 \examples{
 
 library(htmltools)
@@ -68,7 +23,7 @@ library(htmltools)
 div(
   .style \%>\%
     display("flex") \%>\%
-    flex(justify = "center"),
+    flex_justify("center"),
   "Powerful stuff"
 )
 

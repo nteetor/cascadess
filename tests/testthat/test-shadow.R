@@ -1,11 +1,9 @@
-context("shadow()")
-
-test_that("adds class", {
+test_that("adds htmls class", {
   div() %>% shadow("small") %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-shadow-sm")
+    expect_shiny_tag() %>%
+    expect_html_class("shadow-sm")
 
   div(.style %>% shadow("lg")) %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-shadow-lg")
+    expect_shiny_tag() %>%
+    expect_html_class("shadow-lg")
 })

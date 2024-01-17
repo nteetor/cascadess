@@ -1,27 +1,21 @@
-context("add_class()")
-
-test_that("add to tag element", {
+test_that("add class to tag element", {
   el <- add_class(div(), "test-class")
 
-  el %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("test-class")
+  expect_s3_class(el, "shiny.tag")
+  expect_html_class(el, "test-class")
 })
 
-test_that("add to style pronoun", {
-  s <- add_class(.style, "test-class")
+test_that("add class to style pronoun", {
+  pronoun <- add_class(.style, "test-class")
 
-  expect_named(rlang::unbox(s), "class")
-  expect_equal(rlang::unbox(s)$class, "test-class")
+  expect_named(unbox(pronoun), "class")
+  expect_equal(unbox(pronoun)$class, "test-class")
 })
 
-test_that("add to spliced pronoun", {
-  s1 <- add_class(.style, "test-class-1")
-  s2 <- add_class(s1, "test-class-2")
+test_that("add class to spliced pronoun", {
+  pronoun <- add_class(.style, "test-class-1")
+  spliced <- add_class(pronoun, "test-class-2")
 
-  expect_named(rlang::unbox(s2), "class")
-  expect_equal(
-    rlang::unbox(s2)$class,
-    "test-class-1 test-class-2"
-  )
+  expect_named(unbox(spliced), "class")
+  expect_equal(unbox(spliced)$class, "test-class-1 test-class-2")
 })

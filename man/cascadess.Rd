@@ -22,9 +22,9 @@ shinyApp(
     cascadess(),
     div(
       .style \%>\%
-        padding(3) \%>\%
-        background("indigo") \%>\%
-        font("light"),
+        padding_all(3) \%>\%
+        background_color("light") \%>\%
+        font_weight("light"),
       "Etiam laoreet quam sed arcu."
     )
   ),

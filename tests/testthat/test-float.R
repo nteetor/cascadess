@@ -1,16 +1,17 @@
-context("float()")
+test_that("adds html class", {
+  tag1 <- div() %>%
+    float("left")
 
-test_that("adds class", {
-  div() %>%
-    float("left") %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-float-left")
+  expect_s3_class(tag1, "shiny.tag")
+  expect_html_class(tag1, "float-left")
 
-  div(.style %>% float("left")) %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-float-left")
+  tag2 <- div(.style %>% float("left"))
 
-  div(.style %>% float("none")) %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-float-none")
+  expect_s3_class(tag2, "shiny.tag")
+  expect_html_class(tag2, "float-left")
+
+  tag3 <- div(.style %>% float("none"))
+
+  expect_s3_class(tag3, "shiny.tag")
+  expect_html_class(tag3, "float-none")
 })

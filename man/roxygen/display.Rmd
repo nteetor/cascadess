@@ -7,12 +7,12 @@
 div(
   div(
     .style %>%
-      border("blue"),
+      border("primary"),
     "block"
   ),
   div(
     .style %>%
-      border("blue"),
+      border("primary"),
     "block"
   )
 )
@@ -22,13 +22,13 @@ div(
 div(
   div(
     .style %>%
-      border("blue") %>%
+      border("primary") %>%
       display("inline"),
     "inline"
   ),
   div(
     .style %>%
-      border("blue") %>%
+      border("primary") %>%
       display("inline"),
     "inline"
   )

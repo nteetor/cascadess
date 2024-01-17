@@ -4,13 +4,12 @@
 \alias{visible}
 \title{Element visibility}
 \usage{
-visible(x, value)
+visible(x, show)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{value}{One of \code{TRUE} or \code{FALSE} specifying if the element is visible,
-defaults to \code{TRUE}.}
+\item{show}{\code{TRUE} or \code{FALSE}.}
 }
 \description{
 The \code{visible()} function changes the visibility of a tag element. An

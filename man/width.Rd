@@ -4,13 +4,13 @@
 \alias{width}
 \title{Width}
 \usage{
-width(x, size, min = NULL, max = NULL)
+width(x, size)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, \code{"auto"}, or \code{"viewport"} specifying the width of
-the tag element.
+\item{size}{One of \code{25}, \code{50}, \code{75}, \code{100}, \code{"auto"}, or \code{"viewport"} specifying the width
+of the tag element.
 
 If \code{25}, \code{50}, \code{75}, \code{100}, the element's width is a percentage of the
 width of the parent element must also be specified.
@@ -18,42 +18,28 @@ width of the parent element must also be specified.
 These percentages do not account for margins or padding and may cause an
 element to extend beyond its parent element.
 
-If \code{"auto"}, the element's width is determined by the browser.  The
-browser will take into account the height, padding, margins, and border of
-the tag element's parent to keep the element from extending beyond its
-parent.
+If \code{"auto"}, the element's width is determined by the browser.  The browser
+will take into account the height, padding, margins, and border of the tag
+element's parent to keep the element from extending beyond its parent.
 
 If \code{"viewport"}, the element's height is determined by the size of the
 browser window.}
-
-\item{min}{One of \code{25}, \code{50}, \code{75}, \code{100}, or \code{"viewport"} specifying the minimum width
-of the tag element, defaults to \code{NULL}, in which case the argument is
-ignored.
-
-See \code{size} for details.}
-
-\item{max}{One of \code{25}, \code{50}, \code{75}, \code{100}, or \code{"viewport"} specifying the maximum width
-of the tag element, defaults to \code{NULL}, in which case the argument is
-ignored.
-
-See \code{size} for details.}
 }
 \description{
-The `width() function adjusts a tag element's width. Widths are specified
+The \code{width()} function adjusts a tag element's width. Widths are specified
 relative the width of a parent element, an element's content, or the size of
 the browser window.
 }
 \examples{
 
-library(htmltools)
+.style \%>\%
+  width(50)
 
-div(
-  .style \%>\%
-    width(c(xs = 100, md = 50)) \%>\%
-    margin(c(xs = 2, md = "auto")),
-  "In id erat non orci commodo lobortis.",
-  "Suspendisse potenti.",
-  "Nam euismod tellus id erat."
-)
+.style \%>\%
+  width(100)
+
+.style \%>\%
+  width(25) \%>\%
+  text_wrap(TRUE)
 
 }

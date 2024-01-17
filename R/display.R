@@ -1,32 +1,25 @@
-display_type_ <- c(
-  inline = "inline",
-  `inline-block` = "inline-block",
-  block = "block",
-  grid = "grid",
-  table = "table",
-  `table-cell` = "table-cell",
-  `table-row` = "table-row",
-  flex = "flex",
-  `inline-flex` = "inline-flex",
-  none = "none"
+display_type_values <- chr(
+  "none" = "none",
+  "inline" = "inline",
+  "inline-block" = "inline-block",
+  "block" = "block",
+  "grid" = "grid",
+  "inline-grid" = "inline-grid",
+  "table" = "table",
+  "table-cell" = "table-cell",
+  "table-row" = "table-row",
+  "flex" = "flex",
+  "inline-flex" = "inline-flex"
 )
-
-display_type <- function(type) {
-  responsive(pick(type, from = display_type_))
-}
 
 #' Display
 #'
-#' The `display()` function adjusts how a tag element is rendered. For example,
-#' to use the flex box layout the display must be `"flex"`.
+#' The `display()` function adjusts how a tag element and its contents are
+#' rendered.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param type A [responsive] argument.
-#'
-#'   One of `r rd_list(names(display_type_))`.
-#'
-#' @includeRmd man/roxygen/display.Rmd
+#' @param ... Name-value pairs specifying [breakpoints].
 #'
 #' @export
 #' @examples
@@ -37,17 +30,17 @@ display_type <- function(type) {
 #' div(
 #'   .style %>%
 #'     display("flex") %>%
-#'     flex(justify = "center"),
+#'     flex_justify("center"),
 #'   "Powerful stuff"
 #' )
 #'
-display <- function(x, type) {
-  assert_subject(x)
-
-  class <- prefix(
-    display = "d",
-    display_type(type)
+display <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "d",
+      display_type_values,
+      ...
+    )
   )
-
-  add_class(x, class)
 }

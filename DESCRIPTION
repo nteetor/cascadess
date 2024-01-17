@@ -20,40 +20,51 @@ Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Config/testthat/edition: 3
 Depends:
     R (>= 3.5)
 Imports:
-    crayon,
     htmltools (>= 0.4.0),
-    magrittr,
+    magrittr (>= 1.5),
     rlang,
     utils
 Suggests:
+    cli,
     rmarkdown,
     shiny,
     testthat (>= 2.1.0)
 Collate:
-    'align.R'
-    'utils.R'
-    'background.R'
+    'background-color.R'
+    'border-color.R'
+    'border-width.R'
+    'theme.R'
     'border.R'
+    'breakpoints.R'
     'cascadess.R'
     'display.R'
-    'eval-style.R'
     'flex.R'
     'float.R'
     'font.R'
-    'gap.R'
     'height.R'
+    'import-standalone-defer.R'
     'margin.R'
     'overflow.R'
     'padding.R'
     'position.R'
     'reexports.R'
-    'responsive.R'
+    'rounded.R'
     'shadow.R'
-    'text.R'
+    'style-pronoun.R'
+    'text-alignment.R'
+    'text-break.R'
+    'text-color.R'
+    'text-decoration.R'
+    'text-selection.R'
+    'text-transform.R'
+    'text-wrap.R'
     'utils-docs.R'
+    'utils.R'
+    'vertical-alignment.R'
     'visible.R'
     'width.R'
     'zzz.R'

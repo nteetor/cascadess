@@ -1,12 +1,6 @@
-context("padding()")
-
-test_that("adds class", {
+test_that("adds html class", {
   div() %>%
-    padding(3) %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-p-3")
-
-  div(.style %>% padding(bottom = 5)) %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-p-b-5")
+    padding_all(3) %>%
+    expect_shiny_tag() %>%
+    expect_html_class("p-3")
 })

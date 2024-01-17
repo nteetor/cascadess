@@ -1,4 +1,4 @@
-position_value_ <- c(
+position_values <- chr(
   static = "static",
   relative = "relative",
   absolute = "absolute",
@@ -6,88 +6,153 @@ position_value_ <- c(
   sticky = "sticky"
 )
 
-position_value <- function(value) {
-  pick(value, from = position_value_)
+position_helper <- function(x, value, env = caller_env()) {
+  add_class(
+    x,
+    compose_class(
+      "position",
+      position_values,
+      value,
+      env = env
+    )
+  )
 }
 
-position_side_ <- c(
-  `0` = 0,
-  `50` = 50,
-  `100` = 100
-)
-
-position_top <- function(top) {
-  compose("t", pick(top, from = position_side_))
-}
-
-position_right <- function(right) {
-  compose("r", pick(right, from = position_side_))
-}
-
-position_bottom <- function(bottom) {
-  compose("b", pick(bottom, from = position_side_))
-}
-
-position_left <- function(left) {
-  compose("l", pick(left, from = position_side_))
-}
-
-position_by_ <- c(
-  edge = "",
-  center = "by-center"
-)
-
-position_by <- function(by) {
-  x <- pick(by, from = position_by_)
-
-  if (by == "edge") {
-    NULL
-  } else if (by == "center") {
-    x
-  }
-}
-
-#' Position an element
+#' Positioning elements
 #'
-#' The `position()` adjusts how an element is positioned. Positioning could be
-#' absolute or relative. Furthermore, you can arrange an element within its parent
-#' element using `top`, `right`, `bottom`, or `left`.
+#' The `position_*()` functions adjust set the position of an element.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param value One of `r rd_list(position_value_)` specifying how the element is
-#'   positioned.
-#'
-#' @param top,right,bottom,left One of `r rd_list(position_side_)` specifying
-#'   where the element is positioned. By default these values position an
-#'   element using the element's edge, see argument `by`. Defaults to `NULL`, in
-#'   which case the argument is ignored.
-#'
-#' @param by One of `r rd_list(position_by_)` specifying the element's
-#'   positioning anchor, defaults to `"edge"`.
-#'
+#' @family position
 #' @export
+#'
 #' @examples
 #'
-#' library(htmltools)
+#' .style %>%
+#'   position_absolute() %>%
+#'   position_top(50)
 #'
-#' div(
-#'   div(.style %>% position("absolute", t = 0, r = 0))
-#' )
+#' .style %>%
+#'   position_relative() %>%
+#'   position_left(50) %>%
+#'   position_translate()
 #'
-position <- function(x, value, top = NULL, right = NULL, bottom = NULL,
-                     left = NULL, by = "edge") {
-  assert_subject(x)
+position_absolute <- function(x) {
+  position_helper(x, "absolute")
+}
 
-  classes <- prefix(
-    "position",
-    position_value(value),
-    position_top(top),
-    position_right(right),
-    position_bottom(bottom),
-    position_left(left),
-    position_by(by)
+#' @rdname position_absolute
+#' @export
+position_static <- function(x) {
+  position_helper(x, "static")
+}
+
+#' @rdname position_absolute
+#' @export
+position_relative <- function(x) {
+  position_helper(x, "relative")
+}
+
+#' @rdname position_absolute
+#' @export
+position_fixed <- function(x) {
+  position_helper(x, "fixed")
+}
+
+#' @rdname position_absolute
+#' @export
+position_sticky <- function(x) {
+  position_helper(x, "sticky")
+}
+
+position_at_values <- chr(
+  "0" = "0",
+  "50" = "50",
+  "100" = "100"
+)
+
+#' Arranging positioned elements
+#'
+#' Arrange elemnents when positioning then.
+#'
+#' @param x `r param_subject()`
+#'
+#' @param at One of the following character strings,
+#'
+#'   `r rd_list(names(position_at_values))`
+#'
+#' @family position
+#' @export
+position_top <- function(x, at) {
+  add_class(
+    x,
+    compose_class(
+      "top",
+      position_at_values,
+      at
+    )
   )
+}
 
-  add_class(x, classes)
+#' @rdname position_top
+#' @export
+position_left <- function(x, at) {
+  add_class(
+    x,
+    compose_class(
+      "left",
+      position_at_values,
+      at
+    )
+  )
+}
+
+#' @rdname position_top
+#' @export
+position_bottom <- function(x, at) {
+  add_class(
+    x,
+    compose_class(
+      "bottom",
+      position_at_values,
+      at
+    )
+  )
+}
+
+#' @rdname position_top
+#' @export
+position_right <- function(x, at) {
+  add_class(
+    x,
+    compose_class(
+      "right",
+      position_at_values,
+      at
+    )
+  )
+}
+
+position_translate_values <- chr(
+  middle = "middle"
+)
+
+#' Centering positioned elements
+#'
+#' `position_translate()`
+#'
+#' @param x `r param_subject()`
+#'
+#' @family position
+#' @export
+position_translate <- function(x) {
+  add_class(
+    x,
+    compose_class(
+      "translate",
+      position_translate_values,
+      "middle"
+    )
+  )
 }

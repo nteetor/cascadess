@@ -1,6 +1,4 @@
-context("visible()")
-
-test_that("adds classes", {
+test_that("adds html class", {
   div() %>%
     visible(FALSE) %>%
     expect_html_class("invisible")

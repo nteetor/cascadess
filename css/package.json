@@ -6,11 +6,11 @@
   "scripts": {
     "css": "npm-run-all css-compile css-prefix css-minify",
     "css-compile": "sass --style expanded --source-map --embed-sources --no-error-css src/:dist/",
-    "css-minify": "cleancss -O1 --format breakWith=lf --source-map --source-map-inline-sources --output dist/cascadess.min.css dist/cascadess.css",
+    "css-lint": "npm-run-all --aggregate-output --continue-on-error --parallel css-lint-*",
+    "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --config build/.stylelintrc.json",
+    "css-minify": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output dist/cascadess.min.css dist/cascadess.css",
     "css-prefix": "postcss --config build/postcss.config.js --replace \"dist/*.css\" \"!dist/*.min.css\"",
-    "css-vend": "cp dist/* ../inst/www/cascadess/ && cp dist/cascadess.min.css ../pkgdown/extra.css",
-    "css-lint": "npm-run-all --continue-on-error --parallel css-lint-*",
-    "css-lint-stylelint": "stylelint \"**/*.{css,scss}\" --cache --cache-location .cache/.stylelintcache --rd"
+    "css-vend": "cp dist/* ../inst/www/cascadess/ && cp dist/cascadess.min.css ../pkgdown/extra.css"
   },
   "repository": {
     "type": "git",
@@ -23,18 +23,19 @@
   },
   "homepage": "https://github.com/nteetor/cascadess#readme",
   "devDependencies": {
-    "autoprefixer": "^9.8.8",
+    "autoprefixer": "^10.4.16",
     "clean-css-cli": "^4.3.0",
-    "node-sass": "^7.0.1",
+    "node-sass": "^9.0.0",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "postcss-rename": "^0.6.0",
     "sass": "^1.50.0",
-    "stylelint": "^13.13.1"
+    "stylelint": "^15.11.0",
+    "stylelint-config-twbs-bootstrap": "^11.0.1"
   },
   "dependencies": {
-    "bootstrap": "^5.0.0-alpha3",
-    "popper.js": "^1.16.1"
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2"
   }
 }

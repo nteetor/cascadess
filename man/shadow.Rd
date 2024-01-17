@@ -2,49 +2,36 @@
 % Please edit documentation in R/shadow.R
 \name{shadow}
 \alias{shadow}
-\title{Shadows}
+\title{Visual depth}
 \usage{
 shadow(x, size)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of \code{"small"}, \code{"sm"}, \code{"medium"}, \code{"md"}, \code{"large"}, \code{"lg"}, or \code{"none"} specifying the amount
-of shadow added.}
+\item{size}{One of the following,
+\itemize{
+\item \code{"small"}
+\item \code{"sm"}
+\item \code{"medium"}
+\item \code{"md"}
+\item \code{"large"}
+\item \code{"lg"}
+\item \code{"none"}
+}}
 }
 \description{
 The \code{shadow()} function adjusts the box shadow of a tag element. Shadows help
 distinguish elements or indicate interactivity.
 }
-\section{Sizes}{
-\if{html}{\out{
-<div class="cas-d-flex">
-<div class="cas-m-3 cas-p-4 cas-shadow-sm">small</div>
-<div class="cas-m-3 cas-p-4 cas-shadow-sm">sm</div>
-<div class="cas-m-3 cas-p-4 cas-shadow-md">medium</div>
-<div class="cas-m-3 cas-p-4 cas-shadow-md">md</div>
-<div class="cas-m-3 cas-p-4 cas-shadow-lg">large</div>
-<div class="cas-m-3 cas-p-4 cas-shadow-lg">lg</div>
-<div class="cas-m-3 cas-p-4 cas-shadow-none">none</div>
-</div>
-}}
-}
-
 \examples{
 
-library(htmltools)
+.style \%>\%
+  shadow("small")
 
-div(
-  .style \%>\%
-    shadow("md"),
-  "Donec posuere augue in quam."
-)
-
-div(
-  .style \%>\%
-    border("red") \%>\%
-    shadow("small"),
-  "Praesent augue."
-)
+.style \%>\%
+  border_color(theme_warning()) \%>\%
+  background_color(theme_warning()) \%>\%
+  shadow("medium")
 
 }

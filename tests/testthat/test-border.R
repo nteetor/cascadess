@@ -1,25 +1,15 @@
-context("border()")
+test_that("adds html class", {
+  el <- div(
+    .style %>%
+      border_color(theme_primary())
+  )
 
-test_that("add classes", {
-  div(.style %>% border("red")) %>%
-    expect_s3_class("shiny.tag") %>%
-    expect_html_class("cas-border-red")
+  expect_shiny_tag(el)
+  expect_html_class(el, "border-primary")
 })
 
-test_that("spliced return", {
-  .style %>% border("red") %>%
-    expect_s3_class("rlang_box_splice")
-})
-
-test_that("argument `sides` shorthand", {
-  div(.style %>% border("blue", sides = TRUE)) %>%
-    expect_html_class("cas-border")
-
-  div(.style %>% border("green", sides = FALSE)) %>%
-    expect_html_class("cas-border-none")
-})
-
-test_that("`width` argument", {
-  div(.style %>% border("blue", width = 3)) %>%
-    expect_html_class("cas-border-3")
+test_that(".style remains splice box", {
+  .style %>%
+    border_color(theme_primary()) %>%
+    expect_is_splice_box()
 })

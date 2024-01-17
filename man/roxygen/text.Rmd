@@ -1,13 +1,15 @@
-```{r, child = "_setup.Rmd"}
+```{r, child="_setup.R"}
 ```
 
-# Colors
+# Default theme colors
 
 ```{r}
+library(htmltools)
+
 div(
   .style %>%
-    text("blue") %>%  # <-
-    border("blue"),
+    text_color(theme_primary()) %>%  # <-
+    border_color(theme_primary()),
   p("Nullam tristique diam non turpis.",
     "Pellentesque dapibus suscipit ligula.",
     "Nullam eu ante vel est convallis dignissim."),

@@ -1,81 +1,126 @@
-padding_all_ <- list(
-  `0` = 0,
-  `1` = 1,
-  `2` = 2,
-  `3` = 3,
-  `4` = 4,
-  `5` = 5,
-  auto = "auto"
+padding_values <- chr(
+  "0" = "0",
+  "1" = "1",
+  "2" = "2",
+  "3" = "3",
+  "4" = "4",
+  "5" = "5"
 )
 
-padding_all <- function(all) {
-  responsive(pick(all, from = padding_all_))
-}
-
-padding_top <- function(top) {
-  compose("t", responsive(pick(top, from = padding_all_)))
-}
-
-padding_right <- function(right) {
-  compose("r", responsive(pick(right, from = padding_all_)))
-}
-
-padding_bottom <- function(bottom) {
-  compose("b", responsive(pick(bottom, from = padding_all_)))
-}
-
-padding_left <- function(left) {
-  compose("l", responsive(pick(left, from = padding_all_)))
-}
-
-#' Padding
+#' Add space into elements
 #'
-#' The `padding()` function adjusts the inner spacing of a tag element. The
-#' padding of a tag element is the space between the tag element's border and
-#' its content or child elements.
+#' The `padding_*()` functions adjust the inner spacing of a tag element. The
+#' padding of a tag element is the space between the element's border and its
+#' content or child elements.
 #'
-#' @inheritParams background
+#' @param x `r param_subject()`
 #'
-#' @param all A [responsive] argument.
+#' @param ... One of the following,
 #'
-#'   One of `1:5` specifying a padding for all sides of the tag element,
-#'   defaults to `NULL`, in which case the argument is ignored. 0 removes all
-#'   inner space and 5 adds the most space.
+#'   `r rd_bullets(names(padding_values))`
 #'
-#' @param top,right,bottom,left A [responsive] argument.
-#'
-#'   One of `1:5` specifying a padding for the element's respective side,
-#'   defaults to `NULL`, in which case the argument is ignored. 0 removes all
-#'   inner space and 5 adds the most space.
-#'
-#' @includeRmd man/roxygen/padding.Rmd
+#'   Use [breakpoints] to specify responsive values.
 #'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
 #'
 #' div(
 #'   .style %>%
-#'     margin(2) %>%
-#'     border("green") %>%
-#'     padding(2) %>%
-#'     background("red"),
-#'   "Donec vitae dolor."
+#'     margin_all(2) %>%
+#'     padding_all(2) %>%
+#'     border_color("primary") %>%
+#'     background_color("light"),
+#'   "This element has padding"
 #' )
 #'
-padding <- function(x, all = NULL, top = NULL, right = NULL, bottom = NULL,
-                    left = NULL) {
-  assert_subject(x)
-
-  classes <- prefix(
-    padding = "p",
-    padding_all(all),
-    padding_top(top),
-    padding_right(right),
-    padding_bottom(bottom),
-    padding_left(left)
+padding_all <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "p",
+      padding_values,
+      ...
+    )
   )
+}
 
-  add_class(x, classes)
+#' @rdname padding_all
+#' @export
+padding_top <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "pt",
+      padding_values,
+      ...
+    )
+  )
+}
+
+#' @rdname padding_all
+#' @export
+padding_right <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "pe",
+      padding_values,
+      ...
+    )
+  )
+}
+
+#' @rdname padding_all
+#' @export
+padding_bottom <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "pb",
+      padding_values,
+      ...
+    )
+  )
+}
+
+#' @rdname padding_all
+#' @export
+padding_left <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "ps",
+      padding_values,
+      ...
+    )
+  )
+}
+
+#' @rdname padding_all
+#' @export
+padding_horizontal <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "px",
+      padding_values,
+      ...
+    )
+  )
+}
+
+#' @rdname padding_all
+#' @export
+padding_vertical <- function(x, ...) {
+  add_class(
+    x,
+    compose_class(
+      "py",
+      padding_values,
+      ...
+    )
+  )
 }

@@ -25,7 +25,8 @@ Cascadess defines a style pronoun, `.style`, usable inside `htmltools::tags`
 HTML builder functions. With `.style` you can specify styling directly within
 the builder function call, which helps the reader immediately understand how the
 HTML tag element is styled. Without the `.style` pronoun, styling is applied
-after the function call, e.g `div() %>% margin() %>% background()`.
+after the function call, e.g `div() %>% margin_all(2) %>%
+background_color("primary")`.
 
 ``` R
 library(htmltools)
@@ -33,8 +34,8 @@ library(cascadess)
 
 div(
   .style %>%
-    margin(2) %>%
-    border("indigo") %>%
+    margin_all(2) %>%
+    border_color("dark") %>%
     shadow("medium"),
   p("Fusce sagittis, libero non molestie mollis, magna",
     "orci ultrices dolor, at vulputate neque nulla lacinia eros.")
@@ -51,8 +52,8 @@ ui <- list(
   cascadess(),
   h4(
     .style %>%
-      font(case = "upper") %>%
-      border(bottom = "red"),
+      font_transform("uppercase") %>%
+      border_bottom("danger"),
     "Etiam vel tortor sodales tellus ultricies commodo."
   )
 )

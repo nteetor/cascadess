@@ -1,38 +1,57 @@
 ## nocov start
 
-rd_quote <- function(x) {
+param_subject <- function() {
+  "A tag element or [.style] pronoun."
+}
+
+rd_dquote <- function(x) {
   paste0("\"", x, "\"")
 }
 
 rd_code <- function(x) {
-  paste0("\\code{", x, "}")
+  paste0("`", x, "`")
 }
 
-rd_list <- function(x, last = "or") {
-  x <- vapply(x, function(i) {
-    if (is_na(suppressWarnings(as.numeric(i)))) {
-      rd_code(rd_quote(i))
+rd_format <- function(values) {
+  vapply(values, function(v) {
+    if (grepl("^[0-9]+$", v)) {
+      rd_code(v)
+    } else if (grepl("^(TRUE|FALSE)$", v)) {
+      rd_code(v)
     } else {
-      rd_code(i)
+      rd_code(rd_dquote(v))
     }
   }, character(1))
+}
 
-  if (!is_truthy(last)) {
-    return(paste(x, collapse = ", "))
-  }
+rd_list <- function(values, sep = "or") {
+  n_vals <- length(values)
+  formatted_vals <- rd_format(values)
 
-  if (length(x) == 1) {
-    x
-  } else if (length(x) == 2) {
-    paste(x[[1]], last, x[[2]])
+  if (n_vals == 1) {
+    formatted_vals
+  } else if (n_vals == 2) {
+    paste(formatted_vals[[1]], sep, formatted_vals[[2]])
   } else {
-    len <- length(x)
+    end <- paste(sep, formatted_vals[n_vals])
 
-    sprintf(
-      "%s, %s %s",
-      paste(x[seq_len(len - 1)], collapse = ", "), last, x[[len]]
-    )
+    collapse(c(formatted_vals[-n_vals], end), ", ")
   }
+}
+
+rd_bullets <- function(values) {
+  formatted_vals <- rd_format(values)
+
+  collapse(paste("*", formatted_vals), "\n")
+}
+
+rd_default <- function(func, arg) {
+  arg_name <- as_string(enexpr(arg))
+  func_fmls <- fn_fmls(func)
+
+  stopifnot(arg_name %in% names(func_fmls))
+
+  rd_format(func_fmls[[arg_name]])
 }
 
 ## nocov end
