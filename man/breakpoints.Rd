@@ -66,7 +66,7 @@ think larger desktops.
 These breakpoints are chosen by and are a part of the Bootstrap library
 cascadess is built upon. The Bootstrap website goes into greater detail on
 their design, construction, and usage, see
-\link{https://getbootstrap.com/docs/5.3/layout/breakpoints/}.
+\url{https://getbootstrap.com/docs/5.3/layout/breakpoints/}.
 }
 }
 \examples{

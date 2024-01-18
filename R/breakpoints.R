@@ -118,7 +118,7 @@ prepend_breakpoints <- function(values) {
 #' These breakpoints are chosen by and are a part of the Bootstrap library
 #' cascadess is built upon. The Bootstrap website goes into greater detail on
 #' their design, construction, and usage, see
-#' [https://getbootstrap.com/docs/5.3/layout/breakpoints/].
+#' <https://getbootstrap.com/docs/5.3/layout/breakpoints/>.
 #'
 #' @name breakpoints
 #' @examples
