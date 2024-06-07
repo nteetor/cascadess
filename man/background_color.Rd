@@ -25,7 +25,7 @@ library(htmltools)
 
 div(
   .style \%>\%
-    background_color("white") \%>\%
+    background_color("light") \%>\%
     border_color("primary") \%>\%
     text_color("primary"),
   "Nunc porta vulputate tellus.",
