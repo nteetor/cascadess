@@ -1,120 +1,42 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/background_color.html</loc>
-  </url>
-  <url>
-    <loc>/reference/border_all.html</loc>
-  </url>
-  <url>
-    <loc>/reference/border_color.html</loc>
-  </url>
-  <url>
-    <loc>/reference/border_width.html</loc>
-  </url>
-  <url>
-    <loc>/reference/breakpoints.html</loc>
-  </url>
-  <url>
-    <loc>/reference/cascadess.html</loc>
-  </url>
-  <url>
-    <loc>/reference/display.html</loc>
-  </url>
-  <url>
-    <loc>/reference/flex_display.html</loc>
-  </url>
-  <url>
-    <loc>/reference/float.html</loc>
-  </url>
-  <url>
-    <loc>/reference/font_size.html</loc>
-  </url>
-  <url>
-    <loc>/reference/height.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/item_align.html</loc>
-  </url>
-  <url>
-    <loc>/reference/margin_all.html</loc>
-  </url>
-  <url>
-    <loc>/reference/overflow.html</loc>
-  </url>
-  <url>
-    <loc>/reference/padding_all.html</loc>
-  </url>
-  <url>
-    <loc>/reference/position_absolute.html</loc>
-  </url>
-  <url>
-    <loc>/reference/position_top.html</loc>
-  </url>
-  <url>
-    <loc>/reference/position_translate.html</loc>
-  </url>
-  <url>
-    <loc>/reference/reexports.html</loc>
-  </url>
-  <url>
-    <loc>/reference/rounded_all.html</loc>
-  </url>
-  <url>
-    <loc>/reference/shadow.html</loc>
-  </url>
-  <url>
-    <loc>/reference/style-pronoun.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_alignment.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_break.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_color.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_decoration.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_selection.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_transform.html</loc>
-  </url>
-  <url>
-    <loc>/reference/text_wrap.html</loc>
-  </url>
-  <url>
-    <loc>/reference/theme_primary.html</loc>
-  </url>
-  <url>
-    <loc>/reference/vertical_alignment.html</loc>
-  </url>
-  <url>
-    <loc>/reference/visible.html</loc>
-  </url>
-  <url>
-    <loc>/reference/width.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>/404.html</loc></url>
+<url><loc>/LICENSE-text.html</loc></url>
+<url><loc>/LICENSE.html</loc></url>
+<url><loc>/authors.html</loc></url>
+<url><loc>/index.html</loc></url>
+<url><loc>/reference/background_color.html</loc></url>
+<url><loc>/reference/border_all.html</loc></url>
+<url><loc>/reference/border_color.html</loc></url>
+<url><loc>/reference/border_width.html</loc></url>
+<url><loc>/reference/breakpoints.html</loc></url>
+<url><loc>/reference/cascadess.html</loc></url>
+<url><loc>/reference/display.html</loc></url>
+<url><loc>/reference/flex_display.html</loc></url>
+<url><loc>/reference/float.html</loc></url>
+<url><loc>/reference/font_size.html</loc></url>
+<url><loc>/reference/height.html</loc></url>
+<url><loc>/reference/index.html</loc></url>
+<url><loc>/reference/item_align.html</loc></url>
+<url><loc>/reference/margin_all.html</loc></url>
+<url><loc>/reference/overflow.html</loc></url>
+<url><loc>/reference/padding_all.html</loc></url>
+<url><loc>/reference/position_absolute.html</loc></url>
+<url><loc>/reference/position_top.html</loc></url>
+<url><loc>/reference/position_translate.html</loc></url>
+<url><loc>/reference/reexports.html</loc></url>
+<url><loc>/reference/rounded_all.html</loc></url>
+<url><loc>/reference/shadow.html</loc></url>
+<url><loc>/reference/style-pronoun.html</loc></url>
+<url><loc>/reference/text_alignment.html</loc></url>
+<url><loc>/reference/text_break.html</loc></url>
+<url><loc>/reference/text_color.html</loc></url>
+<url><loc>/reference/text_decoration.html</loc></url>
+<url><loc>/reference/text_selection.html</loc></url>
+<url><loc>/reference/text_transform.html</loc></url>
+<url><loc>/reference/text_wrap.html</loc></url>
+<url><loc>/reference/theme_primary.html</loc></url>
+<url><loc>/reference/vertical_alignment.html</loc></url>
+<url><loc>/reference/visible.html</loc></url>
+<url><loc>/reference/width.html</loc></url>
 </urlset>
+
