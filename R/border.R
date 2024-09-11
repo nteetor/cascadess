@@ -5,7 +5,7 @@ border_include_values <- chr(
 
 #' Borders
 #'
-#' The `border_all()` and `border_<side>()` functions adjusts a tag element's
+#' The `border_all()` and `border_<side>()` functions adjust a tag element's
 #' borders.
 #'
 #' @param x `r param_subject()`
