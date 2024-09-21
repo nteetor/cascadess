@@ -1,0 +1,10 @@
+test_that("theme functions return expected prefixes", {
+  expect_equal(theme_primary(), "primary")
+  expect_equal(theme_secondary(), "secondary")
+  expect_equal(theme_success(), "success")
+  expect_equal(theme_info(), "info")
+  expect_equal(theme_danger(), "danger")
+  expect_equal(theme_warning(), "warning")
+  expect_equal(theme_light(), "light")
+  expect_equal(theme_dark(), "dark")
+})
