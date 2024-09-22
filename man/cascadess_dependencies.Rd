@@ -19,8 +19,8 @@ shinyApp(
   ui = list(
     cascadess_dependencies(),
     div(
-      .style |>
-        padding_all(3) |>
+      .style \%>\%
+        padding_all(3) \%>\%
         background_color(theme_light()),
       "Etiam laoreet quam sed arcu."
     )
@@ -35,11 +35,11 @@ library(bslib)
 
 shinyApp(
   ui = page(
-    .style |>
+    .style \%>\%
       background_color(theme_primary()),
     card(
-      .style |>
-        margin_all(3) |>
+      .style \%>\%
+        margin_all(3) \%>\%
         background_color(theme_light()),
       "Hello, world!"
     )
