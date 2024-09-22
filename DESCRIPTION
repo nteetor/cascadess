@@ -46,7 +46,6 @@ Collate:
     'float.R'
     'font.R'
     'height.R'
-    'import-standalone-defer.R'
     'margin.R'
     'overflow.R'
     'padding.R'

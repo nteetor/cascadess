@@ -1,26 +1,8 @@
-.global <- new_environment()
-
 new_pronoun <- function() {
   structure(
     class = "cascadess_style_pronoun",
     list()
   )
-}
-
-pronoun_peek <- function() {
-  .global$pronoun
-}
-
-pronoun_set <- function(new) {
-  env_poke(.global, "pronoun", new)
-}
-
-pronoun_get_prefix <- function(prefix) {
-  if (!nchar(prefix)) {
-    return(prefix)
-  }
-
-  pronoun_peek()[[prefix]] %||% prefix
 }
 
 #' @export

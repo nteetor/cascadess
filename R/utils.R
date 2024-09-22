@@ -30,18 +30,15 @@ compose_class <- function(class_prefix, class_values, ...,
   matched_pairs <- named_match(class_values, breakpoint_pairs)
 
   class_suffix <- prepend_breakpoints(matched_pairs)
-  prefix <- pronoun_get_prefix(class_prefix)
-
-  message(class_prefix)
 
   classes <- {
-    if (prefix == "") {
+    if (!nzchar(class_prefix)) {
       class_suffix
     } else {
       ifelse(
         class_suffix == "",
-        prefix,
-        paste(prefix, class_suffix, sep = "-")
+        class_prefix,
+        paste(class_prefix, class_suffix, sep = "-")
       )
     }
   }
