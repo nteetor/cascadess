@@ -3,14 +3,10 @@ NULL
 
 ## nocov start
 
-#' Cascadess
+#' Cascadess' CSS dependencies
 #'
-#' @description
-#'
-#' Styles for htmltools tags.
-#'
-#' For styles to be applied you must include a call to `cascadess()` in your
-#' shiny application or htmltools tags.
+#' For CSS styles to be applied, you must include a call to
+#' `cascadess_dependencies()` in your UI or use the bslib package.
 #'
 #' @export
 #' @examples
@@ -20,22 +16,38 @@ NULL
 #'
 #' shinyApp(
 #'   ui = list(
-#'     cascadess(),
+#'     cascadess_dependencies(),
 #'     div(
-#'       .style %>%
-#'         padding_all(3) %>%
-#'         background_color("light") %>%
-#'         font_weight("light"),
+#'       .style |>
+#'         padding_all(3) |>
+#'         background_color(theme_light()),
 #'       "Etiam laoreet quam sed arcu."
 #'     )
 #'   ),
-#'   server = function(input, output) {
-#'
-#'   }
+#'   server = function(input, output) {}
 #' )
 #' }
 #'
-cascadess <- function() {
+#' \dontrun{
+#' library(shiny)
+#' library(bslib)
+#'
+#' shinyApp(
+#'   ui = page(
+#'     .style |>
+#'       background_color(theme_primary()),
+#'     card(
+#'       .style |>
+#'         margin_all(3) |>
+#'         background_color(theme_light()),
+#'       "Hello, world!"
+#'     )
+#'   ),
+#'   server = function(input, output) {}
+#' )
+#' }
+#'
+cascadess_dependencies <- function() {
   htmltools::htmlDependency(
     name = "cascadess",
     version = utils::packageVersion("cascadess"),
