@@ -43,15 +43,6 @@ flex_content_values <- chr(
   stretch = "stretch"
 )
 
-class_flex_content <- function(prefix, content) {
-  compose_class(
-    prefix,
-    prepend_breakpoints(
-      named_match(flex_content_values, content)
-    )
-  )
-}
-
 #' Flex
 #'
 #' @description
