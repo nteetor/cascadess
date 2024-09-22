@@ -25,7 +25,7 @@ border_left(x, include = TRUE)
 \code{TRUE}.}
 }
 \description{
-The \code{border_all()} and \verb{border_<side>()} functions adjusts a tag element's
+The \code{border_all()} and \verb{border_<side>()} functions adjust a tag element's
 borders.
 }
 \examples{

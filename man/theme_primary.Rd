@@ -3,14 +3,29 @@
 \name{theme_primary}
 \alias{theme_primary}
 \alias{theme_secondary}
+\alias{theme_success}
+\alias{theme_danger}
 \alias{theme_warning}
+\alias{theme_info}
+\alias{theme_light}
+\alias{theme_dark}
 \title{Theme colors}
 \usage{
 theme_primary()
 
 theme_secondary()
 
+theme_success()
+
+theme_danger()
+
 theme_warning()
+
+theme_info()
+
+theme_light()
+
+theme_dark()
 }
 \description{
 Theme color functions.
