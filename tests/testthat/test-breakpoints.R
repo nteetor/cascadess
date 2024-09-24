@@ -1,5 +1,6 @@
 test_that("assert_breakpoints", {
   expect_error(assert_breakpoints(c(large = 1)), "invalid breakpoint name `large`")
+  expect_error(assert_breakpoints(c(ww = 1, oo = 2), "invalid breakpoint names `ww` and `oo`"))
 })
 
 test_that("prepend_breakpoints", {
