@@ -12,10 +12,91 @@ library(cascadess)
 
 # cascadess
 
+## What can I use cascadess for?
+
+### Change background colors
+
 ```{r}
 div(
   .style %>%
-    font(weight = "bold"),
-  "Apply a little style to your htmltools tags!"
+    background_color(theme_primary()) %>%
+    border_color(theme_primary()) %>%
+    padding_vertical(3)  ## to give the box some height
+)
+```
+
+### Vertically stack action buttons {.mt-4}
+
+```{r button, echo=FALSE, include=FALSE}
+demo_button <- function(label) {
+  tags$button(
+    class = "btn btn-secondary",
+    label
+  )
+}
+```
+
+```{r}
+div(
+  .style %>%
+    flex_display() %>%
+    flex_direction("column") %>%
+    flex_gap(2),
+  demo_button("Button 1"),
+  demo_button("Button 2"),
+  demo_button("Button 3")
+)
+```
+
+
+### Adjust to the screen size {.mt-4}
+
+On small screens this example will look like the column of buttons above. On
+large screens though the buttons will display in a single row.
+
+```{r}
+div(
+  .style %>%
+    flex_display() %>%
+    flex_direction(xs = "column", md = "row") %>%
+    flex_gap(2),
+  demo_button("Button 1"),
+  demo_button("Button 2"),
+  demo_button("Button 3")
+)
+```
+
+### Combine with {bslib} {.mt-4}
+
+```{r echo=FALSE, include=FALSE}
+library(bslib)
+```
+
+```r
+# install.packages("bslib")
+library(bslib)
+```
+
+```{r}
+card(
+  .style %>%
+    border_color(theme_info()) %>%
+    text_color(theme_info()),
+  "An info-styled card"
+)
+```
+
+```{r}
+card(
+  .style %>%
+    border_color("dark"),
+  card_header(
+    .style %>%
+      background_color("dark"),
+    "A header"
+  ),
+  card_body(
+    "Some body text"
+  )
 )
 ```

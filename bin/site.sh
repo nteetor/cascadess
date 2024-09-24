@@ -3,8 +3,8 @@
 DIR=$(pwd)
 PKGDOWN="$DIR/pkgdown"
 
-Rscript -e "remotes::install_github('nteetor/pkgdown@master-nt-preserve-html')"
-Rscript -e "devtools::install(quick = TRUE, build = FALSE, upgrade = FALSE, keep_source = TRUE)"
+# Rscript -e "remotes::install_github('nteetor/pkgdown@master-nt-preserve-html')"
+# Rscript -e "devtools::install(quick = TRUE, build = FALSE, upgrade = FALSE, keep_source = TRUE)"
 
 Rscript -e "\
 rmarkdown::render(
