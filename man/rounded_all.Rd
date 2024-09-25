@@ -6,7 +6,7 @@
 \alias{rounded_right}
 \alias{rounded_bottom}
 \alias{rounded_left}
-\title{Rounding element corners}
+\title{Element corners}
 \usage{
 rounded_all(x, radius = 1)
 
@@ -19,10 +19,11 @@ rounded_bottom(x, radius = 1)
 rounded_left(x, radius = 1)
 }
 \arguments{
-\item{x}{"r param_subject()"}
+\item{x}{A tag element or \link{.style} pronoun.}
 
-\item{radius}{Radius param.}
+\item{radius}{One of \code{0}, \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, \code{"circle"}, or \code{"pill"}, defaults to
+\code{1}. \code{0} will remove rounded corners.}
 }
 \description{
-Description of "rounded()".
+Round element corners or remove rounded corners.
 }
