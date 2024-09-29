@@ -4,7 +4,7 @@ Title: A Style Pronoun for 'htmltools' Tags
 Version: 0.1.0.9000
 Authors@R: c(
   person("Nathan", "Teetor", email = "nate@haufin.ch",
-         role = c("aut", "cre")),
+         role = c("aut", "cre", "cph")),
   person(family = "The Bootstrap Authors", comment = "Bootstrap library",
          role = "cph"),
   person(family = "Twitter, Inc", comment = "Bootstrap library",
