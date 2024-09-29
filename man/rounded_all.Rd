@@ -8,22 +8,51 @@
 \alias{rounded_left}
 \title{Element corners}
 \usage{
-rounded_all(x, radius = 1)
+rounded_all(x, size)
 
-rounded_top(x, radius = 1)
+rounded_top(x, size)
 
-rounded_right(x, radius = 1)
+rounded_right(x, size)
 
-rounded_bottom(x, radius = 1)
+rounded_bottom(x, size)
 
-rounded_left(x, radius = 1)
+rounded_left(x, size)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{radius}{One of \code{0}, \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, \code{"circle"}, or \code{"pill"}, defaults to
-\code{1}. \code{0} will remove rounded corners.}
+\item{size}{A number or character string specifying a corner size. One of,
+\itemize{
+\item \code{0}
+\item \code{1}
+\item \code{2}
+\item \code{3}
+\item \code{4}
+\item \code{5}
+\item \code{"circle"}
+\item \code{"pill"}
+
+Use \code{0} to remove rounded corners.
+}}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-Round element corners or remove rounded corners.
+The \verb{rounded_*()} functions adjust the corners of a tag element.
+}
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    rounded_all(3)
+)
+
+div(
+  .style \%>\%
+    rounded_left("pill")
+)
+
 }

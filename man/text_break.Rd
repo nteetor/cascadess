@@ -2,20 +2,29 @@
 % Please edit documentation in R/text-break.R
 \name{text_break}
 \alias{text_break}
-\title{Text break}
+\title{Break long text}
 \usage{
 text_break(x)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
-Text break.
+The \code{text_break()} function is used to break long strings of text within a
+tag element.
 }
 \examples{
 
-.style \%>\%
-  text_break()
+library(htmltools)
+
+div(
+  .style \%>\%
+    text_break(),
+  "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
+)
 
 }
 \seealso{
@@ -23,8 +32,11 @@ Other text utilities:
 \code{\link{text_alignment}()},
 \code{\link{text_color}()},
 \code{\link{text_decoration}()},
+\code{\link{text_height}()},
 \code{\link{text_selection}()},
+\code{\link{text_style}()},
 \code{\link{text_transform}()},
+\code{\link{text_weight}()},
 \code{\link{text_wrap}()}
 }
 \concept{text utilities}

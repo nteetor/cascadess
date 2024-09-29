@@ -1,10 +1,11 @@
 test_that("adds html class", {
-  div() %>%
-    overflow("auto") %>%
-    expect_shiny_tag() %>%
-    expect_html_class("overflow-auto")
+  x <- div(.style %>% overflow_all("auto"))
 
-  div(.style %>% overflow("hidden")) %>%
-    expect_shiny_tag() %>%
-    expect_html_class("overflow-hidden")
+  expect_s3_class(x, "shiny.tag")
+  expect_html_class(x, "overflow-auto")
+
+  y <- div(.style %>% overflow_horizontal("hidden"))
+
+  expect_s3_class(y, "shiny.tag")
+  expect_html_class(y, "overflow-x-hidden")
 })

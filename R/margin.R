@@ -15,16 +15,20 @@ margin_values <- chr(
 
 #' Margins
 #'
-#' The `margin()` function adjusts the outer spacing of a tag element. The
-#' margin of a tag element is the space outside and around the tag element, its
-#' border, and its content.
+#' The `margin_*()` functions adjust a tag element's margin, the space outside
+#' and around the element, its border, and its content.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param ... One of `r rd_list(names(margin_values))` specifying the margin
-#'   for one or all sides.
+#' @param ... A number or character string specifying a margin. One or more of,
 #'
-#'   Use [breakpoints] to specify responsive values.
+#'   `r rd_bullets(names(margin_values))`
+#'
+#'   Use name-value pairs to specify [breakpoints].
+#'
+#' @returns `r returns_same("x")`
+#'
+#' @seealso [gap_all()] for flex spacing.
 #'
 #' @export
 #'
@@ -36,19 +40,19 @@ margin_values <- chr(
 #'   .style %>%
 #'     margin_left(3) %>%
 #'     margin_right(3),
-#'   "Mauris mollis tincidunt felis."
+#'   "Left margin, right margin"
 #' )
 #'
 #' div(
 #'   .style %>%
 #'     margin_horizontal(3),
-#'   "Nulla posuere."
+#'   "Shorthand for left and right margins"
 #' )
 #'
 #' div(
 #'   .style %>%
-#'     margin_right("auto"),
-#'   "Sed id ligula quis est convallis tempor."
+#'     margin_horizontal("auto"),
+#'   "A centered element."
 #' )
 #'
 margin_all <- function(x, ...) {

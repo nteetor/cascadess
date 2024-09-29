@@ -18,7 +18,9 @@ float_values <- chr(
 #'
 #'   `r rd_bullets(names(float_values))`
 #'
-#'   Use [breakpoints] to specify responsive values.
+#'   Name-value pairs to specify [breakpoints].
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
 #'
@@ -31,12 +33,12 @@ float_values <- chr(
 #'     .style %>%
 #'       border_color("danger") %>%
 #'       float("left"),
-#'     "Danger!"
+#'     "6.5/10"
 #'   ),
 #'   div(
-#'     "Nam a sapien.",
-#'     "Phasellus neque orci, porta a, aliquet quis, semper a, massa.",
-#'     "Phasellus lacus."
+#'     "Considering the need for opening sentences.",
+#'     "We may want to reconsider the necessity of second or third sentences.",
+#'     "The whole problem may be avoided by never creating a problem."
 #'   )
 #' )
 #'

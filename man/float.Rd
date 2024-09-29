@@ -17,8 +17,11 @@ float(x, ...)
 \item \code{"r"}
 \item \code{"none"}
 
-Use \link{breakpoints} to specify responsive values.
+Name-value pairs to specify \link{breakpoints}.
 }}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
 The \code{float()} function places an element to the left or right side of its
@@ -34,12 +37,12 @@ div(
     .style \%>\%
       border_color("danger") \%>\%
       float("left"),
-    "Danger!"
+    "6.5/10"
   ),
   div(
-    "Nam a sapien.",
-    "Phasellus neque orci, porta a, aliquet quis, semper a, massa.",
-    "Phasellus lacus."
+    "Considering the need for opening sentences.",
+    "We may want to reconsider the necessity of second or third sentences.",
+    "The whole problem may be avoided by never creating a problem."
   )
 )
 

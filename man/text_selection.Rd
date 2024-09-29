@@ -9,15 +9,29 @@ text_selection(x, select)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{select}{A character string.}
+\item{select}{A character string specifying how text is selected. One of,
+\itemize{
+\item \code{"all"}
+\item \code{"auto"}
+\item \code{"none"}
+}}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-Text selection
+The \code{text_selection()} function adjusts how text is selected within a tag
+element when the user clicks on the element.
 }
 \examples{
 
-.style \%>\%
-  text_selection("all")
+library(htmltools)
+
+div(
+  .style \%>\%
+    text_selection("all"),
+  "Click to select all the text"
+)
 
 }
 \seealso{
@@ -26,7 +40,10 @@ Other text utilities:
 \code{\link{text_break}()},
 \code{\link{text_color}()},
 \code{\link{text_decoration}()},
+\code{\link{text_height}()},
+\code{\link{text_style}()},
 \code{\link{text_transform}()},
+\code{\link{text_weight}()},
 \code{\link{text_wrap}()}
 }
 \concept{text utilities}

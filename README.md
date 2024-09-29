@@ -1,8 +1,8 @@
 # cascadess
 
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
+[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
 ![r-cmd-check](https://github.com/nteetor/cascadess/workflows/r-cmd-check/badge.svg)
-[![codecov](https://codecov.io/github/nteetor/cascadess/branch/main/graph/badge.svg?token=iqPqX81732)](https://codecov.io/github/nteetor/cascadess)
+[![codecov](https://codecov.io/github/nteetor/cascadess/branch/main/graph/badge.svg?token=iqPqX81732)](https://app.codecov.io/github/nteetor/cascadess)
 [![CRAN status](https://www.r-pkg.org/badges/version/cascadess)](https://CRAN.R-project.org/package=cascadess)
 
 A style pronoun and utilities for {[htmltools](https://github.com/rstudio/htmltools)} tags, {[bslib](https://github.com/rstudio/bslib)}, and {[shiny](https://github.com/rstudio/shiny)}.

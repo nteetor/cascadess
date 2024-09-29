@@ -27,6 +27,24 @@ theme_light()
 
 theme_dark()
 }
+\value{
+A character string.
+}
 \description{
 Theme color functions.
+}
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    background_color("primary")
+)
+
+div(
+  .style \%>\%
+    background_color(theme_primary())
+)
+
 }

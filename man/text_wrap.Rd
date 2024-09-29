@@ -9,18 +9,38 @@ text_wrap(x, wrap)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{wrap}{One of \code{TRUE} or \code{FALSE}.}
+\item{wrap}{A boolean. One of,
+\itemize{
+\item \code{TRUE}
+\item \code{FALSE}
+}}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-Text wrap
+The \code{text_wrap()} adjusts how text is wrapped, or not wrapped, in a tag
+element.
 }
 \examples{
 
-.style \%>\%
-  text_wrap(TRUE)
+library(htmltools)
 
-.style \%>\%
-  text_wrap(FALSE)
+div(
+  style = "width: 5rem;",
+  .style \%>\%
+    background_color(theme_primary()) \%>\%
+    text_wrap(TRUE),
+  "Wrap text to fit the element"
+)
+
+div(
+  style = "width: rem;",
+  .style \%>\%
+    background_color(theme_secondary()) \%>\%
+    text_wrap(FALSE),
+  "This text won't wrap onto a new line."
+)
 
 }
 \seealso{
@@ -29,7 +49,10 @@ Other text utilities:
 \code{\link{text_break}()},
 \code{\link{text_color}()},
 \code{\link{text_decoration}()},
+\code{\link{text_height}()},
 \code{\link{text_selection}()},
-\code{\link{text_transform}()}
+\code{\link{text_style}()},
+\code{\link{text_transform}()},
+\code{\link{text_weight}()}
 }
 \concept{text utilities}

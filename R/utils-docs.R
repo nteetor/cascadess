@@ -4,6 +4,10 @@ param_subject <- function() {
   "A tag element or [.style] pronoun."
 }
 
+returns_same <- function(param) {
+  paste0("An object of the same type as `", param, "`.")
+}
+
 rd_dquote <- function(x) {
   paste0("\"", x, "\"")
 }

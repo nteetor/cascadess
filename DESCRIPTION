@@ -9,10 +9,9 @@ Authors@R: c(
          role = "cph"),
   person(family = "Twitter, Inc", comment = "Bootstrap library",
          role = "cph"))
-Description: Apply styles to tag elements directly or with the
-  .style pronoun. Using the pronoun, styles are created within
-  the context of a tag element. Change borders, background colors,
-  margins, layouts, and more.
+Description: Apply styles to tag elements directly and with the .style
+  pronoun. Using the pronoun, styles are created within the context of a tag
+  element. Change borders, backgrounds, text, margins, layouts, and more.
 License: MIT + file LICENSE
 URL: https://github.com/nteetor/cascadess
 BugReports: https://github.com/nteetor/cascadess/issues
@@ -44,11 +43,13 @@ Collate:
     'display.R'
     'flex.R'
     'float.R'
-    'font.R'
+    'gap.R'
     'height.R'
     'margin.R'
     'overflow.R'
     'padding.R'
+    'position-centered.R'
+    'position-offset.R'
     'position.R'
     'reexports.R'
     'rounded.R'
@@ -58,8 +59,12 @@ Collate:
     'text-break.R'
     'text-color.R'
     'text-decoration.R'
+    'text-height.R'
     'text-selection.R'
+    'text-size.R'
+    'text-style.R'
     'text-transform.R'
+    'text-weight.R'
     'text-wrap.R'
     'utils-docs.R'
     'utils.R'

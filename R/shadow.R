@@ -10,12 +10,11 @@ shadow_size_values <- chr(
 
 #' Visual depth
 #'
-#' The `shadow()` function adjusts the box shadow of a tag element. Shadows help
-#' distinguish elements or indicate interactivity.
+#' The `shadow()` function adjusts the box shadow of a tag element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param size One of the following,
+#' @param size A character string specifying the shadow size. One of,
 #'
 #'   `r rd_bullets(names(shadow_size_values))`
 #'
@@ -23,13 +22,19 @@ shadow_size_values <- chr(
 #'
 #' @examples
 #'
-#' .style %>%
-#'   shadow("small")
+#' library(htmltools)
 #'
-#' .style %>%
-#'   border_color(theme_warning()) %>%
-#'   background_color(theme_warning()) %>%
-#'   shadow("medium")
+#' div(
+#'   .style %>%
+#'     shadow("small")
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     border_color(theme_warning()) %>%
+#'     background_color(theme_warning()) %>%
+#'     shadow("medium")
+#' )
 #'
 shadow <- function(x, size) {
   add_class(

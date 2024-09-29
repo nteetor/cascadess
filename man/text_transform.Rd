@@ -2,26 +2,42 @@
 % Please edit documentation in R/text-transform.R
 \name{text_transform}
 \alias{text_transform}
-\title{Text transformations}
+\title{Text transformation}
 \usage{
 text_transform(x, transform)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{transform}{A character string.}
+\item{transform}{A character string specifying the transform. One of,
+\itemize{
+\item \code{"uppercase"}
+\item \code{"lowercase"}
+\item \code{"capitalize"}
+}}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-Text transformation
+The \code{text_transform()} function adjusts the case of text in a tag element.
 }
 \examples{
 
-.style \%>\%
-  text_transform("lowercase")
+library(htmltools)
 
-.style \%>\%
-  text_color("warning") \%>\%
-  text_transform("uppercase")
+div(
+  .style \%>\%
+    text_transform("lowercase"),
+  "TRANSFORMED TO LOWERCASE"
+)
+
+div(
+  .style \%>\%
+    text_color(theme_warning()) \%>\%
+    text_transform("uppercase"),
+  "transformed to uppercase"
+)
 
 }
 \seealso{
@@ -30,7 +46,10 @@ Other text utilities:
 \code{\link{text_break}()},
 \code{\link{text_color}()},
 \code{\link{text_decoration}()},
+\code{\link{text_height}()},
 \code{\link{text_selection}()},
+\code{\link{text_style}()},
+\code{\link{text_weight}()},
 \code{\link{text_wrap}()}
 }
 \concept{text utilities}

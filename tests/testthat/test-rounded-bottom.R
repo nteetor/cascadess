@@ -1,5 +1,5 @@
 test_that("adds classes", {
-  x <- div(.style %>% rounded_bottom())
+  x <- div(.style %>% rounded_bottom(1))
   y <- div(.style %>% rounded_bottom(3))
 
   expect_s3_class(x, "shiny.tag")

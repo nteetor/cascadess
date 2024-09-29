@@ -4,25 +4,38 @@ text_transform_values <- chr(
   capitalize = "capitalize"
 )
 
-#' Text transformations
-#'
 #' Text transformation
+#'
+#' The `text_transform()` function adjusts the case of text in a tag element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param transform A character string.
+#' @param transform A character string specifying the transform. One of,
+#'
+#'   `r rd_bullets(names(text_transform_values))`
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @family text utilities
+#'
 #' @export
 #'
 #' @examples
 #'
-#' .style %>%
-#'   text_transform("lowercase")
+#' library(htmltools)
 #'
-#' .style %>%
-#'   text_color("warning") %>%
-#'   text_transform("uppercase")
+#' div(
+#'   .style %>%
+#'     text_transform("lowercase"),
+#'   "TRANSFORMED TO LOWERCASE"
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     text_color(theme_warning()) %>%
+#'     text_transform("uppercase"),
+#'   "transformed to uppercase"
+#' )
 #'
 text_transform <- function(x, transform) {
   add_class(

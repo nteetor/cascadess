@@ -9,7 +9,7 @@ shadow(x, size)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{size}{One of the following,
+\item{size}{A character string specifying the shadow size. One of,
 \itemize{
 \item \code{"small"}
 \item \code{"sm"}
@@ -21,17 +21,22 @@ shadow(x, size)
 }}
 }
 \description{
-The \code{shadow()} function adjusts the box shadow of a tag element. Shadows help
-distinguish elements or indicate interactivity.
+The \code{shadow()} function adjusts the box shadow of a tag element.
 }
 \examples{
 
-.style \%>\%
-  shadow("small")
+library(htmltools)
 
-.style \%>\%
-  border_color(theme_warning()) \%>\%
-  background_color(theme_warning()) \%>\%
-  shadow("medium")
+div(
+  .style \%>\%
+    shadow("small")
+)
+
+div(
+  .style \%>\%
+    border_color(theme_warning()) \%>\%
+    background_color(theme_warning()) \%>\%
+    shadow("medium")
+)
 
 }

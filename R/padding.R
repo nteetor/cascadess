@@ -7,19 +7,20 @@ padding_values <- chr(
   "5" = "5"
 )
 
-#' Add space into elements
+#' Padding
 #'
-#' The `padding_*()` functions adjust the inner spacing of a tag element. The
-#' padding of a tag element is the space between the element's border and its
-#' content or child elements.
+#' The `padding_*()` functions adjust a tag element's padding, the space between
+#' the element's border and its content or child elements.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param ... One of the following,
+#' @param ... A number specifying the amount of padding. One of,
 #'
 #'   `r rd_bullets(names(padding_values))`
 #'
-#'   Use [breakpoints] to specify responsive values.
+#'   Use name-value pairs to specify [breakpoints].
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
 #'
@@ -29,11 +30,9 @@ padding_values <- chr(
 #'
 #' div(
 #'   .style %>%
-#'     margin_all(2) %>%
-#'     padding_all(2) %>%
-#'     border_color("primary") %>%
-#'     background_color("light"),
-#'   "This element has padding"
+#'     border_color(theme_primary()) %>%
+#'     padding_all(2),
+#'   "A padded element"
 #' )
 #'
 padding_all <- function(x, ...) {

@@ -1,41 +1,72 @@
-overflow_values <- chr(
+overflow_behavior_values <- chr(
   "auto" = "auto",
   "hidden" = "hidden",
+  "FALSE" = "hidden",
   "visible" = "visible",
-  "scroll" = "scroll"
+  "scroll" = "scroll",
+  "TRUE" = "scroll"
 )
 
-#' Overflow
+#' Content overflow
 #'
-#' The `overflow()` function adjust how an element's content scrolls. Scrolling
-#' an element's contents may be helpful to prevent child elements from extending
-#' the width or height of the element.
+#' The `overflow_*()` functions adjust how an element's content scrolls.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param scroll One of `r rd_list(names(overflow_values))` specifying how the
-#'   content of the element scrolls. `TRUE` and `FALSE` may be used in place of
-#'   `"scroll"` or `"hidden"`, respectively.
+#' @param behavior A character string specifying the content overflow behavior. One of,
+#'
+#'   `r rd_bullets(names(overflow_behavior_values))`
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
 #'
 #' div(
 #'   .style %>%
-#'     width(25) %>%
-#'     overflow("hidden"),
-#'   "Nullam libero mauris, consequat quis, varius et, dictum id, arcu."
+#'     width_relative(25) %>%
+#'     overflow_horizontal("hidden"),
+#'   "We've really got to drag on this sentence because if we don't",
+#'   "then the example does not demonstrat the utility of the overflow",
+#'   "function"
 #' )
 #'
-overflow <- function(x, scroll) {
+overflow_all <- function(x, behavior) {
   add_class(
     x,
     compose_class(
       "overflow",
-      overflow_values,
-      scroll
+      overflow_behavior_values,
+      behavior
+    )
+  )
+}
+
+#' @rdname overflow_all
+#' @export
+overflow_horizontal <- function(x, behavior) {
+  add_class(
+    x,
+    compose_class(
+      "overflow-x",
+      overflow_behavior_values,
+      behavior
+    )
+  )
+}
+
+#' @rdname overflow_all
+#' @export
+overflow_vertical <- function(x, behavior) {
+  add_class(
+    x,
+    compose_class(
+      "overflow-y",
+      overflow_behavior_values,
+      behavior
     )
   )
 }

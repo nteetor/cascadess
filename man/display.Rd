@@ -11,6 +11,9 @@ display(x, ...)
 
 \item{...}{Name-value pairs specifying \link{breakpoints}.}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
 The \code{display()} function adjusts how a tag element and its contents are
 rendered.
@@ -19,7 +22,6 @@ rendered.
 
 library(htmltools)
 
-# When using flex make sure you specify the flex display.
 div(
   .style \%>\%
     display("flex") \%>\%

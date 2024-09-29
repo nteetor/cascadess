@@ -21,12 +21,13 @@ display_type_values <- chr(
 #'
 #' @param ... Name-value pairs specifying [breakpoints].
 #'
+#' @returns `r returns_same("x")`
+#'
 #' @export
 #' @examples
 #'
 #' library(htmltools)
 #'
-#' # When using flex make sure you specify the flex display.
 #' div(
 #'   .style %>%
 #'     display("flex") %>%

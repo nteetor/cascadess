@@ -56,7 +56,7 @@ prepend_breakpoints <- function(values) {
 #'
 #' @description
 #'
-#' Most functions in cascadess accept multiple name-value pairs via `...`. Each
+#' Many functions in cascadess accept multiple name-value pairs via `...`. Each
 #' argument's name specifies a breakpoint, a browser width. At this breakpoint,
 #' at this browser width, the argument value will supercede any values specified
 #' for smaller breakpoints, smaller browser widths.

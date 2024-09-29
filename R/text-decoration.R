@@ -6,25 +6,37 @@ text_decoration_values <- chr(
 
 #' Text decoration
 #'
-#' Text decoration
+#' The `text_dectoration()` function adjusts how text is decorated within a tag
+#' element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param decoration One of the following character strings,
+#' @param decoration A character string specifying a decoration. One of,
 #'
 #'   `r rd_bullets(names(text_decoration_values))`
 #'
+#' @returns `r returns_same("x")`
+#'
 #' @family text utilities
+#'
 #' @export
 #'
 #' @examples
 #'
-#' .style %>%
-#'   text_decoration("strike")
+#' library(htmltools)
 #'
-#' .style %>%
-#'   text_color("danger") %>%
-#'   text_decoration("underline")
+#' div(
+#'   .style %>%
+#'     text_decoration("strike"),
+#'   "TODO: buy milk"
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     text_emphasis(theme_danger()) %>%
+#'     text_decoration("underline"),
+#'   "Red AND underlined!"
+#' )
 #'
 text_decoration <- function(x, decoration) {
   add_class(

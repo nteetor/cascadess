@@ -9,24 +9,36 @@ text_decoration(x, decoration)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{decoration}{One of the following character strings,
+\item{decoration}{A character string specifying a decoration. One of,
 \itemize{
 \item \code{"underline"}
 \item \code{"strike"}
 \item \code{"none"}
 }}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
-Text decoration
+The \code{text_dectoration()} function adjusts how text is decorated within a tag
+element.
 }
 \examples{
 
-.style \%>\%
-  text_decoration("strike")
+library(htmltools)
 
-.style \%>\%
-  text_color("danger") \%>\%
-  text_decoration("underline")
+div(
+  .style \%>\%
+    text_decoration("strike"),
+  "TODO: buy milk"
+)
+
+div(
+  .style \%>\%
+    text_emphasis(theme_danger()) \%>\%
+    text_decoration("underline"),
+  "Red AND underlined!"
+)
 
 }
 \seealso{
@@ -34,8 +46,11 @@ Other text utilities:
 \code{\link{text_alignment}()},
 \code{\link{text_break}()},
 \code{\link{text_color}()},
+\code{\link{text_height}()},
 \code{\link{text_selection}()},
+\code{\link{text_style}()},
 \code{\link{text_transform}()},
+\code{\link{text_weight}()},
 \code{\link{text_wrap}()}
 }
 \concept{text utilities}

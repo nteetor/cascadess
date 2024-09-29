@@ -3,15 +3,19 @@ visible_show_values <- chr(
   "FALSE" = "invisible"
 )
 
-#' Element visibility
+#' Visibility
 #'
-#' The `visible()` function changes the visibility of a tag element. An
+#' The `visible()` function adjusts the visibility of a tag element. An
 #' invisible element is both visually hidden and is also hidden from screen
 #' readers.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param show `r rd_list(names(visible_show_values))`.
+#' @param show A boolean. One of,
+#'
+#'   `r rd_bullets(names(visible_show_values))`
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
 #'
@@ -19,8 +23,11 @@ visible_show_values <- chr(
 #'
 #' library(htmltools)
 #'
-#' div("I am hidden") %>%
-#'   visible(FALSE)
+#' div(
+#'   .style %>%
+#'     visible(FALSE),
+#'   "Not visible"
+#' )
 #'
 visible <- function(x, show) {
   add_class(

@@ -50,8 +50,8 @@ flex_content_values <- chr(
 #' The `flex_*()` functions adjust the flexbox layout of an element. The flexbox
 #' layout is incredibly powerful and allows centering of elements vertically and
 #' horizontally, automatic adjustment of space between and around child
-#' elements, and more.  To use flexbox make sure to include `flex_display()`
-#' when styling an element. For finer control over an element's display see
+#' elements, and more. To use flexbox make sure to include `flex_display()` when
+#' styling an element. For finer control over an element's display see
 #' [display()].
 #'
 #' Direct child elements of a flex box container are automatically considered
@@ -60,7 +60,9 @@ flex_content_values <- chr(
 #'
 #' @param x `r param_subject()`
 #'
-#' @param ... Name-value pairs.
+#' @param ... Name-value pairs specifying [breakpoints].
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
 #'
@@ -210,6 +212,8 @@ item_shrink_values <- chr(
 #' @param x `r param_subject()`
 #'
 #' @param ... Name-value pairs.
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
 #'

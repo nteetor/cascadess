@@ -1,4 +1,4 @@
-rounded_radius_values <- chr(
+rounded_size_values <- chr(
   "0" = "0",
   "1" = "1",
   "2" = "2",
@@ -11,73 +11,93 @@ rounded_radius_values <- chr(
 
 #' Element corners
 #'
-#' Round element corners or remove rounded corners.
+#' The `rounded_*()` functions adjust the corners of a tag element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param radius One of `r rd_list(names(rounded_radius_values))`, defaults to
-#'   `1`. `0` will remove rounded corners.
+#' @param size A number or character string specifying a corner size. One of,
+#'
+#'   `r rd_bullets(names(rounded_size_values))`
+#'
+#'   Use `0` to remove rounded corners.
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
-rounded_all <- function(x, radius = 1) {
+#'
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     rounded_all(3)
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     rounded_left("pill")
+#' )
+#'
+rounded_all <- function(x, size) {
   add_class(
     x,
     compose_class(
       "rounded",
-      rounded_radius_values,
-      radius
+      rounded_size_values,
+      size
     )
   )
 }
 
 #' @rdname rounded_all
 #' @export
-rounded_top <- function(x, radius = 1) {
+rounded_top <- function(x, size) {
   add_class(
     x,
     compose_class(
       "rounded-top",
-      rounded_radius_values,
-      radius
+      rounded_size_values,
+      size
     )
   )
 }
 
 #' @rdname rounded_all
 #' @export
-rounded_right <- function(x, radius = 1) {
+rounded_right <- function(x, size) {
   add_class(
     x,
     compose_class(
       "rounded-right",
-      rounded_radius_values,
-      radius
+      rounded_size_values,
+      size
     )
   )
 }
 
 #' @rdname rounded_all
 #' @export
-rounded_bottom <- function(x, radius = 1) {
+rounded_bottom <- function(x, size) {
   add_class(
     x,
     compose_class(
       "rounded-bottom",
-      rounded_radius_values,
-      radius
+      rounded_size_values,
+      size
     )
   )
 }
 
 #' @rdname rounded_all
 #' @export
-rounded_left <- function(x, radius = 1) {
+rounded_left <- function(x, size) {
   add_class(
     x,
     compose_class(
       "rounded-left",
-      rounded_radius_values,
-      radius
+      rounded_size_values,
+      size
     )
   )
 }

@@ -4,26 +4,38 @@
   center = "center"
 )
 
-#' Align text based on browser size
+#' Align text
 #'
-#' `text_alignment()` specifies how the text within a tag element is
-#' aligned. Text may be aligned to the left, right, or center.
+#' The `text_alignment()` function adjusts how the text within a tag element is
+#' aligned.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param ... Name-value pairs. Names are [breakpoints]. Values are one or more
-#'   of `r rd_list(names(text_alignment_values))`.
+#' @param ... A character string specifying an alignment. One of,
+#'
+#'   `r rd_list(names(text_alignment_values))`.
+#'
+#'    Use name-value pairs to specify [breakpoints].
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @family text utilities
+#'
 #' @export
 #'
 #' @examples
 #'
-#' .style %>%
-#'   text_alignment("left")
+#' library(htmltools)
 #'
-#' .style %>%
-#'  text_alignment("center")
+#' div(
+#'   .style %>%
+#'     text_alignment("left")
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     text_alignment("center")
+#' )
 #'
 text_alignment <- function(x, ...) {
   add_class(

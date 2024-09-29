@@ -2,17 +2,24 @@
 % Please edit documentation in R/visible.R
 \name{visible}
 \alias{visible}
-\title{Element visibility}
+\title{Visibility}
 \usage{
 visible(x, show)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{show}{\code{TRUE} or \code{FALSE}.}
+\item{show}{A boolean. One of,
+\itemize{
+\item \code{TRUE}
+\item \code{FALSE}
+}}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-The \code{visible()} function changes the visibility of a tag element. An
+The \code{visible()} function adjusts the visibility of a tag element. An
 invisible element is both visually hidden and is also hidden from screen
 readers.
 }
@@ -20,7 +27,10 @@ readers.
 
 library(htmltools)
 
-div("I am hidden") \%>\%
-  visible(FALSE)
+div(
+  .style \%>\%
+    visible(FALSE),
+  "Not visible"
+)
 
 }

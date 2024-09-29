@@ -9,7 +9,7 @@ vertical_alignment(x, alignment)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{alignment}{One of the following character strings,
+\item{alignment}{A character string specifying an alignment. One of,
 \itemize{
 \item \code{"baseline"}
 \item \code{"top"}
@@ -18,6 +18,9 @@ vertical_alignment(x, alignment)
 \item \code{"text-top"}
 \item \code{"text-bottom"}
 }}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
 The \code{vertical_alignment()} function adjusts the inline position of inline,

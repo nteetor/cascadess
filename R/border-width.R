@@ -8,21 +8,29 @@ border_width_values <- chr(
 
 #' Border width
 #'
-#' Border width description.
+#' Adjust the boder width of a tag element.
 #'
 #' @param x `r param_subject()`
 #'
 #' @param width A number between `r rd_code(min(border_width_values))` and
 #'   `r rd_code(max(border_width_values))`.
 #'
-#' @family border
+#' @returns `r returns_same("x")`
+#'
+#' @family border utilities
+#'
 #' @export
 #'
 #' @examples
 #'
-#' .style %>%
-#'   border_all() %>%
-#'   border_width(3)
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     border_all() %>%
+#'     border_width(3) %>%
+#'     border_color(theme_primary())
+#' )
 #'
 border_width <- function(x, width) {
   add_class(

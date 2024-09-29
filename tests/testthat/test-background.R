@@ -1,11 +1,8 @@
-test_that("adds html class", {
-  el <- div(
-    .style %>%
-      background_color(theme_primary())
-  )
+test_that("adds classes", {
+  x <- div(.style %>% background_color(theme_primary()))
 
-  expect_shiny_tag(el)
-  expect_html_class(el, "bg-primary")
+  expect_shiny_tag(x)
+  expect_html_class(x, "bg-primary")
 })
 
 test_that(".style remains spliced", {

@@ -9,35 +9,28 @@
 .style
 }
 \description{
-The \code{.style} pronoun allows you to define styles for a tag element within the
-context of the element. Without the \code{.style} pronoun tag styles are applied
-outside and after constructing a tag element.
+The \code{.style} pronoun allows defining styles within the function call of a tag
+element. Without the \code{.style} pronoun tag element styles are applied outside
+and after constructing a tag element.
 
-\if{html}{\out{<div class="sourceCode R">}}\preformatted{div("") \%>\%
+\if{html}{\out{<div class="sourceCode R">}}\preformatted{div() \%>\%
   background_color("primary") \%>\%
   display("flex") \%>\%
   flex_justify("between")
 }\if{html}{\out{</div>}}
 
-However, once the content of a tag element grows to more than a few lines,
-associating the element's styles with the element becomes less and less
-intuitive. In these situations, make use of the \code{.style} pronoun.
+Once the content of a tag element grows to more than a few lines, associating
+the element's styles with the element becomes less and less intuitive. In
+these situations, make use of the \code{.style} pronoun.
 
 \if{html}{\out{<div class="sourceCode R">}}\preformatted{div(
   .style \%>\%
-    border_color("primary") \%>\%
-    text_color("primary"),
-  p("First paragraph"),
-  p("Second paragraph")
+    border_color(theme_primary()) \%>\%
+    text_color(theme_primary()),
+  p("Paragraph"),
+  p("Paragraph"),
+  p("Paragraph")
 )
 }\if{html}{\out{</div>}}
 }
-\section{Prefixing}{
-
-
-Complex components such as \code{shiny::radioButtons()} or
-\code{yonder::listGroupInput()} may need a non-standard prefix for the CSS
-classes applied by cascadess' functions.
-}
-
 \keyword{datasets}

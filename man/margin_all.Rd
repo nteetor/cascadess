@@ -27,15 +27,30 @@ margin_vertical(x, ...)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{...}{One of \code{"-5"}, \code{"-4"}, \code{"-3"}, \code{"-2"}, \code{"-1"}, \code{0}, \code{1}, \code{2}, \code{3}, \code{4}, \code{5}, or \code{"auto"} specifying the margin
-for one or all sides.
+\item{...}{A number or character string specifying a margin. One or more of,
+\itemize{
+\item \code{"-5"}
+\item \code{"-4"}
+\item \code{"-3"}
+\item \code{"-2"}
+\item \code{"-1"}
+\item \code{0}
+\item \code{1}
+\item \code{2}
+\item \code{3}
+\item \code{4}
+\item \code{5}
+\item \code{"auto"}
 
-Use \link{breakpoints} to specify responsive values.}
+Use name-value pairs to specify \link{breakpoints}.
+}}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-The \code{margin()} function adjusts the outer spacing of a tag element. The
-margin of a tag element is the space outside and around the tag element, its
-border, and its content.
+The \verb{margin_*()} functions adjust a tag element's margin, the space outside
+and around the element, its border, and its content.
 }
 \examples{
 
@@ -45,19 +60,22 @@ div(
   .style \%>\%
     margin_left(3) \%>\%
     margin_right(3),
-  "Mauris mollis tincidunt felis."
+  "Left margin, right margin"
 )
 
 div(
   .style \%>\%
     margin_horizontal(3),
-  "Nulla posuere."
+  "Shorthand for left and right margins"
 )
 
 div(
   .style \%>\%
-    margin_right("auto"),
-  "Sed id ligula quis est convallis tempor."
+    margin_horizontal("auto"),
+  "A centered element."
 )
 
+}
+\seealso{
+\code{\link[=gap_all]{gap_all()}} for flex spacing.
 }

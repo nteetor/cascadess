@@ -4,7 +4,7 @@
 \alias{breakpoints}
 \title{Different values for different browser sizes}
 \description{
-Most functions in cascadess accept multiple name-value pairs via \code{...}. Each
+Many functions in cascadess accept multiple name-value pairs via \code{...}. Each
 argument's name specifies a breakpoint, a browser width. At this breakpoint,
 at this browser width, the argument value will supercede any values specified
 for smaller breakpoints, smaller browser widths.

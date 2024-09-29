@@ -2,22 +2,31 @@
 % Please edit documentation in R/background-color.R
 \name{background_color}
 \alias{background_color}
-\alias{subtle}
+\alias{background_subtle}
 \title{Background color}
 \usage{
 background_color(x, color)
 
-subtle(color)
+background_subtle(x, color)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{One of \code{"primary"}, \code{"secondary"}, \code{"success"}, \code{"danger"}, \code{"warning"}, \code{"info"}, \code{"light"}, \code{"dark"}, \code{"body"}, \code{"black"}, \code{"white"}, or \code{"transparent"} specifying
-the background color of the tag element.}
+\item{color}{A character string specifying one of the following colors,
+\itemize{
+\item \code{"primary"}
+\item \code{"secondary"}
+\item \code{"success"}
+\item \code{"danger"}
+\item \code{"warning"}
+\item \code{"info"}
+\item \code{"light"}
+\item \code{"dark"}
+}}
 }
 \description{
-The \code{background_color()} function adjusts the background color of a tag
-element.
+The \code{background_color()} and \code{background_subtle()} functions adjust the
+background color of a tag element.
 }
 \examples{
 
@@ -25,11 +34,28 @@ library(htmltools)
 
 div(
   .style \%>\%
-    background_color("light") \%>\%
-    border_color("primary") \%>\%
-    text_color("primary"),
-  "Nunc porta vulputate tellus.",
-  "Suspendisse potenti."
+    background_color(theme_primary()),
+  "Primary background"
+)
+
+div(
+  .style \%>\%
+    background_color(theme_danger()),
+  "Danger background"
+)
+
+div(
+  .style \%>\%
+    background_subtle(theme_warning()) \%>\%
+    border_emphasis(theme_warning()) \%>\%
+    text_emphasis(theme_warning())
+)
+
+
+div(
+  .style \%>\%
+    background_subtle(theme_dark()) \%>\%
+    border_emphasis(theme_dark())
 )
 
 }

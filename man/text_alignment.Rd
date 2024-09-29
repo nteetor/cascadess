@@ -2,27 +2,39 @@
 % Please edit documentation in R/text-alignment.R
 \name{text_alignment}
 \alias{text_alignment}
-\title{Align text based on browser size}
+\title{Align text}
 \usage{
 text_alignment(x, ...)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{...}{Name-value pairs. Names are \link{breakpoints}. Values are one or more
-of \code{"left"}, \code{"right"}, or \code{"center"}.}
+\item{...}{A character string specifying an alignment. One of,
+
+\code{"left"}, \code{"right"}, or \code{"center"}.
+
+Use name-value pairs to specify \link{breakpoints}.}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
-\code{text_alignment()} specifies how the text within a tag element is
-aligned. Text may be aligned to the left, right, or center.
+The \code{text_alignment()} function adjusts how the text within a tag element is
+aligned.
 }
 \examples{
 
-.style \%>\%
-  text_alignment("left")
+library(htmltools)
 
-.style \%>\%
- text_alignment("center")
+div(
+  .style \%>\%
+    text_alignment("left")
+)
+
+div(
+  .style \%>\%
+    text_alignment("center")
+)
 
 }
 \seealso{
@@ -30,8 +42,11 @@ Other text utilities:
 \code{\link{text_break}()},
 \code{\link{text_color}()},
 \code{\link{text_decoration}()},
+\code{\link{text_height}()},
 \code{\link{text_selection}()},
+\code{\link{text_style}()},
 \code{\link{text_transform}()},
+\code{\link{text_weight}()},
 \code{\link{text_wrap}()}
 }
 \concept{text utilities}

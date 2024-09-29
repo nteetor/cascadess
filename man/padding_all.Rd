@@ -8,7 +8,7 @@
 \alias{padding_left}
 \alias{padding_horizontal}
 \alias{padding_vertical}
-\title{Add space into elements}
+\title{Padding}
 \usage{
 padding_all(x, ...)
 
@@ -27,7 +27,7 @@ padding_vertical(x, ...)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{...}{One of the following,
+\item{...}{A number specifying the amount of padding. One of,
 \itemize{
 \item \code{0}
 \item \code{1}
@@ -36,13 +36,15 @@ padding_vertical(x, ...)
 \item \code{4}
 \item \code{5}
 
-Use \link{breakpoints} to specify responsive values.
+Use name-value pairs to specify \link{breakpoints}.
 }}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
-The \verb{padding_*()} functions adjust the inner spacing of a tag element. The
-padding of a tag element is the space between the element's border and its
-content or child elements.
+The \verb{padding_*()} functions adjust a tag element's padding, the space between
+the element's border and its content or child elements.
 }
 \examples{
 
@@ -50,11 +52,9 @@ library(htmltools)
 
 div(
   .style \%>\%
-    margin_all(2) \%>\%
-    padding_all(2) \%>\%
-    border_color("primary") \%>\%
-    background_color("light"),
-  "This element has padding"
+    border_color(theme_primary()) \%>\%
+    padding_all(2),
+  "A padded element"
 )
 
 }

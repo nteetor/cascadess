@@ -7,21 +7,29 @@ background_color_values <- chr(
   info = "info",
   light = "light",
   dark = "dark",
-  body = "body",
-  black = "black",
-  white = "white",
-  transparent = "transparent"
+)
+
+background_subtle_values <- chr(
+  primary = "primary-subtle",
+  secondary = "secondary-subtle",
+  success = "success-subtle",
+  danger = "danger-subtle",
+  warning = "warning-subtle",
+  info = "info-subtle",
+  light = "light-subtle",
+  dark = "dark-subtle"
 )
 
 #' Background color
 #'
-#' The `background_color()` function adjusts the background color of a tag
-#' element.
+#' The `background_color()` and `background_subtle()` functions adjust the
+#' background color of a tag element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param color One of `r rd_list(names(background_color_values))` specifying
-#'   the background color of the tag element.
+#' @param color A character string specifying one of the following colors,
+#'
+#'   `r rd_bullets(names(background_color_values))`
 #'
 #' @export
 #' @examples
@@ -30,11 +38,21 @@ background_color_values <- chr(
 #'
 #' div(
 #'   .style %>%
-#'     background_color("light") %>%
-#'     border_color("primary") %>%
-#'     text_color("primary"),
-#'   "Nunc porta vulputate tellus.",
-#'   "Suspendisse potenti."
+#'     background_color(theme_primary()),
+#'   "Primary background"
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     background_color(theme_danger()),
+#'   "Danger background"
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     background_subtle(theme_warning()) %>%
+#'     border_emphasis(theme_warning()) %>%
+#'     text_emphasis(theme_warning())
 #' )
 #'
 background_color <- function(x, color) {
@@ -50,6 +68,21 @@ background_color <- function(x, color) {
 
 #' @rdname background_color
 #' @export
-subtle <- function(color) {
-
+#' @examples
+#'
+#' div(
+#'   .style %>%
+#'     background_subtle(theme_dark()) %>%
+#'     border_emphasis(theme_dark())
+#' )
+#'
+background_subtle <- function(x, color) {
+  add_class(
+    x,
+    compose_class(
+      "bg",
+      background_subtle_values,
+      color
+    )
+  )
 }

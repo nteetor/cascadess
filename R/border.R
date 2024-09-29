@@ -13,6 +13,8 @@ border_include_values <- chr(
 #' @param include One of `r rd_list(names(border_include_values))`, defaults to
 #'   `r rd_default(border_all, include)`.
 #'
+#' @returns `r returns_same("x")`
+#'
 #' @family border
 #' @export
 #'

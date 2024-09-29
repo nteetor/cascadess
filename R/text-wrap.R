@@ -5,22 +5,40 @@ text_wrap_values <- chr(
 
 #' Text wrap
 #'
-#' Text wrap
+#' The `text_wrap()` adjusts how text is wrapped, or not wrapped, in a tag
+#' element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param wrap One of `r rd_list(names(text_wrap_values))`.
+#' @param wrap A boolean. One of,
+#'
+#'   `r rd_bullets(names(text_wrap_values))`
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @family text utilities
+#'
 #' @export
 #'
 #' @examples
 #'
-#' .style %>%
-#'   text_wrap(TRUE)
+#' library(htmltools)
 #'
-#' .style %>%
-#'   text_wrap(FALSE)
+#' div(
+#'   style = "width: 5rem;",
+#'   .style %>%
+#'     background_color(theme_primary()) %>%
+#'     text_wrap(TRUE),
+#'   "Wrap text to fit the element"
+#' )
+#'
+#' div(
+#'   style = "width: rem;",
+#'   .style %>%
+#'     background_color(theme_secondary()) %>%
+#'     text_wrap(FALSE),
+#'   "This text won't wrap onto a new line."
+#' )
 #'
 text_wrap <- function(x, wrap) {
   add_class(

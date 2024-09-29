@@ -12,19 +12,26 @@ border_width(x, width)
 \item{width}{A number between \code{1} and
 \code{5}.}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
-Border width description.
+Adjust the boder width of a tag element.
 }
 \examples{
 
-.style \%>\%
-  border_all() \%>\%
-  border_width(3)
+library(htmltools)
+
+div(
+  .style \%>\%
+    border_all() \%>\%
+    border_width(3) \%>\%
+    border_color(theme_primary())
+)
 
 }
 \seealso{
-Other border utilities
-\code{\link{border_all}()},
+Other border utilities: 
 \code{\link{border_color}()}
 }
-\concept{border}
+\concept{border utilities}

@@ -9,8 +9,6 @@ vertical_alignment_values <- chr(
 
 #' Vertical alignment
 #'
-#' @description
-#'
 #' The `vertical_alignment()` function adjusts the inline position of inline,
 #' inline-block, and table cell elements. The utility may be used to adjust the
 #' vertical alignment of an image in a line of text or the contents of a table
@@ -18,9 +16,11 @@ vertical_alignment_values <- chr(
 #'
 #' @param x `r param_subject()`
 #'
-#' @param alignment One of the following character strings,
+#' @param alignment A character string specifying an alignment. One of,
 #'
 #'   `r rd_bullets(names(vertical_alignment_values))`
+#'
+#' @returns `r returns_same("x")`
 #'
 #' @export
 #'

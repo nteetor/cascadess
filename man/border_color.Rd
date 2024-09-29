@@ -2,14 +2,17 @@
 % Please edit documentation in R/border-color.R
 \name{border_color}
 \alias{border_color}
+\alias{border_emphasis}
 \title{Border colors}
 \usage{
 border_color(x, color)
+
+border_emphasis(x, color)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{A character string specifying one of the following colors,
+\item{color}{A character string specifying a color. One of,
 \itemize{
 \item \code{"primary"}
 \item \code{"secondary"}
@@ -19,16 +22,35 @@ border_color(x, color)
 \item \code{"info"}
 \item \code{"light"}
 \item \code{"dark"}
-\item \code{"black"}
-\item \code{"white"}
 }}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
-Border color description.
+The \code{border_color()} and \code{border_emphasis()} functions adjust the border
+color of a tag element.
+}
+\examples{
+
+library(htmltools)
+
+div(
+  .style \%>\%
+    border_color(theme_primary())
+)
+
+
+div(
+  .style \%>\%
+    background_subtle(theme_light()) \%>\%
+    text_emphasis(theme_light()) \%>\%
+    border_emphasis(theme_light())
+)
+
 }
 \seealso{
-Other border utilities
-\code{\link{border_all}()},
+Other border utilities: 
 \code{\link{border_width}()}
 }
-\concept{border}
+\concept{border utilities}

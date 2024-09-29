@@ -27,14 +27,17 @@ flex_content(x, ...)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{...}{Name-value pairs.}
+\item{...}{Name-value pairs specifying \link{breakpoints}.}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
 The \verb{flex_*()} functions adjust the flexbox layout of an element. The flexbox
 layout is incredibly powerful and allows centering of elements vertically and
 horizontally, automatic adjustment of space between and around child
-elements, and more.  To use flexbox make sure to include \code{flex_display()}
-when styling an element. For finer control over an element's display see
+elements, and more. To use flexbox make sure to include \code{flex_display()} when
+styling an element. For finer control over an element's display see
 \code{\link[=display]{display()}}.
 
 Direct child elements of a flex box container are automatically considered

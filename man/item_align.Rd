@@ -23,6 +23,9 @@ item_order(x, ...)
 
 \item{...}{Name-value pairs.}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
 The \verb{item_*()} functions adjust a flex item element. Unlike the \verb{flex_*()}
 utilities, which adjust the flexbox layout of a parent flexbox container, the

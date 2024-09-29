@@ -2,7 +2,24 @@
 #'
 #' Theme color functions.
 #'
+#' @returns A character string.
+#'
 #' @export
+#'
+#' @examples
+#'
+#' library(htmltools)
+#'
+#' div(
+#'   .style %>%
+#'     background_color("primary")
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     background_color(theme_primary())
+#' )
+#'
 theme_primary <- function() {
   "primary"
 }

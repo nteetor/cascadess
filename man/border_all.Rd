@@ -24,6 +24,9 @@ border_left(x, include = TRUE)
 \item{include}{One of \code{TRUE} or \code{FALSE}, defaults to
 \code{TRUE}.}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
 The \code{border_all()} and \verb{border_<side>()} functions adjust a tag element's
 borders.
@@ -40,10 +43,5 @@ h3(
   "Warning"
 )
 
-}
-\seealso{
-Other border utilities
-\code{\link{border_color}()},
-\code{\link{border_width}()}
 }
 \concept{border}

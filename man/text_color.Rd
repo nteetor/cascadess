@@ -2,14 +2,17 @@
 % Please edit documentation in R/text-color.R
 \name{text_color}
 \alias{text_color}
-\title{Emphasize text through color}
+\alias{text_emphasis}
+\title{Text color}
 \usage{
 text_color(x, color)
+
+text_emphasis(x, color)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{A character string specifying one of the following colors,
+\item{color}{A character string specifying a color. One of,
 \itemize{
 \item \code{"primary"}
 \item \code{"secondary"}
@@ -24,17 +27,26 @@ text_color(x, color)
 \item \code{"white"}
 }}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
-The \code{text_color()} function adjusts the color of a tag element's text.
+The \code{text_color()} function adjusts the color of text in a tag element.
 }
 \examples{
 
-.style \%>\%
-  text_color("primary")
+library(htmltools)
 
-.style \%>\%
-  text_color("dark") \%>\%
-  border_color("dark")
+div(
+  .style \%>\%
+    text_color(theme_primary())
+)
+
+div(
+  .style \%>\%
+    text_color(theme_dark()) \%>\%
+    border_color(theme_dark())
+)
 
 }
 \seealso{
@@ -42,8 +54,11 @@ Other text utilities:
 \code{\link{text_alignment}()},
 \code{\link{text_break}()},
 \code{\link{text_decoration}()},
+\code{\link{text_height}()},
 \code{\link{text_selection}()},
+\code{\link{text_style}()},
 \code{\link{text_transform}()},
+\code{\link{text_weight}()},
 \code{\link{text_wrap}()}
 }
 \concept{text utilities}
