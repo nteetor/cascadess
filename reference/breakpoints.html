@@ -189,17 +189,21 @@ their design, construction, and usage, see
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="flex_display.html">flex_display</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="flex_display.html">flex_direction</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="st">"column"</span>, lg <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;spliced&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;pronoun&gt;</span>
+<span class="r-in"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/htmltools" class="external-link">htmltools</a></span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
-<span class="r-in"><span><span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="flex_display.html">flex_display</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>  <span class="fu"><a href="flex_display.html">flex_gap</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="fl">0</span>, md <span class="op">=</span> <span class="fl">2</span>, xl <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;spliced&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;pronoun&gt;</span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="flex_display.html">flex_display</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="flex_direction.html">flex_direction</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="st">"column"</span>, lg <span class="op">=</span> <span class="st">"row"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="d-flex flex-column flex-lg-row"&gt;&lt;/div&gt;</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="flex_display.html">flex_display</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu"><a href="gap_all.html">gap_all</a></span><span class="op">(</span>xs <span class="op">=</span> <span class="fl">0</span>, md <span class="op">=</span> <span class="fl">2</span>, xl <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="d-flex gap-0 gap-md-2 gap-xl-4"&gt;&lt;/div&gt;</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

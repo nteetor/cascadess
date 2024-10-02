@@ -54,7 +54,19 @@ rendered.</p>
 
 
 <dt id="arg--">...<a class="anchor" aria-label="anchor" href="#arg--"></a></dt>
-<dd><p>Name-value pairs specifying <a href="breakpoints.html">breakpoints</a>.</p></dd>
+<dd><p>A character string specifying a display type. One of,</p><ul><li><p><code>"none"</code></p></li>
+<li><p><code>"inline"</code></p></li>
+<li><p><code>"inline-block"</code></p></li>
+<li><p><code>"block"</code></p></li>
+<li><p><code>"grid"</code></p></li>
+<li><p><code>"inline-grid"</code></p></li>
+<li><p><code>"table"</code></p></li>
+<li><p><code>"table-cell"</code></p></li>
+<li><p><code>"table-row"</code></p></li>
+<li><p><code>"flex"</code></p></li>
+<li><p><code>"inline-flex"</code></p>
+<p>Use name-value pairs to specify <a href="breakpoints.html">breakpoints</a>.</p></li>
+</ul></dd>
 
 </dl></div>
     <div class="section level2">
@@ -70,10 +82,20 @@ rendered.</p>
 <span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
 <span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
 <span class="r-in"><span>    <span class="fu">display</span><span class="op">(</span><span class="st">"flex"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
-<span class="r-in"><span>    <span class="fu"><a href="flex_display.html">flex_justify</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>    <span class="fu"><a href="flex_justify.html">flex_justify</a></span><span class="op">(</span><span class="st">"center"</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  <span class="st">"Powerful stuff"</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="d-flex justify-content-center"&gt;Powerful stuff&lt;/div&gt;</span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rstudio.github.io/htmltools/reference/builder.html" class="external-link">div</a></span><span class="op">(</span></span></span>
+<span class="r-in"><span>  <span class="va">.style</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span></span>
+<span class="r-in"><span>    <span class="fu">display</span><span class="op">(</span></span></span>
+<span class="r-in"><span>      xs <span class="op">=</span> <span class="st">"inline"</span>,</span></span>
+<span class="r-in"><span>      md <span class="op">=</span> <span class="st">"block"</span></span></span>
+<span class="r-in"><span>    <span class="op">)</span>,</span></span>
+<span class="r-in"><span>  <span class="st">"Block and roll"</span></span></span>
+<span class="r-in"><span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;div class="d-inline d-md-block"&gt;Block and roll&lt;/div&gt;</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
