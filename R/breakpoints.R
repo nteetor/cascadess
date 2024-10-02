@@ -121,14 +121,21 @@ prepend_breakpoints <- function(values) {
 #' <https://getbootstrap.com/docs/5.3/layout/breakpoints/>.
 #'
 #' @name breakpoints
+#'
 #' @examples
 #'
-#' .style %>%
-#'   flex_display() %>%
-#'   flex_direction(xs = "column", lg = "row")
+#' library(htmltools)
 #'
-#' .style %>%
-#'   flex_display() %>%
-#'   flex_gap(xs = 0, md = 2, xl = 4)
+#' div(
+#'   .style %>%
+#'     flex_display() %>%
+#'     flex_direction(xs = "column", lg = "row")
+#' )
+#'
+#' div(
+#'   .style %>%
+#'     flex_display() %>%
+#'     gap_all(xs = 0, md = 2, xl = 4)
+#' )
 #'
 NULL

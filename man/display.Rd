@@ -9,7 +9,22 @@ display(x, ...)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{...}{Name-value pairs specifying \link{breakpoints}.}
+\item{...}{A character string specifying a display type. One of,
+\itemize{
+\item \code{"none"}
+\item \code{"inline"}
+\item \code{"inline-block"}
+\item \code{"block"}
+\item \code{"grid"}
+\item \code{"inline-grid"}
+\item \code{"table"}
+\item \code{"table-cell"}
+\item \code{"table-row"}
+\item \code{"flex"}
+\item \code{"inline-flex"}
+
+Use name-value pairs to specify \link{breakpoints}.
+}}
 }
 \value{
 An object of the same type as \code{x}.
@@ -27,6 +42,15 @@ div(
     display("flex") \%>\%
     flex_justify("center"),
   "Powerful stuff"
+)
+
+div(
+  .style \%>\%
+    display(
+      xs = "inline",
+      md = "block"
+    ),
+  "Block and roll"
 )
 
 }

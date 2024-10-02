@@ -2,32 +2,12 @@
 % Please edit documentation in R/flex.R
 \name{flex_display}
 \alias{flex_display}
-\alias{flex_direction}
-\alias{flex_justify}
-\alias{flex_align}
-\alias{flex_gap}
-\alias{flex_wrap}
-\alias{flex_content}
-\title{Flex}
+\title{Flex display}
 \usage{
 flex_display(x)
-
-flex_direction(x, ...)
-
-flex_justify(x, ...)
-
-flex_align(x, ...)
-
-flex_gap(x, ...)
-
-flex_wrap(x, ...)
-
-flex_content(x, ...)
 }
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
-
-\item{...}{Name-value pairs specifying \link{breakpoints}.}
 }
 \value{
 An object of the same type as \code{x}.
@@ -37,12 +17,19 @@ The \verb{flex_*()} functions adjust the flexbox layout of an element. The flexb
 layout is incredibly powerful and allows centering of elements vertically and
 horizontally, automatic adjustment of space between and around child
 elements, and more. To use flexbox make sure to include \code{flex_display()} when
-styling an element. For finer control over an element's display see
+styling an element. To adjust an element's display at \link{breakpoints} see
 \code{\link[=display]{display()}}.
 
 Direct child elements of a flex box container are automatically considered
 flex items and may be adjusted with the \verb{item_*()} functions, see
 \code{\link[=item_align]{item_align()}}.
+}
+\details{
+Using flexbox, \code{flex_display()}, a tag element's child elements are
+considered \strong{flex items}. The \verb{item_*()} functions are used to modify the
+bahvior of these flex items. So, while \verb{flex_*()} functions are applied to the
+parent element, all the \verb{item_*()} functions are applied to the individual child
+flex item elements.
 }
 \examples{
 
@@ -52,9 +39,22 @@ div(
   .style \%>\%
     flex_display() \%>\%
     flex_justify("end"),
-  div("Item 1"),
-  div("Item 2"),
-  div("Item 3")
+  div("Flex item"),
+  div("Flex item"),
+  div("Flex item")
 )
 
 }
+\seealso{
+Other flex utilities: 
+\code{\link{flex_align}()},
+\code{\link{flex_content}()},
+\code{\link{flex_direction}()},
+\code{\link{flex_justify}()},
+\code{\link{flex_wrap}()},
+\code{\link{item_align}()},
+\code{\link{item_fill}()},
+\code{\link{item_grow}()},
+\code{\link{item_order}()}
+}
+\concept{flex utilities}

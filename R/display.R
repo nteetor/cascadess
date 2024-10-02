@@ -1,4 +1,4 @@
-display_type_values <- chr(
+display_values <- chr(
   "none" = "none",
   "inline" = "inline",
   "inline-block" = "inline-block",
@@ -19,11 +19,16 @@ display_type_values <- chr(
 #'
 #' @param x `r param_subject()`
 #'
-#' @param ... Name-value pairs specifying [breakpoints].
+#' @param ... A character string specifying a display type. One of,
+#'
+#'   `r rd_bullets(names(display_values))`
+#'
+#'   Use name-value pairs to specify [breakpoints].
 #'
 #' @returns `r returns_same("x")`
 #'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
@@ -35,12 +40,21 @@ display_type_values <- chr(
 #'   "Powerful stuff"
 #' )
 #'
+#' div(
+#'   .style %>%
+#'     display(
+#'       xs = "inline",
+#'       md = "block"
+#'     ),
+#'   "Block and roll"
+#' )
+#'
 display <- function(x, ...) {
   add_class(
     x,
     compose_class(
       "d",
-      display_type_values,
+      display_values,
       ...
     )
   )
