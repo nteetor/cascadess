@@ -1,7 +1,7 @@
 Package: cascadess
 Type: Package
 Title: A Style Pronoun for 'htmltools' Tags
-Version: 0.1.0.9000
+Version: 0.2.0
 Authors@R: c(
   person("Nathan", "Teetor", email = "nate@haufin.ch",
          role = c("aut", "cre", "cph")),
@@ -44,9 +44,9 @@ Collate:
     'flex-align.R'
     'flex-content.R'
     'flex-direction.R'
+    'flex-display.R'
     'flex-justify.R'
     'flex-wrap.R'
-    'flex.R'
     'float.R'
     'gap-all.R'
     'height-relative.R'
