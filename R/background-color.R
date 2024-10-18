@@ -20,18 +20,21 @@ background_subtle_values <- chr(
   dark = "dark-subtle"
 )
 
-#' Background color
+#' Change background color
 #'
 #' The `background_color()` and `background_subtle()` functions adjust the
 #' background color of a tag element.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param color A character string specifying one of the following colors,
+#' @param color A character string specifying a color. One of,
 #'
 #'   `r rd_bullets(names(background_color_values))`
 #'
+#' @returns `r returns_same("x")`
+#'
 #' @export
+#'
 #' @examples
 #'
 #' library(htmltools)
@@ -51,8 +54,9 @@ background_subtle_values <- chr(
 #' div(
 #'   .style %>%
 #'     background_subtle(theme_warning()) %>%
-#'     border_emphasis(theme_warning()) %>%
-#'     text_emphasis(theme_warning())
+#'     border_subtle(theme_warning()) %>%
+#'     text_emphasis(theme_warning()),
+#'   "Warning!"
 #' )
 #'
 background_color <- function(x, color) {
@@ -73,7 +77,7 @@ background_color <- function(x, color) {
 #' div(
 #'   .style %>%
 #'     background_subtle(theme_dark()) %>%
-#'     border_emphasis(theme_dark())
+#'     border_subtle(theme_dark())
 #' )
 #'
 background_subtle <- function(x, color) {

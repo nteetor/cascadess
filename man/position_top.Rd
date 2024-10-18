@@ -39,9 +39,4 @@ div(
 )
 
 }
-\seealso{
-Other position: 
-\code{\link{position_centered}()},
-\code{\link{position}()}
-}
 \concept{position}

@@ -46,8 +46,8 @@ tags$button(
 
 }
 \seealso{
-Other position: 
-\code{\link{position_top}()},
+Other position utilities: 
+\code{\link{position_sticky}()},
 \code{\link{position}()}
 }
-\concept{position}
+\concept{position utilities}

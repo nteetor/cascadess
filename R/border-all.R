@@ -3,15 +3,18 @@ border_include_values <- chr(
   "FALSE" = "0"
 )
 
-#' Borders
+#' Add or remove borders
 #'
 #' The `border_all()` and `border_<side>()` functions adjust a tag element's
 #' borders.
 #'
 #' @param x `r param_subject()`
 #'
-#' @param include One of `r rd_list(names(border_include_values))`, defaults to
-#'   `r rd_default(border_all, include)`.
+#' @param include A boolean specifying to include a side. One of,
+#'
+#'   `r rd_bullets(names(border_include_values))`
+#'
+#'   Defaults to `r rd_default(border_all, include)`.
 #'
 #' @returns `r returns_same("x")`
 #'

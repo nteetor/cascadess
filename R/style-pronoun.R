@@ -17,7 +17,7 @@ str.cascadess_style_pronoun <- function(object, ...) {
   invisible(NULL)
 }
 
-#' Style pronoun
+#' `.style` pronoun
 #'
 #' @description
 #'
@@ -47,7 +47,9 @@ str.cascadess_style_pronoun <- function(object, ...) {
 #' )
 #' ```
 #'
-#' @name style-pronoun
+#' @name dot-style
+#'
+#' @usage NULL
 #'
 #' @format NULL
 #'

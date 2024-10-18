@@ -9,20 +9,20 @@ border_color_values <- chr(
   dark = "dark",
 )
 
-border_emphasis_values <- chr(
-  primary = "primary-emphasis",
-  secondary = "secondary-emphasis",
-  success = "success-emphasis",
-  danger = "danger-emphasis",
-  warning = "warning-emphasis",
-  info = "info-emphasis",
-  light = "light-emphasis",
-  dark = "dark-emphasis"
+border_subtle_values <- chr(
+  primary = "primary-subtle",
+  secondary = "secondary-subtle",
+  success = "success-subtle",
+  danger = "danger-subtle",
+  warning = "warning-subtle",
+  info = "info-subtle",
+  light = "light-subtle",
+  dark = "dark-subtle"
 )
 
-#' Border colors
+#' Change border color
 #'
-#' The `border_color()` and `border_emphasis()` functions adjust the border
+#' The `border_color()` and `border_subtle()` functions adjust the border
 #' color of a tag element.
 #'
 #' @param x `r param_subject()`
@@ -46,6 +46,14 @@ border_emphasis_values <- chr(
 #'     border_color(theme_primary())
 #' )
 #'
+#' div(
+#'   .style %>%
+#'     background_subtle(theme_danger()) %>%
+#'     border_subtle(theme_danger()) %>%
+#'     text_emphasis(theme_danger()),
+#'   "Danger theme with some emphasis"
+#' )
+#'
 border_color <- function(x, color) {
   add_class(
     x,
@@ -65,15 +73,15 @@ border_color <- function(x, color) {
 #'   .style %>%
 #'     background_subtle(theme_light()) %>%
 #'     text_emphasis(theme_light()) %>%
-#'     border_emphasis(theme_light())
+#'     border_subtle(theme_light())
 #' )
 #'
-border_emphasis <- function(x, color) {
+border_subtle <- function(x, color) {
   add_class(
     x,
     compose_class(
       "border",
-      border_emphasis_values,
+      border_subtle_values,
       color
     )
   )

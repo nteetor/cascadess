@@ -27,9 +27,9 @@ flex items and may be adjusted with the \verb{item_*()} functions, see
 \details{
 Using flexbox, \code{flex_display()}, a tag element's child elements are
 considered \strong{flex items}. The \verb{item_*()} functions are used to modify the
-bahvior of these flex items. So, while \verb{flex_*()} functions are applied to the
-parent element, all the \verb{item_*()} functions are applied to the individual child
-flex item elements.
+bahvior of these flex items. So, while \verb{flex_*()} functions are applied to
+the parent element, all the \verb{item_*()} functions are applied to the
+individual child flex item elements.
 }
 \examples{
 

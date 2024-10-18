@@ -36,8 +36,8 @@ div(
 
 }
 \seealso{
-Other position: 
+Other position utilities: 
 \code{\link{position_centered}()},
-\code{\link{position_top}()}
+\code{\link{position_sticky}()}
 }
-\concept{position}
+\concept{position utilities}

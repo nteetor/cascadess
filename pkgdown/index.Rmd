@@ -41,13 +41,27 @@ div(
   .style %>%
     flex_display() %>%
     flex_direction("column") %>%
-    flex_gap(2),
+    gap_vertical(2),
   demo_button("Button 1"),
   demo_button("Button 2"),
   demo_button("Button 3")
 )
 ```
 
+<p></p>
+
+Or use the `stack_vertical()` shortcut function.
+
+```{r}
+div(
+  .style %>%
+    stack_vertical() %>%
+    gap_vertical(2),
+  demo_button("Button 1"),
+  demo_button("Button 2"),
+  demo_button("Button 3")
+)
+```
 
 ### Adjust to the screen size {.mt-4}
 
@@ -59,7 +73,7 @@ div(
   .style %>%
     flex_display() %>%
     flex_direction(xs = "column", md = "row") %>%
-    flex_gap(2),
+    gap_all(2),
   demo_button("Button 1"),
   demo_button("Button 2"),
   demo_button("Button 3")

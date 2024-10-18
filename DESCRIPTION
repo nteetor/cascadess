@@ -13,7 +13,7 @@ Description: Apply styles to tag elements directly and with the .style
   pronoun. Using the pronoun, styles are created within the context of a tag
   element. Change borders, backgrounds, text, margins, layouts, and more.
 License: MIT + file LICENSE
-URL: https://github.com/nteetor/cascadess
+URL: https://nteetor.github.io/cascadess/, https://github.com/nteetor/cascadess
 BugReports: https://github.com/nteetor/cascadess/issues
 Encoding: UTF-8
 LazyData: true
@@ -48,6 +48,7 @@ Collate:
     'flex-justify.R'
     'flex-wrap.R'
     'float.R'
+    'focus-color.R'
     'gap-all.R'
     'height-relative.R'
     'item-align.R'
@@ -59,10 +60,12 @@ Collate:
     'padding-all.R'
     'position-centered.R'
     'position-offset.R'
+    'position-sticky.R'
     'position.R'
     'reexports.R'
     'rounded-all.R'
     'shadow.R'
+    'stack-vertical.R'
     'style-pronoun.R'
     'text-alignment.R'
     'text-break.R'

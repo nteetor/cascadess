@@ -6,7 +6,7 @@ border_width_values <- chr(
   "5" = "5"
 )
 
-#' Border width
+#' Increase or decrease border width
 #'
 #' Adjust the boder width of a tag element.
 #'

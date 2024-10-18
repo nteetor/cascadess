@@ -1,3 +1,80 @@
+url: https://nteetor.github.io/cascadess/
+
 template:
   bootstrap: 5
+  light-switch: true
   theme: github-light
+  theme-dark: github-dark
+
+navbar:
+  structure:
+    left:  [intro, reference, articles, tutorials, news]
+    right: [search, github, lightswitch]
+
+reference:
+  - title: Pronoun
+  - contents:
+      - "`.style`"
+  - title: Breakpoints
+    desc: Develop applications for all screen sizes with responsive breakpoints
+  - contents:
+      - breakpoints
+  - title: Borders and Corners
+  - contents:
+      - starts_with("border")
+      - starts_with("rounded")
+  - title: Backgrounds
+  - contents:
+      - background_color
+  - title: Text
+  - contents:
+      - starts_with("text")
+      - vertical_alignment
+  - title: Sizing
+    desc: Resize elements relative to their parent elements.
+  - contents:
+      - width_relative
+      - height_relative
+  - title: Spacing
+  - contents:
+      - starts_with("padding")
+      - starts_with("margin")
+      - starts_with("gap")
+  - title: Flex
+    desc: Build flexible layouts using the flexbox system.
+  - contents:
+      - starts_with("flex")
+      - starts_with("item")
+      - starts_with("stack")
+  - title: Shadow
+    desc: Add fixed shadows or shadows for focused elements.
+  - contents:
+      - shadow
+      - focus_color
+  - title: Display
+    desc: Adjust the display of an element
+  - contents:
+      - display
+  - title: Position
+    desc: >
+      Position elements relative their parent element or in fixed positions on
+      the page.
+  - contents:
+      - starts_with("position")
+  - title: Overflow
+    desc: Scroll, cutoff, or prevent overflowing content.
+  - contents:
+      - overflow_all
+  - title: Float
+  - contents:
+      - float
+  - title: Visibility
+  - contents:
+      - visible
+  - title: Theme Colors
+    desc: Stand-ins for standard theme colors.
+  - contents:
+      - starts_with("theme")
+  - title: CSS Dependencies
+  - contents:
+      - cascadess_dependencies

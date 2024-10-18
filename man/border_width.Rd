@@ -2,7 +2,7 @@
 % Please edit documentation in R/border-width.R
 \name{border_width}
 \alias{border_width}
-\title{Border width}
+\title{Increase or decrease border width}
 \usage{
 border_width(x, width)
 }

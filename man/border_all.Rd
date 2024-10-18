@@ -6,7 +6,7 @@
 \alias{border_right}
 \alias{border_bottom}
 \alias{border_left}
-\title{Borders}
+\title{Add or remove borders}
 \usage{
 border_all(x, include = TRUE)
 
@@ -21,8 +21,13 @@ border_left(x, include = TRUE)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{include}{One of \code{TRUE} or \code{FALSE}, defaults to
-\code{TRUE}.}
+\item{include}{A boolean specifying to include a side. One of,
+\itemize{
+\item \code{TRUE}
+\item \code{FALSE}
+
+Defaults to \code{TRUE}.
+}}
 }
 \value{
 An object of the same type as \code{x}.

@@ -3,7 +3,7 @@
 \name{background_color}
 \alias{background_color}
 \alias{background_subtle}
-\title{Background color}
+\title{Change background color}
 \usage{
 background_color(x, color)
 
@@ -12,7 +12,7 @@ background_subtle(x, color)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{color}{A character string specifying one of the following colors,
+\item{color}{A character string specifying a color. One of,
 \itemize{
 \item \code{"primary"}
 \item \code{"secondary"}
@@ -23,6 +23,9 @@ background_subtle(x, color)
 \item \code{"light"}
 \item \code{"dark"}
 }}
+}
+\value{
+An object of the same type as \code{x}.
 }
 \description{
 The \code{background_color()} and \code{background_subtle()} functions adjust the
@@ -47,15 +50,16 @@ div(
 div(
   .style \%>\%
     background_subtle(theme_warning()) \%>\%
-    border_emphasis(theme_warning()) \%>\%
-    text_emphasis(theme_warning())
+    border_subtle(theme_warning()) \%>\%
+    text_emphasis(theme_warning()),
+  "Warning!"
 )
 
 
 div(
   .style \%>\%
     background_subtle(theme_dark()) \%>\%
-    border_emphasis(theme_dark())
+    border_subtle(theme_dark())
 )
 
 }

@@ -9,7 +9,7 @@ visible(x, show)
 \arguments{
 \item{x}{A tag element or \link{.style} pronoun.}
 
-\item{show}{A boolean. One of,
+\item{show}{A boolean specifying the visibility. One of,
 \itemize{
 \item \code{TRUE}
 \item \code{FALSE}

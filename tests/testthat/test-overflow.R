@@ -8,4 +8,9 @@ test_that("adds html class", {
 
   expect_s3_class(y, "shiny.tag")
   expect_html_class(y, "overflow-x-hidden")
+
+  z <- div() %>% overflow_vertical(TRUE)
+
+  expect_s3_class(z, "shiny.tag")
+  expect_html_class(z, "overflow-y-scroll")
 })

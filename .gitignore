@@ -3,3 +3,4 @@
 *.Rproj
 .DS_Store
 /css/.cache/
+/docs/

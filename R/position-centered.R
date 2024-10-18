@@ -6,7 +6,7 @@
 #'
 #' @returns `r returns_same("x")`
 #'
-#' @family position
+#' @family position utilities
 #'
 #' @export
 #'

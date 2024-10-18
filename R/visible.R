@@ -11,7 +11,7 @@ visible_show_values <- chr(
 #'
 #' @param x `r param_subject()`
 #'
-#' @param show A boolean. One of,
+#' @param show A boolean specifying the visibility. One of,
 #'
 #'   `r rd_bullets(names(visible_show_values))`
 #'

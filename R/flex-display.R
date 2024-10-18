@@ -17,9 +17,9 @@
 #'
 #' Using flexbox, `flex_display()`, a tag element's child elements are
 #' considered **flex items**. The `item_*()` functions are used to modify the
-#' bahvior of these flex items. So, while `flex_*()` functions are applied to the
-#' parent element, all the `item_*()` functions are applied to the individual child
-#' flex item elements.
+#' bahvior of these flex items. So, while `flex_*()` functions are applied to
+#' the parent element, all the `item_*()` functions are applied to the
+#' individual child flex item elements.
 #'
 #' @param x `r param_subject()`
 #'
