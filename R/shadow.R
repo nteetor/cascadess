@@ -18,6 +18,8 @@ shadow_size_values <- chr(
 #'
 #'   `r rd_bullets(names(shadow_size_values))`
 #'
+#' @returns `r returns_same("x")`
+#'
 #' @export
 #'
 #' @examples

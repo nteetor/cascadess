@@ -20,6 +20,9 @@ shadow(x, size)
 \item \code{"none"}
 }}
 }
+\value{
+An object of the same type as \code{x}.
+}
 \description{
 The \code{shadow()} function adjusts the box shadow of a tag element.
 }

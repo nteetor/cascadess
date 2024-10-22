@@ -6,6 +6,9 @@
 \usage{
 cascadess_dependencies()
 }
+\value{
+An \code{\link[htmltools:htmlDependency]{htmltools::htmlDependency()}}.
+}
 \description{
 For CSS styles to be applied, you must include a call to
 \code{cascadess_dependencies()} in your UI or use the bslib package.

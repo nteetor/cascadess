@@ -8,6 +8,8 @@ NULL
 #' For CSS styles to be applied, you must include a call to
 #' `cascadess_dependencies()` in your UI or use the bslib package.
 #'
+#' @returns An [htmltools::htmlDependency()].
+#'
 #' @export
 #' @examples
 #'
